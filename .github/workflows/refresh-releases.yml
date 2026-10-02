@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: refresh-releases
@@ -17,7 +18,7 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
@@ -27,14 +28,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: chaindiff refresh
-      - name: Commit catalog updates
+      - name: Open a catalog pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git add src/chaindiff/data/releases
           if git diff --cached --quiet; then
             echo "No catalog changes"
             exit 0
           fi
+          branch="catalog/refresh-${GITHUB_RUN_ID}"
+          git checkout -b "$branch"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Refresh client release catalog"
-          git push
+          git push -u origin "$branch"
+          gh pr create --base main --head "$branch" --title "Refresh client release catalog" --body "Scheduled update of the client release catalog."
+          gh pr merge --squash --delete-branch
