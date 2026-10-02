@@ -24,6 +24,21 @@ Supported clients:
 
 Reth and Nimbus are in the catalog because operators run them. Besu and Teku are read from their current GitHub repositories.
 
+The shipping catalog is Ethereum mainnet. The tool also covers these networks, one task each. A check has to use the clients that network actually runs, and that chain's upgrade, not only the latest tag of an upstream Ethereum client.
+
+- Ethereum mainnet
+- Gnosis
+- BNB Smart Chain
+- Avalanche
+- OP Mainnet
+- Base
+- Arbitrum One
+- Polygon PoS
+- Linea
+- Scroll
+- zkSync Era
+- Starknet
+
 Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. Configuration scanning and execution/consensus pairing are tracked as later work. They need sourced rules, not guesses.
 
 Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
@@ -31,9 +46,13 @@ Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the v
 ## Install
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -e .
+pip install chaindiff
+```
+
+That package is published from a GitHub release. Until the first release is on PyPI:
+
+```bash
+pip install git+https://github.com/ehsanhajian/chaindiff.git
 ```
 
 ## Commands
@@ -93,6 +112,8 @@ Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advi
 ## Development
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -e ".[dev]"
 pytest
 ```
