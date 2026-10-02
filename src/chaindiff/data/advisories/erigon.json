@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "3.0.0",
+      "severity": "breaking",
+      "summary": "Erigon 3 does not upgrade an Erigon 2 datadir. Re-sync. Caplin archive flags and prune flags changed, and the built-in consensus client is on by default.",
+      "action": "Re-sync. Replace caplin.backfilling, caplin.backfilling.blobs, and caplin.archive with --caplin.states-archive, --caplin.blobs-archive, and --caplin.blocks-archive. The v3.0.0 notes spell the blobs flag --capin.blobs-archive. Use --prune.mode (full, archive, or minimal). Pass --externalcl to disable the built-in consensus client. Polygon checkpoint sync is on unless you pass --polygon.sync=false.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.0.0"
+    },
+    {
+      "version": "3.7.0",
+      "severity": "breaking",
+      "summary": "Removed startup flags now prevent launch. Polygon chain names and bor/polygon flags are rejected. amd64 binaries require x86-64-v2. Fresh datadirs persist receipts.",
+      "action": "Remove --fcu.background.commit and --experimental.streaming-commitment. Move Polygon to 0xPolygon/erigon. Use an x86-64-v2 CPU (SSE4.2 and POPCNT). For a new datadir, pass --prune.include-receipts=false to keep the old disk-saving default. If --caplin.checkpoint-sync.disable is set, allow checkpoint sync for this upgrade or re-sync Caplin.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.0"
+    },
+    {
+      "version": "3.7.1",
+      "severity": "breaking",
+      "summary": "Custom graffiti is prefixed with client identification unless you opt out. QUIC listens on UDP 4001 by default and refuses to start if that port is already the discovery port.",
+      "action": "Allow UDP 4001, or set --caplin.discovery.quicport (standalone Sentinel: --sentinel.quic.port). If --caplin.discovery.port is 4001, move QUIC first. Pass --beacon.api.preserve-graffiti to keep all 32 graffiti bytes. No re-sync from 3.7.0. Sepolia Caplin must be on this release before Oct 6, 2026, 13:53:36 UTC.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.1"
+    }
+  ]
+}

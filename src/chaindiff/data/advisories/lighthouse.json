@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "8.2.0",
+      "severity": "breaking",
+      "summary": "The validator client refuses to start when an enabled validator has no fee recipient. Proposer duties use the v2 endpoint by default. The beacon node migrates the database from schema v28 to v29 on startup.",
+      "action": "Set suggested_fee_recipient in validator_definitions.yml or pass --suggested-fee-recipient. If proposer duties fail against a beacon node that lacks the v2 API, add --disable-proposer-duties-v2. A downgrade to schema v28 is only supported before the Gloas fork.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    },
+    {
+      "version": "8.2.0",
+      "severity": "deprecated",
+      "summary": "Beacon-node flags --libp2p-addresses, --reconstruct-historic-states, and --proposer-reorg-* are deprecated.",
+      "action": "Use --boot-nodes instead of --libp2p-addresses, and --archive instead of --reconstruct-historic-states. Leave the proposer-reorg flags unset.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    },
+    {
+      "version": "8.2.1",
+      "severity": "none",
+      "summary": "Security fixes and partial-data-column fixes for Hoodi and Sepolia. No database migration and no breaking CLI change.",
+      "action": "",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.1"
+    },
+    {
+      "version": "8.2.2",
+      "severity": "none",
+      "summary": "Security fixes. No database migration and no breaking CLI change. The notes do not disclose the vulnerability details.",
+      "action": "",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.2"
+    },
+    {
+      "version": "8.2.3",
+      "severity": "note",
+      "summary": "Security fixes for mainnet. Sepolia is not covered by this tag. Data-column backfill can still run out of memory, including on Gnosis; that is fixed in v8.3.0-rc.0.",
+      "action": "Run v8.3.0-rc.0 on Sepolia instead of v8.2.3. On mainnet, upgrade for the security fixes and do not resync only to avoid the backfill issue.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.3"
+    }
+  ]
+}

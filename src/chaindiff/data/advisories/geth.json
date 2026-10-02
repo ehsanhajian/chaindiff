@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "1.17.0",
+      "severity": "note",
+      "summary": "Includes fixes for CVE-2026-26313, CVE-2026-26314, and CVE-2026-26315. The geth version-check subcommand was removed.",
+      "action": "Delete DATADIR/geth/nodekey before restart so the p2p node key is recreated. The node ID changes, which can break static peers.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.0"
+    },
+    {
+      "version": "1.17.1",
+      "severity": "note",
+      "summary": "Bugfix release. p2p protocol eth/68 is no longer supported, and the engine API no longer enables plain-text HTTP/2.",
+      "action": "Peers that speak only eth/68 will not connect. If the consensus client had trouble with engine-API HTTP/2, this release turns that off.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.1"
+    },
+    {
+      "version": "1.17.2",
+      "severity": "note",
+      "summary": "The default cache size is 4GB on every network. A debug_executionWitness bug that could corrupt node data is fixed.",
+      "action": "Plan for the 4GB default cache. Upgrade if you call debug_executionWitness.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.2"
+    },
+    {
+      "version": "1.17.3",
+      "severity": "breaking",
+      "summary": "structLog tracers change field format, and reexec is removed from the tracing config.",
+      "action": "Update debug_trace callers. memory words are 0x-prefixed and padded to 32 bytes, storage keys and values are 0x-prefixed, an empty error is omitted, and reexec is no longer accepted.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.3"
+    },
+    {
+      "version": "1.17.4",
+      "severity": "breaking",
+      "summary": "The bundled clef signer was removed, and command-line flags deprecated for more than a year were removed.",
+      "action": "Install clef from https://github.com/ethereum/clef. Drop these flags if you still pass them: nousb, whitelist, cache.trie.journal, cache.trie.rejournal, v5disc, txlookuplimit, log.backtrace, log.debug, miner.newpayload-timeout, miner.etherbase, mine, metrics.expensive, rpc.enabledeprecatedpersonal, unlock, allow-insecure-unlock.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.5",
+      "severity": "note",
+      "summary": "Default GOGC changed from 20 to 50. A new database uses Pebble v2; an existing database stays on Pebble v1 until you run geth db pebble-upgrade.",
+      "action": "Pass --gogc=20 to keep the old garbage-collection behavior.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.5"
+    },
+    {
+      "version": "1.17.6",
+      "severity": "note",
+      "summary": "Amsterdam is scheduled on Sepolia at timestamp 1791294816. The Holesky testnet was removed. Release binaries are built with Go 1.27.",
+      "action": "Sepolia operators must upgrade before Oct 6, 2026, 13:53:36 UTC. Do not start this release with a Holesky network flag.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.6"
+    },
+    {
+      "version": "1.17.7",
+      "severity": "none",
+      "summary": "Republish of the 1.17.6 Sepolia Amsterdam build, plus small fixes. Either 1.17.6 or 1.17.7 is ready for that fork. Optional history pruning accepts --history.chain <block number>:<block hash>.",
+      "action": "",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.7"
+    }
+  ]
+}

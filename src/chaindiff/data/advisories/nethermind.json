@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "2.0.0",
+      "severity": "breaking",
+      "summary": "Several config keys fail startup. An existing patricia database is kept and does not resync; a new database uses the flat backend.",
+      "action": "Before restart: set Db.FlushOnExit to None, WalOnly, or Full (true/false is rejected; the default is now WalOnly); replace Blocks.PreWarmStateOnBlockProcessing with Blocks.PreWarming; change negative numbers, including Receipt.TxLookupLimit -1, to an unsigned value (the old -1 sentinel is 18446744073709551615); set FlatDb.HistoryRetention whenever you set a history window. Receipt.MaxBlockDepth now defaults to 1000.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
+    },
+    {
+      "version": "2.0.0",
+      "severity": "note",
+      "summary": "Archive configs enable flat history, but an existing patricia archive keeps working. Flat history does not backfill. New or resyncing mainnet nodes keep ancient history only from block 24600000.",
+      "action": "To move an archive to the flat backend, resync or set FlatDb.ImportFromPruningTrieState=true. Do not pass FlatDb.Enabled=false on a database that is already flat.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
+    },
+    {
+      "version": "2.1.0",
+      "severity": "breaking",
+      "summary": "FlatDb.Enabled=false is refused on an existing flat database. Removed config keys are reported as invalid. poacore configs that synced on 2.0.0 can refuse to start.",
+      "action": "Remove FlatDb.EnablePreimageRecording, Db.PreimageDbRocksDbOptions, Db.PreimageDbAdditionalRocksDbOptions, LogIndex.VerifyRpcResponse, Grpc.Enabled, Grpc.Host, and Grpc.Port. On an existing flat database pass FlatDb.Enabled=true, or delete the flat, flatHistory, and persistedSnapshot directories and resync. A fresh flat node with FastSync and SnapSync disabled is refused.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "severity": "note",
+      "summary": "Sepolia Glamsterdam is epoch 353024. With Network.LocalIp unset, Linux and Windows listen on IPv6 as well as IPv4. Merge.CompactMemory now defaults to No. Receipt.MaxBlockDepth is 10000 again. A RocksDB repair of a flat database resyncs state unless FlatDb.OnRepair=Ignore.",
+      "action": "Run a consensus client that supports Sepolia Glamsterdam before Oct 6, 2026, 13:53:36 UTC. Set Network.LocalIp=0.0.0.0 to stay IPv4-only. Archive nodes that cannot snap-resync should set FlatDb.OnRepair=Ignore.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    }
+  ]
+}
