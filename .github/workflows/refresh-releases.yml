@@ -1,0 +1,40 @@
+name: Refresh client releases
+
+on:
+  schedule:
+    # 06:15 UTC on Monday and Thursday.
+    - cron: "15 6 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-releases
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ChainDiff
+        run: pip install -e .
+      - name: Refresh release catalog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: chaindiff refresh
+      - name: Commit catalog updates
+        run: |
+          git add src/chaindiff/data/releases
+          if git diff --cached --quiet; then
+            echo "No catalog changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh client release catalog"
+          git push

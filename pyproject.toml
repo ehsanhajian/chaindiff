@@ -1,0 +1,33 @@
+[project]
+name = "chaindiff"
+version = "0.1.0"
+description = "Decide whether an Ethereum node client upgrade is safe."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "ehsanhajian" }]
+classifiers = [
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Systems Administration",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+chaindiff = "chaindiff.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+chaindiff = ["data/*.json", "data/releases/*.json", "data/advisories/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

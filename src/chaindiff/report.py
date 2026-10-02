@@ -1,0 +1,166 @@
+"""Text and JSON reports."""
+
+from __future__ import annotations
+
+from datetime import datetime, timedelta, timezone
+
+from chaindiff.catalog import format_time
+from chaindiff.evaluate import latest_stable, newer_prerelease
+from chaindiff.models import VERDICT_LABELS, CheckResult, Client, Release
+
+
+def _day(value: str) -> str:
+    return value[:10] if len(value) >= 10 else "-"
+
+
+def _shown_releases(releases: list[Release]) -> tuple[list[Release | None], int]:
+    if len(releases) <= 12:
+        return list(releases), 0
+    hidden = releases[8:-3]
+    shown: list[Release | None] = list(releases[:8]) + [None] + list(releases[-3:])
+    return shown, len(hidden)
+
+
+def format_check(result: CheckResult, *, plan_only: bool = False) -> str:
+    lines = [
+        f"{result.client.name}  {result.client.role}",
+        result.client.github,
+        f"Catalog: {format_time(result.fetched_at)}",
+        "",
+        f"{result.current.text}  →  {result.target.text}"
+        + (f"  ({result.target_tag})" if result.target_tag else ""),
+        "",
+        f"Verdict: {VERDICT_LABELS[result.verdict]}",
+        "",
+    ]
+    if result.reasons:
+        lines.append("Why")
+        lines.extend(f"  {reason}" for reason in result.reasons)
+        lines.append("")
+    if result.warnings:
+        lines.append("Warnings")
+        lines.extend(f"  {warning}" for warning in result.warnings)
+        lines.append("")
+    if not plan_only and result.releases:
+        lines.append("Releases")
+        shown, hidden = _shown_releases(result.releases)
+        for item in shown:
+            if item is None:
+                lines.append(f"  ({hidden} older releases omitted)")
+                continue
+            lines.append(f"  {item.tag:<16} {_day(item.published_at)}  {item.url}")
+        oldest = min(result.releases, key=lambda item: item.version)
+        if len(result.releases) > 1:
+            lines.append(
+                f"  First release after {result.current.text}: {oldest.tag} on {_day(oldest.published_at)}"
+            )
+        lines.append("")
+    if result.steps:
+        lines.append("Before any upgrade")
+        for index, step in enumerate(result.steps, start=1):
+            lines.append(f"  {index}. {step}")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def check_json(result: CheckResult) -> dict:
+    return {
+        "client": result.client.id,
+        "name": result.client.name,
+        "role": result.client.role,
+        "github": result.client.github,
+        "from": result.current.text,
+        "to": result.target.text,
+        "target_tag": result.target_tag,
+        "verdict": result.verdict,
+        "reasons": result.reasons,
+        "warnings": result.warnings,
+        "releases": [
+            {
+                "tag": item.tag,
+                "name": item.name,
+                "published_at": item.published_at,
+                "prerelease": item.prerelease,
+                "url": item.url,
+            }
+            for item in result.releases
+        ],
+        "steps": result.steps,
+        "catalog_fetched_at": format_time(result.fetched_at),
+        "catalog_stale": result.stale,
+    }
+
+
+def format_versions(
+    rows: list[tuple[Client, datetime | None, list[Release] | None]],
+    now: datetime | None = None,
+) -> str:
+    moment = now or datetime.now(timezone.utc)
+    lines = [f"{'Client':<12} {'Role':<10} {'Latest':<18} {'Published':<12} Notes"]
+    stale = False
+    for client, fetched_at, releases in rows:
+        if releases is None or fetched_at is None:
+            lines.append(f"{client.id:<12} {client.role:<10} {'-':<18} {'-':<12} no catalog")
+            continue
+        is_stale = moment - fetched_at > timedelta(days=5)
+        stale = stale or is_stale
+        stable = latest_stable(releases)
+        ahead = newer_prerelease(releases, stable)
+        if stable is None:
+            latest = "-"
+            published = "-"
+        else:
+            latest = stable.tag
+            published = _day(stable.published_at)
+        notes = f"prerelease {ahead.tag} is newer" if ahead else ""
+        if is_stale:
+            notes = (notes + "; " if notes else "") + "catalog is stale"
+        lines.append(f"{client.id:<12} {client.role:<10} {latest:<18} {published:<12} {notes}".rstrip())
+    if stale:
+        lines.insert(0, "Release catalog is more than 5 days old. Run: chaindiff refresh")
+        lines.insert(1, "")
+    return "\n".join(lines) + "\n"
+
+
+def versions_json(
+    rows: list[tuple[Client, datetime | None, list[Release] | None]],
+    now: datetime | None = None,
+) -> dict:
+    moment = now or datetime.now(timezone.utc)
+    clients = []
+    for client, fetched_at, releases in rows:
+        if releases is None or fetched_at is None:
+            clients.append(
+                {
+                    "id": client.id,
+                    "name": client.name,
+                    "role": client.role,
+                    "github": client.github,
+                    "catalog": None,
+                }
+            )
+            continue
+        stable = latest_stable(releases)
+        ahead = newer_prerelease(releases, stable)
+        clients.append(
+            {
+                "id": client.id,
+                "name": client.name,
+                "role": client.role,
+                "github": client.github,
+                "fetched_at": format_time(fetched_at),
+                "stale": moment - fetched_at > timedelta(days=5),
+                "latest_stable": None
+                if stable is None
+                else {
+                    "tag": stable.tag,
+                    "version": stable.version.text,
+                    "published_at": stable.published_at,
+                    "url": stable.url,
+                },
+                "prerelease_ahead": None
+                if ahead is None
+                else {"tag": ahead.tag, "published_at": ahead.published_at, "url": ahead.url},
+            }
+        )
+    return {"clients": clients}

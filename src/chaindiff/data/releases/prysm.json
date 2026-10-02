@@ -1,0 +1,1248 @@
+{
+  "schema_version": 1,
+  "client": "prysm",
+  "github": "OffchainLabs/prysm",
+  "fetched_at": "2026-10-02T12:57:35Z",
+  "ignored_tag_count": 1,
+  "releases": [
+    {
+      "tag": "v7.2.0",
+      "name": "v7.2.0",
+      "published_at": "2026-09-28T15:50:56Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    },
+    {
+      "tag": "v7.1.8",
+      "name": "v7.1.8",
+      "published_at": "2026-07-29T14:51:33Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.8"
+    },
+    {
+      "tag": "v7.1.7",
+      "name": "v7.1.7",
+      "published_at": "2026-07-13T16:06:37Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.7"
+    },
+    {
+      "tag": "v7.1.6",
+      "name": "v7.1.6",
+      "published_at": "2026-07-01T20:51:48Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.6"
+    },
+    {
+      "tag": "v7.1.5",
+      "name": "v7.1.5",
+      "published_at": "2026-06-17T02:41:30Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.5"
+    },
+    {
+      "tag": "v7.1.4",
+      "name": "v7.1.4",
+      "published_at": "2026-05-22T19:14:48Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.4"
+    },
+    {
+      "tag": "v7.1.3",
+      "name": "v7.1.3",
+      "published_at": "2026-03-18T17:54:54Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.3"
+    },
+    {
+      "tag": "v7.1.2",
+      "name": "v7.1.2",
+      "published_at": "2026-01-07T16:51:20Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.2"
+    },
+    {
+      "tag": "v7.1.2-rc.0",
+      "name": "v7.1.2-rc.0",
+      "published_at": "2025-12-22T18:05:10Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.2-rc.0"
+    },
+    {
+      "tag": "v7.1.1",
+      "name": "v7.1.1",
+      "published_at": "2025-12-18T16:50:44Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.1"
+    },
+    {
+      "tag": "v7.1.0",
+      "name": "v7.1.0",
+      "published_at": "2025-12-10T18:03:17Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.1.0"
+    },
+    {
+      "tag": "v7.0.1",
+      "name": "v7.0.1",
+      "published_at": "2025-12-08T20:09:29Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.0.1"
+    },
+    {
+      "tag": "v7.0.0",
+      "name": "v7.0.0",
+      "published_at": "2025-11-10T22:32:23Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.0.0"
+    },
+    {
+      "tag": "v6.1.4",
+      "name": "v6.1.4",
+      "published_at": "2025-10-28T15:32:25Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.1.4"
+    },
+    {
+      "tag": "v6.1.3",
+      "name": "v6.1.3",
+      "published_at": "2025-10-21T15:22:37Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.1.3"
+    },
+    {
+      "tag": "v6.1.2",
+      "name": "v6.1.2",
+      "published_at": "2025-10-10T14:50:49Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.1.2"
+    },
+    {
+      "tag": "v6.1.1",
+      "name": "v6.1.1",
+      "published_at": "2025-09-29T16:56:27Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.1.1"
+    },
+    {
+      "tag": "v6.1.0",
+      "name": "v6.1.0",
+      "published_at": "2025-09-26T15:41:26Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.1.0"
+    },
+    {
+      "tag": "v6.0.5",
+      "name": "v6.0.5",
+      "published_at": "2025-09-26T15:40:59Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.0.5"
+    },
+    {
+      "tag": "v6.0.4",
+      "name": "v6.0.4",
+      "published_at": "2025-06-06T01:29:25Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.0.4"
+    },
+    {
+      "tag": "v6.0.3",
+      "name": "v6.0.3",
+      "published_at": "2025-05-21T20:04:33Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.0.3"
+    },
+    {
+      "tag": "v6.0.2",
+      "name": "v6.0.2",
+      "published_at": "2025-05-12T19:13:46Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.0.2"
+    },
+    {
+      "tag": "v6.0.1",
+      "name": "v6.0.1",
+      "published_at": "2025-05-02T17:59:59Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.0.1"
+    },
+    {
+      "tag": "v6.0.0",
+      "name": "v6.0.0",
+      "published_at": "2025-04-21T21:17:20Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v6.0.0"
+    },
+    {
+      "tag": "v5.3.2",
+      "name": "v5.3.2",
+      "published_at": "2025-03-25T14:28:13Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.3.2"
+    },
+    {
+      "tag": "v5.3.1",
+      "name": "v5.3.1",
+      "published_at": "2025-03-13T21:45:32Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.3.1"
+    },
+    {
+      "tag": "v5.3.0",
+      "name": "v5.3.0",
+      "published_at": "2025-02-12T18:53:00Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.3.0"
+    },
+    {
+      "tag": "v5.2.0",
+      "name": "v5.2.0",
+      "published_at": "2024-12-16T19:42:18Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.2.0"
+    },
+    {
+      "tag": "v5.1.3-rc.0",
+      "name": "v5.1.3-rc.0",
+      "published_at": "2024-11-06T17:48:17Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.1.3-rc.0"
+    },
+    {
+      "tag": "v5.1.2",
+      "name": "v5.1.2",
+      "published_at": "2024-10-16T21:10:56Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.1.2"
+    },
+    {
+      "tag": "v5.1.2-mekong",
+      "name": "Mekong testnet release (v5.1.2)",
+      "published_at": "2024-11-07T18:39:34Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.1.2-mekong"
+    },
+    {
+      "tag": "v5.1.1",
+      "name": "v5.1.1",
+      "published_at": "2024-10-15T20:43:30Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.1.1"
+    },
+    {
+      "tag": "v5.1.0",
+      "name": "v5.1.0",
+      "published_at": "2024-08-20T18:55:13Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.1.0"
+    },
+    {
+      "tag": "v5.0.4",
+      "name": "v5.0.4",
+      "published_at": "2024-06-21T16:13:40Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.4"
+    },
+    {
+      "tag": "v5.0.3",
+      "name": " v5.0.3",
+      "published_at": "2024-04-04T20:27:58Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.3"
+    },
+    {
+      "tag": "v5.0.2",
+      "name": "v5.0.2",
+      "published_at": "2024-03-27T14:33:08Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.2"
+    },
+    {
+      "tag": "v5.0.1",
+      "name": "v5.0.1",
+      "published_at": "2024-03-08T21:09:56Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.1"
+    },
+    {
+      "tag": "v5.0.1-rc.3",
+      "name": "v5.0.1-rc.3",
+      "published_at": "2024-03-07T03:20:12Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.1-rc.3"
+    },
+    {
+      "tag": "v5.0.0",
+      "name": "v5.0.0",
+      "published_at": "2024-02-22T15:35:17Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.0"
+    },
+    {
+      "tag": "v5.0.0-rc.1",
+      "name": "v5.0.0-rc.1",
+      "published_at": "2024-02-22T01:53:12Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.0-rc.1"
+    },
+    {
+      "tag": "v5.0.0-rc.0",
+      "name": "v5.0.0-rc.0",
+      "published_at": "2024-02-17T03:40:06Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v5.0.0-rc.0"
+    },
+    {
+      "tag": "v4.2.2-rc.0",
+      "name": "v4.2.2-rc.0",
+      "published_at": "2024-02-06T14:53:38Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.2-rc.0"
+    },
+    {
+      "tag": "v4.2.1",
+      "name": "V4.2.1",
+      "published_at": "2024-01-30T19:55:44Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.1"
+    },
+    {
+      "tag": "v4.2.1-rc.3",
+      "name": "v4.2.1-rc.3",
+      "published_at": "2024-01-29T16:42:43Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.1-rc.3"
+    },
+    {
+      "tag": "v4.2.1-rc.2",
+      "name": "v4.2.1-rc.2",
+      "published_at": "2024-01-26T00:36:15Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.1-rc.2"
+    },
+    {
+      "tag": "v4.2.1-rc.1",
+      "name": "v4.2.1-rc.1",
+      "published_at": "2024-01-24T19:50:42Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.1-rc.1"
+    },
+    {
+      "tag": "v4.2.1-rc.0",
+      "name": "v4.2.1-rc.0",
+      "published_at": "2024-01-17T16:32:50Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.1-rc.0"
+    },
+    {
+      "tag": "v4.2.0",
+      "name": "v4.2.0",
+      "published_at": "2024-01-11T15:23:44Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.0"
+    },
+    {
+      "tag": "v4.2.0-rc.1",
+      "name": "v4.2.0-rc.1",
+      "published_at": "2024-01-10T21:14:00Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.0-rc.1"
+    },
+    {
+      "tag": "v4.2.0-rc.0",
+      "name": "v4.2.0-rc.0",
+      "published_at": "2024-01-09T20:07:28Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.2.0-rc.0"
+    },
+    {
+      "tag": "v4.1.1",
+      "name": "v4.1.1",
+      "published_at": "2023-10-24T19:44:46Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.1.1"
+    },
+    {
+      "tag": "v4.1.0",
+      "name": "V4.1.0",
+      "published_at": "2023-10-17T15:19:24Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.1.0"
+    },
+    {
+      "tag": "v4.1.0-alpha.1",
+      "name": "v4.1.0-alpha.1",
+      "published_at": "2023-09-26T01:19:09Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.1.0-alpha.1"
+    },
+    {
+      "tag": "v4.1.0-alpha.0",
+      "name": "v4.1.0-alpha.0",
+      "published_at": "2023-09-08T18:26:43Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.1.0-alpha.0"
+    },
+    {
+      "tag": "v4.0.8",
+      "name": "v4.0.8",
+      "published_at": "2023-08-22T20:35:07Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.8"
+    },
+    {
+      "tag": "v4.0.7",
+      "name": "v4.0.7",
+      "published_at": "2023-07-13T19:01:51Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.7"
+    },
+    {
+      "tag": "v4.0.6",
+      "name": "V4.0.6",
+      "published_at": "2023-06-15T20:52:29Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.6"
+    },
+    {
+      "tag": "v4.0.5",
+      "name": "v4.0.5",
+      "published_at": "2023-05-22T19:49:30Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.5"
+    },
+    {
+      "tag": "v4.0.4",
+      "name": "v4.0.4",
+      "published_at": "2023-05-15T19:27:06Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.4"
+    },
+    {
+      "tag": "v4.0.4-rc.1",
+      "name": "v4.0.4-rc.1",
+      "published_at": "2023-05-13T15:08:42Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.4-rc.1"
+    },
+    {
+      "tag": "v4.0.4-rc.0",
+      "name": "v4.0.4-rc.0",
+      "published_at": "2023-05-12T18:30:24Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.4-rc.0"
+    },
+    {
+      "tag": "v4.0.3",
+      "name": "v4.0.3",
+      "published_at": "2023-04-20T18:32:43Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.3"
+    },
+    {
+      "tag": "v4.0.3-hotfix",
+      "name": "v4.0.3-hotfix",
+      "published_at": "2023-05-13T03:41:52Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.3-hotfix"
+    },
+    {
+      "tag": "v4.0.2",
+      "name": "v4.0.2",
+      "published_at": "2023-04-13T04:11:39Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.2"
+    },
+    {
+      "tag": "v4.0.1",
+      "name": "v4.0.1",
+      "published_at": "2023-03-28T16:12:42Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.1"
+    },
+    {
+      "tag": "v4.0.0",
+      "name": "V4.0.0",
+      "published_at": "2023-03-27T22:15:01Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v4.0.0"
+    },
+    {
+      "tag": "v3.2.2",
+      "name": "v3.2.2",
+      "published_at": "2023-03-10T18:27:32Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.2.2"
+    },
+    {
+      "tag": "v3.2.2-rc.3",
+      "name": "v3.2.2-rc.3",
+      "published_at": "2023-03-08T18:49:37Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.2.2-rc.3"
+    },
+    {
+      "tag": "v3.2.2-rc.0",
+      "name": "v3.2.2-rc.0",
+      "published_at": "2023-02-27T18:45:26Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.2.2-rc.0"
+    },
+    {
+      "tag": "v3.2.1",
+      "name": "v3.2.1",
+      "published_at": "2023-02-13T19:08:10Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.2.1"
+    },
+    {
+      "tag": "v3.2.0",
+      "name": "v3.2.0",
+      "published_at": "2022-12-16T14:31:52Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.2.0"
+    },
+    {
+      "tag": "v3.1.2",
+      "name": "v3.1.2",
+      "published_at": "2022-10-27T20:17:22Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.1.2"
+    },
+    {
+      "tag": "v3.1.1",
+      "name": "v3.1.1",
+      "published_at": "2022-09-09T21:13:07Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.1.1"
+    },
+    {
+      "tag": "v3.1.0",
+      "name": "v3.1.0",
+      "published_at": "2022-09-05T20:30:12Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.1.0"
+    },
+    {
+      "tag": "v3.0.0",
+      "name": "v3.0.0",
+      "published_at": "2022-08-22T20:54:26Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v3.0.0"
+    },
+    {
+      "tag": "v2.1.4",
+      "name": "v2.1.4",
+      "published_at": "2022-08-10T19:15:12Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.4"
+    },
+    {
+      "tag": "v2.1.4-rc.1",
+      "name": "v2.1.4-rc.1",
+      "published_at": "2022-08-04T19:19:22Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.4-rc.1"
+    },
+    {
+      "tag": "v2.1.4-rc.0",
+      "name": "v2.1.4-rc.0",
+      "published_at": "2022-07-27T13:46:59Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.4-rc.0"
+    },
+    {
+      "tag": "v2.1.3",
+      "name": "v2.1.3",
+      "published_at": "2022-07-06T19:13:58Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.3"
+    },
+    {
+      "tag": "v2.1.3-rc.4",
+      "name": "v2.1.3-rc.4 (Sepolia Testnet)",
+      "published_at": "2022-06-21T16:46:24Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.3-rc.4"
+    },
+    {
+      "tag": "v2.1.3-rc.3",
+      "name": "v2.1.3-rc.3",
+      "published_at": "2022-06-07T12:47:37Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.3-rc.3"
+    },
+    {
+      "tag": "v2.1.3-rc.2",
+      "name": "v2.1.3-rc.2",
+      "published_at": "2022-05-26T23:38:30Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.3-rc.2"
+    },
+    {
+      "tag": "v2.1.3-rc.1",
+      "name": "v2.1.3-rc.1",
+      "published_at": "2022-05-26T23:02:56Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.3-rc.1"
+    },
+    {
+      "tag": "v2.1.3-rc.0",
+      "name": "v2.1.3-rc.0",
+      "published_at": "2022-05-25T15:16:37Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.3-rc.0"
+    },
+    {
+      "tag": "v2.1.2",
+      "name": "v2.1.2",
+      "published_at": "2022-05-16T19:22:13Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.2"
+    },
+    {
+      "tag": "v2.1.1",
+      "name": "v2.1.1",
+      "published_at": "2022-05-03T17:21:03Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.1"
+    },
+    {
+      "tag": "v2.1.0",
+      "name": "v2.1.0",
+      "published_at": "2022-04-26T15:42:54Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.1.0"
+    },
+    {
+      "tag": "v2.0.6",
+      "name": "v2.0.6",
+      "published_at": "2022-01-31T17:09:10Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.6"
+    },
+    {
+      "tag": "v2.0.5",
+      "name": "v2.0.5",
+      "published_at": "2021-12-13T22:08:46Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.5"
+    },
+    {
+      "tag": "v2.0.4",
+      "name": "v2.0.4",
+      "published_at": "2021-11-29T14:47:43Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.4"
+    },
+    {
+      "tag": "v2.0.3",
+      "name": "v2.0.3",
+      "published_at": "2021-11-22T21:50:54Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.3"
+    },
+    {
+      "tag": "v2.0.2",
+      "name": "v2.0.2",
+      "published_at": "2021-10-18T17:58:26Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.2"
+    },
+    {
+      "tag": "v2.0.1",
+      "name": "v2.0.1",
+      "published_at": "2021-10-06T13:53:08Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.1"
+    },
+    {
+      "tag": "v2.0.0",
+      "name": "v2.0.0",
+      "published_at": "2021-10-04T17:49:35Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.0"
+    },
+    {
+      "tag": "v2.0.0-rc.2",
+      "name": "v2.0.0-rc.2",
+      "published_at": "2021-09-21T17:10:53Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.0-rc.2"
+    },
+    {
+      "tag": "v2.0.0-rc.1",
+      "name": "v2.0.0-rc.1",
+      "published_at": "2021-08-31T16:34:14Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.0-rc.1"
+    },
+    {
+      "tag": "v2.0.0-rc.0",
+      "name": "v2.0.0-rc.0",
+      "published_at": "2021-08-16T23:54:08Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v2.0.0-rc.0"
+    },
+    {
+      "tag": "v1.4.4",
+      "name": "v1.4.4",
+      "published_at": "2021-09-01T20:01:57Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.4.4"
+    },
+    {
+      "tag": "v1.4.3",
+      "name": "v1.4.3",
+      "published_at": "2021-08-03T18:36:06Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.4.3"
+    },
+    {
+      "tag": "v1.4.2",
+      "name": "v1.4.2",
+      "published_at": "2021-07-22T14:16:43Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.4.2"
+    },
+    {
+      "tag": "v1.4.1",
+      "name": "v1.4.1",
+      "published_at": "2021-07-20T19:03:59Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.4.1"
+    },
+    {
+      "tag": "v1.3.11",
+      "name": "v1.3.11",
+      "published_at": "2021-06-16T17:20:07Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.11"
+    },
+    {
+      "tag": "v1.3.10",
+      "name": "v1.3.10",
+      "published_at": "2021-06-02T18:12:57Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.10"
+    },
+    {
+      "tag": "v1.3.9",
+      "name": "v1.3.9",
+      "published_at": "2021-05-12T17:37:38Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.9"
+    },
+    {
+      "tag": "v1.3.8",
+      "name": "v1.3.8",
+      "published_at": "2021-04-19T20:07:05Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.8"
+    },
+    {
+      "tag": "v1.3.7",
+      "name": "v1.3.7",
+      "published_at": "2021-04-12T20:07:00Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.7"
+    },
+    {
+      "tag": "v1.3.6",
+      "name": "v1.3.6",
+      "published_at": "2021-04-06T14:40:57Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.6"
+    },
+    {
+      "tag": "v1.3.5",
+      "name": "v1.3.5",
+      "published_at": "2021-03-29T21:28:15Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.5"
+    },
+    {
+      "tag": "v1.3.4",
+      "name": "v1.3.4",
+      "published_at": "2021-03-22T20:11:20Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.4"
+    },
+    {
+      "tag": "v1.3.3",
+      "name": "v1.3.3",
+      "published_at": "2021-03-08T22:54:46Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.3"
+    },
+    {
+      "tag": "v1.3.2",
+      "name": "v1.3.2",
+      "published_at": "2021-03-01T22:24:57Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.2"
+    },
+    {
+      "tag": "v1.3.1",
+      "name": "v1.3.1",
+      "published_at": "2021-02-24T22:59:22Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.1"
+    },
+    {
+      "tag": "v1.3.0",
+      "name": "v1.3.0",
+      "published_at": "2021-02-23T15:36:36Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.3.0"
+    },
+    {
+      "tag": "v1.2.2",
+      "name": "v1.2.2",
+      "published_at": "2021-02-17T21:48:00Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.2.2"
+    },
+    {
+      "tag": "v1.2.1",
+      "name": "v1.2.1",
+      "published_at": "2021-02-09T15:30:27Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.2.1"
+    },
+    {
+      "tag": "v1.2.0",
+      "name": "v1.2.0",
+      "published_at": "2021-02-08T16:41:48Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.2.0"
+    },
+    {
+      "tag": "v1.1.0",
+      "name": "v1.1.0",
+      "published_at": "2021-01-18T22:14:15Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.1.0"
+    },
+    {
+      "tag": "v1.0.5",
+      "name": "v1.0.5",
+      "published_at": "2020-12-14T18:31:28Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.5"
+    },
+    {
+      "tag": "v1.0.4",
+      "name": "v1.0.4",
+      "published_at": "2020-12-07T18:09:05Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.4"
+    },
+    {
+      "tag": "v1.0.3",
+      "name": "v1.0.3",
+      "published_at": "2020-12-01T14:44:47Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.3"
+    },
+    {
+      "tag": "v1.0.2",
+      "name": "v1.0.2",
+      "published_at": "2020-11-30T03:47:38Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.2"
+    },
+    {
+      "tag": "v1.0.1",
+      "name": "v1.0.1",
+      "published_at": "2020-11-27T22:48:43Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.1"
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "v1.0.0 Mainnet Ready",
+      "published_at": "2020-11-24T21:23:42Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0"
+    },
+    {
+      "tag": "v1.0.0-beta.3",
+      "name": "v1.0.0-beta.3",
+      "published_at": "2020-11-16T17:51:09Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-beta.3"
+    },
+    {
+      "tag": "v1.0.0-beta.2",
+      "name": "v1.0.0-beta.2",
+      "published_at": "2020-11-09T19:25:06Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-beta.2"
+    },
+    {
+      "tag": "v1.0.0-beta.1",
+      "name": "v1.0.0-beta.1",
+      "published_at": "2020-11-02T18:05:49Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-beta.1"
+    },
+    {
+      "tag": "v1.0.0-beta.0.rc",
+      "name": "Beta.0 release candidate",
+      "published_at": "2020-10-20T15:51:57Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-beta.0.rc"
+    },
+    {
+      "tag": "v1.0.0-beta.0",
+      "name": "Prysm Beta!",
+      "published_at": "2020-10-26T17:26:21Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-beta.0"
+    },
+    {
+      "tag": "v1.0.0-alpha.29",
+      "name": "v1.0.0-alpha.29",
+      "published_at": "2020-10-12T07:14:27Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.29"
+    },
+    {
+      "tag": "v1.0.0-alpha.28",
+      "name": "v1.0.0-alpha.28",
+      "published_at": "2020-10-05T21:27:50Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.28"
+    },
+    {
+      "tag": "v1.0.0-alpha.27",
+      "name": "v1.0.0-alpha.27",
+      "published_at": "2020-09-29T19:02:14Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.27"
+    },
+    {
+      "tag": "v1.0.0-alpha.26",
+      "name": "v1.0.0-alpha.26",
+      "published_at": "2020-09-22T00:09:49Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.26"
+    },
+    {
+      "tag": "v1.0.0-alpha.25",
+      "name": "1.0.0-alpha.25",
+      "published_at": "2020-09-14T17:02:51Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.25"
+    },
+    {
+      "tag": "v1.0.0-alpha.24",
+      "name": "v1.0.0-alpha.24",
+      "published_at": "2020-08-31T18:42:36Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.24"
+    },
+    {
+      "tag": "v1.0.0-alpha.23",
+      "name": "v1.0.0-alpha.23",
+      "published_at": "2020-08-18T04:53:14Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.23"
+    },
+    {
+      "tag": "v1.0.0-alpha.22",
+      "name": "v1.0.0-alpha.22",
+      "published_at": "2020-08-16T21:31:59Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.22"
+    },
+    {
+      "tag": "v1.0.0-alpha.20",
+      "name": "alpha.20",
+      "published_at": "2020-08-12T00:36:48Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.20"
+    },
+    {
+      "tag": "v1.0.0-alpha.19",
+      "name": "Medalla panic fixes",
+      "published_at": "2020-08-05T15:26:57Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.19"
+    },
+    {
+      "tag": "v1.0.0-alpha.18",
+      "name": "Medalla fixes",
+      "published_at": "2020-08-03T21:22:21Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.18"
+    },
+    {
+      "tag": "v1.0.0-alpha.17",
+      "name": "Medalla!",
+      "published_at": "2020-07-31T03:33:10Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.17"
+    },
+    {
+      "tag": "v1.0.0-alpha.16",
+      "name": "1.0.0-alpha.16",
+      "published_at": "2020-07-21T01:57:05Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.16"
+    },
+    {
+      "tag": "v1.0.0-alpha.15",
+      "name": "1.0.0-alpha.15",
+      "published_at": "2020-07-13T22:02:24Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.15"
+    },
+    {
+      "tag": "v1.0.0-alpha.14",
+      "name": "v1.0.0-alpha.14",
+      "published_at": "2020-07-08T20:09:58Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.14"
+    },
+    {
+      "tag": "v1.0.0-alpha.13",
+      "name": "Altona support + Quantstamp feedback",
+      "published_at": "2020-06-29T05:10:32Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.13"
+    },
+    {
+      "tag": "v1.0.0-alpha.12",
+      "name": "Onyx major improvements",
+      "published_at": "2020-06-17T22:19:01Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.12"
+    },
+    {
+      "tag": "v1.0.0-alpha.11",
+      "name": "Onyx pre-genesis improvements",
+      "published_at": "2020-06-12T19:44:41Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.11"
+    },
+    {
+      "tag": "v1.0.0-alpha.10",
+      "name": "Sunset Topaz, Welcome Onyx",
+      "published_at": "2020-06-10T04:12:43Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.10"
+    },
+    {
+      "tag": "v1.0.0-alpha.9",
+      "name": "Big fixes before Topaz restart for v0.12",
+      "published_at": "2020-06-01T15:40:04Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.9"
+    },
+    {
+      "tag": "v1.0.0-alpha.8",
+      "name": "Minor fixes and code reordering",
+      "published_at": "2020-05-14T04:38:58Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.8"
+    },
+    {
+      "tag": "v1.0.0-alpha.7",
+      "name": "10% CPU reduction",
+      "published_at": "2020-05-11T17:09:25Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.7"
+    },
+    {
+      "tag": "v1.0.0-alpha.6",
+      "name": "Minor fixes / improvements",
+      "published_at": "2020-05-01T05:48:05Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.6"
+    },
+    {
+      "tag": "v1.0.0-alpha.5",
+      "name": "Use less memory!",
+      "published_at": "2020-04-22T03:45:51Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.5"
+    },
+    {
+      "tag": "v1.0.0-alpha.4",
+      "name": "Pubsub Fix",
+      "published_at": "2020-04-19T03:03:02Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.4"
+    },
+    {
+      "tag": "v1.0.0-alpha.3",
+      "name": "Minor fixes for Topaz",
+      "published_at": "2020-04-17T06:53:03Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.3"
+    },
+    {
+      "tag": "v1.0.0-alpha.2",
+      "name": "GossipSub snappy compression fix",
+      "published_at": "2020-04-15T20:24:57Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.2"
+    },
+    {
+      "tag": "v1.0.0-alpha.1",
+      "name": "Minor flag fixes",
+      "published_at": "2020-04-14T23:02:45Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha.1"
+    },
+    {
+      "tag": "v1.0.0-alpha",
+      "name": "Topaz Testnet!",
+      "published_at": "2020-04-14T21:37:33Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v1.0.0-alpha"
+    },
+    {
+      "tag": "v0.3.10",
+      "name": "Major initial sync improvements",
+      "published_at": "2020-04-07T18:05:39Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.10"
+    },
+    {
+      "tag": "v0.3.9",
+      "name": "More fixes and improvements",
+      "published_at": "2020-04-01T00:23:26Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.9"
+    },
+    {
+      "tag": "v0.3.8",
+      "name": "ipv6 and CORS",
+      "published_at": "2020-03-25T18:25:35Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.8"
+    },
+    {
+      "tag": "v0.3.7",
+      "name": "Yaml based config",
+      "published_at": "2020-03-21T18:41:38Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.7"
+    },
+    {
+      "tag": "v0.3.6",
+      "name": "Fuzz testing!",
+      "published_at": "2020-03-19T06:39:41Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.6"
+    },
+    {
+      "tag": "v0.3.4",
+      "name": "Invalid Slashing Sig Check",
+      "published_at": "2020-03-12T21:47:49Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.4"
+    },
+    {
+      "tag": "v0.3.3",
+      "name": "Prysm is now 15% faster with -c opt ",
+      "published_at": "2020-03-07T05:54:27Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.3"
+    },
+    {
+      "tag": "v0.3.2",
+      "name": "Stable testnet Prysm with cross compile toolchain support",
+      "published_at": "2020-03-06T04:39:56Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.2"
+    },
+    {
+      "tag": "v0.3.1",
+      "name": "Hotfix",
+      "published_at": "2020-01-07T21:18:29Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.1"
+    },
+    {
+      "tag": "v0.3.0",
+      "name": "Testnet restart for spec v0.9.3",
+      "published_at": "2020-01-07T19:49:42Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.3.0"
+    },
+    {
+      "tag": "v0.2.7",
+      "name": "v0.2.7",
+      "published_at": "2019-11-22T16:56:04Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.7"
+    },
+    {
+      "tag": "v0.2.6",
+      "name": "v0.2.6",
+      "published_at": "2019-11-21T18:43:09Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.6"
+    },
+    {
+      "tag": "v0.2.5",
+      "name": "v0.2.5",
+      "published_at": "2019-11-20T17:49:50Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.5"
+    },
+    {
+      "tag": "v0.2.4",
+      "name": "v0.2.4",
+      "published_at": "2019-11-19T07:42:34Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.4"
+    },
+    {
+      "tag": "v0.2.3",
+      "name": "v0.2.3",
+      "published_at": "2019-11-13T08:02:26Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.3"
+    },
+    {
+      "tag": "v0.2.2",
+      "name": "v0.2.2",
+      "published_at": "2019-10-24T05:51:29Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.2"
+    },
+    {
+      "tag": "v0.2.1",
+      "name": "v0.2.1",
+      "published_at": "2019-10-24T02:48:35Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.1"
+    },
+    {
+      "tag": "v0.2.0",
+      "name": "v0.2.0",
+      "published_at": "2019-10-22T19:45:37Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v0.2.0"
+    },
+    {
+      "tag": "0.1.2",
+      "name": "Sapphire",
+      "published_at": "2019-05-07T13:54:27Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/0.1.2"
+    },
+    {
+      "tag": "0.0.0",
+      "name": "Shasper Demo",
+      "published_at": "2018-10-03T13:24:23Z",
+      "prerelease": true,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/0.0.0"
+    }
+  ]
+}

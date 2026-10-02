@@ -1,0 +1,1647 @@
+{
+  "schema_version": 1,
+  "client": "geth",
+  "github": "ethereum/go-ethereum",
+  "fetched_at": "2026-10-02T12:57:35Z",
+  "ignored_tag_count": 0,
+  "releases": [
+    {
+      "tag": "v1.17.7",
+      "name": "Intact Neuro-Coil (v1.17.7)",
+      "published_at": "2026-09-30T11:48:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.7"
+    },
+    {
+      "tag": "v1.17.6",
+      "name": "Inorganic Lubricant (v1.17.6)",
+      "published_at": "2026-09-23T02:21:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.6"
+    },
+    {
+      "tag": "v1.17.5",
+      "name": "Grav-Torque Pad (v1.17.5)",
+      "published_at": "2026-07-27T08:17:40Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.5"
+    },
+    {
+      "tag": "v1.17.4",
+      "name": "Flexible Polymer Casing (v1.17.4)",
+      "published_at": "2026-06-22T07:47:09Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "tag": "v1.17.3",
+      "name": "Enzymatic Injector (v1.17.3)",
+      "published_at": "2026-05-11T15:23:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.3"
+    },
+    {
+      "tag": "v1.17.2",
+      "name": "EMF Suppressor (v1.17.2)",
+      "published_at": "2026-03-30T11:24:52Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.2"
+    },
+    {
+      "tag": "v1.17.1",
+      "name": "Eezo Shunt (v1.17.1)",
+      "published_at": "2026-03-03T12:47:43Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.1"
+    },
+    {
+      "tag": "v1.17.0",
+      "name": "Eezo-Inlaid Circuitry (v1.17.0)",
+      "published_at": "2026-02-17T16:15:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.0"
+    },
+    {
+      "tag": "v1.16.9",
+      "name": "Shield Focusing Module (v1.16.9)",
+      "published_at": "2026-02-17T16:06:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.9"
+    },
+    {
+      "tag": "v1.16.8",
+      "name": "Moisture Filters (v1.16.8)",
+      "published_at": "2026-01-13T16:05:32Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.8"
+    },
+    {
+      "tag": "v1.16.7",
+      "name": "Ballistic Drift Stabilizer (v1.16.7)",
+      "published_at": "2025-11-04T12:28:55Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.7"
+    },
+    {
+      "tag": "v1.16.6",
+      "name": "Leather Wrapping (v1.16.6)",
+      "published_at": "2025-11-03T16:54:25Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.6"
+    },
+    {
+      "tag": "v1.16.5",
+      "name": "Coolant Cells (v1.16.5)",
+      "published_at": "2025-10-16T08:01:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.5"
+    },
+    {
+      "tag": "v1.16.4",
+      "name": "Bioelectric Infusers (v1.16.4)",
+      "published_at": "2025-09-26T09:41:54Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.4"
+    },
+    {
+      "tag": "v1.16.3",
+      "name": "Impact Restrictors (v1.16.3)",
+      "published_at": "2025-09-02T08:42:44Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.3"
+    },
+    {
+      "tag": "v1.16.2",
+      "name": "Sprouted Seed Vial (v1.16.2)",
+      "published_at": "2025-08-04T14:13:56Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.2"
+    },
+    {
+      "tag": "v1.16.1",
+      "name": "Repair Actuals (v1.16.1)",
+      "published_at": "2025-07-02T08:13:39Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.1"
+    },
+    {
+      "tag": "v1.16.0",
+      "name": "Terran Rivets (v1.16.0)",
+      "published_at": "2025-06-26T18:59:37Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.16.0"
+    },
+    {
+      "tag": "v1.15.11",
+      "name": "Armored Compartments (v1.15.11)",
+      "published_at": "2025-05-05T14:21:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.11"
+    },
+    {
+      "tag": "v1.15.10",
+      "name": "Omni-Capacitors (v1.15.10)",
+      "published_at": "2025-04-25T11:27:07Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.10"
+    },
+    {
+      "tag": "v1.15.9",
+      "name": "Multicapacitor (v1.15.9)",
+      "published_at": "2025-04-21T12:56:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.9"
+    },
+    {
+      "tag": "v1.15.8",
+      "name": "Combatives Upgrade (v1.15.8)",
+      "published_at": "2025-04-11T09:32:49Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.8"
+    },
+    {
+      "tag": "v1.15.7",
+      "name": "Juggernaut Shield (v1.15.7)",
+      "published_at": "2025-03-31T16:31:42Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.7"
+    },
+    {
+      "tag": "v1.15.6",
+      "name": "Mental Focuser (v1.15.6)",
+      "published_at": "2025-03-25T11:25:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.6"
+    },
+    {
+      "tag": "v1.15.5",
+      "name": "Stronghold Package (v1.15.5)",
+      "published_at": "2025-03-05T10:56:34Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.5"
+    },
+    {
+      "tag": "v1.15.4",
+      "name": "Commando Package (v1.15.4)",
+      "published_at": "2025-03-01T20:38:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.4"
+    },
+    {
+      "tag": "v1.15.3",
+      "name": "Expert Package (v1.15.3)",
+      "published_at": "2025-02-25T15:20:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.3"
+    },
+    {
+      "tag": "v1.15.2",
+      "name": "Survivor Loadout (v1.15.2)",
+      "published_at": "2025-02-17T11:22:51Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.2"
+    },
+    {
+      "tag": "v1.15.1",
+      "name": "Engineering Kit (v1.15.1)",
+      "published_at": "2025-02-13T15:25:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.1"
+    },
+    {
+      "tag": "v1.15.0",
+      "name": "Operative Package (v1.15.0)",
+      "published_at": "2025-02-06T14:06:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.15.0"
+    },
+    {
+      "tag": "v1.14.13",
+      "name": "Schwarzschild (v1.14.13)",
+      "published_at": "2025-01-30T13:17:31Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.13"
+    },
+    {
+      "tag": "v1.14.12",
+      "name": "Gei Hinnom (v1.14.12)",
+      "published_at": "2024-11-19T13:53:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.12"
+    },
+    {
+      "tag": "v1.14.11",
+      "name": "Makhaira (v1.14.11)",
+      "published_at": "2024-10-01T13:25:38Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.11"
+    },
+    {
+      "tag": "v1.14.10",
+      "name": "Kopis (v1.14.10)",
+      "published_at": "2024-09-27T11:15:39Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.10"
+    },
+    {
+      "tag": "v1.14.9",
+      "name": "Aegis (v1.14.9)",
+      "published_at": "2024-09-18T17:54:48Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.9"
+    },
+    {
+      "tag": "v1.14.8",
+      "name": "Rayingri (v1.14.8)",
+      "published_at": "2024-08-12T12:18:33Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.8"
+    },
+    {
+      "tag": "v1.14.7",
+      "name": "Trident (v1.14.7)",
+      "published_at": "2024-07-11T12:37:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.7"
+    },
+    {
+      "tag": "v1.14.6",
+      "name": "Talaria (v1.14.6)",
+      "published_at": "2024-07-02T15:29:23Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.6"
+    },
+    {
+      "tag": "v1.14.5",
+      "name": "Bothros (v1.14.5)",
+      "published_at": "2024-06-06T13:41:53Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.5"
+    },
+    {
+      "tag": "v1.14.4",
+      "name": "Triodia (v1.14.4)",
+      "published_at": "2024-06-05T08:12:17Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.4"
+    },
+    {
+      "tag": "v1.14.3",
+      "name": "Fuel Depot (v1.14.3)",
+      "published_at": "2024-05-09T10:40:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.3"
+    },
+    {
+      "tag": "v1.14.2",
+      "name": "Ker (v1.14.2)",
+      "published_at": "2024-05-08T14:32:19Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.2"
+    },
+    {
+      "tag": "v1.14.0",
+      "name": "Asteria (v1.14.0)",
+      "published_at": "2024-04-24T08:06:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.14.0"
+    },
+    {
+      "tag": "v1.13.15",
+      "name": "Ontamalca (v1.13.15)",
+      "published_at": "2024-04-17T05:23:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.15"
+    },
+    {
+      "tag": "v1.13.14",
+      "name": "Altaaya (v1.13.14)",
+      "published_at": "2024-02-27T11:53:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.14"
+    },
+    {
+      "tag": "v1.13.13",
+      "name": "Alsages (v1.13.13)",
+      "published_at": "2024-02-21T14:49:30Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.13"
+    },
+    {
+      "tag": "v1.13.12",
+      "name": "Edolus (v1.13.12)",
+      "published_at": "2024-02-09T07:00:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.12"
+    },
+    {
+      "tag": "v1.13.11",
+      "name": "Tremanre (v1.13.11)",
+      "published_at": "2024-01-24T10:56:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.11"
+    },
+    {
+      "tag": "v1.13.10",
+      "name": "Sharjila B (v1.13.10)",
+      "published_at": "2024-01-11T17:30:03Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.10"
+    },
+    {
+      "tag": "v1.13.9",
+      "name": "Sharjila (v1.13.9)",
+      "published_at": "2024-01-10T16:32:21Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.9"
+    },
+    {
+      "tag": "v1.13.8",
+      "name": "Patavig (v1.13.8)",
+      "published_at": "2023-12-22T12:49:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.8"
+    },
+    {
+      "tag": "v1.13.7",
+      "name": "Fargeluse (v1.13.7)",
+      "published_at": "2023-12-19T13:04:09Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.7"
+    },
+    {
+      "tag": "v1.13.6",
+      "name": "Porolan (v1.13.6)",
+      "published_at": "2023-12-18T18:09:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.6"
+    },
+    {
+      "tag": "v1.13.5",
+      "name": "Carbonaceous (v1.13.5)",
+      "published_at": "2023-11-14T12:05:18Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.5"
+    },
+    {
+      "tag": "v1.13.4",
+      "name": "Archanes (v1.13.4)",
+      "published_at": "2023-10-17T11:19:18Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.4"
+    },
+    {
+      "tag": "v1.13.3",
+      "name": "Armeni (v1.13.3)",
+      "published_at": "2023-10-12T11:38:52Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.3"
+    },
+    {
+      "tag": "v1.13.2",
+      "name": "Phaistos (v1.13.2)",
+      "published_at": "2023-09-28T07:24:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.2"
+    },
+    {
+      "tag": "v1.13.1",
+      "name": "Zakros (v1.13.1)",
+      "published_at": "2023-09-17T14:56:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.1"
+    },
+    {
+      "tag": "v1.13.0",
+      "name": "Therum (v1.13.0)",
+      "published_at": "2023-09-12T11:03:34Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.13.0"
+    },
+    {
+      "tag": "v1.12.2",
+      "name": "Mawinor (v1.12.2)",
+      "published_at": "2023-08-12T09:05:53Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.12.2"
+    },
+    {
+      "tag": "v1.12.1",
+      "name": "Antibaar (v1.12.1)",
+      "published_at": "2023-08-10T18:32:32Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.12.1"
+    },
+    {
+      "tag": "v1.12.0",
+      "name": "Krogam DMZ (v1.12.0)",
+      "published_at": "2023-05-25T10:02:50Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.12.0"
+    },
+    {
+      "tag": "v1.11.6",
+      "name": "Azimir (v1.11.6)",
+      "published_at": "2023-04-20T18:17:29Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.6"
+    },
+    {
+      "tag": "v1.11.5",
+      "name": "Erszbat (v1.11.5)",
+      "published_at": "2023-03-21T08:05:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.5"
+    },
+    {
+      "tag": "v1.11.4",
+      "name": "Vana (v1.11.4)",
+      "published_at": "2023-03-10T19:03:56Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.4"
+    },
+    {
+      "tag": "v1.11.3",
+      "name": "Spekilas (v1.11.3)",
+      "published_at": "2023-03-07T17:18:42Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.3"
+    },
+    {
+      "tag": "v1.11.2",
+      "name": "Kite's Nest (v1.11.2)",
+      "published_at": "2023-02-22T12:26:30Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.2"
+    },
+    {
+      "tag": "v1.11.1",
+      "name": "Saradril (v1.11.1)",
+      "published_at": "2023-02-16T19:54:38Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.1"
+    },
+    {
+      "tag": "v1.11.0",
+      "name": "Annos Basin (v1.11.0)",
+      "published_at": "2023-02-15T18:16:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.11.0"
+    },
+    {
+      "tag": "v1.10.26",
+      "name": "Paravin (v1.10.26)",
+      "published_at": "2022-11-03T11:06:19Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.26"
+    },
+    {
+      "tag": "v1.10.25",
+      "name": "Nemata (v1.10.25)",
+      "published_at": "2022-09-15T16:08:44Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.25"
+    },
+    {
+      "tag": "v1.10.24",
+      "name": "Jarfor (v1.10.24)",
+      "published_at": "2022-09-14T09:21:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.24"
+    },
+    {
+      "tag": "v1.10.23",
+      "name": "Sentry Omega (v1.10.23)",
+      "published_at": "2022-08-24T09:13:23Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.23"
+    },
+    {
+      "tag": "v1.10.22",
+      "name": "Promavess (v1.10.22)",
+      "published_at": "2022-08-22T08:38:42Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.22"
+    },
+    {
+      "tag": "v1.10.21",
+      "name": "Nausicaa (v1.10.21)",
+      "published_at": "2022-07-27T11:58:24Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.21"
+    },
+    {
+      "tag": "v1.10.20",
+      "name": "Vectra (v1.10.20)",
+      "published_at": "2022-06-29T22:29:48Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.20"
+    },
+    {
+      "tag": "v1.10.19",
+      "name": "Camaron (v1.10.19)",
+      "published_at": "2022-06-15T12:57:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.19"
+    },
+    {
+      "tag": "v1.10.18",
+      "name": "Sharblu (v1.10.18)",
+      "published_at": "2022-05-25T12:46:03Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.18"
+    },
+    {
+      "tag": "v1.10.17",
+      "name": "Ploitari (v1.10.17)",
+      "published_at": "2022-03-29T17:20:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.17"
+    },
+    {
+      "tag": "v1.10.16",
+      "name": "Osun (v1.10.16)",
+      "published_at": "2022-02-16T12:27:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.16"
+    },
+    {
+      "tag": "v1.10.15",
+      "name": "Faryar (v1.10.15)",
+      "published_at": "2022-01-05T16:18:35Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.15"
+    },
+    {
+      "tag": "v1.10.14",
+      "name": "Hourglass Nebula (v1.10.14)",
+      "published_at": "2021-12-23T10:22:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.14"
+    },
+    {
+      "tag": "v1.10.13",
+      "name": "Far Rim (v1.10.13)",
+      "published_at": "2021-11-24T12:15:27Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.13"
+    },
+    {
+      "tag": "v1.10.12",
+      "name": "Vallhallan Threshold (v1.10.12)",
+      "published_at": "2021-11-08T13:45:20Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.12"
+    },
+    {
+      "tag": "v1.10.11",
+      "name": "Xathorron (v1.10.11)",
+      "published_at": "2021-10-20T12:16:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.11"
+    },
+    {
+      "tag": "v1.10.10",
+      "name": "Sytau (v1.10.10)",
+      "published_at": "2021-10-15T11:37:01Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.10"
+    },
+    {
+      "tag": "v1.10.9",
+      "name": "Attican Beta (v1.10.9)",
+      "published_at": "2021-09-29T18:01:32Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.9"
+    },
+    {
+      "tag": "v1.10.8",
+      "name": "Hades Gamma (v1.10.8)",
+      "published_at": "2021-08-24T07:07:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.8"
+    },
+    {
+      "tag": "v1.10.7",
+      "name": "Styx Theta (v1.10.7)",
+      "published_at": "2021-08-12T07:16:59Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.7"
+    },
+    {
+      "tag": "v1.10.6",
+      "name": "Terra Nova (v1.10.6)",
+      "published_at": "2021-07-22T14:53:24Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.6"
+    },
+    {
+      "tag": "v1.10.5",
+      "name": "Exodus Cluster (v1.10.5)",
+      "published_at": "2021-07-14T08:06:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.5"
+    },
+    {
+      "tag": "v1.10.4",
+      "name": "Voyager Cluster (v1.10.4)",
+      "published_at": "2021-06-17T10:37:35Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.4"
+    },
+    {
+      "tag": "v1.10.3",
+      "name": "Maroon Sea (v1.10.3)",
+      "published_at": "2021-05-05T11:22:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.3"
+    },
+    {
+      "tag": "v1.10.2",
+      "name": "Kepler Verge (v1.10.2)",
+      "published_at": "2021-04-08T11:05:48Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.2"
+    },
+    {
+      "tag": "v1.10.1",
+      "name": "Gemini Sigma (v1.10.1)",
+      "published_at": "2021-03-08T09:35:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.1"
+    },
+    {
+      "tag": "v1.10.0",
+      "name": "Pangaea Expanse (v1.10.0)",
+      "published_at": "2021-03-03T16:59:53Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.10.0"
+    },
+    {
+      "tag": "v1.9.25",
+      "name": "Marljeh (v1.9.25)",
+      "published_at": "2020-12-11T08:11:30Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.25"
+    },
+    {
+      "tag": "v1.9.24",
+      "name": "Akantha (v1.9.24)",
+      "published_at": "2020-11-12T20:16:43Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.24"
+    },
+    {
+      "tag": "v1.9.23",
+      "name": "Tupari (v1.9.23)",
+      "published_at": "2020-10-15T10:31:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.23"
+    },
+    {
+      "tag": "v1.9.22",
+      "name": "Noverian Rum (v1.9.22)",
+      "published_at": "2020-09-28T08:24:35Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.22"
+    },
+    {
+      "tag": "v1.9.21",
+      "name": "Tavum (v1.9.21)",
+      "published_at": "2020-09-09T08:25:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.21"
+    },
+    {
+      "tag": "v1.9.20",
+      "name": "Paragade (v1.9.20)",
+      "published_at": "2020-08-25T14:23:55Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.20"
+    },
+    {
+      "tag": "v1.9.19",
+      "name": "Red Janey (v1.9.19)",
+      "published_at": "2020-08-11T11:13:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.19"
+    },
+    {
+      "tag": "v1.9.18",
+      "name": "Illium Elite (v1.9.18)",
+      "published_at": "2020-07-27T12:00:23Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.18"
+    },
+    {
+      "tag": "v1.9.17",
+      "name": "Mount Milgrom (v1.9.17)",
+      "published_at": "2020-07-20T13:02:33Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.17"
+    },
+    {
+      "tag": "v1.9.16",
+      "name": "Ryncol (v1.9.16)",
+      "published_at": "2020-07-10T10:41:40Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.16"
+    },
+    {
+      "tag": "v1.9.15",
+      "name": "Dextro Heat Sink (v1.9.15)",
+      "published_at": "2020-06-08T09:01:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.15"
+    },
+    {
+      "tag": "v1.9.14",
+      "name": "Pink Marble (v1.9.14)",
+      "published_at": "2020-05-13T09:36:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.14"
+    },
+    {
+      "tag": "v1.9.13",
+      "name": "Drossix Blue (v1.9.13)",
+      "published_at": "2020-04-16T07:43:17Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.13"
+    },
+    {
+      "tag": "v1.9.12",
+      "name": "Tall Moose (v1.9.12)",
+      "published_at": "2020-03-16T11:47:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.12"
+    },
+    {
+      "tag": "v1.9.11",
+      "name": "Weeping Heart (v1.9.11)",
+      "published_at": "2020-02-18T11:51:07Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.11"
+    },
+    {
+      "tag": "v1.9.10",
+      "name": "Rojo Loco (v1.9.10)",
+      "published_at": "2020-01-20T10:36:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.10"
+    },
+    {
+      "tag": "v1.9.9",
+      "name": "Serrice Ice (v1.9.9)",
+      "published_at": "2019-12-06T10:26:25Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.9"
+    },
+    {
+      "tag": "v1.9.8",
+      "name": "Thessian Temple (v1.9.8)",
+      "published_at": "2019-11-26T10:26:50Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.8"
+    },
+    {
+      "tag": "v1.9.7",
+      "name": "Quad Kicker (v1.9.7)",
+      "published_at": "2019-11-07T08:18:53Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.7"
+    },
+    {
+      "tag": "v1.9.6",
+      "name": "Elasa (v1.9.6)",
+      "published_at": "2019-10-03T09:43:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.6"
+    },
+    {
+      "tag": "v1.9.5",
+      "name": "Memory Stealer (v1.9.5)",
+      "published_at": "2019-09-20T11:47:31Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.5"
+    },
+    {
+      "tag": "v1.9.4",
+      "name": "Frozen Pyjak (v1.9.4)",
+      "published_at": "2019-09-19T09:11:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.4"
+    },
+    {
+      "tag": "v1.9.3",
+      "name": "Tasty Tankard (v1.9.3)",
+      "published_at": "2019-09-03T09:15:50Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.3"
+    },
+    {
+      "tag": "v1.9.2",
+      "name": "Blue Thessia (v1.9.2)",
+      "published_at": "2019-08-13T10:51:38Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.2"
+    },
+    {
+      "tag": "v1.9.1",
+      "name": "Lucky Leprechaun (v1.9.1)",
+      "published_at": "2019-07-24T07:19:21Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.1"
+    },
+    {
+      "tag": "v1.9.0",
+      "name": "Full Biotic Kick (v1.9.0)",
+      "published_at": "2019-07-10T09:40:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.9.0"
+    },
+    {
+      "tag": "v1.8.27",
+      "name": "Punisher (v1.8.27)",
+      "published_at": "2019-04-17T12:48:34Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.27"
+    },
+    {
+      "tag": "v1.8.26",
+      "name": "Light Ball (v1.8.26)",
+      "published_at": "2019-04-10T12:55:14Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.26"
+    },
+    {
+      "tag": "v1.8.25",
+      "name": "White Ball (v1.8.25)",
+      "published_at": "2019-04-09T08:50:05Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.25"
+    },
+    {
+      "tag": "v1.8.24",
+      "name": "Pointy Eightball (v1.8.24)",
+      "published_at": "2019-04-08T13:18:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.24"
+    },
+    {
+      "tag": "v1.8.23",
+      "name": "Xircus (v1.8.23)",
+      "published_at": "2019-02-20T08:50:13Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.23"
+    },
+    {
+      "tag": "v1.8.22",
+      "name": "Can'tstantinople (v1.8.22)",
+      "published_at": "2019-01-31T11:34:27Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.22"
+    },
+    {
+      "tag": "v1.8.21",
+      "name": "Byzantium Revert (v1.8.21)",
+      "published_at": "2019-01-15T21:01:32Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.21"
+    },
+    {
+      "tag": "v1.8.20",
+      "name": "Constant (v1.8.20)",
+      "published_at": "2018-12-11T14:55:05Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.20"
+    },
+    {
+      "tag": "v1.8.19",
+      "name": "No Nick (v1.8.19)",
+      "published_at": "2018-11-28T13:01:20Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.19"
+    },
+    {
+      "tag": "v1.8.18",
+      "name": "Devcon Delay (v1.8.18)",
+      "published_at": "2018-11-14T09:18:25Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.18"
+    },
+    {
+      "tag": "v1.8.17",
+      "name": "Shoutingstone (v1.8.17)",
+      "published_at": "2018-10-09T08:47:56Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.17"
+    },
+    {
+      "tag": "v1.8.16",
+      "name": "Budapest (v1.8.16)",
+      "published_at": "2018-09-24T13:07:55Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.16"
+    },
+    {
+      "tag": "v1.8.15",
+      "name": "Khazad-d\u00fbm\u00b2 (v1.8.15)",
+      "published_at": "2018-08-29T15:31:24Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.15"
+    },
+    {
+      "tag": "v1.8.14",
+      "name": "Khazad-d\u00fbm (v1.8.14)",
+      "published_at": "2018-08-22T08:46:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.14"
+    },
+    {
+      "tag": "v1.8.13",
+      "name": "Swarming (v1.8.13)",
+      "published_at": "2018-07-31T10:46:19Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.13"
+    },
+    {
+      "tag": "v1.8.12",
+      "name": "Waggle Dance (v1.8.12)",
+      "published_at": "2018-07-05T10:15:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.12"
+    },
+    {
+      "tag": "v1.8.11",
+      "name": "Streamline (v1.8.11)",
+      "published_at": "2018-06-12T14:11:43Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.11"
+    },
+    {
+      "tag": "v1.8.10",
+      "name": "Sacrosancter (v1.8.10)",
+      "published_at": "2018-05-30T08:15:06Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.10"
+    },
+    {
+      "tag": "v1.8.9",
+      "name": "Sacrosanct (v1.8.9)",
+      "published_at": "2018-05-28T11:46:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.9"
+    },
+    {
+      "tag": "v1.8.8",
+      "name": "Coffice (v.1.8.8)",
+      "published_at": "2018-05-14T11:00:50Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.8"
+    },
+    {
+      "tag": "v1.8.7",
+      "name": "Titanium (v1.8.7)",
+      "published_at": "2018-05-02T11:12:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.7"
+    },
+    {
+      "tag": "v1.8.6",
+      "name": "Third Derivative (v1.8.6)",
+      "published_at": "2018-04-23T12:58:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.6"
+    },
+    {
+      "tag": "v1.8.5",
+      "name": "Second Derivative (v1.8.5)",
+      "published_at": "2018-04-23T07:17:37Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.5"
+    },
+    {
+      "tag": "v1.8.4",
+      "name": "Dirty Derivative (v1.8.4)",
+      "published_at": "2018-04-17T12:10:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.4"
+    },
+    {
+      "tag": "v1.8.3",
+      "name": "Supreme Gardening Equipment (v1.8.3)",
+      "published_at": "2018-03-27T06:48:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.3"
+    },
+    {
+      "tag": "v1.8.2",
+      "name": "Frost (v1.8.2)",
+      "published_at": "2018-03-05T14:15:14Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.2"
+    },
+    {
+      "tag": "v1.8.1",
+      "name": "Iceberg\u00b2 (v1.8.1)",
+      "published_at": "2018-02-19T10:16:42Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.1"
+    },
+    {
+      "tag": "v1.8.0",
+      "name": "Iceberg\u00b9 (v1.8.0)",
+      "published_at": "2018-02-14T13:23:37Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.8.0"
+    },
+    {
+      "tag": "v1.7.3",
+      "name": "Weir (v1.7.3)",
+      "published_at": "2017-11-21T10:41:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.7.3"
+    },
+    {
+      "tag": "v1.7.2",
+      "name": "Urgent Update (v1.7.2)",
+      "published_at": "2017-10-14T13:05:08Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.7.2"
+    },
+    {
+      "tag": "v1.7.1",
+      "name": "Ptolemy (v1.7.1)",
+      "published_at": "2017-10-04T06:57:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.7.1"
+    },
+    {
+      "tag": "v1.7.0",
+      "name": "Megara (v1.7.0)",
+      "published_at": "2017-09-14T14:08:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.7.0"
+    },
+    {
+      "tag": "v1.6.7",
+      "name": "AYTABTU (v1.6.7)",
+      "published_at": "2017-07-12T09:37:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.7"
+    },
+    {
+      "tag": "v1.6.6",
+      "name": "lgtm on mobile (v1.6.6)",
+      "published_at": "2017-06-23T10:02:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.6"
+    },
+    {
+      "tag": "v1.6.5",
+      "name": "Hat Trick (v1.6.5)",
+      "published_at": "2017-06-01T18:55:15Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.5"
+    },
+    {
+      "tag": "v1.6.4",
+      "name": "Coverage (v1.6.4)",
+      "published_at": "2017-06-01T14:45:35Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.4"
+    },
+    {
+      "tag": "v1.6.3",
+      "name": "Covfefe (v1.6.3)",
+      "published_at": "2017-06-01T09:52:52Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.3"
+    },
+    {
+      "tag": "v1.6.2",
+      "name": "Nonce, Inc. (v1.6.2)",
+      "published_at": "2017-05-31T09:01:20Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.2"
+    },
+    {
+      "tag": "v1.6.1",
+      "name": "Deripors of Ohratuu (v1.6.1)",
+      "published_at": "2017-05-04T11:57:18Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.1"
+    },
+    {
+      "tag": "v1.6.0",
+      "name": "Puppeth Master (v1.6.0)",
+      "published_at": "2017-04-14T10:54:21Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.6.0"
+    },
+    {
+      "tag": "v1.5.9",
+      "name": "Davy Jones' Locker (v1.5.9)",
+      "published_at": "2017-02-13T17:30:50Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.9"
+    },
+    {
+      "tag": "v1.5.8",
+      "name": "Peachest (v1.5.8)",
+      "published_at": "2017-02-01T11:03:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.8"
+    },
+    {
+      "tag": "v1.5.7",
+      "name": "Peacher (v1.5.7)",
+      "published_at": "2017-01-16T10:11:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.7"
+    },
+    {
+      "tag": "v1.5.6",
+      "name": "Peach (v1.5.6)",
+      "published_at": "2017-01-09T18:57:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.6"
+    },
+    {
+      "tag": "v1.5.5",
+      "name": "Doesn't look like anything to me (1.5.5)",
+      "published_at": "2016-12-14T14:40:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.5"
+    },
+    {
+      "tag": "v1.5.4",
+      "name": "Stat it (v1.5.4)",
+      "published_at": "2016-11-28T15:06:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.4"
+    },
+    {
+      "tag": "v1.5.3",
+      "name": "Touch Revert (v1.5.3)",
+      "published_at": "2016-11-24T23:04:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.3"
+    },
+    {
+      "tag": "v1.5.2",
+      "name": "Cry uncle (v1.5.2)",
+      "published_at": "2016-11-18T18:35:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.2"
+    },
+    {
+      "tag": "v1.5.1",
+      "name": "Let There Be Less Typos (v1.5.1)",
+      "published_at": "2016-11-17T13:57:49Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.1"
+    },
+    {
+      "tag": "v1.5.0",
+      "name": "Let There Be Light (v1.5.0)",
+      "published_at": "2016-11-15T13:55:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.5.0"
+    },
+    {
+      "tag": "v1.4.19",
+      "name": "Garbage Man (v1.4.19)",
+      "published_at": "2016-11-15T13:47:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.19"
+    },
+    {
+      "tag": "v1.4.18",
+      "name": "Note 7 (v1.4.18)",
+      "published_at": "2016-10-15T11:17:15Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.18"
+    },
+    {
+      "tag": "v1.4.17",
+      "name": "Poolaid (v1.4.17)",
+      "published_at": "2016-10-10T15:31:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.17"
+    },
+    {
+      "tag": "v1.4.16",
+      "name": "Dear Diary (v1.4.16)",
+      "published_at": "2016-10-06T14:57:38Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.16"
+    },
+    {
+      "tag": "v1.4.15",
+      "name": "Come at me Bro (1.4.15)",
+      "published_at": "2016-10-03T09:10:20Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.15"
+    },
+    {
+      "tag": "v1.4.14",
+      "name": "What else should we rewrite? (1.4.14)",
+      "published_at": "2016-09-28T10:45:51Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.14"
+    },
+    {
+      "tag": "v1.4.13",
+      "name": "Into the Woods (1.4.13)",
+      "published_at": "2016-09-26T09:47:59Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.13"
+    },
+    {
+      "tag": "v1.4.12",
+      "name": "From Shanghai, with love (1.4.12)",
+      "published_at": "2016-09-19T01:30:55Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.12"
+    },
+    {
+      "tag": "v1.4.11",
+      "name": "Minor Text Fixes (1.4.11)",
+      "published_at": "2016-08-18T17:23:55Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.11"
+    },
+    {
+      "tag": "v1.4.10",
+      "name": "Return of the ETH (1.4.10)",
+      "published_at": "2016-07-16T16:31:59Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.10"
+    },
+    {
+      "tag": "v1.4.9",
+      "name": "The network strikes back (1.4.9)",
+      "published_at": "2016-06-29T14:03:51Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.9"
+    },
+    {
+      "tag": "v1.4.8",
+      "name": "DAO Wars (1.4.8)",
+      "published_at": "2016-06-29T09:22:15Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.8"
+    },
+    {
+      "tag": "v1.4.7",
+      "name": "Colourise (1.4.7)",
+      "published_at": "2016-06-15T10:37:43Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.7"
+    },
+    {
+      "tag": "v1.4.6",
+      "name": "EDGE (1.4.6)",
+      "published_at": "2016-06-06T15:58:12Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.6"
+    },
+    {
+      "tag": "v1.4.5",
+      "name": "drop table users (1.4.5)",
+      "published_at": "2016-05-24T09:39:20Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.5"
+    },
+    {
+      "tag": "v1.4.4",
+      "name": "Gethasaurus (1.4.4)",
+      "published_at": "2016-05-17T15:32:39Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.4"
+    },
+    {
+      "tag": "v1.4.3",
+      "name": "Gethy McGethface (1.4.3)",
+      "published_at": "2016-05-10T11:54:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.3"
+    },
+    {
+      "tag": "v1.4.2",
+      "name": "Gethy McGethface (1.4.2 final)",
+      "published_at": "2016-05-10T09:17:13Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.2"
+    },
+    {
+      "tag": "v1.4.1",
+      "name": "Knoxjonesi (1.4.1)",
+      "published_at": "2016-05-04T07:10:16Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.1"
+    },
+    {
+      "tag": "v1.4.0",
+      "name": "Bursarius (1.4.0)",
+      "published_at": "2016-04-20T10:31:06Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.4.0"
+    },
+    {
+      "tag": "v1.3.6",
+      "name": "Release 1.3.6",
+      "published_at": "2016-04-01T10:52:56Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.3.6"
+    },
+    {
+      "tag": "v1.3.5",
+      "name": "Release 1.3.5",
+      "published_at": "2016-03-03T14:35:54Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.3.5"
+    },
+    {
+      "tag": "v1.3.4",
+      "name": "Homestead (1.3.4)",
+      "published_at": "2016-02-29T14:07:48Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.3.4"
+    },
+    {
+      "tag": "v1.3.3",
+      "name": "Breviceps (1.3.3)",
+      "published_at": "2016-01-05T14:27:14Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.3.3"
+    },
+    {
+      "tag": "v1.3.2",
+      "name": "Attwater (1.3.2)",
+      "published_at": "2015-11-25T10:46:47Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.3.2"
+    },
+    {
+      "tag": "v1.3.1",
+      "name": "Arenarius (1.3.1)",
+      "published_at": "2015-11-03T11:27:04Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.3.1"
+    },
+    {
+      "tag": "v1.2.3",
+      "name": "Bugfoot (1.2.3) hotfix 2",
+      "published_at": "2015-10-21T16:06:05Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.2.3"
+    },
+    {
+      "tag": "v1.2.2",
+      "name": "Bugfoot (1.2.2) hotfix 1",
+      "published_at": "2015-10-02T11:09:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.2.2"
+    },
+    {
+      "tag": "1.2.1",
+      "name": "Bugfoot  (1.2.1)",
+      "published_at": "2015-10-01T09:34:37Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/1.2.1"
+    },
+    {
+      "tag": "v1.1.3",
+      "name": "Liquid Fairies (1.1.0) Hotfix 3",
+      "published_at": "2015-09-10T09:23:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.1.3"
+    },
+    {
+      "tag": "v1.1.2",
+      "name": "Liquid Fairies (1.1.0) Hotfix 2",
+      "published_at": "2015-09-02T23:02:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.1.2"
+    },
+    {
+      "tag": "v1.1.1",
+      "name": "Liquid Fairies (1.1.0) Hotfix 1",
+      "published_at": "2015-09-01T22:41:07Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.1.1"
+    },
+    {
+      "tag": "v1.1.0",
+      "name": "Liquid Fairies (1.1.0)",
+      "published_at": "2015-08-25T14:25:40Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.1.0"
+    },
+    {
+      "tag": "v1.0.3",
+      "name": "v1.0.3",
+      "published_at": "2015-09-01T22:34:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.0.3"
+    },
+    {
+      "tag": "v1.0.2",
+      "name": "v1.0.2",
+      "published_at": "2015-08-22T10:02:16Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.0.2"
+    },
+    {
+      "tag": "v1.0.1.1",
+      "name": "Thawing (1.0.1) Hotfix 1",
+      "published_at": "2015-08-05T16:50:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.0.1.1"
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "Frontier (1.0.0)",
+      "published_at": "2015-07-29T14:44:39Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.0.0"
+    },
+    {
+      "tag": "v0.9.38",
+      "name": "Release 0.9.38 - RC2",
+      "published_at": "2015-07-09T16:18:27Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.38"
+    },
+    {
+      "tag": "v0.9.36",
+      "name": "Release 0.9.36 - Frozen",
+      "published_at": "2015-07-07T13:43:37Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.36"
+    },
+    {
+      "tag": "v0.9.34",
+      "name": "Release 0.9.34",
+      "published_at": "2015-06-30T00:28:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.34"
+    },
+    {
+      "tag": "v0.9.34-1",
+      "name": "Hotfix release 0.9.34-1",
+      "published_at": "2015-06-30T09:18:46Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.34-1"
+    },
+    {
+      "tag": "v0.9.32",
+      "name": "Release 0.9.32",
+      "published_at": "2015-06-23T17:27:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.32"
+    },
+    {
+      "tag": "v0.9.30",
+      "name": "Release 0.9.30 - Consolation",
+      "published_at": "2015-06-15T17:34:54Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.30"
+    },
+    {
+      "tag": "v0.9.28",
+      "name": "Release 0.9.28",
+      "published_at": "2015-06-09T19:23:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.28"
+    },
+    {
+      "tag": "v0.9.26",
+      "name": "Fork slayer (0.9.26)",
+      "published_at": "2015-05-28T16:26:56Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.26"
+    },
+    {
+      "tag": "v0.9.25",
+      "name": "Olympic Release (0.9.25)",
+      "published_at": "2015-05-27T00:08:09Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.25"
+    },
+    {
+      "tag": "v0.9.24",
+      "name": "Olympic Release (0.9.24)",
+      "published_at": "2015-05-26T12:57:37Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.24"
+    },
+    {
+      "tag": "0.9.23",
+      "name": "Olympic Release (0.9.23)",
+      "published_at": "2015-05-21T17:57:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/0.9.23"
+    },
+    {
+      "tag": "v0.9.21.1",
+      "name": "Olympic Release (0.9.21.1)",
+      "published_at": "2015-05-16T11:05:44Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.21.1"
+    },
+    {
+      "tag": "v0.9.21",
+      "name": "Olympic Release (0.9.21)",
+      "published_at": "2015-05-15T22:38:03Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.21"
+    },
+    {
+      "tag": "v0.9.20",
+      "name": "Olympic Release (0.9.20)",
+      "published_at": "2015-05-12T17:06:47Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.20"
+    },
+    {
+      "tag": "v0.9.18",
+      "name": "Olympic Release",
+      "published_at": "2015-05-09T11:17:39Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.9.18"
+    },
+    {
+      "tag": "v0.8.5",
+      "name": "Proof of concept 8",
+      "published_at": "2015-02-22T15:03:07Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.8.5"
+    },
+    {
+      "tag": "v0.8.4",
+      "name": "Proof of concept 8",
+      "published_at": "2015-02-20T23:55:05Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.8.4"
+    },
+    {
+      "tag": "v0.7.10",
+      "name": "Proof of concept 7",
+      "published_at": "2014-12-22T10:16:03Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.7.10"
+    },
+    {
+      "tag": "v0.6.8",
+      "name": "Mist 0.6.8",
+      "published_at": "2014-10-07T09:28:10Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.6.8"
+    },
+    {
+      "tag": "v0.6.7",
+      "name": "Mist 0.6.7",
+      "published_at": "2014-09-26T11:56:14Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.6.7"
+    },
+    {
+      "tag": "v0.6.6",
+      "name": "Mist 0.6.6",
+      "published_at": "2014-09-24T18:45:10Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.6.6"
+    },
+    {
+      "tag": "v0.6.5",
+      "name": "Mist 0.6.5",
+      "published_at": "2014-09-23T16:26:50Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.6.5"
+    },
+    {
+      "tag": "v0.6.0",
+      "name": "0.6.0 - Adrastea",
+      "published_at": "2014-07-25T08:53:20Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v0.6.0"
+    },
+    {
+      "tag": "0.5.19",
+      "name": "PoC5 Release (v0.5.19)",
+      "published_at": "2014-07-23T10:38:49Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/0.5.19"
+    },
+    {
+      "tag": "0.5.18",
+      "name": "PoC5 Release (v0.5.18)",
+      "published_at": "2014-07-22T17:56:04Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/0.5.18"
+    }
+  ]
+}

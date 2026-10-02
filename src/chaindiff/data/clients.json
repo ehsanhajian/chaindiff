@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "clients": [
+    {
+      "id": "geth",
+      "name": "Geth",
+      "role": "execution",
+      "github": "ethereum/go-ethereum",
+      "versioning": "semver"
+    },
+    {
+      "id": "nethermind",
+      "name": "Nethermind",
+      "role": "execution",
+      "github": "NethermindEth/nethermind",
+      "versioning": "semver"
+    },
+    {
+      "id": "erigon",
+      "name": "Erigon",
+      "role": "execution",
+      "github": "erigontech/erigon",
+      "versioning": "semver"
+    },
+    {
+      "id": "besu",
+      "name": "Besu",
+      "role": "execution",
+      "github": "besu-eth/besu",
+      "versioning": "calver"
+    },
+    {
+      "id": "reth",
+      "name": "Reth",
+      "role": "execution",
+      "github": "paradigmxyz/reth",
+      "versioning": "semver"
+    },
+    {
+      "id": "lighthouse",
+      "name": "Lighthouse",
+      "role": "consensus",
+      "github": "sigp/lighthouse",
+      "versioning": "semver"
+    },
+    {
+      "id": "prysm",
+      "name": "Prysm",
+      "role": "consensus",
+      "github": "OffchainLabs/prysm",
+      "versioning": "semver"
+    },
+    {
+      "id": "teku",
+      "name": "Teku",
+      "role": "consensus",
+      "github": "Consensys-Incorporated/teku",
+      "versioning": "calver"
+    },
+    {
+      "id": "nimbus",
+      "name": "Nimbus",
+      "role": "consensus",
+      "github": "status-im/nimbus-eth2",
+      "versioning": "calver"
+    }
+  ]
+}
