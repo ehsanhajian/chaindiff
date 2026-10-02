@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "26.9.0",
+      "severity": "breaking",
+      "summary": "--history=archive no longer keeps data columns past the 18-day retention window. High urgency on Sepolia for the Glamsterdam fork; medium urgency elsewhere.",
+      "action": "Pass --history=column-archive if you need columns older than 18 days. Sepolia operators should upgrade before Oct 6, 2026.",
+      "source": "https://github.com/status-im/nimbus-eth2/releases/tag/v26.9.0"
+    },
+    {
+      "version": "26.9.1",
+      "severity": "note",
+      "summary": "Validator-client-only change from v26.9.0. It ignores stale PAYLOAD_DUE_BPS values so mixed beacon nodes stop logging incompatible time configuration. The beacon node matches v26.9.0.",
+      "action": "Upgrade the validator client if you see that warning. Sepolia still needs v26.9.0 or v26.9.1 before Oct 6, 2026.",
+      "source": "https://github.com/status-im/nimbus-eth2/releases/tag/v26.9.1"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "26.9.0",
+      "severity": "breaking",
+      "summary": "--deposit-snapshot-enabled and --Xdeposit-snapshot were removed, along with the bundled deposit tree snapshots. The experimental signer-limit flag was promoted to --validators-external-signer-concurrent-limit, and the maximum is 1024.",
+      "action": "Remove the two deposit-snapshot flags. Use --validators-external-signer-concurrent-limit and keep the value at or below 1024.",
+      "source": "https://github.com/Consensys-Incorporated/teku/releases/tag/26.9.0"
+    },
+    {
+      "version": "26.9.0",
+      "severity": "note",
+      "summary": "Aircompressor is the default Snappy implementation. --p2p-target-subnet-subscriber-count defaults to 3, up from 2. Cloudsmith binary publishing will stop in a later release.",
+      "action": "Pass --Xp2p-gossip-snappy-aircompressor-enabled and --Xp2p-rpc-snappy-aircompressor-enabled if you need snappy-java. Point download scripts at the GitHub release instead of Cloudsmith.",
+      "source": "https://github.com/Consensys-Incorporated/teku/releases/tag/26.9.0"
+    },
+    {
+      "version": "26.9.1",
+      "severity": "note",
+      "summary": "Required on Sepolia for Gloas at epoch 353024. Aircompressor is now the only Snappy implementation. GET /eth/v1/events returns 400 for an unknown topic.",
+      "action": "Sepolia operators must upgrade before Oct 6, 2026, 13:53:36 UTC. Event-stream clients should handle a 400 for an unrecognised topic.",
+      "source": "https://github.com/Consensys-Incorporated/teku/releases/tag/26.9.1"
+    }
+  ]
+}

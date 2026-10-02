@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "26.9.0",
+      "severity": "deprecated",
+      "summary": "--Xsnapsync-synchronizer-pivot-block-distance-before-caching and --snapsync-synchronizer-pre-checkpoint-headers-only-enabled are silent no-ops and will be removed.",
+      "action": "Remove both flags. They no longer change sync.",
+      "source": "https://github.com/besu-eth/besu/releases/tag/26.9.0"
+    },
+    {
+      "version": "26.9.0",
+      "severity": "note",
+      "summary": "Amsterdam is scheduled on Sepolia. The process now exits on OutOfMemoryError. eth_feeHistory rejects bad percentiles, and debug_traceCall uses the same balance checks as eth_call. Plugin API breaks are listed in the notes and do not change a stock node.",
+      "action": "Sepolia operators must upgrade before Oct 6, 2026, 13:53:36 UTC. Use a restart policy, or set JAVA_OPTS=-XX:-ExitOnOutOfMemoryError to keep running after an out-of-memory error. Update eth_feeHistory callers that sent percentiles outside 0-100, unsorted, or longer than 100.",
+      "source": "https://github.com/besu-eth/besu/releases/tag/26.9.0"
+    }
+  ]
+}

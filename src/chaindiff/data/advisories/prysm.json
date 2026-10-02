@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "7.2.0",
+      "severity": "breaking",
+      "summary": "Proposer settings loaded from --proposer-settings-file or --proposer-settings-url reject unknown keys. Gloas is scheduled on Sepolia at epoch 353024, but this build still defaults Sepolia proposers to a 60M gas limit.",
+      "action": "Remove unknown keys from the proposer settings file before upgrading. Sepolia operators must upgrade, with an execution client that has Amsterdam, before Oct 6, 2026, 13:53:36 UTC. To propose at 200M gas, set gas_limit to 200000000 in the v2 proposer settings. --suggested-gas-limit does not apply after Gloas.",
+      "source": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    },
+    {
+      "version": "7.2.0",
+      "severity": "deprecated",
+      "summary": "--with-builder, --enable-builder, and --suggested-gas-limit only produce pre-Gloas mev-boost registrations.",
+      "action": "Do not rely on those three flags for Gloas builder settings. Use version 2 proposer settings.",
+      "source": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    }
+  ]
+}

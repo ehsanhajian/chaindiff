@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "2.0.0",
+      "severity": "deprecated",
+      "summary": "Storage v2 is the default for new nodes. Existing storage v1 nodes keep working. Storage v1 support will be removed later, with no date set. A v2 datadir cannot be opened as v1.",
+      "action": "Leave an existing v1 datadir on v1 until you choose to resync or restore a v2 snapshot. Do not point a v1 binary at a v2 datadir. ExEx users: WAL block encoding changed from bincode to RLP.",
+      "source": "https://github.com/paradigmxyz/reth/releases/tag/v2.0.0"
+    },
+    {
+      "version": "2.7.0",
+      "severity": "note",
+      "summary": "Amsterdam is scheduled on Sepolia. Default RPC cache counts are lower (blocks 5000 to 1000, receipts 2000 to 500). The testing RPC namespace must be selected explicitly. eth_estimateGas honors --rpc.gascap.",
+      "action": "Sepolia operators must upgrade before Oct 6, 2026, 13:53:36 UTC. Raise the RPC cache flags if you depended on the old sizes, and enable the testing namespace if you still call it.",
+      "source": "https://github.com/paradigmxyz/reth/releases/tag/v2.7.0"
+    }
+  ]
+}
