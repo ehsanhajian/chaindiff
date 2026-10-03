@@ -1,4 +1,4 @@
-"""Shipped execution-client flag rules come from release notes."""
+"""Shipped flag rules come from release notes."""
 
 import json
 
@@ -103,6 +103,75 @@ def test_erigon_removed_startup_flag(tmp_path, capsys):
     output = capsys.readouterr().out
     assert code == 2
     assert "prevents startup" in output
+
+
+def test_consensus_flag_files_load():
+    for client_id in ("lighthouse", "prysm", "teku", "nimbus"):
+        rules = load_flag_rules(client_id)
+        assert rules, client_id
+        for rule in rules:
+            assert rule.action
+            assert rule.source.startswith("https://")
+
+
+def test_lighthouse_fee_recipient_is_required_when_unset(tmp_path, capsys):
+    config = tmp_path / "lighthouse.flags"
+    config.write_text("--libp2p-addresses enode://a\n")
+    code = main(
+        [
+            "scan",
+            "--client",
+            "lighthouse",
+            "--from",
+            "v8.1.3",
+            "--to",
+            "v8.2.3",
+            "--config",
+            str(config),
+        ]
+    )
+    output = capsys.readouterr().out
+    assert code == 1
+    assert "suggested-fee-recipient" in output
+    assert "boot-nodes" in output
+
+
+def test_teku_removed_deposit_flag(tmp_path, capsys):
+    config = tmp_path / "teku.flags"
+    config.write_text("--deposit-snapshot-enabled=true\n")
+    code = main(["scan", "--client", "teku", "--from", "26.8.0", "--to", "26.9.1", "--config", str(config)])
+    output = capsys.readouterr().out
+    assert code == 2
+    assert "deposit tree snapshots" in output
+
+
+def test_nimbus_archive_history_keeps_columns_only_when_asked(tmp_path, capsys):
+    archive = tmp_path / "archive.flags"
+    archive.write_text("--history=archive\n")
+    code = main(
+        ["scan", "--client", "nimbus", "--from", "v26.8.0", "--to", "v26.9.1", "--config", str(archive)]
+    )
+    assert code == 1
+    assert "column-archive" in capsys.readouterr().out
+
+    kept = tmp_path / "columns.flags"
+    kept.write_text("--history=column-archive\n")
+    code = main(
+        ["scan", "--client", "nimbus", "--from", "v26.8.0", "--to", "v26.9.1", "--config", str(kept)]
+    )
+    output = capsys.readouterr().out
+    assert code == 0
+    assert "SAFE" in output
+    assert "18 days" not in output
+
+
+def test_prysm_hidden_flag_was_removed(tmp_path, capsys):
+    config = tmp_path / "prysm.flags"
+    config.write_text("--disable-progressive-ssz\n")
+    code = main(["scan", "--client", "prysm", "--from", "v7.1.8", "--to", "v7.2.0", "--config", str(config)])
+    output = capsys.readouterr().out
+    assert code == 2
+    assert "never honored it" in output
 
 
 def test_reth_backpressure_default_is_reported_when_unset(tmp_path, capsys):
