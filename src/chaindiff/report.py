@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 
 from chaindiff.catalog import format_time
 from chaindiff.evaluate import latest_stable, newer_prerelease
-from chaindiff.models import VERDICT_LABELS, CheckResult, Client, Release
+from chaindiff.models import VERDICT_LABELS, CheckResult, Client, FlagFinding, Release, ScanResult, Setting
 
 
 def _day(value: str) -> str:
@@ -89,6 +89,106 @@ def check_json(result: CheckResult) -> dict:
         "catalog_fetched_at": format_time(result.fetched_at),
         "catalog_stale": result.stale,
     }
+
+
+_EFFECT_LABELS = {
+    "removed": "Removed",
+    "renamed": "Renamed",
+    "deprecated": "Deprecated",
+    "default": "Default changed",
+}
+
+
+def _setting_label(flag: str, value: str, line: int | None) -> str:
+    shown = flag if value == "" else f"{flag}={value}"
+    if line:
+        return f"{shown}  (line {line})"
+    return shown
+
+
+def format_scan(result: ScanResult) -> str:
+    target = result.target.text
+    if result.target_tag:
+        target = f"{target}  ({result.target_tag})"
+    lines = [
+        f"{result.client.name}  {result.client.role}",
+        result.client.github,
+        "",
+        f"{result.current.text}  →  {target}",
+        f"Config: {result.config_path}  ({result.config_format})",
+        "",
+        f"Verdict: {VERDICT_LABELS[result.verdict]}",
+        "",
+    ]
+    if result.reasons:
+        lines.append("Why")
+        lines.extend(f"  {reason}" for reason in result.reasons)
+        lines.append("")
+    if result.warnings:
+        lines.append("Warnings")
+        lines.extend(f"  {warning}" for warning in result.warnings)
+        lines.append("")
+    current_effect = None
+    for finding in result.findings:
+        if finding.effect != current_effect:
+            current_effect = finding.effect
+            lines.append(_EFFECT_LABELS[finding.effect])
+        lines.append(f"  {_finding_line(finding)}")
+        if finding.action:
+            lines.append(f"  {finding.action}")
+        lines.append(f"  {finding.source}")
+        lines.append("")
+    if result.uncovered:
+        lines.append("Not covered")
+        lines.append("  The flag catalog does not cover these settings.")
+        for setting in result.uncovered:
+            lines.append(f"  {_setting_label(setting.flag, setting.value, setting.line)}")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _finding_line(finding: FlagFinding) -> str:
+    label = _setting_label(finding.flag, finding.value, finding.line)
+    change = f"in {finding.version.text}"
+    if finding.replacement:
+        change = f"{change}  →  {finding.replacement}"
+    return f"{label}  {change}"
+
+
+def scan_json(result: ScanResult) -> dict:
+    return {
+        "client": result.client.id,
+        "name": result.client.name,
+        "role": result.client.role,
+        "github": result.client.github,
+        "from": result.current.text,
+        "to": result.target.text,
+        "target_tag": result.target_tag,
+        "config": result.config_path,
+        "format": result.config_format,
+        "verdict": result.verdict,
+        "reasons": result.reasons,
+        "warnings": result.warnings,
+        "findings": [_finding_json(item) for item in result.findings],
+        "uncovered": [_setting_json(item) for item in result.uncovered],
+    }
+
+
+def _finding_json(finding: FlagFinding) -> dict:
+    return {
+        "effect": finding.effect,
+        "flag": finding.flag,
+        "value": finding.value,
+        "line": finding.line,
+        "version": finding.version.text,
+        "replacement": finding.replacement,
+        "action": finding.action,
+        "source": finding.source,
+    }
+
+
+def _setting_json(setting: Setting) -> dict:
+    return {"flag": setting.flag, "value": setting.value, "line": setting.line}
 
 
 def format_versions(

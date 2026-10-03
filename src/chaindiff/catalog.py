@@ -7,7 +7,8 @@ import os
 from datetime import datetime, timezone
 from pathlib import Path
 
-from chaindiff.models import SEVERITIES, Advisory, Client, Release
+from chaindiff.configparse import normalize_flag
+from chaindiff.models import FLAG_EFFECTS, SEVERITIES, Advisory, Client, FlagRule, Release
 from chaindiff.versions import parse_version
 
 SCHEMA_VERSION = 1
@@ -177,3 +178,45 @@ def load_advisories(client_id: str) -> list[Advisory]:
             )
         )
     return advisories
+
+
+def load_flag_rules(client_id: str) -> list[FlagRule]:
+    path = data_dir() / "flags" / f"{client_id}.json"
+    if not path.exists():
+        return []
+    payload = _read_json(path)
+    rules: list[FlagRule] = []
+    for index, raw in enumerate(payload.get("rules", []), start=1):
+        if not isinstance(raw, dict):
+            raise ValueError(f"{path} rule {index} must be an object")
+        version_text = str(raw.get("version", "")).strip()
+        version = parse_version(version_text)
+        flag = str(raw.get("flag", "")).strip().removeprefix("--")
+        effect = str(raw.get("effect", "")).strip()
+        action = str(raw.get("action", "")).strip()
+        source = str(raw.get("source", "")).strip()
+        replacement = str(raw.get("replacement", "")).strip().removeprefix("--")
+        where = f"{path} rule {index} ({flag or version_text or 'missing flag'})"
+        if version is None:
+            raise ValueError(f"{where} has a version ChainDiff cannot parse")
+        if effect not in FLAG_EFFECTS:
+            raise ValueError(f"{where} has an unknown effect")
+        if normalize_flag(flag) == "":
+            raise ValueError(f"{where} needs a flag")
+        if not action:
+            raise ValueError(f"{where} needs an action")
+        if effect == "renamed" and normalize_flag(replacement) == "":
+            raise ValueError(f"{where} needs a replacement")
+        if not source.startswith(("https://", "http://")):
+            raise ValueError(f"{where} needs an http(s) source URL")
+        rules.append(
+            FlagRule(
+                version=version,
+                flag=flag,
+                effect=effect,
+                action=action,
+                source=source,
+                replacement=replacement,
+            )
+        )
+    return rules

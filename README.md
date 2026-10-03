@@ -39,7 +39,7 @@ The shipping catalog is Ethereum mainnet. The tool also covers these networks, o
 - zkSync Era
 - Starknet
 
-Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. Configuration scanning and execution/consensus pairing are tracked as later work. They need sourced rules, not guesses.
+Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. Execution and consensus pairing is later work. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
 
 Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
 
@@ -62,8 +62,13 @@ chaindiff versions
 chaindiff check --client geth --from <installed>
 chaindiff check --client lighthouse --from <installed> --to v8.2.3
 chaindiff plan --client nethermind --from <installed>
+chaindiff scan --client geth --from <installed> --to <target> --config <file>
 chaindiff refresh
 ```
+
+`scan` accepts CLI flags, TOML, JSON, or YAML. The format follows the file extension (`.toml`, `.json`, `.yaml`, `.yml`). A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that. `--to` defaults to the latest stable release. The command prints what to change. It does not edit the file.
+
+Exit 2 means a setting in the file was removed or renamed. Exit 1 means a default changed, a setting is deprecated, or the catalog does not cover a setting. Exit 0 means every setting is covered and none of those changes apply. A stale catalog cannot return exit 0 for `latest`.
 
 `check` and `plan` use the local catalog. `refresh` is the only command that talks to GitHub. Set `GH_TOKEN` or `GITHUB_TOKEN` if you hit the unauthenticated rate limit.
 
@@ -109,6 +114,29 @@ Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advi
 
 `severity` is `breaking`, `deprecated`, `note`, or `none`. `none` means the release was reviewed and there is nothing to do. `breaking` and `deprecated` need an `action`. Every advisory needs an `http` or `https` source. Do not mark a release reviewed without reading it.
 
+## Flag rules
+
+`scan` uses `src/chaindiff/data/flags/<client>.json`. A missing file means the catalog covers nothing for that client.
+
+```json
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "1.17.4",
+      "flag": "txlookuplimit",
+      "effect": "removed",
+      "action": "Drop the flag.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    }
+  ]
+}
+```
+
+`effect` is `removed`, `renamed`, `deprecated`, or `default`. `renamed` also needs `replacement`. Every rule needs an action and an `http` or `https` source. `flag` is the key the operator set: a CLI name without the leading dashes, or a dotted path such as `JsonRpc.Enabled`. Dashes and underscores match dots.
+
+A rule applies when its version is after `--from` and at or before `--to`. Removed, renamed, and deprecated rules are reported when the file sets that key. A `default` rule is reported when the file does not set it. The same key outside that range is covered, and it is not listed as a change.
+
 ## Development
 
 ```bash
@@ -118,4 +146,4 @@ pip install -e ".[dev]"
 pytest
 ```
 
-Tests that need a private catalog can set `CHAINDIFF_DATA` to a directory with the same `clients.json`, `releases/`, and `advisories/` layout.
+Tests that need a private catalog can set `CHAINDIFF_DATA` to a directory with the same `clients.json`, `releases/`, `advisories/`, and `flags/` layout.

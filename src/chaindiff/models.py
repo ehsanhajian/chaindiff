@@ -1,4 +1,4 @@
-"""Shared records for clients, releases, and advisories."""
+"""Shared records for clients, releases, advisories, and flag rules."""
 
 from __future__ import annotations
 
@@ -24,6 +24,7 @@ VERDICT_LABELS = {
 }
 
 SEVERITIES = ("none", "note", "deprecated", "breaking")
+FLAG_EFFECTS = ("removed", "renamed", "deprecated", "default")
 
 
 @dataclass(frozen=True)
@@ -52,6 +53,50 @@ class Advisory:
     summary: str
     action: str
     source: str
+
+
+@dataclass(frozen=True)
+class FlagRule:
+    version: Version
+    flag: str
+    effect: str
+    action: str
+    source: str
+    replacement: str = ""
+
+
+@dataclass(frozen=True)
+class Setting:
+    flag: str
+    value: str
+    line: int | None
+
+
+@dataclass(frozen=True)
+class FlagFinding:
+    effect: str
+    flag: str
+    version: Version
+    action: str
+    source: str
+    replacement: str
+    value: str
+    line: int | None
+
+
+@dataclass
+class ScanResult:
+    client: Client
+    current: Version
+    target: Version
+    target_tag: str | None
+    config_path: str
+    config_format: str
+    verdict: str
+    reasons: list[str]
+    warnings: list[str]
+    findings: list[FlagFinding]
+    uncovered: list[Setting]
 
 
 @dataclass
