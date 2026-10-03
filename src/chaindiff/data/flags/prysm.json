@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "7.2.0",
+      "flag": "with-builder",
+      "effect": "deprecated",
+      "action": "This flag only produces pre-Gloas mev-boost settings and warns when used. It does not configure Gloas builders. Use version 2 proposer settings.",
+      "source": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    },
+    {
+      "version": "7.2.0",
+      "flag": "enable-builder",
+      "effect": "deprecated",
+      "action": "This flag only produces pre-Gloas mev-boost content. It still drives registrations before the fork and does not override version 2 proposer settings.",
+      "source": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    },
+    {
+      "version": "7.2.0",
+      "flag": "suggested-gas-limit",
+      "effect": "deprecated",
+      "action": "This flag only applies to pre-Gloas mev-boost registrations and has no effect after the fork. Set gas_limit in the version 2 proposer settings for a Gloas gas limit.",
+      "source": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    },
+    {
+      "version": "7.2.0",
+      "flag": "disable-progressive-ssz",
+      "effect": "removed",
+      "action": "Remove this flag. It was hidden, and the generated SSZ code never honored it.",
+      "source": "https://github.com/OffchainLabs/prysm/releases/tag/v7.2.0"
+    }
+  ]
+}

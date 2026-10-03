@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "26.9.0",
+      "flag": "history",
+      "effect": "deprecated",
+      "values": ["archive"],
+      "action": "--history=archive no longer keeps data columns past 18 days. Use --history=column-archive to keep them.",
+      "source": "https://github.com/status-im/nimbus-eth2/releases/tag/v26.9.0"
+    }
+  ]
+}

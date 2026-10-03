@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "8.2.0",
+      "flag": "suggested-fee-recipient",
+      "effect": "default",
+      "action": "The validator client refuses to start when an enabled validator has no suggested_fee_recipient in validator_definitions.yml and this flag is unset. Set one of them.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    },
+    {
+      "version": "8.2.0",
+      "flag": "graffiti-append",
+      "effect": "default",
+      "action": "Beacon nodes append the client version to graffiti unless you pass --graffiti-append false, the graffiti is already 30-32 bytes, or the beacon node uses --private.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    },
+    {
+      "version": "8.2.0",
+      "flag": "disable-proposer-duties-v2",
+      "effect": "default",
+      "action": "The validator client calls proposer duties v2 by default. Add --disable-proposer-duties-v2 if the beacon node does not support it, including a Nimbus beacon node, or if you see 'Failed to download proposer duties'.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    },
+    {
+      "version": "8.2.0",
+      "flag": "libp2p-addresses",
+      "effect": "deprecated",
+      "replacement": "boot-nodes",
+      "action": "Use --boot-nodes instead.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    },
+    {
+      "version": "8.2.0",
+      "flag": "reconstruct-historic-states",
+      "effect": "deprecated",
+      "replacement": "archive",
+      "action": "Use --archive instead.",
+      "source": "https://github.com/sigp/lighthouse/releases/tag/v8.2.0"
+    }
+  ]
+}
