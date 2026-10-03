@@ -39,7 +39,7 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-chaindiff = ["data/*.json", "data/releases/*.json", "data/advisories/*.json"]
+chaindiff = ["data/*.json", "data/releases/*.json", "data/advisories/*.json", "data/flags/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
