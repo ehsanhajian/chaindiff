@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "26.9.0",
+      "flag": "Xsnapsync-synchronizer-pivot-block-distance-before-caching",
+      "effect": "deprecated",
+      "action": "Remove this flag. It is a silent no-op and will be removed in a later release.",
+      "source": "https://github.com/besu-eth/besu/releases/tag/26.9.0"
+    },
+    {
+      "version": "26.9.0",
+      "flag": "snapsync-synchronizer-pre-checkpoint-headers-only-enabled",
+      "effect": "deprecated",
+      "action": "Remove this flag. It is a silent no-op and will be removed in a later release.",
+      "source": "https://github.com/besu-eth/besu/releases/tag/26.9.0"
+    }
+  ]
+}

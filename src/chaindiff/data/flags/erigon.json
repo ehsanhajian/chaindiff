@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "3.0.0",
+      "flag": "caplin.backfilling",
+      "effect": "removed",
+      "action": "Remove this flag. The 3.0.0 notes replace the Caplin archive flags with --caplin.states-archive, --caplin.blobs-archive, and --caplin.blocks-archive. The notes spell the blobs flag --capin.blobs-archive.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.0.0"
+    },
+    {
+      "version": "3.0.0",
+      "flag": "caplin.backfilling.blobs",
+      "effect": "removed",
+      "action": "Remove this flag. The 3.0.0 notes replace the Caplin archive flags with --caplin.states-archive, --caplin.blobs-archive, and --caplin.blocks-archive. The notes spell the blobs flag --capin.blobs-archive.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.0.0"
+    },
+    {
+      "version": "3.0.0",
+      "flag": "caplin.archive",
+      "effect": "removed",
+      "action": "Remove this flag. The 3.0.0 notes replace the Caplin archive flags with --caplin.states-archive, --caplin.blobs-archive, and --caplin.blocks-archive. The notes spell the blobs flag --capin.blobs-archive.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.0.0"
+    },
+    {
+      "version": "3.0.0",
+      "flag": "internalcl",
+      "effect": "default",
+      "action": "The built-in consensus client is on by default. Pass --externalcl to keep an external consensus client.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.0.0"
+    },
+    {
+      "version": "3.0.0",
+      "flag": "polygon.sync",
+      "effect": "default",
+      "action": "In 3.0.0, Polygon checkpoint sync is on unless you set --polygon.sync=false. From 3.7.0 that flag is rejected, so do not add it when the target is 3.7 or newer.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.0.0"
+    },
+    {
+      "version": "3.7.0",
+      "flag": "fcu.background.commit",
+      "effect": "removed",
+      "action": "Remove this flag. It now prevents startup.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.0"
+    },
+    {
+      "version": "3.7.0",
+      "flag": "experimental.streaming-commitment",
+      "effect": "removed",
+      "action": "Remove this flag. It now prevents startup.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.0"
+    },
+    {
+      "version": "3.7.0",
+      "flag": "polygon.sync",
+      "effect": "removed",
+      "action": "Remove this flag. Polygon chain names and --bor.* / --polygon.* flags are no longer accepted. Use https://github.com/0xPolygon/erigon.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.0"
+    },
+    {
+      "version": "3.7.0",
+      "flag": "prune.include-receipts",
+      "effect": "default",
+      "action": "A new datadir now keeps receipts. Pass --prune.include-receipts=false when creating it to keep the old disk-saving default. An existing datadir keeps the setting it was created with.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.0"
+    },
+    {
+      "version": "3.7.1",
+      "flag": "beacon.api.preserve-graffiti",
+      "effect": "default",
+      "action": "Custom graffiti is prefixed with client identification unless you set --beacon.api.preserve-graffiti. The prefix leaves 19 bytes, or 25 while the execution-client version is unavailable.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.1"
+    },
+    {
+      "version": "3.7.1",
+      "flag": "caplin.discovery.quicport",
+      "effect": "default",
+      "action": "QUIC listens on UDP 4001 unless you set --caplin.discovery.quicport. If --caplin.discovery.port is already 4001, pick a different QUIC port or Caplin will not start. Standalone Sentinel uses --sentinel.quic.port.",
+      "source": "https://github.com/erigontech/erigon/releases/tag/v3.7.1"
+    }
+  ]
+}

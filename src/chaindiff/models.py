@@ -63,6 +63,7 @@ class FlagRule:
     action: str
     source: str
     replacement: str = ""
+    values: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)

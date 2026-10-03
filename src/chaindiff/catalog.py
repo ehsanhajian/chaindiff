@@ -196,6 +196,7 @@ def load_flag_rules(client_id: str) -> list[FlagRule]:
         action = str(raw.get("action", "")).strip()
         source = str(raw.get("source", "")).strip()
         replacement = str(raw.get("replacement", "")).strip().removeprefix("--")
+        raw_values = raw.get("values", [])
         where = f"{path} rule {index} ({flag or version_text or 'missing flag'})"
         if version is None:
             raise ValueError(f"{where} has a version ChainDiff cannot parse")
@@ -209,6 +210,11 @@ def load_flag_rules(client_id: str) -> list[FlagRule]:
             raise ValueError(f"{where} needs a replacement")
         if not source.startswith(("https://", "http://")):
             raise ValueError(f"{where} needs an http(s) source URL")
+        if not isinstance(raw_values, list) or any(not isinstance(item, str) or not item.strip() for item in raw_values):
+            raise ValueError(f"{where} values must be a list of strings")
+        values = tuple(item.strip() for item in raw_values)
+        if effect == "default" and values:
+            raise ValueError(f"{where} matches a missing key, so it cannot list values")
         rules.append(
             FlagRule(
                 version=version,
@@ -217,6 +223,7 @@ def load_flag_rules(client_id: str) -> list[FlagRule]:
                 action=action,
                 source=source,
                 replacement=replacement,
+                values=values,
             )
         )
     return rules
