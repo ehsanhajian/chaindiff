@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "2.0.0",
+      "flag": "engine.persistence-backpressure-threshold",
+      "effect": "default",
+      "action": "Engine backpressure is on. When the canonical tip is more than this many blocks ahead of the last persisted block, new payloads wait. The default is 16.",
+      "source": "https://github.com/paradigmxyz/reth/releases/tag/v2.0.0"
+    }
+  ]
+}

@@ -2,7 +2,8 @@
 
 A rule counts only when its version is after the installed release and at or
 before the target. Removed, renamed, and deprecated rules apply when the file
-sets that key. A default change applies when the file does not set it.
+sets that key. If the rule lists values, the setting must be one of them.
+A default change applies when the file does not set it.
 A key with no rule is uncovered: the scan does not call it safe.
 """
 
@@ -61,7 +62,7 @@ def scan_settings(
                 )
             )
             continue
-        if setting is None:
+        if setting is None or not _value_matches(rule, setting):
             continue
         findings.append(
             FlagFinding(
@@ -92,6 +93,13 @@ def scan_settings(
         findings=findings,
         uncovered=uncovered,
     )
+
+
+def _value_matches(rule: FlagRule, setting: Setting) -> bool:
+    if not rule.values:
+        return True
+    actual = setting.value.strip().casefold()
+    return actual in {item.casefold() for item in rule.values}
 
 
 def _verdict(findings: list[FlagFinding], uncovered: list[Setting]) -> tuple[str, list[str]]:

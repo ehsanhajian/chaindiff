@@ -133,7 +133,7 @@ Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advi
 }
 ```
 
-`effect` is `removed`, `renamed`, `deprecated`, or `default`. `renamed` also needs `replacement`. Every rule needs an action and an `http` or `https` source. `flag` is the key the operator set: a CLI name without the leading dashes, or a dotted path such as `JsonRpc.Enabled`. Dashes and underscores match dots.
+`effect` is `removed`, `renamed`, `deprecated`, or `default`. `renamed` also needs `replacement`. Every rule needs an action and an `http` or `https` source. `flag` is the key the operator set: a CLI name without the leading dashes, or a dotted path such as `JsonRpc.Enabled`. Dashes and underscores match dots. A rule may list `values`. It then matches only when the file sets the key to one of those values, so a new valid value is left alone.
 
 A rule applies when its version is after `--from` and at or before `--to`. Removed, renamed, and deprecated rules are reported when the file sets that key. A `default` rule is reported when the file does not set it. The same key outside that range is covered, and it is not listed as a change.
 

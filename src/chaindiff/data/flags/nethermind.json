@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "2.0.0",
+      "flag": "Db.FlushOnExit",
+      "effect": "removed",
+      "values": ["true", "false"],
+      "action": "Boolean values were removed and the node will not start. Use Full instead of true, and None instead of false. WalOnly is the new default.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
+    },
+    {
+      "version": "2.0.0",
+      "flag": "Db.FlushOnExit",
+      "effect": "default",
+      "action": "The default changed from a full flush to WalOnly. Set Db.FlushOnExit=Full to keep the old default.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
+    },
+    {
+      "version": "2.0.0",
+      "flag": "Blocks.PreWarmStateOnBlockProcessing",
+      "effect": "renamed",
+      "replacement": "Blocks.PreWarming",
+      "action": "The old key is ignored, so the setting is dropped. Use Blocks.PreWarming with None, Block, or BlockAndMempool. The default is BlockAndMempool.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
+    },
+    {
+      "version": "2.0.0",
+      "flag": "Receipt.MaxBlockDepth",
+      "effect": "default",
+      "action": "The default changed from 10000 to 1000. eth_getLogs ranges wider than that are rejected unless the log index is enabled. Raise Receipt.MaxBlockDepth or split the query.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Receipt.MaxBlockDepth",
+      "effect": "default",
+      "action": "The default changed from 1000 back to 10000. eth_getFilterLogs now enforces the same limit.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "FlatDb.EnablePreimageRecording",
+      "effect": "removed",
+      "action": "Remove this key. Startup logs it as an invalid configuration setting.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Db.PreimageDbRocksDbOptions",
+      "effect": "removed",
+      "action": "Remove this key. Startup logs it as an invalid configuration setting.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Db.PreimageDbAdditionalRocksDbOptions",
+      "effect": "removed",
+      "action": "Remove this key. Startup logs it as an invalid configuration setting.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "LogIndex.VerifyRpcResponse",
+      "effect": "removed",
+      "action": "Remove this key. Startup logs it as an invalid configuration setting.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Grpc.Enabled",
+      "effect": "removed",
+      "action": "Remove this key. The gRPC endpoint was removed, and startup logs the key as invalid.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Grpc.Host",
+      "effect": "removed",
+      "action": "Remove this key. The gRPC endpoint was removed, and startup logs the key as invalid.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Grpc.Port",
+      "effect": "removed",
+      "action": "Remove this key. The gRPC endpoint was removed, and startup logs the key as invalid.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Merge.CompactMemory",
+      "effect": "default",
+      "action": "The default changed from Yes to No, which drops GC compaction on engine_newPayload. Set Merge.CompactMemory=Yes to keep the old behavior. Steady-state memory use may be higher.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Network.LocalIp",
+      "effect": "default",
+      "action": "With this unset, Linux and Windows also listen on IPv6. Set Network.LocalIp=0.0.0.0 to stay IPv4-only. macOS stays IPv4-only either way.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "FlatDb.OnRepair",
+      "effect": "default",
+      "action": "The default is Resync. A RocksDB repair of the flat database wipes flat state and syncs it again. Set FlatDb.OnRepair=Ignore if this node cannot snap-resync.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    },
+    {
+      "version": "2.1.0",
+      "flag": "Flashbots.EnableValidation",
+      "effect": "default",
+      "action": "The default changed to true, so a Flashbots relay validates builder submissions. Set Flashbots.EnableValidation=false to keep the old behavior.",
+      "source": "https://github.com/NethermindEth/nethermind/releases/tag/2.1.0"
+    }
+  ]
+}

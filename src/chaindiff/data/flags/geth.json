@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "rules": [
+    {
+      "version": "1.17.4",
+      "flag": "nousb",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "whitelist",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "cache.trie.journal",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "cache.trie.rejournal",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "v5disc",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "txlookuplimit",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "log.backtrace",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "log.debug",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "miner.newpayload-timeout",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "miner.etherbase",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "mine",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "metrics.expensive",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "rpc.enabledeprecatedpersonal",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "unlock",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.4",
+      "flag": "allow-insecure-unlock",
+      "effect": "removed",
+      "action": "Remove this flag. Geth 1.17.4 deleted it after more than a year of deprecation.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.4"
+    },
+    {
+      "version": "1.17.5",
+      "flag": "gogc",
+      "effect": "default",
+      "action": "The default GOGC changed from 20 to 50. Pass --gogc=20 to keep the old behavior.",
+      "source": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.5"
+    }
+  ]
+}
