@@ -59,12 +59,24 @@ pip install git+https://github.com/ehsanhajian/chaindiff.git
 
 ```bash
 chaindiff versions
+chaindiff detect --client geth --binary /usr/bin/geth
+chaindiff detect --client lighthouse --image sigp/lighthouse:v8.2.3
 chaindiff check --client geth --from <installed>
 chaindiff check --client lighthouse --from <installed> --to v8.2.3
 chaindiff plan --client nethermind --from <installed>
 chaindiff scan --client geth --from <installed> --to <target> --config <file>
 chaindiff refresh
 ```
+
+`detect` reads the version from a client binary, or from a Docker image tag. It does not pull or start an image, and it does not run `check`. Geth is asked with `version`. The other clients are asked with `--version`. Prysm's binary is `beacon-chain` or `validator`.
+
+When the output or the tag is one precise release, `detect` prints that version and the `check` command. A tag such as `1.17` is not treated as `1.17.0`. `latest`, `stable`, `nightly`, and the other channel names are not versions. If the binary fails, the tag is not a release, or more than one version appears, it prints:
+
+```bash
+chaindiff check --client geth --from <installed>
+```
+
+Exit 0 means a version was read. Exit 1 means it was not. Exit 3 means the client is unknown.
 
 `scan` accepts CLI flags, TOML, JSON, or YAML. The format follows the file extension (`.toml`, `.json`, `.yaml`, `.yml`). A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that. `--to` defaults to the latest stable release. The command prints what to change. It does not edit the file.
 

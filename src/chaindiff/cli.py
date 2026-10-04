@@ -13,6 +13,14 @@ from chaindiff.catalog import client_by_id, load_advisories, load_clients, load_
 from chaindiff.configparse import parse_config
 from chaindiff.evaluate import evaluate, latest_stable
 from chaindiff.models import CURRENT, DOWNGRADE, PRERELEASE, REVIEW, SAFE, UNSAFE
+from chaindiff.detect import (
+    detect_json,
+    format_detect,
+    read_binary_output,
+    version_argv,
+    version_from_image,
+    version_from_output,
+)
 from chaindiff.refresh import refresh_catalog
 from chaindiff.report import check_json, format_check, format_scan, format_versions, scan_json, versions_json
 from chaindiff.scan import scan_settings
@@ -55,6 +63,13 @@ def _parser() -> argparse.ArgumentParser:
     scan.add_argument("--config", required=True, help="CLI flags, TOML, JSON, or YAML file")
     scan.add_argument("--format", choices=("cli", "toml", "json", "yaml"), help="Config format")
     scan.add_argument("--json", action="store_true")
+
+    detect = commands.add_parser("detect", help="Read the installed client version")
+    detect.add_argument("--client", required=True, help="Client id, for example geth")
+    source = detect.add_mutually_exclusive_group(required=True)
+    source.add_argument("--binary", help="Path to the client binary")
+    source.add_argument("--image", help="Docker image reference; only the tag is read")
+    detect.add_argument("--json", action="store_true")
 
     refresh = commands.add_parser("refresh", help="Download the release catalog from GitHub")
     refresh.add_argument("--client", action="append", dest="clients", help="Refresh one client id")
@@ -227,6 +242,33 @@ def _scan(args: argparse.Namespace) -> int:
     return _EXIT[result.verdict]
 
 
+def _detect(args: argparse.Namespace) -> int:
+    clients = _selected_clients([args.client])
+    if clients is None:
+        return 3
+    client = clients[0]
+    if args.binary is not None:
+        output = read_binary_output(args.binary, version_argv(client.id))
+        version = None if output is None else version_from_output(client.id, output)
+        source = "binary"
+    else:
+        version = version_from_image(args.image)
+        source = "image"
+    if args.json:
+        print(json.dumps(detect_json(client_id=client.id, version=version), indent=2))
+    else:
+        print(
+            format_detect(
+                client_id=client.id,
+                client_name=client.name,
+                version=version,
+                source=source,
+            ),
+            end="",
+        )
+    return 0 if version is not None else 1
+
+
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     if args.command == "versions":
@@ -235,6 +277,8 @@ def main(argv: list[str] | None = None) -> int:
         return refresh_catalog(args.clients)
     if args.command == "scan":
         return _scan(args)
+    if args.command == "detect":
+        return _detect(args)
     if args.command == "plan":
         return _check(args, plan_only=True)
     return _check(args, plan_only=False)
