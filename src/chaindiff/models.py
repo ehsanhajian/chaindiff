@@ -135,6 +135,17 @@ class NetworkCheckResult:
 
 
 @dataclass
+class PairCheckResult:
+    execution: CheckResult
+    consensus: CheckResult
+    schedule: NetworkSchedule
+    verdict: str
+    reasons: list[str]
+    warnings: list[str]
+    steps: list[str]
+
+
+@dataclass
 class CheckResult:
     client: Client
     current: Version

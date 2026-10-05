@@ -29,14 +29,17 @@ from chaindiff.detect import (
     version_from_output,
 )
 from chaindiff.network import evaluate_network
+from chaindiff.pair import combine_pair
 from chaindiff.refresh import refresh_catalog
 from chaindiff.report import (
     check_json,
     format_check,
     format_network,
+    format_pair,
     format_scan,
     format_versions,
     network_json,
+    pair_json,
     scan_json,
     versions_json,
 )
@@ -74,8 +77,10 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--network", help="Network id, for example ethereum")
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
+        command.add_argument("--execution-to", help="Execution target version, or latest")
         command.add_argument("--consensus", help="Consensus client id")
         command.add_argument("--consensus-version", help="Installed consensus client version")
+        command.add_argument("--consensus-to", help="Consensus target version, or latest")
         command.add_argument("--json", action="store_true")
 
     scan = commands.add_parser("scan", help="Compare a config file with sourced flag changes")
@@ -148,6 +153,17 @@ def _versions(args: argparse.Namespace) -> int:
 def _check(args: argparse.Namespace, *, plan_only: bool) -> int:
     if args.network:
         return _network_check(args)
+    if any(
+        (
+            args.execution,
+            args.execution_version,
+            args.execution_to,
+            args.consensus,
+            args.consensus_version,
+            args.consensus_to,
+        )
+    ):
+        return _pair_check(args)
     if not args.client or not args.current:
         print("A client check needs --client and --from.", file=sys.stderr)
         return 3
@@ -269,12 +285,100 @@ def _scan(args: argparse.Namespace) -> int:
     return _EXIT[result.verdict]
 
 
+def _client_result(client, current_text: str, target_text: str):
+    current = parse_version(current_text)
+    if current is None:
+        raise ValueError(explain_unparsed(current_text))
+    loaded = load_releases(client.id)
+    advisories = load_advisories(client.id)
+    if loaded is None:
+        raise ValueError(f"No release catalog for {client.id}. Run: chaindiff refresh")
+    fetched_at, releases = loaded
+    target_is_latest = target_text.lower() in ("latest", "stable")
+    if target_is_latest:
+        stable = latest_stable(releases)
+        if stable is None:
+            raise ValueError(f"{client.id} has no stable release in the catalog.")
+        target = stable.version
+    else:
+        target = parse_version(target_text)
+        if target is None:
+            raise ValueError(explain_unparsed(target_text))
+    return evaluate(
+        client=client,
+        releases=releases,
+        advisories=advisories,
+        current=current,
+        target=target,
+        target_is_latest=target_is_latest,
+        fetched_at=fetched_at,
+        now=datetime.now(timezone.utc),
+    )
+
+
+def _pair_check(args: argparse.Namespace) -> int:
+    if args.client or args.current:
+        print("A pair check does not use --client or --from.", file=sys.stderr)
+        return 3
+    if args.target != "latest":
+        print("A pair check does not use --to. Use --execution-to and --consensus-to.", file=sys.stderr)
+        return 3
+    if not all((args.execution, args.execution_version, args.consensus, args.consensus_version)):
+        print(
+            "A pair check needs --execution, --execution-version, --consensus, and --consensus-version.",
+            file=sys.stderr,
+        )
+        return 3
+    try:
+        clients = load_clients()
+        schedule = load_network("ethereum")
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 3
+    execution = client_by_id(clients, args.execution)
+    consensus = client_by_id(clients, args.consensus)
+    if execution is None or consensus is None:
+        known = ", ".join(item.id for item in clients)
+        missing = args.execution if execution is None else args.consensus
+        print(f"Unknown client '{missing}'. Known clients: {known}", file=sys.stderr)
+        return 3
+    if execution.role != "execution":
+        print(f"{execution.id} is a consensus client.", file=sys.stderr)
+        return 3
+    if consensus.role != "consensus":
+        print(f"{consensus.id} is an execution client.", file=sys.stderr)
+        return 3
+    try:
+        execution_result = _client_result(
+            execution,
+            args.execution_version,
+            args.execution_to or "latest",
+        )
+        consensus_result = _client_result(
+            consensus,
+            args.consensus_version,
+            args.consensus_to or "latest",
+        )
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
+        return 3
+    result = combine_pair(execution_result, consensus_result, schedule)
+    if args.json:
+        print(json.dumps(pair_json(result), indent=2))
+    else:
+        print(format_pair(result), end="")
+    return _EXIT[result.verdict]
+
+
 def _network_check(args: argparse.Namespace) -> int:
     if args.client or args.current:
         print("--network does not use --client or --from.", file=sys.stderr)
         return 3
     if args.target != "latest":
         print("--network does not use --to.", file=sys.stderr)
+        return 3
+    if args.execution_to or args.consensus_to:
+        print("--network does not use --execution-to or --consensus-to.", file=sys.stderr)
         return 3
     if not all((args.execution, args.execution_version, args.consensus, args.consensus_version)):
         print(
