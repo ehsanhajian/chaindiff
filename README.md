@@ -49,11 +49,7 @@ Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the v
 pip install chaindiff
 ```
 
-That package is published from a GitHub release. Until the first release is on PyPI:
-
-```bash
-pip install git+https://github.com/ehsanhajian/chaindiff.git
-```
+That package is published from a GitHub release.
 
 ## Commands
 
@@ -68,6 +64,8 @@ chaindiff plan --client nethermind --from <installed>
 chaindiff scan --client geth --from <installed> --to <target> --config <file>
 chaindiff refresh
 ```
+
+`check`, `plan`, `scan`, and `detect` read the client binary. Use them for a mainnet node or a testnet node. A Sepolia Geth upgrade is the same command as a mainnet one. A release note that names a testnet deadline is included when that release is in the range.
 
 `detect` reads the version from a client binary, or from a Docker image tag. It does not pull or start an image, and it does not run `check`. Geth is asked with `version`. The other clients are asked with `--version`. Prysm's binary is `beacon-chain` or `validator`.
 
