@@ -74,7 +74,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--client", help="Client id, for example geth")
         command.add_argument("--from", dest="current", help="Installed version")
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
-        command.add_argument("--network", help="Network id, for example ethereum")
+        command.add_argument("--network", help="Network id, for example ethereum or op-mainnet")
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
         command.add_argument("--execution-to", help="Execution target version, or latest")
@@ -287,6 +287,8 @@ def _scan(args: argparse.Namespace) -> int:
 
 _MAINNET_EXECUTION = frozenset({"geth", "nethermind", "erigon", "besu", "reth"})
 _MAINNET_CONSENSUS = frozenset({"lighthouse", "prysm", "teku", "nimbus"})
+_OP_MAINNET_EXECUTION = frozenset({"op-geth", "op-reth"})
+_OP_MAINNET_CONSENSUS = frozenset({"op-node"})
 
 
 def _parse_client_version(client, text: str) -> Version | None:
@@ -310,8 +312,25 @@ def _outside_mainnet_pair(execution, consensus) -> str | None:
     listed = ", ".join(outside)
     return (
         f"The Ethereum mainnet pair does not include {listed}. "
-        "Check op-geth, op-reth, and op-node with --client. "
-        "Their network schedules are separate."
+        "Use --client for one OP Stack client, or --network op-mainnet for the OP Mainnet schedule."
+    )
+
+
+def _outside_op_mainnet(execution, consensus) -> str | None:
+    outside = [
+        client.id
+        for client, allowed in (
+            (execution, _OP_MAINNET_EXECUTION),
+            (consensus, _OP_MAINNET_CONSENSUS),
+        )
+        if client.id not in allowed
+    ]
+    if not outside:
+        return None
+    listed = ", ".join(outside)
+    return (
+        f"OP Mainnet does not include {listed}. "
+        "This check uses op-geth or op-reth with op-node."
     )
 
 
@@ -445,9 +464,13 @@ def _network_check(args: argparse.Namespace) -> int:
         return 3
     if schedule.id == "ethereum":
         outside = _outside_mainnet_pair(execution, consensus)
-        if outside is not None:
-            print(outside, file=sys.stderr)
-            return 3
+    elif schedule.id == "op-mainnet":
+        outside = _outside_op_mainnet(execution, consensus)
+    else:
+        outside = None
+    if outside is not None:
+        print(outside, file=sys.stderr)
+        return 3
     execution_version = _parse_client_version(execution, args.execution_version)
     if execution_version is None:
         print(explain_unparsed(args.execution_version), file=sys.stderr)

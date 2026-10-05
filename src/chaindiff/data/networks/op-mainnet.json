@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "op-mainnet",
+  "name": "OP Mainnet",
+  "upgrade": {
+    "name": "Lagoon",
+    "activation": null,
+    "source": "https://docs.optimism.io/op-stack/protocol/hardforks/lagoon",
+    "summary": "OP Mainnet activation has not been scheduled. The hardfork registry lists Lagoon as in development, with no superchain-wide activation time.",
+    "order": null,
+    "order_summary": "No upgrade order between the execution client and op-node is stated for OP Mainnet.",
+    "warning": "The interop prep notice covers OP Sepolia and Unichain Sepolia. It does not name an op-node or op-reth release, and it says OP Mainnet timestamps will be announced separately. A late July 2026 line in that notice is not an activation time. That notice names op-reth as the execution client for interop. op-geth support ended on May 31, 2026.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}
