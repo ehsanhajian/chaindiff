@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "ethereum",
+  "name": "Ethereum mainnet",
+  "upgrade": {
+    "name": "Glamsterdam",
+    "activation": null,
+    "source": "https://blog.ethereum.org/2026/09/17/glamsterdam-testnet-announcement",
+    "summary": "Mainnet activation has not been scheduled. The announcement covers Sepolia and says it does not schedule a mainnet upgrade.",
+    "order": null,
+    "order_summary": "No upgrade order between the execution client and the consensus client is stated for mainnet.",
+    "warning": "Sepolia activates at 2026-10-06 13:53:36 UTC. That announcement tells mainnet operators not to act on it, and it does not publish mainnet client releases.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

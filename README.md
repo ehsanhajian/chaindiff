@@ -39,7 +39,7 @@ The shipping catalog is Ethereum mainnet. The tool also covers these networks, o
 - zkSync Era
 - Starknet
 
-Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. Execution and consensus pairing is later work. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
+Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. A general execution and consensus pair report is later work. `check --network ethereum` compares the two clients you run with the next mainnet upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
 
 Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
 
@@ -63,6 +63,7 @@ chaindiff detect --client geth --binary /usr/bin/geth
 chaindiff detect --client lighthouse --image sigp/lighthouse:v8.2.3
 chaindiff check --client geth --from <installed>
 chaindiff check --client lighthouse --from <installed> --to v8.2.3
+chaindiff check --network ethereum --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
 chaindiff plan --client nethermind --from <installed>
 chaindiff scan --client geth --from <installed> --to <target> --config <file>
 chaindiff refresh
@@ -77,6 +78,10 @@ chaindiff check --client geth --from <installed>
 ```
 
 Exit 0 means a version was read. Exit 1 means it was not. Exit 3 means the client is unknown.
+
+`check --network ethereum` asks whether the execution client and the consensus client you run are the versions the next mainnet upgrade requires, and whether an upgrade order is stated. The schedule is `src/chaindiff/data/networks/ethereum.json`, taken from the network announcement. A Sepolia date in that announcement is not a mainnet deadline. No required mainnet version is invented from a testnet table.
+
+**Already current** means both clients are the announced requirement and the mainnet time is set. **Review required** means a required version or the activation time has not been announced, or the installed version is newer than the announcement. **Not safe** means an installed version is older than an announced requirement. A prerelease is still refused on mainnet.
 
 `scan` accepts CLI flags, TOML, JSON, or YAML. The format follows the file extension (`.toml`, `.json`, `.yaml`, `.yml`). A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that. `--to` defaults to the latest stable release. The command prints what to change. It does not edit the file.
 
@@ -148,6 +153,33 @@ Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advi
 `effect` is `removed`, `renamed`, `deprecated`, or `default`. `renamed` also needs `replacement`. Every rule needs an action and an `http` or `https` source. `flag` is the key the operator set: a CLI name without the leading dashes, or a dotted path such as `JsonRpc.Enabled`. Dashes and underscores match dots. A rule may list `values`. It then matches only when the file sets the key to one of those values, so a new valid value is left alone.
 
 A rule applies when its version is after `--from` and at or before `--to`. Removed, renamed, and deprecated rules are reported when the file sets that key. A `default` rule is reported when the file does not set it. The same key outside that range is covered, and it is not listed as a change.
+
+## Networks
+
+`check --network` reads `src/chaindiff/data/networks/<network>.json`:
+
+```json
+{
+  "schema_version": 1,
+  "id": "ethereum",
+  "name": "Ethereum mainnet",
+  "upgrade": {
+    "name": "Glamsterdam",
+    "activation": null,
+    "source": "https://blog.ethereum.org/2026/09/17/glamsterdam-testnet-announcement",
+    "summary": "What the announcement says about mainnet.",
+    "order": null,
+    "order_summary": "What the announcement says about upgrade order.",
+    "warning": "A date or table the operator must not treat as the mainnet requirement.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}
+```
+
+`activation` is an ISO time, or `null` when mainnet is not scheduled. `order` is `execution-first`, `consensus-first`, or `null`. `required` maps a client id to a `major.minor.patch` version from the announcement. An empty map means that role has no announced requirement. Do not fill it from a testnet table.
 
 ## Development
 
