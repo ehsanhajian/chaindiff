@@ -86,6 +86,19 @@ class Version:
         return self.pre < other.pre
 
 
+def version_from_tag(tag: str, tag_prefix: str = "") -> Version | None:
+    """Parse a release tag, dropping a monorepo prefix such as ``op-node/``.
+
+    A client with a prefix ignores every other tag in that repository.
+    """
+    text = tag.strip()
+    if tag_prefix:
+        if not text.startswith(tag_prefix):
+            return None
+        text = text[len(tag_prefix) :]
+    return parse_version(text)
+
+
 def parse_version(tag: str) -> Version | None:
     text = tag.strip()
     if text.lower().endswith("-stable"):

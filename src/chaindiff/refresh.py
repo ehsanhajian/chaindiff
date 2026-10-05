@@ -13,7 +13,7 @@ from typing import Any
 
 from chaindiff.catalog import load_clients, save_releases
 from chaindiff.models import Client, Release
-from chaindiff.versions import parse_version, tag_is_prerelease
+from chaindiff.versions import tag_is_prerelease, version_from_tag
 
 API_ROOT = "https://api.github.com"
 _NEXT_LINK = re.compile(r'<([^>]+)>;\s*rel="next"')
@@ -62,7 +62,10 @@ def _next_url(link_header: str | None) -> str | None:
     return matched.group(1)
 
 
-def releases_from_payload(items: list[dict[str, Any]]) -> tuple[list[Release], int]:
+def releases_from_payload(
+    items: list[dict[str, Any]],
+    tag_prefix: str = "",
+) -> tuple[list[Release], int]:
     releases: list[Release] = []
     ignored = 0
     seen: set[str] = set()
@@ -74,13 +77,14 @@ def releases_from_payload(items: list[dict[str, Any]]) -> tuple[list[Release], i
         if not tag or tag in seen:
             ignored += 1
             continue
-        version = parse_version(tag)
+        version = version_from_tag(tag, tag_prefix)
         if version is None:
             ignored += 1
             continue
         seen.add(tag)
         published = str(item.get("published_at") or "")
-        prerelease = bool(item.get("prerelease")) or tag_is_prerelease(tag)
+        version_tag = tag[len(tag_prefix) :] if tag_prefix else tag
+        prerelease = bool(item.get("prerelease")) or tag_is_prerelease(version_tag)
         releases.append(
             Release(
                 tag=tag,
@@ -102,7 +106,7 @@ def fetch_releases(
     fetch = opener or _default_opener
     url = f"{API_ROOT}/repos/{client.github}/releases?per_page=100"
     pages: list[dict[str, Any]] = []
-    for _ in range(20):
+    for _ in range(40):
         payload, link = fetch(url, token)
         if isinstance(payload, dict):
             message = payload.get("message", "unexpected GitHub response")
@@ -116,7 +120,7 @@ def fetch_releases(
         url = nxt
     else:
         raise GitHubError(f"{client.github}: too many release pages")
-    return releases_from_payload(pages)
+    return releases_from_payload(pages, client.tag_prefix)
 
 
 def github_token() -> str | None:

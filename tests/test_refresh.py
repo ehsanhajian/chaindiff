@@ -34,6 +34,28 @@ def test_payload_keeps_releases_and_drops_junk():
     assert candidate.prerelease
 
 
+def test_monorepo_prefix_keeps_one_component():
+    releases, ignored = releases_from_payload(
+        [
+            _item("op-node/v1.19.8"),
+            _item("op-node/v1.19.0-rc.1", prerelease=True),
+            _item("op-reth/v2.5.0"),
+            _item("op-batcher/v1.16.0"),
+            _item("op-proposer/v1.16.0"),
+            _item("kona-node/v1.0.0"),
+            _item("v1.19.8"),
+        ],
+        tag_prefix="op-node/",
+    )
+    assert {item.tag for item in releases} == {"op-node/v1.19.8", "op-node/v1.19.0-rc.1"}
+    assert ignored == 5
+    stable = next(item for item in releases if item.tag == "op-node/v1.19.8")
+    assert stable.version.text == "1.19.8"
+    candidate = next(item for item in releases if item.tag == "op-node/v1.19.0-rc.1")
+    assert candidate.prerelease
+    assert candidate.version.text == "1.19.0-rc.1"
+
+
 def test_fetch_follows_the_next_link():
     first = "https://api.github.com/repos/ethereum/go-ethereum/releases?per_page=100"
     second = "https://example.test/page-2"

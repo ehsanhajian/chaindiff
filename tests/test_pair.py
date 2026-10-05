@@ -232,6 +232,53 @@ def test_shipped_mainnet_schedule_states_no_order(capsys):
     assert "https://blog.ethereum.org/2026/09/17/glamsterdam-testnet-announcement" in output
 
 
+def test_pair_rejects_an_op_stack_client(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "op-reth",
+                "--execution-version",
+                "2.4.4",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "1.19.8",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include op-reth, op-node" in error
+    assert "Glamsterdam" not in error
+    assert "blog.ethereum.org" not in error
+
+
+def test_network_check_rejects_an_op_stack_client(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "ethereum",
+                "--execution",
+                "op-geth",
+                "--execution-version",
+                "1.101702.2",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include op-geth" in error
+    assert "Glamsterdam" not in error
+
+
 def test_pair_rejects_a_consensus_client_as_execution(capsys):
     assert (
         main(

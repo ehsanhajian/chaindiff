@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "client": "op-reth",
+  "github": "ethereum-optimism/optimism",
+  "fetched_at": "2026-10-05T08:13:19Z",
+  "ignored_tag_count": 2355,
+  "releases": [
+    {
+      "tag": "op-reth/v2.5.0",
+      "name": "op-reth v2.5.0",
+      "published_at": "2026-10-01T08:08:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.5.0"
+    },
+    {
+      "tag": "op-reth/v2.4.4",
+      "name": "op-reth v2.4.4",
+      "published_at": "2026-09-11T18:35:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.4.4"
+    },
+    {
+      "tag": "op-reth/v2.4.3",
+      "name": "op-reth v2.4.3",
+      "published_at": "2026-09-08T15:59:09Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.4.3"
+    },
+    {
+      "tag": "op-reth/v2.4.2",
+      "name": "op-reth v2.4.2",
+      "published_at": "2026-08-13T16:18:06Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.4.2"
+    },
+    {
+      "tag": "op-reth/v2.4.1",
+      "name": "op-reth v2.4.1",
+      "published_at": "2026-07-31T15:49:05Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.4.1"
+    },
+    {
+      "tag": "op-reth/v2.4.0",
+      "name": "op-reth v2.4.0",
+      "published_at": "2026-07-20T16:19:28Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.4.0"
+    },
+    {
+      "tag": "op-reth/v2.3.3",
+      "name": "op-reth v2.3.3",
+      "published_at": "2026-06-26T21:00:03Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.3.3"
+    },
+    {
+      "tag": "op-reth/v2.3.2",
+      "name": "op-reth v2.3.2",
+      "published_at": "2026-06-26T00:37:40Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.3.2"
+    },
+    {
+      "tag": "op-reth/v2.3.1",
+      "name": "op-reth/v2.3.1",
+      "published_at": "2026-06-05T19:50:25Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.3.1"
+    },
+    {
+      "tag": "op-reth/v2.2.3",
+      "name": "op-reth v2.2.3",
+      "published_at": "2026-05-18T20:08:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.2.3"
+    },
+    {
+      "tag": "op-reth/v2.2.2",
+      "name": "op-reth/v2.2.2",
+      "published_at": "2026-05-11T21:03:29Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.2.2"
+    },
+    {
+      "tag": "op-reth/v2.2.1",
+      "name": "op-reth/v2.2.1",
+      "published_at": "2026-05-04T18:01:07Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.2.1"
+    },
+    {
+      "tag": "op-reth/v2.2.0",
+      "name": "op-reth v2.2.0",
+      "published_at": "2026-04-29T20:26:13Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.2.0"
+    },
+    {
+      "tag": "op-reth/v2.1.0",
+      "name": "op-reth v2.1.0",
+      "published_at": "2026-04-21T16:37:40Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.1.0"
+    },
+    {
+      "tag": "op-reth/v2.0.0",
+      "name": "op-reth/v2.0.0",
+      "published_at": "2026-04-15T21:12:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.0.0"
+    },
+    {
+      "tag": "op-reth/v1.11.5",
+      "name": "op-reth/v1.11.5",
+      "published_at": "2026-04-02T22:37:27Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v1.11.5"
+    },
+    {
+      "tag": "op-reth/v1.11.3",
+      "name": "op-reth/v1.11.3",
+      "published_at": "2026-03-17T20:52:23Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v1.11.3"
+    },
+    {
+      "tag": "op-reth/v1.11.0",
+      "name": "op-reth/v1.11.0",
+      "published_at": "2026-02-20T18:05:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v1.11.0"
+    }
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "schema_version": 1,
+  "client": "op-geth",
+  "github": "ethereum-optimism/op-geth",
+  "fetched_at": "2026-10-05T08:11:05Z",
+  "ignored_tag_count": 0,
+  "releases": [
+    {
+      "tag": "v1.101702.3",
+      "name": "v1.101702.3",
+      "published_at": "2026-08-31T12:30:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.3"
+    },
+    {
+      "tag": "v1.101702.2",
+      "name": "v1.101702.2",
+      "published_at": "2026-05-11T20:58:34Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.2"
+    },
+    {
+      "tag": "v1.101702.1",
+      "name": "v1.101702.1",
+      "published_at": "2026-04-13T16:19:23Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.1"
+    },
+    {
+      "tag": "v1.101702.0",
+      "name": "v1.101702.0: no-op release",
+      "published_at": "2026-04-09T12:27:19Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.0"
+    },
+    {
+      "tag": "v1.101701.0",
+      "name": "v1.101701.0",
+      "published_at": "2026-03-20T11:41:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101701.0"
+    },
+    {
+      "tag": "v1.101609.2",
+      "name": "v1.101609.2",
+      "published_at": "2026-03-09T22:20:35Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101609.2"
+    },
+    {
+      "tag": "v1.101609.1",
+      "name": "v1.101609.1",
+      "published_at": "2026-03-02T14:17:51Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101609.1"
+    },
+    {
+      "tag": "v1.101609.0-rc.1",
+      "name": "v1.101609.0",
+      "published_at": "2026-03-02T15:09:41Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101609.0-rc.1"
+    },
+    {
+      "tag": "v1.101608.0",
+      "name": "v1.101608.0",
+      "published_at": "2026-02-02T18:29:19Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101608.0"
+    },
+    {
+      "tag": "v1.101605.0",
+      "name": "v1.101605.0",
+      "published_at": "2026-01-13T21:05:19Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101605.0"
+    },
+    {
+      "tag": "v1.101604.0",
+      "name": "v1.101604.0",
+      "published_at": "2025-12-20T03:31:29Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101604.0"
+    },
+    {
+      "tag": "v1.101603.5",
+      "name": "v1.101603.5 Jovian",
+      "published_at": "2025-11-14T21:35:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101603.5"
+    },
+    {
+      "tag": "v1.101603.4",
+      "name": "v1.101603.4 Mainnet Fusaka Readiness",
+      "published_at": "2025-11-06T20:18:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101603.4"
+    },
+    {
+      "tag": "v1.101603.3",
+      "name": "v1.101603.3",
+      "published_at": "2025-10-31T14:55:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101603.3"
+    },
+    {
+      "tag": "v1.101603.2",
+      "name": "v1.101603.2",
+      "published_at": "2025-10-24T17:33:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101603.2"
+    },
+    {
+      "tag": "v1.101603.1",
+      "name": "v1.101603.1 Fusaka Readiness Release (Sepolia)",
+      "published_at": "2025-10-07T21:53:29Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101603.1"
+    },
+    {
+      "tag": "v1.101602.3",
+      "name": "v1.101602.3",
+      "published_at": "2025-09-19T12:04:11Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101602.3"
+    },
+    {
+      "tag": "v1.101602.0",
+      "name": "v1.101602.0",
+      "published_at": "2025-09-11T09:19:18Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101602.0"
+    },
+    {
+      "tag": "v1.101511.1",
+      "name": "v1.101511.1",
+      "published_at": "2025-07-16T12:26:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101511.1"
+    },
+    {
+      "tag": "v1.101511.0",
+      "name": "v1.101511.0",
+      "published_at": "2025-05-21T19:30:05Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101511.0"
+    },
+    {
+      "tag": "v1.101503.4",
+      "name": "v1.101503.4 - Isthmus Mainnet",
+      "published_at": "2025-04-18T13:16:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101503.4"
+    },
+    {
+      "tag": "v1.101503.3",
+      "name": "v1.101503.3 - Worldchain Sepolia Fix",
+      "published_at": "2025-04-10T20:38:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101503.3"
+    },
+    {
+      "tag": "v1.101503.2",
+      "name": "v1.101503.2 - Isthmus Sepolia",
+      "published_at": "2025-04-03T20:41:43Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101503.2"
+    },
+    {
+      "tag": "v1.101503.1",
+      "name": "v1.101503.1",
+      "published_at": "2025-03-14T16:43:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101503.1"
+    },
+    {
+      "tag": "v1.101503.0",
+      "name": "v1.101503.0 - Pectra L1 readiness",
+      "published_at": "2025-03-11T22:05:59Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101503.0"
+    },
+    {
+      "tag": "v1.101500.1",
+      "name": "v1.101500.1 - Ink Mainnet Holocene Update",
+      "published_at": "2025-02-24T20:26:45Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101500.1"
+    },
+    {
+      "tag": "v1.101500.0",
+      "name": "v1.101500.0 - L1 Pectra Readiness",
+      "published_at": "2025-02-11T21:38:02Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101500.0"
+    },
+    {
+      "tag": "v1.101411.8",
+      "name": "v1.101411.8 - upgrade path to v1.101500.0",
+      "published_at": "2025-02-10T16:59:35Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.8"
+    },
+    {
+      "tag": "v1.101411.6",
+      "name": "v1.101411.6 - P2P Fix",
+      "published_at": "2025-01-30T13:36:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.6"
+    },
+    {
+      "tag": "v1.101411.5",
+      "name": "v1.101411.5",
+      "published_at": "2025-01-24T11:28:27Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.5"
+    },
+    {
+      "tag": "v1.101411.4",
+      "name": "v1.101411.4 - Holocene Mainnet Superchain",
+      "published_at": "2024-12-17T14:35:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.4"
+    },
+    {
+      "tag": "v1.101411.3",
+      "name": "v1.101411.3",
+      "published_at": "2024-12-03T21:18:24Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.3"
+    },
+    {
+      "tag": "v1.101411.2",
+      "name": "v1.101411.2 - Sepolia Holocene",
+      "published_at": "2024-11-19T18:36:39Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.2"
+    },
+    {
+      "tag": "v1.101411.1",
+      "name": "v1.101411.1",
+      "published_at": "2024-11-11T12:23:15Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.1"
+    },
+    {
+      "tag": "v1.101411.0",
+      "name": "v1.101411.0 - upstream geth v1.14.11 merge",
+      "published_at": "2024-10-21T15:12:07Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101411.0"
+    },
+    {
+      "tag": "v1.101408.0",
+      "name": "v1.101408.0 - Optimistic Granite Mainnet release",
+      "published_at": "2024-08-29T16:24:01Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101408.0"
+    },
+    {
+      "tag": "v1.101315.3",
+      "name": "v1.101315.3 - Sepolia Granite activation",
+      "published_at": "2024-08-07T20:34:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101315.3"
+    },
+    {
+      "tag": "v1.101315.2",
+      "name": "v1.101315.2 - Optimistic Fjord Mainnet release",
+      "published_at": "2024-06-13T16:34:24Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101315.2"
+    },
+    {
+      "tag": "v1.101315.1",
+      "name": "v1.101315.1 - Sepolia Fjord activation",
+      "published_at": "2024-05-24T18:11:42Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101315.1"
+    },
+    {
+      "tag": "v1.101315.0",
+      "name": "v1.101315.0",
+      "published_at": "2024-05-07T19:40:42Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101315.0"
+    },
+    {
+      "tag": "v1.101311.0",
+      "name": "op-geth v1.101311.0",
+      "published_at": "2024-04-11T23:30:10Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101311.0"
+    },
+    {
+      "tag": "v1.101308.2",
+      "name": "op-geth v1.101308.2 - Optimistic Ecotone Mainnet Release",
+      "published_at": "2024-02-26T13:43:00Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101308.2"
+    },
+    {
+      "tag": "v1.101308.1",
+      "name": "op-geth v1.101308.1 - OUTDATED Ecotone Mainnet Release",
+      "published_at": "2024-02-16T21:46:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101308.1"
+    },
+    {
+      "tag": "v1.101308.0",
+      "name": "op-geth v1.101308.0 - Sepolia Ecotone Release",
+      "published_at": "2024-02-09T21:35:40Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101308.0"
+    },
+    {
+      "tag": "v1.101305.3",
+      "name": "op-geth v1.101305.3 - mainnet Delta & goerli Ecotone",
+      "published_at": "2024-02-01T11:33:33Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101305.3"
+    },
+    {
+      "tag": "v1.101305.1",
+      "name": "op-geth v1.101305.1",
+      "published_at": "2024-01-22T20:00:41Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101305.1"
+    },
+    {
+      "tag": "v1.101305.0",
+      "name": "Release op-geth v1.101305.0",
+      "published_at": "2024-01-12T01:33:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101305.0"
+    },
+    {
+      "tag": "v1.101304.2",
+      "name": "Release op-geth v1.101304.2",
+      "published_at": "2023-12-11T23:08:31Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101304.2"
+    },
+    {
+      "tag": "v1.101304.1",
+      "name": "Release op-geth v1.101304.1",
+      "published_at": "2023-11-07T00:16:26Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101304.1"
+    },
+    {
+      "tag": "v1.101304.0",
+      "name": "Release op-geth v1.101304.0",
+      "published_at": "2023-10-31T21:29:38Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101304.0"
+    },
+    {
+      "tag": "v1.101303.0",
+      "name": "v1.101303.0",
+      "published_at": "2023-10-31T11:33:57Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101303.0"
+    },
+    {
+      "tag": "v1.101301.1",
+      "name": "v1.101301.1",
+      "published_at": "2023-10-17T23:38:58Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101301.1"
+    },
+    {
+      "tag": "v1.101200.2-rc.1",
+      "name": "v1.101200.2-rc.1",
+      "published_at": "2023-09-06T10:56:47Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101200.2-rc.1"
+    },
+    {
+      "tag": "v1.101200.1",
+      "name": "v1.101200.1",
+      "published_at": "2023-09-06T10:54:33Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101200.1"
+    },
+    {
+      "tag": "v1.101200.1-rc.2",
+      "name": "v1.101200.1-rc.2",
+      "published_at": "2023-08-23T18:57:35Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101200.1-rc.2"
+    },
+    {
+      "tag": "v1.101200.0",
+      "name": "v1.101200.0",
+      "published_at": "2023-08-22T19:53:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101200.0"
+    },
+    {
+      "tag": "v1.101106.0",
+      "name": "v1.101106.0",
+      "published_at": "2023-06-29T20:53:27Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101106.0"
+    },
+    {
+      "tag": "v1.101105.3",
+      "name": "Release op-geth v1.101105.3",
+      "published_at": "2023-06-08T22:05:44Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.3"
+    },
+    {
+      "tag": "v1.101105.2",
+      "name": "Release op-geth v1.101105.2",
+      "published_at": "2023-05-31T18:58:07Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.2"
+    },
+    {
+      "tag": "v1.101105.1",
+      "name": "Release op-geth v1.101105.1",
+      "published_at": "2023-04-24T18:28:16Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.1"
+    },
+    {
+      "tag": "v1.101105.0",
+      "name": "Release op-geth v1.101105.0",
+      "published_at": "2023-04-08T19:24:59Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101105.0"
+    },
+    {
+      "tag": "v1.11.2-13ee9ab",
+      "name": "Release op-geth v1.11.2-13ee9ab",
+      "published_at": "2023-03-08T20:28:31Z",
+      "prerelease": true,
+      "url": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.11.2-13ee9ab"
+    }
+  ]
+}

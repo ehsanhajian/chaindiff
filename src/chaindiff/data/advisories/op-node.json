@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "1.19.0",
+      "severity": "note",
+      "summary": "Mandatory release for node operators. It embeds Sepolia and Mainnet Karst timestamps, and --syncmode.offset-el-safe now defaults to 12h for execution-layer sync.",
+      "action": "Upgrade before the Karst time for your chain, and run op-reth. op-geth cannot follow Karst. Pass --syncmode.offset-el-safe=0 to keep the previous offset.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.0"
+    },
+    {
+      "version": "1.19.1",
+      "severity": "breaking",
+      "summary": "Removes the request-response p2p sync client. After Karst, this release uses getPayloadV5, which earlier op-reth does not support.",
+      "action": "Use op-reth v2.3.2 or later with this release. The request-response p2p sync client is gone.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.1"
+    },
+    {
+      "version": "1.19.2",
+      "severity": "none",
+      "summary": "Fixes derivation against an execution client that prunes historical block bodies, including op-reth with --minimal or --prune.bodies.distance.",
+      "action": "",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.2"
+    },
+    {
+      "version": "1.19.3",
+      "severity": "note",
+      "summary": "Mandatory for Mode, Metal, and Zora nodes that use the built-in network configs, because the embedded Karst gas setting was wrong on v1.19.2 and earlier. OP Mainnet is unaffected. Unknown keys in a custom superchain registry now fail startup.",
+      "action": "Upgrade Mode, Metal, and Zora nodes that use the built-in configs. Remove unmodeled keys from a custom registry before upgrading, or startup will fail.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.3"
+    },
+    {
+      "version": "1.19.5",
+      "severity": "note",
+      "summary": "Patch release. --l2.follow.source.rpc-timeout is now a registered flag. It previously failed as unknown, and the effective timeout was already 10s unless you set it.",
+      "action": "Operators on Sepolia OP Stack chains must upgrade to op-node v1.19.5 or later before the Glamsterdam hardfork on October 6, 2026.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.5"
+    },
+    {
+      "version": "1.19.6",
+      "severity": "breaking",
+      "summary": "cross_unsafe_l2 is removed from optimism_syncStatus and from eth.SyncStatus. It mirrored unsafe_l2. Required for World Chain operators on the built-in chain configs.",
+      "action": "Read unsafe_l2 instead of cross_unsafe_l2. The message-safety level named cross-unsafe is unchanged.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.6"
+    },
+    {
+      "version": "1.19.7",
+      "severity": "none",
+      "summary": "Production-build dependency cleanup. No runtime behavior or configuration change.",
+      "action": "",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.7"
+    },
+    {
+      "version": "1.19.8",
+      "severity": "note",
+      "summary": "Recommended for sequencer operators, particularly those running with --l2.follow.source. op-node refuses to start when a rollup config activates Jovian or a later hardfork at the same timestamp as the fork before it, unless that timestamp is at or before genesis. It also rejects a config that schedules Jovian, Karst, or Lagoon without its predecessor, or before it. No chain in the embedded superchain registry is affected.",
+      "action": "Correct a custom rollup config that violates that rule before upgrading. Sepolia OP Stack nodes must be on v1.19.5 or later before the Glamsterdam hardfork on October 6, 2026.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.8"
+    }
+  ]
+}

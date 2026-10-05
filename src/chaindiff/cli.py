@@ -44,7 +44,7 @@ from chaindiff.report import (
     versions_json,
 )
 from chaindiff.scan import scan_settings
-from chaindiff.versions import explain_unparsed, parse_version
+from chaindiff.versions import Version, explain_unparsed, parse_version
 
 _EXIT = {
     CURRENT: 0,
@@ -171,7 +171,7 @@ def _check(args: argparse.Namespace, *, plan_only: bool) -> int:
     if clients is None:
         return 3
     client = clients[0]
-    current = parse_version(args.current)
+    current = _parse_client_version(client, args.current)
     if current is None:
         print(explain_unparsed(args.current), file=sys.stderr)
         return 3
@@ -193,7 +193,7 @@ def _check(args: argparse.Namespace, *, plan_only: bool) -> int:
             return 3
         target = stable.version
     else:
-        target = parse_version(args.target)
+        target = _parse_client_version(client, args.target)
         if target is None:
             print(explain_unparsed(args.target), file=sys.stderr)
             return 3
@@ -219,7 +219,7 @@ def _scan(args: argparse.Namespace) -> int:
     if clients is None:
         return 3
     client = clients[0]
-    current = parse_version(args.current)
+    current = _parse_client_version(client, args.current)
     if current is None:
         print(explain_unparsed(args.current), file=sys.stderr)
         return 3
@@ -255,7 +255,7 @@ def _scan(args: argparse.Namespace) -> int:
         if datetime.now(timezone.utc) - fetched_at > timedelta(days=5):
             stale_warning = "The release catalog is more than 5 days old, so latest may be behind."
     else:
-        target = parse_version(args.target)
+        target = _parse_client_version(client, args.target)
         if target is None:
             print(explain_unparsed(args.target), file=sys.stderr)
             return 3
@@ -285,8 +285,38 @@ def _scan(args: argparse.Namespace) -> int:
     return _EXIT[result.verdict]
 
 
+_MAINNET_EXECUTION = frozenset({"geth", "nethermind", "erigon", "besu", "reth"})
+_MAINNET_CONSENSUS = frozenset({"lighthouse", "prysm", "teku", "nimbus"})
+
+
+def _parse_client_version(client, text: str) -> Version | None:
+    raw = text.strip()
+    if client.tag_prefix and raw.startswith(client.tag_prefix):
+        raw = raw[len(client.tag_prefix) :]
+    return parse_version(raw)
+
+
+def _outside_mainnet_pair(execution, consensus) -> str | None:
+    outside = [
+        client.id
+        for client, allowed in (
+            (execution, _MAINNET_EXECUTION),
+            (consensus, _MAINNET_CONSENSUS),
+        )
+        if client.id not in allowed
+    ]
+    if not outside:
+        return None
+    listed = ", ".join(outside)
+    return (
+        f"The Ethereum mainnet pair does not include {listed}. "
+        "Check op-geth, op-reth, and op-node with --client. "
+        "Their network schedules are separate."
+    )
+
+
 def _client_result(client, current_text: str, target_text: str):
-    current = parse_version(current_text)
+    current = _parse_client_version(client, current_text)
     if current is None:
         raise ValueError(explain_unparsed(current_text))
     loaded = load_releases(client.id)
@@ -301,7 +331,7 @@ def _client_result(client, current_text: str, target_text: str):
             raise ValueError(f"{client.id} has no stable release in the catalog.")
         target = stable.version
     else:
-        target = parse_version(target_text)
+        target = _parse_client_version(client, target_text)
         if target is None:
             raise ValueError(explain_unparsed(target_text))
     return evaluate(
@@ -331,7 +361,6 @@ def _pair_check(args: argparse.Namespace) -> int:
         return 3
     try:
         clients = load_clients()
-        schedule = load_network("ethereum")
     except ValueError as exc:
         print(str(exc), file=sys.stderr)
         return 3
@@ -347,6 +376,15 @@ def _pair_check(args: argparse.Namespace) -> int:
         return 3
     if consensus.role != "consensus":
         print(f"{consensus.id} is an execution client.", file=sys.stderr)
+        return 3
+    outside = _outside_mainnet_pair(execution, consensus)
+    if outside is not None:
+        print(outside, file=sys.stderr)
+        return 3
+    try:
+        schedule = load_network("ethereum")
+    except ValueError as exc:
+        print(str(exc), file=sys.stderr)
         return 3
     try:
         execution_result = _client_result(
@@ -405,11 +443,16 @@ def _network_check(args: argparse.Namespace) -> int:
     if consensus.role != "consensus":
         print(f"{consensus.id} is an execution client.", file=sys.stderr)
         return 3
-    execution_version = parse_version(args.execution_version)
+    if schedule.id == "ethereum":
+        outside = _outside_mainnet_pair(execution, consensus)
+        if outside is not None:
+            print(outside, file=sys.stderr)
+            return 3
+    execution_version = _parse_client_version(execution, args.execution_version)
     if execution_version is None:
         print(explain_unparsed(args.execution_version), file=sys.stderr)
         return 3
-    consensus_version = parse_version(args.consensus_version)
+    consensus_version = _parse_client_version(consensus, args.consensus_version)
     if consensus_version is None:
         print(explain_unparsed(args.consensus_version), file=sys.stderr)
         return 3
@@ -433,7 +476,8 @@ def _detect(args: argparse.Namespace) -> int:
         return 3
     client = clients[0]
     if args.binary is not None:
-        output = read_binary_output(args.binary, version_argv(client.id))
+        argv = version_argv(client.id)
+        output = None if argv is None else read_binary_output(args.binary, argv)
         version = None if output is None else version_from_output(client.id, output)
         source = "binary"
     else:

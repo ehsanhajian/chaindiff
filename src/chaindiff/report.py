@@ -58,7 +58,7 @@ def format_check(result: CheckResult, *, plan_only: bool = False) -> str:
             if item is None:
                 lines.append(f"  ({hidden} older releases omitted)")
                 continue
-            lines.append(f"  {item.tag:<16} {_day(item.published_at)}  {item.url}")
+            lines.append(f"  {item.tag:<22} {_day(item.published_at)}  {item.url}")
         oldest = min(result.releases, key=lambda item: item.version)
         if len(result.releases) > 1:
             lines.append(

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "2.5.0",
+      "severity": "breaking",
+      "summary": "Removes the legacy pre-Bedrock import commands import-op and import-receipts-op. Also updates rustls for RUSTSEC-2026-0285 and imbl for RUSTSEC-2026-0292.",
+      "action": "Operators who import pre-Bedrock OVM history with those commands must switch to the Bedrock state bootstrap before upgrading: run op-reth init-state --without-ovm, and serve pre-Bedrock history from an l2geth instance.",
+      "source": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.5.0"
+    }
+  ]
+}

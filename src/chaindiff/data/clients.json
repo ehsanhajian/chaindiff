@@ -37,6 +37,21 @@
       "versioning": "semver"
     },
     {
+      "id": "op-geth",
+      "name": "op-geth",
+      "role": "execution",
+      "github": "ethereum-optimism/op-geth",
+      "versioning": "semver"
+    },
+    {
+      "id": "op-reth",
+      "name": "op-reth",
+      "role": "execution",
+      "github": "ethereum-optimism/optimism",
+      "versioning": "semver",
+      "tag_prefix": "op-reth/"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",
@@ -63,6 +78,14 @@
       "role": "consensus",
       "github": "status-im/nimbus-eth2",
       "versioning": "calver"
+    },
+    {
+      "id": "op-node",
+      "name": "op-node",
+      "role": "consensus",
+      "github": "ethereum-optimism/optimism",
+      "versioning": "semver",
+      "tag_prefix": "op-node/"
     }
   ]
 }

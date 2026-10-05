@@ -10,7 +10,7 @@ from pathlib import Path
 
 from chaindiff.configparse import normalize_flag
 from chaindiff.models import FLAG_EFFECTS, SEVERITIES, Advisory, Client, FlagRule, NetworkSchedule, Release
-from chaindiff.versions import Version, parse_version
+from chaindiff.versions import Version, parse_version, version_from_tag
 
 SCHEMA_VERSION = 1
 _NETWORK_ORDERS = ("execution-first", "consensus-first")
@@ -49,21 +49,29 @@ def load_clients() -> list[Client]:
     payload = _read_json(path)
     clients: list[Client] = []
     seen: set[str] = set()
+    prefixes: set[str] = set()
     for raw in payload.get("clients", []):
         client_id = str(raw.get("id", "")).strip()
         role = raw.get("role")
         versioning = raw.get("versioning")
         github = str(raw.get("github", "")).strip()
         name = str(raw.get("name", "")).strip()
+        tag_prefix = str(raw.get("tag_prefix", "")).strip()
         if not client_id or not name or not github:
             raise ValueError(f"{path} has a client missing id, name, or github")
         if role not in ("execution", "consensus"):
             raise ValueError(f"{client_id} has an unknown role")
         if versioning not in ("semver", "calver"):
             raise ValueError(f"{client_id} has an unknown versioning scheme")
+        if tag_prefix and (any(char.isspace() for char in tag_prefix) or not tag_prefix.endswith("/")):
+            raise ValueError(f"{client_id} tag_prefix must end with /")
         if client_id in seen:
             raise ValueError(f"{client_id} is listed twice")
+        if tag_prefix and tag_prefix in prefixes:
+            raise ValueError(f"{client_id} reuses tag_prefix {tag_prefix}")
         seen.add(client_id)
+        if tag_prefix:
+            prefixes.add(tag_prefix)
         clients.append(
             Client(
                 id=client_id,
@@ -71,11 +79,23 @@ def load_clients() -> list[Client]:
                 role=role,
                 github=github,
                 versioning=versioning,
+                tag_prefix=tag_prefix,
             )
         )
     if not clients:
         raise ValueError(f"{path} does not list any clients")
     return clients
+
+
+def _tag_prefix(client_id: str) -> str:
+    try:
+        clients = load_clients()
+    except ValueError:
+        return ""
+    client = client_by_id(clients, client_id)
+    if client is None:
+        return ""
+    return client.tag_prefix
 
 
 def client_by_id(clients: list[Client], client_id: str) -> Client | None:
@@ -96,10 +116,11 @@ def load_releases(client_id: str) -> tuple[datetime, list[Release]] | None:
         return None
     payload = _read_json(path)
     fetched_at = parse_time(str(payload["fetched_at"]))
+    tag_prefix = _tag_prefix(client_id)
     releases: list[Release] = []
     for raw in payload.get("releases", []):
         tag = str(raw.get("tag", ""))
-        version = parse_version(tag)
+        version = version_from_tag(tag, tag_prefix)
         if version is None:
             continue
         releases.append(

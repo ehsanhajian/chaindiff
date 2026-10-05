@@ -16,6 +16,7 @@ from chaindiff.versions import Version, parse_version
 # A wrong flag can start the node, so there is no fallback.
 _VERSION_ARGV = {
     "geth": ("version",),
+    "op-geth": ("version",),
     "nethermind": ("--version",),
     "erigon": ("--version",),
     "besu": ("--version",),
@@ -44,8 +45,12 @@ _RELEASE_TEXT = re.compile(r"\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?")
 _TRAILING_COMMIT = re.compile(r"-[0-9a-fA-F]{6,}$")
 
 
-def version_argv(client_id: str) -> tuple[str, ...]:
-    return _VERSION_ARGV[client_id]
+def version_argv(client_id: str) -> tuple[str, ...] | None:
+    """Return the version command, or None when the binary format is unknown.
+
+    An unknown client is left unread. Guessing ``--version`` can start the node.
+    """
+    return _VERSION_ARGV.get(client_id)
 
 
 def check_command(client_id: str, version: Version | None) -> str:
@@ -71,8 +76,11 @@ def normalize_release(raw: str) -> Version | None:
 
 
 def version_from_output(client_id: str, text: str) -> Version | None:
+    extractor = _EXTRACTORS.get(client_id)
+    if extractor is None:
+        return None
     cleaned = text.replace("\r\n", "\n").replace("\r", "\n")
-    return _one_version(_EXTRACTORS[client_id](cleaned))
+    return _one_version(extractor(cleaned))
 
 
 def version_from_image(ref: str) -> Version | None:
@@ -222,6 +230,7 @@ def _nimbus(text: str) -> list[str]:
 
 _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "geth": _version_lines,
+    "op-geth": _version_lines,
     "nethermind": _version_lines,
     "erigon": _erigon,
     "besu": lambda text: _slash_version("besu", text),
