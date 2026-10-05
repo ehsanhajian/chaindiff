@@ -17,16 +17,26 @@ def test_registry_lists_the_supported_clients():
         "erigon",
         "besu",
         "reth",
+        "op-geth",
+        "op-reth",
         "lighthouse",
         "prysm",
         "teku",
         "nimbus",
+        "op-node",
     ]
     by_id = {client.id: client for client in load_clients()}
     assert by_id["besu"].github == "besu-eth/besu"
     assert by_id["teku"].github == "Consensys-Incorporated/teku"
     assert by_id["besu"].versioning == "calver"
     assert by_id["geth"].versioning == "semver"
+    assert by_id["op-geth"].github == "ethereum-optimism/op-geth"
+    assert by_id["op-geth"].tag_prefix == ""
+    assert by_id["op-reth"].github == "ethereum-optimism/optimism"
+    assert by_id["op-reth"].tag_prefix == "op-reth/"
+    assert by_id["op-node"].github == "ethereum-optimism/optimism"
+    assert by_id["op-node"].tag_prefix == "op-node/"
+    assert by_id["op-node"].role == "consensus"
 
 
 def test_shipped_catalog_has_a_stable_release_for_every_client():
@@ -35,7 +45,9 @@ def test_shipped_catalog_has_a_stable_release_for_every_client():
         assert loaded is not None, client.id
         _, releases = loaded
         assert latest_stable(releases) is not None, client.id
-        assert all(parse_version(item.tag) is not None for item in releases)
+        assert all(
+            parse_version(item.tag.removeprefix(client.tag_prefix)) is not None for item in releases
+        )
 
 
 def test_erigon_latest_is_on_the_semver_line():
@@ -51,6 +63,15 @@ def test_shipped_catalog_drops_known_non_releases():
     assert all(item.tag != "nightly" for item in nimbus)
     _, nethermind = load_releases("nethermind")
     assert all(not item.tag.startswith("zkvm-guests") for item in nethermind)
+    _, op_node = load_releases("op-node")
+    tags = {item.tag for item in op_node}
+    assert "op-node/v1.19.8" in tags
+    assert all(item.tag.startswith("op-node/") for item in op_node)
+    assert all(not item.tag.startswith("op-batcher/") for item in op_node)
+    assert all(not item.tag.startswith("op-proposer/") for item in op_node)
+    _, op_reth = load_releases("op-reth")
+    assert any(item.tag == "op-reth/v2.5.0" for item in op_reth)
+    assert all(item.tag.startswith("op-reth/") for item in op_reth)
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

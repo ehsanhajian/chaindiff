@@ -34,6 +34,7 @@ class Client:
     role: str
     github: str
     versioning: str
+    tag_prefix: str = ""
 
 
 @dataclass(frozen=True)

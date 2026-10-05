@@ -6,6 +6,7 @@ import pytest
 from chaindiff.cli import main
 from chaindiff.detect import (
     read_binary_output,
+    version_argv,
     version_from_image,
     version_from_output,
 )
@@ -211,6 +212,50 @@ def test_detect_unsure_image_json(capsys):
     assert payload["detected"] is False
     assert payload["version"] is None
     assert payload["check"] == "chaindiff check --client nimbus --from <installed>"
+
+
+def test_op_geth_uses_the_geth_version_command(monkeypatch, capsys):
+    text = "Op-Geth\nVersion: 1.101702.2-stable\nUpstream Version: 1.17.2-stable\nGo Version: go1.24.1\n"
+
+    def fake(path, argv, timeout=10):
+        assert argv == ("version",)
+        return text
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fake)
+    assert main(["detect", "--client", "op-geth", "--binary", "/usr/bin/op-geth"]) == 0
+    output = capsys.readouterr().out
+    assert "op-geth 1.101702.2" in output
+    assert "1.17.2" not in output
+    assert "go1.24.1" not in output
+
+
+def test_op_node_binary_is_not_run(monkeypatch, capsys):
+    def fail(path, argv, timeout=10):
+        raise AssertionError("op-node version output is not confirmed")
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fail)
+    assert version_argv("op-node") is None
+    assert version_argv("op-reth") is None
+    assert main(["detect", "--client", "op-node", "--binary", "/usr/bin/op-node"]) == 1
+    output = capsys.readouterr().out
+    assert "Could not read a op-node version from that binary." in output
+    assert "chaindiff check --client op-node --from <installed>" in output
+
+
+def test_op_node_image_tag_is_read(capsys):
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "op-node",
+                "--image",
+                "us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.19.8",
+            ]
+        )
+        == 0
+    )
+    assert "op-node 1.19.8" in capsys.readouterr().out
 
 
 def test_detect_unknown_client(capsys):

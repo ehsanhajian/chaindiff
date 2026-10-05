@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "1.101702.0",
+      "severity": "none",
+      "summary": "This tag is a no-op. It points at an existing commit and introduces no op-geth code changes.",
+      "action": "",
+      "source": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.0"
+    },
+    {
+      "version": "1.101702.1",
+      "severity": "note",
+      "summary": "Merges upstream go-ethereum v1.17.2. The default cache size is 4GB, and a debug_executionWitness bug that could corrupt node data is fixed.",
+      "action": "Plan for the 4GB default cache. Upgrade if you call debug_executionWitness.",
+      "source": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.1"
+    },
+    {
+      "version": "1.101702.2",
+      "severity": "none",
+      "summary": "Maintenance release with superchain registry updates.",
+      "action": "",
+      "source": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.2"
+    },
+    {
+      "version": "1.101702.3",
+      "severity": "breaking",
+      "summary": "Optimism does not support running op-geth from this release. It is a library release only, and op-geth is deprecated.",
+      "action": "Do not run this release as a node.",
+      "source": "https://github.com/ethereum-optimism/op-geth/releases/tag/v1.101702.3"
+    }
+  ]
+}
