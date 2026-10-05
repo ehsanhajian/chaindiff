@@ -12,6 +12,7 @@ from chaindiff.models import (
     Client,
     FlagFinding,
     NetworkCheckResult,
+    PairCheckResult,
     Release,
     ScanResult,
     Setting,
@@ -70,6 +71,66 @@ def format_check(result: CheckResult, *, plan_only: bool = False) -> str:
             lines.append(f"  {index}. {step}")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
+
+
+def format_pair(result: PairCheckResult) -> str:
+    lines = [
+        "Execution and consensus",
+        _pair_arrow(result.execution),
+        _pair_arrow(result.consensus),
+        "",
+        f"Verdict: {VERDICT_LABELS[result.verdict]}",
+        "",
+        "Why",
+    ]
+    lines.extend(f"  {reason}" for reason in result.reasons)
+    lines.append("")
+    lines.append("Upgrade order")
+    lines.append(f"  {result.schedule.order_summary}")
+    lines.append(f"  {result.schedule.source}")
+    lines.append("")
+    if result.warnings:
+        lines.append("Warnings")
+        lines.extend(f"  {warning}" for warning in result.warnings)
+        lines.append("")
+    if result.steps:
+        lines.append("Before any upgrade")
+        for index, step in enumerate(result.steps, start=1):
+            lines.append(f"  {index}. {step}")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _pair_arrow(result: CheckResult) -> str:
+    target = result.target.text
+    if result.target_tag:
+        target = f"{target}  ({result.target_tag})"
+    return f"{result.client.id} {result.current.text}  →  {target}"
+
+
+def pair_json(result: PairCheckResult) -> dict:
+    return {
+        "verdict": result.verdict,
+        "order": result.schedule.order,
+        "order_summary": result.schedule.order_summary,
+        "order_source": result.schedule.source,
+        "execution": _pair_side_json(result.execution),
+        "consensus": _pair_side_json(result.consensus),
+        "reasons": result.reasons,
+        "warnings": result.warnings,
+        "steps": result.steps,
+    }
+
+
+def _pair_side_json(result: CheckResult) -> dict:
+    return {
+        "client": result.client.id,
+        "from": result.current.text,
+        "to": result.target.text,
+        "target_tag": result.target_tag,
+        "verdict": result.verdict,
+        "reasons": result.reasons,
+    }
 
 
 def format_network(result: NetworkCheckResult) -> str:

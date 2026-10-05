@@ -39,7 +39,7 @@ The shipping catalog is Ethereum mainnet. The tool also covers these networks, o
 - zkSync Era
 - Starknet
 
-Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. A general execution and consensus pair report is later work. `check --network ethereum` compares the two clients you run with the next mainnet upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
+Not in this cut: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. `check` can take the execution client and the consensus client together and return one verdict and one plan. `check --network ethereum` compares that pair with the next mainnet upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
 
 Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
 
@@ -59,6 +59,8 @@ chaindiff detect --client geth --binary /usr/bin/geth
 chaindiff detect --client lighthouse --image sigp/lighthouse:v8.2.3
 chaindiff check --client geth --from <installed>
 chaindiff check --client lighthouse --from <installed> --to v8.2.3
+chaindiff check --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
+chaindiff plan --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
 chaindiff check --network ethereum --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
 chaindiff plan --client nethermind --from <installed>
 chaindiff scan --client geth --from <installed> --to <target> --config <file>
@@ -77,9 +79,9 @@ chaindiff check --client geth --from <installed>
 
 Exit 0 means a version was read. Exit 1 means it was not. Exit 3 means the client is unknown.
 
-`check --network ethereum` asks whether the execution client and the consensus client you run are the versions the next mainnet upgrade requires, and whether an upgrade order is stated. The schedule is `src/chaindiff/data/networks/ethereum.json`, taken from the network announcement. A Sepolia date in that announcement is not a mainnet deadline. No required mainnet version is invented from a testnet table.
+A pair check takes the execution client and the consensus client and returns one verdict and one plan. The pair is **safe** only when every release in both ranges has a sourced review and none is breaking. Otherwise it stays **review required** or **not safe**. The plan states the upgrade order from the mainnet schedule. It does not invent a compatibility matrix between the two clients.
 
-**Already current** means both clients are the announced requirement and the mainnet time is set. **Review required** means a required version or the activation time has not been announced, or the installed version is newer than the announcement. **Not safe** means an installed version is older than an announced requirement. A prerelease is still refused on mainnet.
+`check --network ethereum` asks whether the execution client and the consensus client you run are the versions the next mainnet upgrade requires, and whether an upgrade order is stated. The schedule is `src/chaindiff/data/networks/ethereum.json`, taken from the network announcement. A Sepolia date in that announcement is not a mainnet deadline. No required mainnet version is invented from a testnet table. For this network check, **already current** means both clients are the announced requirement and the mainnet time is set. **Review required** means a required version or the activation time has not been announced, or the installed version is newer than the announcement. **Not safe** means an installed version is older than an announced requirement. A prerelease is still refused on mainnet.
 
 `scan` accepts CLI flags, TOML, JSON, or YAML. The format follows the file extension (`.toml`, `.json`, `.yaml`, `.yml`). A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that. `--to` defaults to the latest stable release. The command prints what to change. It does not edit the file.
 
