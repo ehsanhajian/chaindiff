@@ -252,6 +252,115 @@ def test_schedule_rejects_a_short_requirement(tmp_path, monkeypatch):
         load_network("ethereum")
 
 
+def test_op_mainnet_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "op-mainnet",
+                "--execution",
+                "op-geth",
+                "--execution-version",
+                "1.101702.2",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "1.19.8",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert "OP Mainnet" in output
+    assert "Next upgrade: Lagoon" in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://docs.optimism.io/op-stack/protocol/hardforks/lagoon" in output
+    assert "op-geth 1.101702.2  execution  requirement not announced" in output
+    assert "op-node 1.19.8  consensus  requirement not announced" in output
+    assert "No upgrade order between the execution client and op-node is stated for OP Mainnet." in output
+    assert "OP Sepolia and Unichain Sepolia" in output
+    assert "late July 2026" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 1.19" not in output
+    assert "required 1.101702" not in output
+    assert "TBD" not in output
+
+
+def test_op_mainnet_accepts_op_reth(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "op-mainnet",
+                "--execution",
+                "op-reth",
+                "--execution-version",
+                "2.5.0",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "op-node/v1.19.8",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert "op-reth 2.5.0  execution  requirement not announced" in output
+    assert "op-node 1.19.8  consensus  requirement not announced" in output
+
+
+def test_op_mainnet_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "op-mainnet",
+                "--execution",
+                "op-reth",
+                "--execution-version",
+                "2.5.0",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "1.19.0-rc.1",
+            ]
+        )
+        == 2
+    )
+    output = capsys.readouterr().out
+    assert "PRERELEASE" in output
+    assert "1.19.0-rc.1" in output
+
+
+def test_op_mainnet_rejects_an_ethereum_client(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "op-mainnet",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "OP Mainnet does not include geth, lighthouse" in error
+    assert "Lagoon" not in error
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))
