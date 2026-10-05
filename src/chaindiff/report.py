@@ -6,7 +6,16 @@ from datetime import datetime, timedelta, timezone
 
 from chaindiff.catalog import format_time
 from chaindiff.evaluate import latest_stable, newer_prerelease
-from chaindiff.models import VERDICT_LABELS, CheckResult, Client, FlagFinding, Release, ScanResult, Setting
+from chaindiff.models import (
+    VERDICT_LABELS,
+    CheckResult,
+    Client,
+    FlagFinding,
+    NetworkCheckResult,
+    Release,
+    ScanResult,
+    Setting,
+)
 
 
 def _day(value: str) -> str:
@@ -61,6 +70,79 @@ def format_check(result: CheckResult, *, plan_only: bool = False) -> str:
             lines.append(f"  {index}. {step}")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
+
+
+def format_network(result: NetworkCheckResult) -> str:
+    activation = "not scheduled"
+    if result.schedule.activation is not None:
+        activation = format_time(result.schedule.activation)
+    lines = [
+        result.schedule.name,
+        f"Next upgrade: {result.schedule.upgrade}",
+        f"Mainnet activation: {activation}",
+        f"Source: {result.schedule.source}",
+        "",
+        _network_side(result.execution),
+        _network_side(result.consensus),
+        "",
+        f"Verdict: {VERDICT_LABELS[result.verdict]}",
+        "",
+    ]
+    if result.reasons:
+        lines.append("Why")
+        lines.extend(f"  {reason}" for reason in result.reasons)
+        lines.append("")
+    if result.warnings:
+        lines.append("Warnings")
+        lines.extend(f"  {warning}" for warning in result.warnings)
+        lines.append("")
+    if result.steps:
+        lines.append("What to do")
+        for index, step in enumerate(result.steps, start=1):
+            lines.append(f"  {index}. {step}")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _network_side(side) -> str:
+    if side.status == "unannounced":
+        requirement = "requirement not announced"
+    elif side.required is not None and side.status == "above":
+        requirement = f"announced {side.required.text}, installed is newer"
+    elif side.required is not None:
+        requirement = f"required {side.required.text}"
+    else:
+        requirement = side.status
+    return f"{side.client.id} {side.installed.text}  {side.client.role}  {requirement}"
+
+
+def network_json(result: NetworkCheckResult) -> dict:
+    activation = None
+    if result.schedule.activation is not None:
+        activation = format_time(result.schedule.activation)
+    return {
+        "network": result.schedule.id,
+        "name": result.schedule.name,
+        "upgrade": result.schedule.upgrade,
+        "activation": activation,
+        "source": result.schedule.source,
+        "order": result.schedule.order,
+        "execution": _network_side_json(result.execution),
+        "consensus": _network_side_json(result.consensus),
+        "verdict": result.verdict,
+        "reasons": result.reasons,
+        "warnings": result.warnings,
+        "steps": result.steps,
+    }
+
+
+def _network_side_json(side) -> dict:
+    return {
+        "client": side.client.id,
+        "version": side.installed.text,
+        "required": None if side.required is None else side.required.text,
+        "status": side.status,
+    }
 
 
 def check_json(result: CheckResult) -> dict:

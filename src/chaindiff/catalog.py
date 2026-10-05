@@ -4,14 +4,17 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
 from chaindiff.configparse import normalize_flag
-from chaindiff.models import FLAG_EFFECTS, SEVERITIES, Advisory, Client, FlagRule, Release
-from chaindiff.versions import parse_version
+from chaindiff.models import FLAG_EFFECTS, SEVERITIES, Advisory, Client, FlagRule, NetworkSchedule, Release
+from chaindiff.versions import Version, parse_version
 
 SCHEMA_VERSION = 1
+_NETWORK_ORDERS = ("execution-first", "consensus-first")
+_PRECISE_RELEASE = re.compile(r"v?\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$")
 
 
 def data_dir() -> Path:
@@ -227,3 +230,92 @@ def load_flag_rules(client_id: str) -> list[FlagRule]:
             )
         )
     return rules
+
+
+def network_ids() -> list[str]:
+    directory = data_dir() / "networks"
+    if not directory.is_dir():
+        return []
+    return sorted(path.stem for path in directory.glob("*.json"))
+
+
+def load_network(network_id: str) -> NetworkSchedule:
+    key = network_id.strip().lower()
+    path = data_dir() / "networks" / f"{key}.json"
+    if not path.exists():
+        known = ", ".join(network_ids()) or "none"
+        raise ValueError(f"Unknown network '{network_id}'. Known networks: {known}")
+    payload = _read_json(path)
+    if str(payload.get("id", "")).strip() != key:
+        raise ValueError(f"{path} id does not match the file name")
+    name = str(payload.get("name", "")).strip()
+    upgrade = payload.get("upgrade")
+    if not name or not isinstance(upgrade, dict):
+        raise ValueError(f"{path} needs a name and an upgrade object")
+    upgrade_name = str(upgrade.get("name", "")).strip()
+    source = str(upgrade.get("source", "")).strip()
+    summary = str(upgrade.get("summary", "")).strip()
+    order_summary = str(upgrade.get("order_summary", "")).strip()
+    order = upgrade.get("order")
+    warning = str(upgrade.get("warning", "")).strip()
+    if not upgrade_name or not summary or not order_summary:
+        raise ValueError(f"{path} needs an upgrade name, summary, and order summary")
+    if not source.startswith(("https://", "http://")):
+        raise ValueError(f"{path} needs an http(s) source URL")
+    if order is not None and order not in _NETWORK_ORDERS:
+        raise ValueError(f"{path} has an unknown upgrade order")
+    activation = _optional_time(path, upgrade.get("activation"), "activation")
+    clients = load_clients()
+    required = upgrade.get("required")
+    if not isinstance(required, dict):
+        raise ValueError(f"{path} needs a required object")
+    return NetworkSchedule(
+        id=key,
+        name=name,
+        upgrade=upgrade_name,
+        activation=activation,
+        source=source,
+        summary=summary,
+        order=order,
+        order_summary=order_summary,
+        warning=warning,
+        required_execution=_required_versions(path, required, "execution", clients),
+        required_consensus=_required_versions(path, required, "consensus", clients),
+    )
+
+
+def _optional_time(path: Path, value: object, label: str) -> datetime | None:
+    if value is None:
+        return None
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{path} has an unreadable {label}")
+    try:
+        return parse_time(value.strip())
+    except ValueError as exc:
+        raise ValueError(f"{path} has an unreadable {label}") from exc
+
+
+def _required_versions(
+    path: Path,
+    required: dict,
+    role: str,
+    clients: list[Client],
+) -> dict[str, Version]:
+    raw = required.get(role)
+    if not isinstance(raw, dict):
+        raise ValueError(f"{path} needs required.{role}")
+    versions: dict[str, Version] = {}
+    for client_id, version_text in raw.items():
+        client = client_by_id(clients, str(client_id))
+        where = f"{path} required {role} {client_id}"
+        if client is None or client.role != role:
+            article = "an" if role[:1] in "aeiou" else "a"
+            raise ValueError(f"{where} is not {article} {role} client")
+        text = str(version_text).strip()
+        if _PRECISE_RELEASE.fullmatch(text) is None:
+            raise ValueError(f"{where} needs a major.minor.patch version")
+        version = parse_version(text)
+        if version is None:
+            raise ValueError(f"{where} has a version ChainDiff cannot parse")
+        versions[client.id] = version
+    return versions

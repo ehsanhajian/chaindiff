@@ -100,6 +100,40 @@ class ScanResult:
     uncovered: list[Setting]
 
 
+@dataclass(frozen=True)
+class NetworkSchedule:
+    id: str
+    name: str
+    upgrade: str
+    activation: datetime | None
+    source: str
+    summary: str
+    order: str | None
+    order_summary: str
+    warning: str
+    required_execution: dict[str, Version]
+    required_consensus: dict[str, Version]
+
+
+@dataclass(frozen=True)
+class NetworkSide:
+    client: Client
+    installed: Version
+    required: Version | None
+    status: str
+
+
+@dataclass
+class NetworkCheckResult:
+    schedule: NetworkSchedule
+    execution: NetworkSide
+    consensus: NetworkSide
+    verdict: str
+    reasons: list[str]
+    warnings: list[str]
+    steps: list[str]
+
+
 @dataclass
 class CheckResult:
     client: Client
