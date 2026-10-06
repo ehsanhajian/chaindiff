@@ -1,0 +1,1955 @@
+{
+  "schema_version": 1,
+  "client": "bor",
+  "github": "0xPolygon/bor",
+  "fetched_at": "2026-10-06T07:37:26Z",
+  "ignored_tag_count": 4,
+  "releases": [
+    {
+      "tag": "v2.10.2",
+      "name": "v2.10.2",
+      "published_at": "2026-09-30T09:59:41Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2"
+    },
+    {
+      "tag": "v2.10.2-preconf2",
+      "name": "v2.10.2-preconf2 (Testing Only)",
+      "published_at": "2026-09-10T17:29:00Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-preconf2"
+    },
+    {
+      "tag": "v2.10.2-preconf",
+      "name": "v2.10.2-preconf (Testing Only)",
+      "published_at": "2026-09-08T20:13:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-preconf"
+    },
+    {
+      "tag": "v2.10.2-beta5",
+      "name": "v2.10.2-beta5",
+      "published_at": "2026-09-28T20:46:54Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-beta5"
+    },
+    {
+      "tag": "v2.10.2-beta4",
+      "name": "v2.10.2-beta4",
+      "published_at": "2026-09-28T16:52:19Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-beta4"
+    },
+    {
+      "tag": "v2.10.2-beta3",
+      "name": "v2.10.2-beta3",
+      "published_at": "2026-09-23T19:19:11Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-beta3"
+    },
+    {
+      "tag": "v2.10.2-beta2",
+      "name": "v2.10.2-beta2",
+      "published_at": "2026-09-22T23:07:44Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-beta2"
+    },
+    {
+      "tag": "v2.10.2-beta",
+      "name": "v2.10.2-beta",
+      "published_at": "2026-09-07T11:51:53Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2-beta"
+    },
+    {
+      "tag": "v2.10.1",
+      "name": "v2.10.1",
+      "published_at": "2026-08-26T16:36:08Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.1"
+    },
+    {
+      "tag": "v2.10.1-hotfix2",
+      "name": "v2.10.1-hotfix2",
+      "published_at": "2026-09-23T11:01:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.1-hotfix2"
+    },
+    {
+      "tag": "v2.10.1-hotfix",
+      "name": "v2.10.1-hotfix",
+      "published_at": "2026-09-22T15:17:13Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.1-hotfix"
+    },
+    {
+      "tag": "v2.10.1-beta",
+      "name": "v2.10.1-beta",
+      "published_at": "2026-08-18T16:50:27Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.1-beta"
+    },
+    {
+      "tag": "v2.10.0",
+      "name": "Bor v2.10.0 - Austin hardfork",
+      "published_at": "2026-08-13T15:53:30Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.10.0"
+    },
+    {
+      "tag": "v2.9.1-beta2",
+      "name": "v2.9.1-beta2",
+      "published_at": "2026-07-17T19:52:38Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.9.1-beta2"
+    },
+    {
+      "tag": "v2.9.1-beta",
+      "name": "v2.9.1-beta",
+      "published_at": "2026-07-15T16:24:19Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.9.1-beta"
+    },
+    {
+      "tag": "v2.9.0",
+      "name": "Bor v2.9.0 - Valencia hardfork",
+      "published_at": "2026-07-02T15:28:27Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.9.0"
+    },
+    {
+      "tag": "v2.8.3",
+      "name": "v2.8.3",
+      "published_at": "2026-06-12T16:11:45Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.3"
+    },
+    {
+      "tag": "v2.8.3-beta5",
+      "name": "v2.8.3-beta5",
+      "published_at": "2026-05-29T10:30:33Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.3-beta5"
+    },
+    {
+      "tag": "v2.8.3-beta4",
+      "name": "v2.8.3-beta4",
+      "published_at": "2026-05-27T20:51:42Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.3-beta4"
+    },
+    {
+      "tag": "v2.8.3-beta3",
+      "name": "v2.8.3-beta3",
+      "published_at": "2026-05-27T19:43:38Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.3-beta3"
+    },
+    {
+      "tag": "v2.8.3-beta2",
+      "name": "v2.8.3-beta2",
+      "published_at": "2026-05-27T19:32:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.3-beta2"
+    },
+    {
+      "tag": "v2.8.3-beta",
+      "name": "v2.8.3-beta",
+      "published_at": "2026-05-27T18:22:58Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.3-beta"
+    },
+    {
+      "tag": "v2.8.2",
+      "name": "v2.8.2",
+      "published_at": "2026-05-27T16:33:39Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.2"
+    },
+    {
+      "tag": "v2.8.1",
+      "name": "v2.8.1",
+      "published_at": "2026-05-26T17:59:26Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.1"
+    },
+    {
+      "tag": "v2.8.0",
+      "name": "v2.8.0",
+      "published_at": "2026-05-14T14:31:41Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.0"
+    },
+    {
+      "tag": "v2.8.0-beta2",
+      "name": "v2.8.0-beta2",
+      "published_at": "2026-05-14T12:07:39Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.0-beta2"
+    },
+    {
+      "tag": "v2.8.0-beta",
+      "name": "v2.8.0-beta",
+      "published_at": "2026-05-11T16:53:18Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.8.0-beta"
+    },
+    {
+      "tag": "v2.7.3",
+      "name": "v2.7.3",
+      "published_at": "2026-05-07T12:07:10Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.3"
+    },
+    {
+      "tag": "v2.7.3-beta",
+      "name": "v2.7.3-beta",
+      "published_at": "2026-04-29T18:08:12Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.3-beta"
+    },
+    {
+      "tag": "v2.7.2",
+      "name": "v2.7.2",
+      "published_at": "2026-04-24T06:47:52Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.2"
+    },
+    {
+      "tag": "v2.7.2-beta",
+      "name": "v2.7.2-beta",
+      "published_at": "2026-04-23T14:43:51Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.2-beta"
+    },
+    {
+      "tag": "v2.7.1",
+      "name": "v2.7.1",
+      "published_at": "2026-04-13T20:27:55Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.1"
+    },
+    {
+      "tag": "v2.7.1-beta",
+      "name": "v2.7.1-beta",
+      "published_at": "2026-04-03T20:45:43Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.1-beta"
+    },
+    {
+      "tag": "v2.7.0",
+      "name": "v2.7.0",
+      "published_at": "2026-03-26T16:43:32Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.0"
+    },
+    {
+      "tag": "v2.7.0-beta5",
+      "name": "v2.7.0-beta5",
+      "published_at": "2026-03-24T13:57:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.0-beta5"
+    },
+    {
+      "tag": "v2.7.0-beta4",
+      "name": "v2.7.0-beta4",
+      "published_at": "2026-03-24T13:20:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.0-beta4"
+    },
+    {
+      "tag": "v2.7.0-beta3",
+      "name": "v2.7.0-beta3",
+      "published_at": "2026-03-19T12:32:33Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.0-beta3"
+    },
+    {
+      "tag": "v2.7.0-beta2",
+      "name": "v2.7.0-beta2",
+      "published_at": "2026-03-16T13:25:28Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.0-beta2"
+    },
+    {
+      "tag": "v2.7.0-beta",
+      "name": "v2.7.0-beta",
+      "published_at": "2026-03-13T09:47:58Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.7.0-beta"
+    },
+    {
+      "tag": "v2.6.5",
+      "name": "v2.6.5",
+      "published_at": "2026-03-18T22:38:48Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.5"
+    },
+    {
+      "tag": "v2.6.3",
+      "name": "v2.6.3",
+      "published_at": "2026-03-11T12:20:39Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.3"
+    },
+    {
+      "tag": "v2.6.3-beta3",
+      "name": "v2.6.3-beta3",
+      "published_at": "2026-03-10T13:33:19Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.3-beta3"
+    },
+    {
+      "tag": "v2.6.3-beta2",
+      "name": "v2.6.3-beta2",
+      "published_at": "2026-03-09T11:23:02Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.3-beta2"
+    },
+    {
+      "tag": "v2.6.3-beta",
+      "name": "v2.6.3-beta",
+      "published_at": "2026-03-06T02:37:29Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.3-beta"
+    },
+    {
+      "tag": "v2.6.2",
+      "name": "v2.6.2",
+      "published_at": "2026-03-04T16:24:14Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.2"
+    },
+    {
+      "tag": "v2.6.2-beta2",
+      "name": "v2.6.2-beta2",
+      "published_at": "2026-02-28T11:19:49Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.2-beta2"
+    },
+    {
+      "tag": "v2.6.2-beta",
+      "name": "v2.6.2-beta",
+      "published_at": "2026-02-23T08:47:39Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.2-beta"
+    },
+    {
+      "tag": "v2.6.1-beta",
+      "name": "v2.6.1-beta",
+      "published_at": "2026-02-20T14:39:33Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.1-beta"
+    },
+    {
+      "tag": "v2.6.0",
+      "name": "v2.6.0",
+      "published_at": "2026-02-19T10:23:49Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.0"
+    },
+    {
+      "tag": "v2.6.0-beta2",
+      "name": "v2.6.0-beta2",
+      "published_at": "2026-02-13T18:37:16Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.0-beta2"
+    },
+    {
+      "tag": "v2.6.0-beta",
+      "name": "v2.6.0-beta",
+      "published_at": "2026-02-05T11:22:24Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.6.0-beta"
+    },
+    {
+      "tag": "v2.5.9",
+      "name": "v2.5.9",
+      "published_at": "2026-02-17T16:17:13Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.9"
+    },
+    {
+      "tag": "v2.5.8",
+      "name": "v2.5.8",
+      "published_at": "2026-01-29T03:43:45Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.8"
+    },
+    {
+      "tag": "v2.5.8-beta2",
+      "name": "v2.5.8-beta2",
+      "published_at": "2026-01-28T19:27:18Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.8-beta2"
+    },
+    {
+      "tag": "v2.5.8-beta",
+      "name": "v2.5.8-beta",
+      "published_at": "2026-01-27T18:23:27Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.8-beta"
+    },
+    {
+      "tag": "v2.5.7",
+      "name": "v2.5.7",
+      "published_at": "2026-01-13T16:38:25Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.7"
+    },
+    {
+      "tag": "v2.5.7-beta2",
+      "name": "v2.5.7-beta2",
+      "published_at": "2026-01-13T07:30:46Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.7-beta2"
+    },
+    {
+      "tag": "v2.5.7-beta",
+      "name": "v2.5.7-beta",
+      "published_at": "2026-01-10T05:15:54Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.7-beta"
+    },
+    {
+      "tag": "v2.5.6",
+      "name": "v2.5.6",
+      "published_at": "2026-01-07T18:29:24Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6"
+    },
+    {
+      "tag": "v2.5.6-beta6",
+      "name": "v2.5.6-beta6",
+      "published_at": "2026-01-06T17:49:41Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6-beta6"
+    },
+    {
+      "tag": "v2.5.6-beta5",
+      "name": "v2.5.6-beta5",
+      "published_at": "2026-01-05T11:59:24Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6-beta5"
+    },
+    {
+      "tag": "v2.5.6-beta4",
+      "name": "v2.5.6-beta4",
+      "published_at": "2025-12-18T09:27:51Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6-beta4"
+    },
+    {
+      "tag": "v2.5.6-beta3",
+      "name": "v2.5.6-beta3",
+      "published_at": "2025-12-17T21:20:38Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6-beta3"
+    },
+    {
+      "tag": "v2.5.6-beta2",
+      "name": "v2.5.6-beta2",
+      "published_at": "2025-12-16T17:49:39Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6-beta2"
+    },
+    {
+      "tag": "v2.5.6-beta",
+      "name": "v2.5.6-beta",
+      "published_at": "2025-12-16T15:54:06Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.6-beta"
+    },
+    {
+      "tag": "v2.5.5",
+      "name": "v2.5.5",
+      "published_at": "2025-12-15T10:10:26Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.5"
+    },
+    {
+      "tag": "v2.5.5-beta3",
+      "name": "v2.5.5-beta3",
+      "published_at": "2025-12-13T10:11:29Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.5-beta3"
+    },
+    {
+      "tag": "v2.5.5-beta2",
+      "name": "v2.5.5-beta2",
+      "published_at": "2025-12-13T04:17:01Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.5-beta2"
+    },
+    {
+      "tag": "v2.5.5-beta",
+      "name": "v2.5.5-beta",
+      "published_at": "2025-12-12T17:44:40Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.5-beta"
+    },
+    {
+      "tag": "v2.5.4",
+      "name": "v2.5.4",
+      "published_at": "2025-12-09T15:11:42Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.4"
+    },
+    {
+      "tag": "v2.5.3",
+      "name": "v2.5.3",
+      "published_at": "2025-12-04T10:11:20Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.3"
+    },
+    {
+      "tag": "v2.5.3-beta",
+      "name": "v2.5.3-beta",
+      "published_at": "2025-12-02T10:14:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.3-beta"
+    },
+    {
+      "tag": "v2.5.2",
+      "name": "v2.5.2",
+      "published_at": "2025-11-25T19:08:08Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.2"
+    },
+    {
+      "tag": "v2.5.2-beta2",
+      "name": "v2.5.2-beta2",
+      "published_at": "2025-11-20T15:07:45Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.2-beta2"
+    },
+    {
+      "tag": "v2.5.2-beta",
+      "name": "v2.5.2-beta",
+      "published_at": "2025-11-19T16:58:20Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.2-beta"
+    },
+    {
+      "tag": "v2.5.1",
+      "name": "v2.5.1",
+      "published_at": "2025-11-17T17:35:45Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.1"
+    },
+    {
+      "tag": "v2.5.0",
+      "name": "v2.5.0",
+      "published_at": "2025-11-17T10:02:23Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.5.0"
+    },
+    {
+      "tag": "v2.4.0-beta5",
+      "name": "v2.4.0-beta5",
+      "published_at": "2025-11-08T23:27:39Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.4.0-beta5"
+    },
+    {
+      "tag": "v2.4.0-beta4",
+      "name": "v2.4.0-beta4",
+      "published_at": "2025-11-05T12:43:10Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.4.0-beta4"
+    },
+    {
+      "tag": "v2.4.0-beta3",
+      "name": "v2.4.0-beta3",
+      "published_at": "2025-11-04T17:24:58Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.4.0-beta3"
+    },
+    {
+      "tag": "v2.4.0-beta2",
+      "name": "v2.4.0-beta2",
+      "published_at": "2025-11-03T09:15:15Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.4.0-beta2"
+    },
+    {
+      "tag": "v2.4.0-beta",
+      "name": "v2.4.0-beta",
+      "published_at": "2025-10-31T11:20:11Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.4.0-beta"
+    },
+    {
+      "tag": "v2.3.4",
+      "name": "v2.3.4",
+      "published_at": "2025-10-20T18:37:58Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.4"
+    },
+    {
+      "tag": "v2.3.4-beta",
+      "name": "v2.3.4-beta",
+      "published_at": "2025-10-16T10:25:08Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.4-beta"
+    },
+    {
+      "tag": "v2.3.3",
+      "name": "v2.3.3",
+      "published_at": "2025-10-15T14:50:09Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.3"
+    },
+    {
+      "tag": "v2.3.2-beta2",
+      "name": "v2.3.2-beta2",
+      "published_at": "2025-10-10T19:14:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.2-beta2"
+    },
+    {
+      "tag": "v2.3.2-beta",
+      "name": "v2.3.2-beta",
+      "published_at": "2025-10-07T10:09:53Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.2-beta"
+    },
+    {
+      "tag": "v2.3.1",
+      "name": "v2.3.1",
+      "published_at": "2025-10-03T19:26:02Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.1"
+    },
+    {
+      "tag": "v2.3.1-hotfix2",
+      "name": "v2.3.1-hotfix2",
+      "published_at": "2025-10-10T16:17:24Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.1-hotfix2"
+    },
+    {
+      "tag": "v2.3.1-hotfix",
+      "name": "v2.3.1-hotfix",
+      "published_at": "2025-10-08T21:27:22Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.1-hotfix"
+    },
+    {
+      "tag": "v2.3.1-beta3",
+      "name": "v2.3.1-beta3",
+      "published_at": "2025-09-29T17:16:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.1-beta3"
+    },
+    {
+      "tag": "v2.3.1-beta2",
+      "name": "v2.3.1-beta2",
+      "published_at": "2025-09-29T13:14:15Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.1-beta2"
+    },
+    {
+      "tag": "v2.3.1-beta",
+      "name": "v2.3.1-beta",
+      "published_at": "2025-09-28T20:09:16Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.1-beta"
+    },
+    {
+      "tag": "v2.3.0",
+      "name": "v2.3.0",
+      "published_at": "2025-09-24T19:58:05Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.0"
+    },
+    {
+      "tag": "v2.3.0-beta4",
+      "name": "v2.3.0-beta4",
+      "published_at": "2025-09-18T07:50:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.0-beta4"
+    },
+    {
+      "tag": "v2.3.0-beta3",
+      "name": "v2.3.0-beta3",
+      "published_at": "2025-09-09T05:49:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.0-beta3"
+    },
+    {
+      "tag": "v2.3.0-beta2",
+      "name": "v2.3.0-beta2",
+      "published_at": "2025-09-04T18:55:03Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.0-beta2"
+    },
+    {
+      "tag": "v2.3.0-beta",
+      "name": "v2.3.0-beta",
+      "published_at": "2025-08-31T16:24:07Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.3.0-beta"
+    },
+    {
+      "tag": "v2.2.11",
+      "name": "v2.2.11",
+      "published_at": "2025-09-17T12:23:26Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.11"
+    },
+    {
+      "tag": "v2.2.11-beta3",
+      "name": "v2.2.11-beta3",
+      "published_at": "2025-09-16T18:27:27Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.11-beta3"
+    },
+    {
+      "tag": "v2.2.11-beta2",
+      "name": "v2.2.11-beta2",
+      "published_at": "2025-09-10T11:29:21Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.11-beta2"
+    },
+    {
+      "tag": "v2.2.11-beta",
+      "name": "v2.2.11-beta",
+      "published_at": "2025-09-10T10:53:58Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.11-beta"
+    },
+    {
+      "tag": "v2.2.10",
+      "name": "v2.2.10",
+      "published_at": "2025-08-21T10:45:30Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.10"
+    },
+    {
+      "tag": "v2.2.10-beta2",
+      "name": "v2.2.10-beta2",
+      "published_at": "2025-08-20T11:48:11Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.10-beta2"
+    },
+    {
+      "tag": "v2.2.10-beta",
+      "name": "v2.2.10-beta",
+      "published_at": "2025-08-19T05:25:11Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.10-beta"
+    },
+    {
+      "tag": "v2.2.9",
+      "name": "v2.2.9",
+      "published_at": "2025-07-17T04:33:46Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.9"
+    },
+    {
+      "tag": "v2.2.9-beta2",
+      "name": "v2.2.9-beta2",
+      "published_at": "2025-07-16T04:46:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.9-beta2"
+    },
+    {
+      "tag": "v2.2.9-beta",
+      "name": "v2.2.9-beta",
+      "published_at": "2025-07-15T06:02:50Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.9-beta"
+    },
+    {
+      "tag": "v2.2.8",
+      "name": "v2.2.8",
+      "published_at": "2025-07-10T21:56:07Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.8"
+    },
+    {
+      "tag": "v2.2.7",
+      "name": "v2.2.7",
+      "published_at": "2025-07-10T21:44:58Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.7"
+    },
+    {
+      "tag": "v2.2.6",
+      "name": "v2.2.6",
+      "published_at": "2025-07-10T20:36:36Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.6"
+    },
+    {
+      "tag": "v2.2.5",
+      "name": "v2.2.5",
+      "published_at": "2025-07-03T21:12:40Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.5"
+    },
+    {
+      "tag": "v2.2.4",
+      "name": "v2.2.4",
+      "published_at": "2025-07-03T07:10:07Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.4"
+    },
+    {
+      "tag": "v2.2.4-beta2",
+      "name": "v2.2.4-beta2",
+      "published_at": "2025-06-30T11:12:59Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.4-beta2"
+    },
+    {
+      "tag": "v2.2.4-beta",
+      "name": "v2.2.4-beta",
+      "published_at": "2025-06-27T10:08:08Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.4-beta"
+    },
+    {
+      "tag": "v2.2.3-beta",
+      "name": "v2.2.3-beta",
+      "published_at": "2025-06-26T07:07:06Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.3-beta"
+    },
+    {
+      "tag": "v2.2.2-beta",
+      "name": "v2.2.2-beta",
+      "published_at": "2025-06-24T17:15:55Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.2-beta"
+    },
+    {
+      "tag": "v2.2.1-beta",
+      "name": "v2.2.1-beta",
+      "published_at": "2025-06-24T06:39:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.1-beta"
+    },
+    {
+      "tag": "v2.2.0-test",
+      "name": "v2.2.0-test",
+      "published_at": "2025-06-16T06:28:03Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.0-test"
+    },
+    {
+      "tag": "v2.2.0-beta",
+      "name": "v2.2.0-beta",
+      "published_at": "2025-06-18T19:44:54Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.2.0-beta"
+    },
+    {
+      "tag": "v2.1.1",
+      "name": "v2.1.1",
+      "published_at": "2025-06-17T09:49:59Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.1.1"
+    },
+    {
+      "tag": "v2.1.0",
+      "name": "v2.1.0",
+      "published_at": "2025-06-12T07:46:11Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.1.0"
+    },
+    {
+      "tag": "v2.1.0-beta4",
+      "name": "v2.1.0-beta4",
+      "published_at": "2025-06-04T08:04:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.1.0-beta4"
+    },
+    {
+      "tag": "v2.1.0-beta",
+      "name": "v2.1.0-beta",
+      "published_at": "2025-06-03T08:54:43Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.1.0-beta"
+    },
+    {
+      "tag": "v2.0.4",
+      "name": "v2.0.4",
+      "published_at": "2025-06-12T03:26:32Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.4"
+    },
+    {
+      "tag": "v2.0.4-beta",
+      "name": "v2.0.4-beta",
+      "published_at": "2025-05-15T06:02:28Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.4-beta"
+    },
+    {
+      "tag": "v2.0.3",
+      "name": "v2.0.3",
+      "published_at": "2025-05-09T19:10:22Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.3"
+    },
+    {
+      "tag": "v2.0.2",
+      "name": "v2.0.2",
+      "published_at": "2025-05-09T09:54:34Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.2"
+    },
+    {
+      "tag": "v2.0.2-beta",
+      "name": "v2.0.2-beta",
+      "published_at": "2025-03-26T13:03:16Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.2-beta"
+    },
+    {
+      "tag": "v2.0.1",
+      "name": "v2.0.1",
+      "published_at": "2025-03-19T13:37:00Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.1"
+    },
+    {
+      "tag": "v2.0.1-beta",
+      "name": "v2.0.1-beta",
+      "published_at": "2025-03-04T08:50:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.1-beta"
+    },
+    {
+      "tag": "v2.0.0",
+      "name": "v2.0.0",
+      "published_at": "2025-02-17T13:05:39Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.0"
+    },
+    {
+      "tag": "v2.0.0-v2",
+      "name": "v2.0.0-v2",
+      "published_at": "2025-03-13T13:18:33Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.0-v2"
+    },
+    {
+      "tag": "v2.0.0-beta2",
+      "name": "v2.0.0-beta2",
+      "published_at": "2025-02-10T16:17:45Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.0-beta2"
+    },
+    {
+      "tag": "v2.0.0-beta",
+      "name": "v2.0.0-beta",
+      "published_at": "2025-01-30T19:59:42Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.0.0-beta"
+    },
+    {
+      "tag": "v1.5.5",
+      "name": "v1.5.5",
+      "published_at": "2025-01-30T13:14:42Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.5"
+    },
+    {
+      "tag": "v1.5.4",
+      "name": "v1.5.4",
+      "published_at": "2025-01-10T19:15:32Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.4"
+    },
+    {
+      "tag": "v1.5.4-beta",
+      "name": "v1.5.4-beta",
+      "published_at": "2025-01-02T16:11:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.4-beta"
+    },
+    {
+      "tag": "v1.5.3",
+      "name": "v1.5.3",
+      "published_at": "2024-12-11T08:43:44Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.3"
+    },
+    {
+      "tag": "v1.5.3-beta",
+      "name": "v1.5.3-beta",
+      "published_at": "2024-12-10T08:00:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.3-beta"
+    },
+    {
+      "tag": "v1.5.2",
+      "name": "v1.5.2",
+      "published_at": "2024-10-30T15:04:05Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.2"
+    },
+    {
+      "tag": "v1.5.1",
+      "name": "v1.5.1",
+      "published_at": "2024-10-28T15:30:27Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.1"
+    },
+    {
+      "tag": "v1.5.0",
+      "name": "v1.5.0",
+      "published_at": "2024-10-23T17:18:20Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0"
+    },
+    {
+      "tag": "v1.5.0-beta6",
+      "name": "v1.5.0-beta6",
+      "published_at": "2024-10-17T21:47:40Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0-beta6"
+    },
+    {
+      "tag": "v1.5.0-beta5",
+      "name": "v1.5.0-beta5",
+      "published_at": "2024-10-16T22:13:19Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0-beta5"
+    },
+    {
+      "tag": "v1.5.0-beta4",
+      "name": "v1.5.0-beta4",
+      "published_at": "2024-10-15T18:34:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0-beta4"
+    },
+    {
+      "tag": "v1.5.0-beta3",
+      "name": "v1.5.0-beta3",
+      "published_at": "2024-10-09T15:09:28Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0-beta3"
+    },
+    {
+      "tag": "v1.5.0-beta2",
+      "name": "v1.5.0-beta2",
+      "published_at": "2024-10-04T17:50:40Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0-beta2"
+    },
+    {
+      "tag": "v1.5.0-beta",
+      "name": "v1.5.0-beta",
+      "published_at": "2024-10-03T17:47:25Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.5.0-beta"
+    },
+    {
+      "tag": "v1.4.1",
+      "name": "v1.4.1",
+      "published_at": "2024-09-18T15:51:25Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.4.1"
+    },
+    {
+      "tag": "v1.4.0",
+      "name": "v1.4.0",
+      "published_at": "2024-09-13T13:24:04Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.4.0"
+    },
+    {
+      "tag": "v1.4.0-beta2",
+      "name": "v1.4.0-beta2",
+      "published_at": "2024-09-13T17:23:14Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.4.0-beta2"
+    },
+    {
+      "tag": "v1.4.0-beta",
+      "name": "v1.4.0-beta",
+      "published_at": "2024-09-05T15:45:30Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.4.0-beta"
+    },
+    {
+      "tag": "v1.3.7",
+      "name": "v1.3.7",
+      "published_at": "2024-08-12T06:39:29Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.7"
+    },
+    {
+      "tag": "v1.3.6",
+      "name": "v1.3.6",
+      "published_at": "2024-08-07T13:57:50Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.6"
+    },
+    {
+      "tag": "v1.3.5-beta",
+      "name": "v1.3.5-beta",
+      "published_at": "2024-07-30T04:36:51Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.5-beta"
+    },
+    {
+      "tag": "v1.3.4",
+      "name": "v1.3.4",
+      "published_at": "2024-07-25T12:18:30Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.4"
+    },
+    {
+      "tag": "v1.3.4-beta3",
+      "name": "v1.3.4-beta3",
+      "published_at": "2024-07-11T11:35:53Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.4-beta3"
+    },
+    {
+      "tag": "v1.3.4-beta2",
+      "name": "v1.3.4-beta2",
+      "published_at": "2024-06-21T15:34:04Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.4-beta2"
+    },
+    {
+      "tag": "v1.3.4-beta",
+      "name": "v1.3.4-beta",
+      "published_at": "2024-06-19T05:58:15Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.4-beta"
+    },
+    {
+      "tag": "v1.3.3",
+      "name": "v1.3.3",
+      "published_at": "2024-06-12T08:15:02Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.3"
+    },
+    {
+      "tag": "v1.3.3-beta3",
+      "name": "v1.3.3-beta3",
+      "published_at": "2024-06-10T07:06:27Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.3-beta3"
+    },
+    {
+      "tag": "v1.3.3-beta2",
+      "name": "v1.3.3-beta2",
+      "published_at": "2024-06-06T05:37:18Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.3-beta2"
+    },
+    {
+      "tag": "v1.3.3-beta",
+      "name": "v1.3.3-beta",
+      "published_at": "2024-05-30T09:10:00Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.3-beta"
+    },
+    {
+      "tag": "v1.3.2",
+      "name": "v1.3.2",
+      "published_at": "2024-05-10T10:48:40Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.2"
+    },
+    {
+      "tag": "v1.3.2-beta-2",
+      "name": "v1.3.2-beta-2",
+      "published_at": "2024-05-06T15:30:04Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.2-beta-2"
+    },
+    {
+      "tag": "v1.3.2-beta",
+      "name": "v1.3.2-beta",
+      "published_at": "2024-05-02T19:58:26Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.2-beta"
+    },
+    {
+      "tag": "v1.3.1",
+      "name": "v1.3.1",
+      "published_at": "2024-04-29T06:52:11Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.1"
+    },
+    {
+      "tag": "v1.3.1-beta-1",
+      "name": "v1.3.1-beta-1",
+      "published_at": "2024-04-19T07:57:47Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.1-beta-1"
+    },
+    {
+      "tag": "v1.3.0",
+      "name": "v1.3.0",
+      "published_at": "2024-04-12T09:52:29Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.0"
+    },
+    {
+      "tag": "v1.3.0-beta-2",
+      "name": "v1.3.0-beta-2",
+      "published_at": "2024-03-26T12:33:56Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.0-beta-2"
+    },
+    {
+      "tag": "v1.3.0-beta-1",
+      "name": "v1.3.0-beta-1",
+      "published_at": "2024-03-26T09:21:23Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.3.0-beta-1"
+    },
+    {
+      "tag": "v1.2.9-beta",
+      "name": "v1.2.9-beta",
+      "published_at": "2024-03-19T10:59:16Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.9-beta"
+    },
+    {
+      "tag": "v1.2.8",
+      "name": "v1.2.8",
+      "published_at": "2024-03-15T06:31:43Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.8"
+    },
+    {
+      "tag": "v1.2.8-beta",
+      "name": "v1.2.8-beta",
+      "published_at": "2024-03-12T12:52:27Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.8-beta"
+    },
+    {
+      "tag": "v1.2.7",
+      "name": "v1.2.7",
+      "published_at": "2024-03-05T18:51:59Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.7"
+    },
+    {
+      "tag": "v1.2.7-beta4",
+      "name": "v1.2.7-beta4",
+      "published_at": "2024-02-29T03:16:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.7-beta4"
+    },
+    {
+      "tag": "v1.2.7-beta3",
+      "name": "v1.2.7-beta3",
+      "published_at": "2024-02-28T13:02:31Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.7-beta3"
+    },
+    {
+      "tag": "v1.2.7-beta2",
+      "name": "v1.2.7-beta2",
+      "published_at": "2024-02-27T13:36:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.7-beta2"
+    },
+    {
+      "tag": "v1.2.7-beta",
+      "name": "v1.2.7-beta",
+      "published_at": "2024-02-23T12:45:26Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.7-beta"
+    },
+    {
+      "tag": "v1.2.6-beta",
+      "name": "v1.2.6-beta",
+      "published_at": "2024-02-14T07:55:01Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.6-beta"
+    },
+    {
+      "tag": "v1.2.5-beta",
+      "name": "v1.2.5-beta",
+      "published_at": "2024-02-09T18:44:58Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.5-beta"
+    },
+    {
+      "tag": "v1.2.4-beta",
+      "name": "v1.2.4-beta",
+      "published_at": "2024-01-30T08:20:24Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.4-beta"
+    },
+    {
+      "tag": "v1.2.3",
+      "name": "v1.2.3",
+      "published_at": "2024-01-23T06:55:21Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.3"
+    },
+    {
+      "tag": "v1.2.2",
+      "name": "v1.2.2",
+      "published_at": "2024-01-11T05:27:49Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.2"
+    },
+    {
+      "tag": "v1.2.2-beta",
+      "name": "v1.2.2-beta",
+      "published_at": "2024-01-04T11:36:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.2-beta"
+    },
+    {
+      "tag": "v1.2.1",
+      "name": "v1.2.1",
+      "published_at": "2023-12-19T03:49:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.1"
+    },
+    {
+      "tag": "v1.2.1-beta",
+      "name": "v1.2.1-beta",
+      "published_at": "2023-12-18T10:17:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.1-beta"
+    },
+    {
+      "tag": "v1.2.0",
+      "name": "v1.2.0",
+      "published_at": "2023-11-29T16:03:03Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.0"
+    },
+    {
+      "tag": "v1.2.0-beta2",
+      "name": "v1.2.0-beta2",
+      "published_at": "2023-11-24T07:55:10Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.0-beta2"
+    },
+    {
+      "tag": "v1.2.0-beta",
+      "name": "v1.2.0-beta",
+      "published_at": "2023-11-22T06:50:49Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.2.0-beta"
+    },
+    {
+      "tag": "v1.1.0",
+      "name": "v1.1.0",
+      "published_at": "2023-11-09T13:05:28Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0"
+    },
+    {
+      "tag": "v1.1.0-amoy-3",
+      "name": "v1.1.0-amoy-3",
+      "published_at": "2024-01-10T09:02:16Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-amoy-3"
+    },
+    {
+      "tag": "v1.1.0-amoy-2",
+      "name": "v1.1.0-amoy-2",
+      "published_at": "2024-01-05T08:39:56Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-amoy-2"
+    },
+    {
+      "tag": "v1.1.0-amoy",
+      "name": "v1.1.0-amoy",
+      "published_at": "2023-11-22T06:07:03Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-amoy"
+    },
+    {
+      "tag": "v1.1.0-beta4",
+      "name": "v1.1.0-beta4",
+      "published_at": "2023-10-31T19:23:07Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-beta4"
+    },
+    {
+      "tag": "v1.1.0-beta3",
+      "name": "v1.1.0-beta3",
+      "published_at": "2023-10-25T10:24:53Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-beta3"
+    },
+    {
+      "tag": "v1.1.0-beta2",
+      "name": "v1.1.0-beta2",
+      "published_at": "2023-10-18T06:57:02Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-beta2"
+    },
+    {
+      "tag": "v1.1.0-beta",
+      "name": "v1.1.0-beta",
+      "published_at": "2023-10-17T09:15:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.1.0-beta"
+    },
+    {
+      "tag": "v1.0.6",
+      "name": "v1.0.6",
+      "published_at": "2023-10-06T08:29:49Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.6"
+    },
+    {
+      "tag": "v1.0.6-beta-txpool",
+      "name": "v1.0.6-beta-txpool",
+      "published_at": "2023-10-31T00:08:19Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.6-beta-txpool"
+    },
+    {
+      "tag": "v1.0.5",
+      "name": "v1.0.5",
+      "published_at": "2023-10-05T15:56:11Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.5"
+    },
+    {
+      "tag": "v1.0.4",
+      "name": "v1.0.4",
+      "published_at": "2023-09-20T13:12:28Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.4"
+    },
+    {
+      "tag": "v1.0.4-beta",
+      "name": "v1.0.4-beta",
+      "published_at": "2023-09-19T06:28:43Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.4-beta"
+    },
+    {
+      "tag": "v1.0.3-beta",
+      "name": "v1.0.3-beta",
+      "published_at": "2023-09-14T06:52:33Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.3-beta"
+    },
+    {
+      "tag": "v1.0.2-beta",
+      "name": "v1.0.2-beta",
+      "published_at": "2023-09-13T10:24:44Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.2-beta"
+    },
+    {
+      "tag": "v1.0.1-beta",
+      "name": "v1.0.1-beta",
+      "published_at": "2023-09-12T20:25:05Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.1-beta"
+    },
+    {
+      "tag": "v1.0.0-beta",
+      "name": "v1.0.0-beta",
+      "published_at": "2023-08-29T18:53:46Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v1.0.0-beta"
+    },
+    {
+      "tag": "v0.5.0",
+      "name": "v0.5.0",
+      "published_at": "2023-09-03T09:52:18Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0"
+    },
+    {
+      "tag": "v0.5.0-beta-6",
+      "name": "v0.5.0-beta-6",
+      "published_at": "2023-08-28T18:35:56Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0-beta-6"
+    },
+    {
+      "tag": "v0.5.0-beta-5",
+      "name": "v0.5.0-beta-5",
+      "published_at": "2023-08-18T06:33:20Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0-beta-5"
+    },
+    {
+      "tag": "v0.5.0-beta-4",
+      "name": "v0.5.0-beta-4",
+      "published_at": "2023-08-08T08:07:04Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0-beta-4"
+    },
+    {
+      "tag": "v0.5.0-beta-3",
+      "name": "v0.5.0-beta-3",
+      "published_at": "2023-08-04T19:44:52Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0-beta-3"
+    },
+    {
+      "tag": "v0.5.0-beta-2",
+      "name": "v0.5.0-beta-2",
+      "published_at": "2023-08-04T09:58:29Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0-beta-2"
+    },
+    {
+      "tag": "v0.5.0-beta-1",
+      "name": "v0.5.0-beta-1",
+      "published_at": "2023-08-03T10:31:32Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.5.0-beta-1"
+    },
+    {
+      "tag": "v0.4.0",
+      "name": "v0.4.0",
+      "published_at": "2023-06-27T09:05:23Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0"
+    },
+    {
+      "tag": "v0.4.0-beta-6",
+      "name": "v0.4.0-beta-6",
+      "published_at": "2023-06-20T18:27:43Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0-beta-6"
+    },
+    {
+      "tag": "v0.4.0-beta-5",
+      "name": "v0.4.0-beta-5",
+      "published_at": "2023-06-12T16:24:11Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0-beta-5"
+    },
+    {
+      "tag": "v0.4.0-beta-4",
+      "name": "v0.4.0-beta-4",
+      "published_at": "2023-06-09T03:40:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0-beta-4"
+    },
+    {
+      "tag": "v0.4.0-beta-3",
+      "name": "v0.4.0-beta-3",
+      "published_at": "2023-06-08T21:19:10Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0-beta-3"
+    },
+    {
+      "tag": "v0.4.0-beta-2",
+      "name": "v0.4.0-beta-2",
+      "published_at": "2023-06-08T05:59:20Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0-beta-2"
+    },
+    {
+      "tag": "v0.4.0-beta",
+      "name": "v0.4.0-beta",
+      "published_at": "2023-06-07T15:32:08Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.4.0-beta"
+    },
+    {
+      "tag": "v0.3.10-beta-3",
+      "name": "v0.3.10-beta-3",
+      "published_at": "2023-06-09T03:37:46Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.10-beta-3"
+    },
+    {
+      "tag": "v0.3.10-beta-2",
+      "name": "v0.3.10-beta-2",
+      "published_at": "2023-06-07T07:42:58Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.10-beta-2"
+    },
+    {
+      "tag": "v0.3.9",
+      "name": "v0.3.9",
+      "published_at": "2023-05-10T21:08:03Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.9"
+    },
+    {
+      "tag": "v0.3.9-beta-4",
+      "name": "v0.3.9-beta-4",
+      "published_at": "2023-05-08T08:22:24Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.9-beta-4"
+    },
+    {
+      "tag": "v0.3.9-beta-3",
+      "name": "v0.3.9-beta-3",
+      "published_at": "2023-05-04T13:12:05Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.9-beta-3"
+    },
+    {
+      "tag": "v0.3.9-beta-2",
+      "name": "v0.3.9-beta-2",
+      "published_at": "2023-05-02T13:26:14Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.9-beta-2"
+    },
+    {
+      "tag": "v0.3.9-beta",
+      "name": "v0.3.9-beta",
+      "published_at": "2023-04-17T12:23:06Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.9-beta"
+    },
+    {
+      "tag": "v0.3.8-beta",
+      "name": "v0.3.8-beta",
+      "published_at": "2023-04-05T19:09:23Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.8-beta"
+    },
+    {
+      "tag": "v0.3.7",
+      "name": "v0.3.7",
+      "published_at": "2023-03-23T07:35:18Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.7"
+    },
+    {
+      "tag": "v0.3.6",
+      "name": "v0.3.6",
+      "published_at": "2023-03-15T13:16:57Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.6"
+    },
+    {
+      "tag": "v0.3.5",
+      "name": "v0.3.5",
+      "published_at": "2023-03-07T07:10:01Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.5"
+    },
+    {
+      "tag": "v0.3.5-pprof",
+      "name": "v0.3.5-pprof",
+      "published_at": "2023-02-08T21:52:59Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.5-pprof"
+    },
+    {
+      "tag": "v0.3.5-beta",
+      "name": "v0.3.5-beta",
+      "published_at": "2023-02-03T13:06:21Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.5-beta"
+    },
+    {
+      "tag": "v0.3.4",
+      "name": "v0.3.4",
+      "published_at": "2023-02-20T15:56:13Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.4"
+    },
+    {
+      "tag": "v0.3.4-beta3",
+      "name": "v0.3.4-beta3",
+      "published_at": "2023-02-15T08:55:09Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.4-beta3"
+    },
+    {
+      "tag": "v0.3.4-beta2",
+      "name": "v0.3.4-beta2",
+      "published_at": "2023-01-20T02:22:32Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.4-beta2"
+    },
+    {
+      "tag": "v0.3.4-beta",
+      "name": "v0.3.4-beta",
+      "published_at": "2023-01-19T09:27:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.4-beta"
+    },
+    {
+      "tag": "v0.3.3",
+      "name": "v0.3.3",
+      "published_at": "2023-01-09T18:51:51Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.3"
+    },
+    {
+      "tag": "v0.3.3-beta3",
+      "name": "v0.3.3-beta3",
+      "published_at": "2023-01-26T01:31:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.3-beta3"
+    },
+    {
+      "tag": "v0.3.3-beta2",
+      "name": "v0.3.3-beta2",
+      "published_at": "2023-01-20T03:19:43Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.3-beta2"
+    },
+    {
+      "tag": "v0.3.2",
+      "name": "v0.3.2",
+      "published_at": "2023-01-05T06:45:57Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.2"
+    },
+    {
+      "tag": "v0.3.2-beta",
+      "name": "v0.3.2-beta",
+      "published_at": "2022-12-15T09:12:04Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.2-beta"
+    },
+    {
+      "tag": "v0.3.1-mumbai",
+      "name": "v0.3.1-mumbai",
+      "published_at": "2022-12-06T07:03:06Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.1-mumbai"
+    },
+    {
+      "tag": "v0.3.0",
+      "name": "v0.3.0",
+      "published_at": "2022-12-14T17:03:07Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0"
+    },
+    {
+      "tag": "v0.3.0-beta5",
+      "name": "v0.3.0-beta5",
+      "published_at": "2022-08-23T16:02:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0-beta5"
+    },
+    {
+      "tag": "v0.3.0-beta4",
+      "name": "v0.3.0-beta4",
+      "published_at": "2022-08-04T22:03:26Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0-beta4"
+    },
+    {
+      "tag": "v0.3.0-beta3",
+      "name": "v0.3.0-beta3",
+      "published_at": "2022-02-04T16:33:43Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0-beta3"
+    },
+    {
+      "tag": "v0.3.0-beta2",
+      "name": "v0.3.0-beta2",
+      "published_at": "2022-02-03T13:53:54Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0-beta2"
+    },
+    {
+      "tag": "v0.3.0-beta1",
+      "name": "v0.3.0-beta1",
+      "published_at": "2022-02-02T11:44:17Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0-beta1"
+    },
+    {
+      "tag": "v0.3.0-beta",
+      "name": "v0.3.0-beta",
+      "published_at": "2022-11-25T16:33:23Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.3.0-beta"
+    },
+    {
+      "tag": "v0.2.17",
+      "name": "v0.2.17",
+      "published_at": "2022-08-30T12:45:24Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.17"
+    },
+    {
+      "tag": "v0.2.16",
+      "name": "v0.2.16",
+      "published_at": "2022-05-20T10:29:02Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.16"
+    },
+    {
+      "tag": "v0.2.16-beta2",
+      "name": "v0.2.16-beta2",
+      "published_at": "2022-04-26T16:39:26Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.16-beta2"
+    },
+    {
+      "tag": "v0.2.16-beta1",
+      "name": "v0.2.16-beta1",
+      "published_at": "2022-04-26T15:10:41Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.16-beta1"
+    },
+    {
+      "tag": "v0.2.15-beta2",
+      "name": "v0.2.15-beta2",
+      "published_at": "2022-02-24T14:03:53Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.15-beta2"
+    },
+    {
+      "tag": "v0.2.15-beta1",
+      "name": "v0.2.15-beta1",
+      "published_at": "2022-02-16T11:32:41Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.15-beta1"
+    },
+    {
+      "tag": "v0.2.14",
+      "name": "v0.2.14",
+      "published_at": "2022-01-21T10:39:09Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.14"
+    },
+    {
+      "tag": "v0.2.14-tmp-span-hotfix",
+      "name": "v0.2.14-tmp-span-hotfix",
+      "published_at": "2022-03-10T22:53:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.14-tmp-span-hotfix"
+    },
+    {
+      "tag": "v0.2.13",
+      "name": "v0.2.13",
+      "published_at": "2022-01-11T13:38:06Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.13"
+    },
+    {
+      "tag": "v0.2.13-beta2",
+      "name": "RLP Encode baseFee in Block Header",
+      "published_at": "2021-12-15T14:38:04Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.13-beta2"
+    },
+    {
+      "tag": "v0.2.13-beta1",
+      "name": "Activate London Fork on Mumbai Testnet",
+      "published_at": "2021-12-13T09:32:39Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.13-beta1"
+    },
+    {
+      "tag": "v0.2.12",
+      "name": "Bor update for Mainnet release",
+      "published_at": "2021-12-04T21:13:49Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.12"
+    },
+    {
+      "tag": "v0.2.12-beta1",
+      "name": "Bor Update for Mumbai Testnet",
+      "published_at": "2021-12-03T19:53:49Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.12-beta1"
+    },
+    {
+      "tag": "v0.2.11",
+      "name": "Fix for writing bor receipts to ancient db",
+      "published_at": "2021-12-01T15:56:21Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.11"
+    },
+    {
+      "tag": "v0.2.10",
+      "name": "Upstream Changes from Geth v1.10.10",
+      "published_at": "2021-11-22T21:30:15Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.10"
+    },
+    {
+      "tag": "v0.2.10-beta2",
+      "name": "Upstream Changes from Geth v1.10.10",
+      "published_at": "2021-11-22T15:15:15Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.10-beta2"
+    },
+    {
+      "tag": "v0.2.9",
+      "name": "Fixed Memory Leak, Added Network Flags for Mumbai and Mainnet",
+      "published_at": "2021-11-11T15:42:40Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.9"
+    },
+    {
+      "tag": "v0.2.9-beta1",
+      "name": "Hot Fix for Memory Bloat",
+      "published_at": "2021-09-27T07:13:22Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.9-beta1"
+    },
+    {
+      "tag": "v0.2.8",
+      "name": "Latest Updates from Geth",
+      "published_at": "2021-08-30T11:50:55Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.8"
+    },
+    {
+      "tag": "v0.2.7",
+      "name": "Updates from Geth v1.10.8",
+      "published_at": "2021-08-24T08:23:29Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.7"
+    },
+    {
+      "tag": "v0.2.6",
+      "name": "Geth Update v1.10.3",
+      "published_at": "2021-05-31T06:59:21Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.6"
+    },
+    {
+      "tag": "v0.2.5",
+      "name": "Berlin Fork Upgrade",
+      "published_at": "2021-05-11T17:29:05Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.5"
+    },
+    {
+      "tag": "v0.2.4",
+      "name": "v0.2.4",
+      "published_at": "2021-02-26T04:20:14Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.4"
+    },
+    {
+      "tag": "v0.2.3",
+      "name": "v0.2.3",
+      "published_at": "2021-01-07T01:42:12Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.3"
+    },
+    {
+      "tag": "v0.2.2",
+      "name": "Beleza By The Beach (v0.2.2)",
+      "published_at": "2020-12-08T13:51:39Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.2"
+    },
+    {
+      "tag": "v0.2.0-devnet-70004",
+      "name": "Devnet 70004 v2",
+      "published_at": "2020-06-24T10:21:35Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v0.2.0-devnet-70004"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "0.12.1",
+      "severity": "note",
+      "summary": "Public release of the Lugano hardfork, already activated on mainnet at block 54,627,000 on October 1, 2026. Consensus-layer security fixes in this release are gated at that height.",
+      "action": "Nodes on v0.11.0 or older stop at the Lugano height. Upgrade to v0.12.1 and restart.",
+      "source": "https://github.com/0xPolygon/heimdall-v2/releases/tag/v0.12.1"
+    }
+  ]
+}

@@ -555,6 +555,114 @@ def test_arbitrum_one_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_polygon_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "polygon",
+                "--execution",
+                "bor",
+                "--execution-version",
+                "2.10.2",
+                "--consensus",
+                "heimdall",
+                "--consensus-version",
+                "0.12.1",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Polygon PoS\n")
+    assert "Next upgrade: Unannounced" in output
+    assert "Next upgrade: Lugano" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://forum.polygon.technology/t/heimdall-v0-12-1/22300" in output
+    assert "bor 2.10.2  execution  requirement not announced" in output
+    assert "heimdall 0.12.1  consensus  requirement not announced" in output
+    assert "No upgrade order between bor and heimdall is stated" in output
+    assert "October 1, 2026" in output
+    assert "v0.12.1" in output
+    assert "v2.10.2" in output
+    assert "https://github.com/0xPolygon/bor/releases/tag/v2.10.2" in output
+    assert "Amoy is not this schedule." in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 0.12" not in output
+    assert "required 2.10" not in output
+    assert "2026-10-01" not in output
+
+
+def test_polygon_rejects_an_ethereum_pair(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "polygon",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "Polygon PoS does not include geth, lighthouse" in error
+    assert "Unannounced" not in error
+    assert "Lugano" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "bor",
+                "--execution-version",
+                "2.10.2",
+                "--consensus",
+                "heimdall",
+                "--consensus-version",
+                "0.12.1",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include bor, heimdall" in error
+    assert "--network polygon" in error
+    assert "Glamsterdam" not in error
+
+
+def test_polygon_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "polygon",
+                "--execution",
+                "bor",
+                "--execution-version",
+                "2.10.2-beta.1",
+                "--consensus",
+                "heimdall",
+                "--consensus-version",
+                "0.12.1",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))

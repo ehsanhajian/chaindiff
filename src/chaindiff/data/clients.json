@@ -59,6 +59,13 @@
       "versioning": "semver"
     },
     {
+      "id": "bor",
+      "name": "Bor",
+      "role": "execution",
+      "github": "0xPolygon/bor",
+      "versioning": "semver"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",
@@ -93,6 +100,13 @@
       "github": "ethereum-optimism/optimism",
       "versioning": "semver",
       "tag_prefix": "op-node/"
+    },
+    {
+      "id": "heimdall",
+      "name": "Heimdall",
+      "role": "consensus",
+      "github": "0xPolygon/heimdall-v2",
+      "versioning": "semver"
     }
   ]
 }

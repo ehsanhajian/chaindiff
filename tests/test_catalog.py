@@ -20,11 +20,13 @@ def test_registry_lists_the_supported_clients():
         "op-geth",
         "op-reth",
         "nitro",
+        "bor",
         "lighthouse",
         "prysm",
         "teku",
         "nimbus",
         "op-node",
+        "heimdall",
     ]
     by_id = {client.id: client for client in load_clients()}
     assert by_id["besu"].github == "besu-eth/besu"
@@ -41,6 +43,12 @@ def test_registry_lists_the_supported_clients():
     assert by_id["nitro"].github == "OffchainLabs/nitro"
     assert by_id["nitro"].role == "execution"
     assert by_id["nitro"].tag_prefix == ""
+    assert by_id["bor"].github == "0xPolygon/bor"
+    assert by_id["bor"].role == "execution"
+    assert by_id["bor"].tag_prefix == ""
+    assert by_id["heimdall"].github == "0xPolygon/heimdall-v2"
+    assert by_id["heimdall"].role == "consensus"
+    assert by_id["heimdall"].tag_prefix == ""
 
 
 def test_shipped_catalog_has_a_stable_release_for_every_client():
@@ -79,6 +87,10 @@ def test_shipped_catalog_drops_known_non_releases():
     _, nitro = load_releases("nitro")
     assert any(item.tag == "v3.12.1" for item in nitro)
     assert all(not item.tag.startswith("consensus-") for item in nitro)
+    _, bor = load_releases("bor")
+    assert any(item.tag == "v2.10.2" for item in bor)
+    _, heimdall = load_releases("heimdall")
+    assert any(item.tag == "v0.12.1" for item in heimdall)
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

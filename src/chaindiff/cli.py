@@ -76,7 +76,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
         command.add_argument(
             "--network",
-            help="Network id, for example ethereum, op-mainnet, base, or arbitrum-one",
+            help="Network id, for example ethereum, op-mainnet, base, arbitrum-one, or polygon",
         )
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
@@ -289,6 +289,9 @@ def _scan(args: argparse.Namespace) -> int:
 
 
 _MAINNET_EXECUTION = frozenset({"geth", "nethermind", "erigon", "besu", "reth"})
+_POLYGON_CLIENTS = frozenset({"bor", "heimdall"})
+_POLYGON_EXECUTION = frozenset({"bor"})
+_POLYGON_CONSENSUS = frozenset({"heimdall"})
 _MAINNET_CONSENSUS = frozenset({"lighthouse", "prysm", "teku", "nimbus"})
 _OP_MAINNET_EXECUTION = frozenset({"op-geth", "op-reth"})
 _OP_MAINNET_CONSENSUS = frozenset({"op-node"})
@@ -315,10 +318,14 @@ def _outside_mainnet_pair(execution, consensus) -> str | None:
     if not outside:
         return None
     listed = ", ".join(outside)
-    return (
-        f"The Ethereum mainnet pair does not include {listed}. "
-        "Use --client for one OP Stack client, or --network op-mainnet or --network base for that chain's schedule."
-    )
+    if set(outside) <= _POLYGON_CLIENTS:
+        hint = "Use --network polygon for that chain's schedule."
+    else:
+        hint = (
+            "Use --client for one OP Stack client, or --network op-mainnet or --network base "
+            "for that chain's schedule."
+        )
+    return f"The Ethereum mainnet pair does not include {listed}. {hint}"
 
 
 def _outside_op_mainnet(execution, consensus) -> str | None:
@@ -352,6 +359,21 @@ def _outside_base(execution, consensus) -> str | None:
         return None
     listed = ", ".join(outside)
     return f"Base does not include {listed}. This check uses op-geth with op-node."
+
+
+def _outside_polygon(execution, consensus) -> str | None:
+    outside = [
+        client.id
+        for client, allowed in (
+            (execution, _POLYGON_EXECUTION),
+            (consensus, _POLYGON_CONSENSUS),
+        )
+        if client.id not in allowed
+    ]
+    if not outside:
+        return None
+    listed = ", ".join(outside)
+    return f"Polygon PoS does not include {listed}. This check uses bor with heimdall."
 
 
 def _client_result(client, current_text: str, target_text: str):
@@ -524,6 +546,8 @@ def _network_check(args: argparse.Namespace) -> int:
         outside = _outside_op_mainnet(execution, consensus)
     elif schedule.id == "base":
         outside = _outside_base(execution, consensus)
+    elif schedule.id == "polygon":
+        outside = _outside_polygon(execution, consensus)
     else:
         outside = None
     if outside is not None:
