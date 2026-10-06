@@ -19,6 +19,7 @@ def test_registry_lists_the_supported_clients():
         "reth",
         "op-geth",
         "op-reth",
+        "nitro",
         "lighthouse",
         "prysm",
         "teku",
@@ -37,6 +38,9 @@ def test_registry_lists_the_supported_clients():
     assert by_id["op-node"].github == "ethereum-optimism/optimism"
     assert by_id["op-node"].tag_prefix == "op-node/"
     assert by_id["op-node"].role == "consensus"
+    assert by_id["nitro"].github == "OffchainLabs/nitro"
+    assert by_id["nitro"].role == "execution"
+    assert by_id["nitro"].tag_prefix == ""
 
 
 def test_shipped_catalog_has_a_stable_release_for_every_client():
@@ -72,6 +76,9 @@ def test_shipped_catalog_drops_known_non_releases():
     _, op_reth = load_releases("op-reth")
     assert any(item.tag == "op-reth/v2.5.0" for item in op_reth)
     assert all(item.tag.startswith("op-reth/") for item in op_reth)
+    _, nitro = load_releases("nitro")
+    assert any(item.tag == "v3.12.1" for item in nitro)
+    assert all(not item.tag.startswith("consensus-") for item in nitro)
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

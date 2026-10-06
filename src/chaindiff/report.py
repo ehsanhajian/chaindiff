@@ -144,11 +144,16 @@ def format_network(result: NetworkCheckResult) -> str:
         f"Source: {result.schedule.source}",
         "",
         _network_side(result.execution),
-        _network_side(result.consensus),
-        "",
-        f"Verdict: {VERDICT_LABELS[result.verdict]}",
-        "",
     ]
+    if result.consensus is not None:
+        lines.append(_network_side(result.consensus))
+    lines.extend(
+        [
+            "",
+            f"Verdict: {VERDICT_LABELS[result.verdict]}",
+            "",
+        ]
+    )
     if result.reasons:
         lines.append("Why")
         lines.extend(f"  {reason}" for reason in result.reasons)
@@ -189,7 +194,7 @@ def network_json(result: NetworkCheckResult) -> dict:
         "source": result.schedule.source,
         "order": result.schedule.order,
         "execution": _network_side_json(result.execution),
-        "consensus": _network_side_json(result.consensus),
+        "consensus": None if result.consensus is None else _network_side_json(result.consensus),
         "verdict": result.verdict,
         "reasons": result.reasons,
         "warnings": result.warnings,

@@ -52,6 +52,13 @@
       "tag_prefix": "op-reth/"
     },
     {
+      "id": "nitro",
+      "name": "Nitro",
+      "role": "execution",
+      "github": "OffchainLabs/nitro",
+      "versioning": "semver"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",

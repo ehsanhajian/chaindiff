@@ -465,6 +465,96 @@ def test_base_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_arbitrum_one_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "arbitrum-one",
+                "--execution",
+                "nitro",
+                "--execution-version",
+                "3.12.1",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Arbitrum One\n")
+    assert "Next upgrade: Unannounced" in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/overview" in output
+    assert "nitro 3.12.1  execution  requirement not announced" in output
+    assert "consensus" not in output.split("Verdict:")[0]
+    assert "Nitro is the node." in output
+    assert "August 20, 2026" in output
+    assert "v3.11.3 or higher" in output
+    assert "Arbitrum Sepolia" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 3.11" not in output
+    assert "not Arbitrum One" in output
+
+
+def test_arbitrum_one_rejects_geth_and_a_consensus_flag(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "arbitrum-one",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+            ]
+        )
+        == 3
+    )
+    assert "Arbitrum One does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "arbitrum-one",
+                "--execution",
+                "nitro",
+                "--execution-version",
+                "3.12.1",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not use --consensus" in error
+    assert "Glamsterdam" not in error
+
+
+def test_arbitrum_one_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "arbitrum-one",
+                "--execution",
+                "nitro",
+                "--execution-version",
+                "3.11.0-rc.3",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))
