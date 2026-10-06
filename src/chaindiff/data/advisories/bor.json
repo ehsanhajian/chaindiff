@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "2.10.2",
+      "severity": "note",
+      "summary": "No hardfork, no database schema change, and no resync. The WIT2 signed-announce wire format changed after the v2.10.2-beta and preconf tags, so those nodes drop connections with v2.10.2 until they match. Docker images are no longer published to Docker Hub.",
+      "action": "Upgrade all WIT2-capable nodes in one window if any node is still on v2.10.2-beta, v2.10.2-preconf, or v2.10.2-preconf2. Nodes coming from v2.10.1 are unaffected. Clef users must whitelist application/x-bor-wit2-announce.",
+      "source": "https://github.com/0xPolygon/bor/releases/tag/v2.10.2"
+    }
+  ]
+}

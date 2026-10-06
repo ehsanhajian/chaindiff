@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "polygon",
+  "name": "Polygon PoS",
+  "upgrade": {
+    "name": "Unannounced",
+    "activation": null,
+    "source": "https://forum.polygon.technology/t/heimdall-v0-12-1/22300",
+    "summary": "No Polygon PoS upgrade after Lugano names both a bor release and a heimdall release. Lugano is already active.",
+    "order": null,
+    "order_summary": "No upgrade order between bor and heimdall is stated, because the next upgrade has not announced a pair.",
+    "warning": "Lugano activated on Polygon PoS mainnet on October 1, 2026 at Heimdall block 54,627,000. That announcement names Heimdall v0.12.1 and does not name a bor release. Bor v2.10.2 says it has no hardfork and does not name a heimdall release (https://github.com/0xPolygon/bor/releases/tag/v2.10.2). A bor release without the matching heimdall is not the next upgrade. Amoy is not this schedule.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

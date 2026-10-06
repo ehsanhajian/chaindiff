@@ -78,6 +78,8 @@ NIMBUS = "v26.9.1-abcdef-stateofus\n"
         ("nimbus", NIMBUS, "26.9.1"),
         ("nimbus", "26.9.1\n", "26.9.1"),
         ("nimbus", "Nimbus beacon node v26.9.1-abcdef-stateofus\n", "26.9.1"),
+        ("bor", "Version: 2.10.2\nGitCommit: abcdef1234567890\n", "2.10.2"),
+        ("heimdall", "0.12.1\n", "0.12.1"),
     ],
 )
 def test_binary_output_reads_one_release(client, text, version):
@@ -227,6 +229,22 @@ def test_op_geth_uses_the_geth_version_command(monkeypatch, capsys):
     assert "op-geth 1.101702.2" in output
     assert "1.17.2" not in output
     assert "go1.24.1" not in output
+
+
+def test_bor_and_heimdall_use_the_version_subcommand(monkeypatch, capsys):
+    def fake(path, argv, timeout=10):
+        assert argv == ("version",)
+        if path.endswith("bor"):
+            return "Version: 2.10.2\nGitCommit: abcdef1234567890\n"
+        return "0.12.1\n"
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fake)
+    assert main(["detect", "--client", "bor", "--binary", "/usr/bin/bor"]) == 0
+    assert "bor 2.10.2" in capsys.readouterr().out
+    assert main(["detect", "--client", "heimdall", "--binary", "/usr/bin/heimdalld"]) == 0
+    output = capsys.readouterr().out
+    assert "heimdall 0.12.1" in output
+    assert version_from_output("heimdall", "name: heimdall\nversion: 0.12.1\n") is None
 
 
 def test_op_node_binary_is_not_run(monkeypatch, capsys):

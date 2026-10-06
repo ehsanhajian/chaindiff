@@ -12,8 +12,9 @@ from collections.abc import Callable
 
 from chaindiff.versions import Version, parse_version
 
-# Geth's version is a subcommand. The others print and exit on --version.
-# A wrong flag can start the node, so there is no fallback.
+# Geth, op-geth, bor, and heimdall use a version subcommand. The other
+# confirmed clients print and exit on --version. A wrong flag can start the
+# node, so there is no fallback.
 _VERSION_ARGV = {
     "geth": ("version",),
     "op-geth": ("version",),
@@ -25,6 +26,10 @@ _VERSION_ARGV = {
     "prysm": ("--version",),
     "teku": ("--version",),
     "nimbus": ("--version",),
+    # Bor v2.10.2 registers `version` and prints "Version: <major.minor.patch>".
+    # heimdalld v0.12.1 `version` prints that build version alone.
+    "bor": ("version",),
+    "heimdall": ("version",),
 }
 
 # Tags that name a channel, not a release. Exact match only.
@@ -218,6 +223,13 @@ def _prysm(text: str) -> list[str]:
     )
 
 
+def _plain_version(text: str) -> list[str]:
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    if len(lines) == 1:
+        return lines
+    return []
+
+
 def _nimbus(text: str) -> list[str]:
     banner = re.findall(r"(?im)^Nimbus beacon node[ \t]+(\S+)[ \t]*$", text)
     if banner:
@@ -239,4 +251,6 @@ _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "prysm": _prysm,
     "teku": lambda text: _slash_version("teku", text),
     "nimbus": _nimbus,
+    "bor": _version_lines,
+    "heimdall": _plain_version,
 }
