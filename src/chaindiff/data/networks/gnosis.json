@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "gnosis",
+  "name": "Gnosis Chain",
+  "upgrade": {
+    "name": "Glamsterdam",
+    "activation": null,
+    "source": "https://github.com/gnosischain/specs/blob/main/network-upgrades/glamsterdam.md",
+    "summary": "Gnosis mainnet activation has not been scheduled. The Glamsterdam spec leaves the Chiado and mainnet timestamps blank, and the readiness list has not selected fork triggers.",
+    "order": null,
+    "order_summary": "No upgrade order between the execution client and the consensus client is stated for Gnosis.",
+    "warning": "Fusaka activated on Gnosis mainnet on April 14, 2026 at 12:06:20 UTC, epoch 1714688. That is the live fork, not the next upgrade, and the Fusaka spec does not name a client release. Chiado Fusaka activated on March 16, 2026 and is not a mainnet deadline. Glamsterdam does not name a Nethermind, Erigon, or Lighthouse release, and it does not state a Gnosis-only flag change. The Pectra page names older client releases for a fork that activated on April 30, 2025.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

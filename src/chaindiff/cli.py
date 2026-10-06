@@ -76,7 +76,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
         command.add_argument(
             "--network",
-            help="Network id, for example ethereum, op-mainnet, base, arbitrum-one, or polygon",
+            help="Network id, for example ethereum, gnosis, op-mainnet, base, arbitrum-one, or polygon",
         )
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
@@ -297,6 +297,8 @@ _OP_MAINNET_EXECUTION = frozenset({"op-geth", "op-reth"})
 _OP_MAINNET_CONSENSUS = frozenset({"op-node"})
 _BASE_EXECUTION = frozenset({"op-geth"})
 _BASE_CONSENSUS = frozenset({"op-node"})
+_GNOSIS_EXECUTION = frozenset({"nethermind", "erigon", "geth", "reth"})
+_GNOSIS_CONSENSUS = frozenset({"lighthouse", "nimbus", "teku"})
 
 
 def _parse_client_version(client, text: str) -> Version | None:
@@ -374,6 +376,24 @@ def _outside_polygon(execution, consensus) -> str | None:
         return None
     listed = ", ".join(outside)
     return f"Polygon PoS does not include {listed}. This check uses bor with heimdall."
+
+
+def _outside_gnosis(execution, consensus) -> str | None:
+    outside = [
+        client.id
+        for client, allowed in (
+            (execution, _GNOSIS_EXECUTION),
+            (consensus, _GNOSIS_CONSENSUS),
+        )
+        if client.id not in allowed
+    ]
+    if not outside:
+        return None
+    listed = ", ".join(outside)
+    return (
+        f"Gnosis Chain does not include {listed}. "
+        "This check uses nethermind, erigon, geth, or reth with lighthouse, nimbus, or teku."
+    )
 
 
 def _client_result(client, current_text: str, target_text: str):
@@ -548,6 +568,8 @@ def _network_check(args: argparse.Namespace) -> int:
         outside = _outside_base(execution, consensus)
     elif schedule.id == "polygon":
         outside = _outside_polygon(execution, consensus)
+    elif schedule.id == "gnosis":
+        outside = _outside_gnosis(execution, consensus)
     else:
         outside = None
     if outside is not None:
