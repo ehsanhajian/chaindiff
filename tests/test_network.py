@@ -361,6 +361,110 @@ def test_op_mainnet_rejects_an_ethereum_client(capsys):
     assert "Lagoon" not in error
 
 
+def test_base_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "base",
+                "--execution",
+                "op-geth",
+                "--execution-version",
+                "1.101702.2",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "1.19.8",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Base\n")
+    assert "Next upgrade: Denim" in output
+    assert "Next upgrade: Lagoon" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://docs.base.org/upgrades/denim/overview" in output
+    assert "op-geth 1.101702.2  execution  requirement not announced" in output
+    assert "op-node 1.19.8  consensus  requirement not announced" in output
+    assert "No upgrade order between op-geth and op-node is stated for Base." in output
+    assert "November 2026" in output
+    assert "October 2026" in output
+    assert "2026-11" not in output
+    assert "2026-10" not in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 1.19" not in output
+    assert "ghcr.io/base/node" in output
+
+
+def test_base_rejects_op_reth_and_an_ethereum_client(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "base",
+                "--execution",
+                "op-reth",
+                "--execution-version",
+                "2.5.0",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "1.19.8",
+            ]
+        )
+        == 3
+    )
+    assert "Base does not include op-reth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "base",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "Base does not include geth, lighthouse" in error
+    assert "Denim" not in error
+
+
+def test_base_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "base",
+                "--execution",
+                "op-geth",
+                "--execution-version",
+                "1.101702.3",
+                "--consensus",
+                "op-node",
+                "--consensus-version",
+                "1.19.0-rc.1",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))

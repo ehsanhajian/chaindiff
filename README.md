@@ -27,7 +27,7 @@ Supported clients:
 
 Reth and Nimbus are in the catalog because operators run them. Besu and Teku are read from their current GitHub repositories. op-reth is the execution client Optimism documents for node operators, and op-node is the rollup node in the same repository. op-geth stays in the catalog because existing nodes may still be running it. op-batcher and op-proposer are not node clients.
 
-The shipping network schedules are Ethereum mainnet and OP Mainnet. op-geth, op-reth, and op-node are checked on their own with `--client`, and against OP Mainnet's next upgrade with `--network op-mainnet`. Base's schedule is still a separate task, so a release Base requires is not an OP Mainnet requirement. The tool also covers these networks, one task each. A check has to use the clients that network actually runs, and that chain's upgrade, not only the latest tag of an upstream Ethereum client.
+The shipping network schedules are Ethereum mainnet, OP Mainnet, and Base. op-geth, op-reth, and op-node are checked on their own with `--client`. `--network op-mainnet` and `--network base` each use that chain's next upgrade, so a release one chain requires is not assumed on the other. The tool also covers these networks, one task each. A check has to use the clients that network actually runs, and that chain's upgrade, not only the latest tag of an upstream Ethereum client.
 
 - Ethereum mainnet
 - Gnosis
@@ -42,7 +42,7 @@ The shipping network schedules are Ethereum mainnet and OP Mainnet. op-geth, op-
 - zkSync Era
 - Starknet
 
-Not in this cut: Lodestar, Grandine, op-batcher, op-proposer, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. `check` can take the execution client and the consensus client together and return one verdict and one plan. `check --network ethereum` compares that pair with the next Ethereum mainnet upgrade. `check --network op-mainnet` compares op-geth or op-reth and op-node with the next OP Mainnet upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
+Not in this cut: Lodestar, Grandine, op-batcher, op-proposer, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. `check` can take the execution client and the consensus client together and return one verdict and one plan. `check --network ethereum` compares that pair with the next Ethereum mainnet upgrade. `check --network op-mainnet` compares op-geth or op-reth and op-node with the next OP Mainnet upgrade. `check --network base` compares op-geth and op-node with the next Base upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
 
 Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
 
@@ -86,7 +86,9 @@ A pair check takes an Ethereum mainnet execution client and consensus client and
 
 `check --network ethereum` asks whether the execution client and the consensus client you run are the versions the next mainnet upgrade requires, and whether an upgrade order is stated. The schedule is `src/chaindiff/data/networks/ethereum.json`, taken from the network announcement. A Sepolia date in that announcement is not a mainnet deadline. No required mainnet version is invented from a testnet table. For this network check, **already current** means both clients are the announced requirement and the activation time is set. **Review required** means a required version or the activation time has not been announced, or the installed version is newer than the announcement. **Not safe** means an installed version is older than an announced requirement. A prerelease is still refused.
 
-`check --network op-mainnet` asks the same question for op-geth or op-reth and op-node. The schedule is `src/chaindiff/data/networks/op-mainnet.json`. The next upgrade is Lagoon. OP Mainnet's activation time and client releases are not scheduled. The OP Sepolia interop notice leaves those versions as TBD, and a late July 2026 line in that notice is not an activation time. No required version is taken from that notice or from Base.
+`check --network op-mainnet` asks the same question for op-geth or op-reth and op-node. The schedule is `src/chaindiff/data/networks/op-mainnet.json`. The next upgrade is Lagoon. OP Mainnet's activation time and client releases are not scheduled. The OP Sepolia interop notice does not name those releases, and a late July 2026 line in that notice is not an activation time. No required version is taken from that notice or from Base.
+
+`check --network base` asks the same question for op-geth and op-node. The schedule is `src/chaindiff/data/networks/base.json`. The next upgrade is Denim. Base Mainnet's activation time is not scheduled. November 2026 is a planning target on the upgrades index, and October 2026 is the Sepolia planning target. Denim does not name an op-geth or op-node release. The operator node is published from base/base, and that image tag is not recorded here as the requirement.
 
 `scan` accepts CLI flags, TOML, JSON, or YAML. The format follows the file extension (`.toml`, `.json`, `.yaml`, `.yml`). A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that. `--to` defaults to the latest stable release. The command prints what to change. It does not edit the file.
 
