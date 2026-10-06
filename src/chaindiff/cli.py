@@ -74,7 +74,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--client", help="Client id, for example geth")
         command.add_argument("--from", dest="current", help="Installed version")
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
-        command.add_argument("--network", help="Network id, for example ethereum or op-mainnet")
+        command.add_argument("--network", help="Network id, for example ethereum, op-mainnet, or base")
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
         command.add_argument("--execution-to", help="Execution target version, or latest")
@@ -289,6 +289,8 @@ _MAINNET_EXECUTION = frozenset({"geth", "nethermind", "erigon", "besu", "reth"})
 _MAINNET_CONSENSUS = frozenset({"lighthouse", "prysm", "teku", "nimbus"})
 _OP_MAINNET_EXECUTION = frozenset({"op-geth", "op-reth"})
 _OP_MAINNET_CONSENSUS = frozenset({"op-node"})
+_BASE_EXECUTION = frozenset({"op-geth"})
+_BASE_CONSENSUS = frozenset({"op-node"})
 
 
 def _parse_client_version(client, text: str) -> Version | None:
@@ -312,7 +314,7 @@ def _outside_mainnet_pair(execution, consensus) -> str | None:
     listed = ", ".join(outside)
     return (
         f"The Ethereum mainnet pair does not include {listed}. "
-        "Use --client for one OP Stack client, or --network op-mainnet for the OP Mainnet schedule."
+        "Use --client for one OP Stack client, or --network op-mainnet or --network base for that chain's schedule."
     )
 
 
@@ -332,6 +334,21 @@ def _outside_op_mainnet(execution, consensus) -> str | None:
         f"OP Mainnet does not include {listed}. "
         "This check uses op-geth or op-reth with op-node."
     )
+
+
+def _outside_base(execution, consensus) -> str | None:
+    outside = [
+        client.id
+        for client, allowed in (
+            (execution, _BASE_EXECUTION),
+            (consensus, _BASE_CONSENSUS),
+        )
+        if client.id not in allowed
+    ]
+    if not outside:
+        return None
+    listed = ", ".join(outside)
+    return f"Base does not include {listed}. This check uses op-geth with op-node."
 
 
 def _client_result(client, current_text: str, target_text: str):
@@ -466,6 +483,8 @@ def _network_check(args: argparse.Namespace) -> int:
         outside = _outside_mainnet_pair(execution, consensus)
     elif schedule.id == "op-mainnet":
         outside = _outside_op_mainnet(execution, consensus)
+    elif schedule.id == "base":
+        outside = _outside_base(execution, consensus)
     else:
         outside = None
     if outside is not None:

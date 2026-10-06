@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "base",
+  "name": "Base",
+  "upgrade": {
+    "name": "Denim",
+    "activation": null,
+    "source": "https://docs.base.org/upgrades/denim/overview",
+    "summary": "Base Mainnet activation has not been scheduled. Denim is in planning, and the upgrades index treats a month without a confirmed timestamp as a target that may change.",
+    "order": null,
+    "order_summary": "No upgrade order between op-geth and op-node is stated for Base.",
+    "warning": "Base lists Mainnet as planning for November 2026 and Sepolia as planning for October 2026. Those months are not activation times. Denim does not name an op-geth or op-node release. The operator node is published from base/base as ghcr.io/base/node.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}
