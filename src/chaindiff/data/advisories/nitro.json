@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "3.12.1",
+      "severity": "breaking",
+      "summary": "Stylus activation is refused for eth_call and eth_estimateGas by default.",
+      "action": "Set execution.stylus-target.allow-offchain-activation if those calls must activate Stylus.",
+      "source": "https://github.com/OffchainLabs/nitro/releases/tag/v3.12.1"
+    }
+  ]
+}

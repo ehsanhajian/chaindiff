@@ -74,7 +74,10 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--client", help="Client id, for example geth")
         command.add_argument("--from", dest="current", help="Installed version")
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
-        command.add_argument("--network", help="Network id, for example ethereum, op-mainnet, or base")
+        command.add_argument(
+            "--network",
+            help="Network id, for example ethereum, op-mainnet, base, or arbitrum-one",
+        )
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
         command.add_argument("--execution-to", help="Execution target version, or latest")
@@ -444,6 +447,40 @@ def _pair_check(args: argparse.Namespace) -> int:
     return _EXIT[result.verdict]
 
 
+def _arbitrum_one_check(args: argparse.Namespace, schedule, clients) -> int:
+    if args.consensus or args.consensus_version:
+        print("Arbitrum One is a Nitro node. This check does not use --consensus.", file=sys.stderr)
+        return 3
+    if not args.execution or not args.execution_version:
+        print(
+            "An Arbitrum One check needs --execution nitro and --execution-version.",
+            file=sys.stderr,
+        )
+        return 3
+    execution = client_by_id(clients, args.execution)
+    if execution is None:
+        known = ", ".join(item.id for item in clients)
+        print(f"Unknown client '{args.execution}'. Known clients: {known}", file=sys.stderr)
+        return 3
+    if execution.id != "nitro":
+        print(f"Arbitrum One does not include {execution.id}. This check uses nitro.", file=sys.stderr)
+        return 3
+    execution_version = _parse_client_version(execution, args.execution_version)
+    if execution_version is None:
+        print(explain_unparsed(args.execution_version), file=sys.stderr)
+        return 3
+    result = evaluate_network(
+        schedule,
+        execution=execution,
+        execution_version=execution_version,
+    )
+    if args.json:
+        print(json.dumps(network_json(result), indent=2))
+    else:
+        print(format_network(result), end="")
+    return _EXIT[result.verdict]
+
+
 def _network_check(args: argparse.Namespace) -> int:
     if args.client or args.current:
         print("--network does not use --client or --from.", file=sys.stderr)
@@ -454,17 +491,19 @@ def _network_check(args: argparse.Namespace) -> int:
     if args.execution_to or args.consensus_to:
         print("--network does not use --execution-to or --consensus-to.", file=sys.stderr)
         return 3
-    if not all((args.execution, args.execution_version, args.consensus, args.consensus_version)):
-        print(
-            "A network check needs --execution, --execution-version, --consensus, and --consensus-version.",
-            file=sys.stderr,
-        )
-        return 3
     try:
         schedule = load_network(args.network)
         clients = load_clients()
     except ValueError as exc:
         print(str(exc), file=sys.stderr)
+        return 3
+    if schedule.id == "arbitrum-one":
+        return _arbitrum_one_check(args, schedule, clients)
+    if not all((args.execution, args.execution_version, args.consensus, args.consensus_version)):
+        print(
+            "A network check needs --execution, --execution-version, --consensus, and --consensus-version.",
+            file=sys.stderr,
+        )
         return 3
     execution = client_by_id(clients, args.execution)
     consensus = client_by_id(clients, args.consensus)

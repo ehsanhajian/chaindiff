@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "arbitrum-one",
+  "name": "Arbitrum One",
+  "upgrade": {
+    "name": "Unannounced",
+    "activation": null,
+    "source": "https://docs.arbitrum.io/run-arbitrum-node/arbos-releases/overview",
+    "summary": "No ArbOS upgrade after Elara is listed for Arbitrum One. The ArbOS release list ends at ArbOS 61 Elara, which is already active.",
+    "order": null,
+    "order_summary": "Nitro is the node. No separate consensus client is part of this upgrade.",
+    "warning": "ArbOS 61 Elara activated on Arbitrum One on August 20, 2026. That live release requires Nitro v3.11.3 or higher, and it is not the next upgrade. Nitro v3.11.4 before October 6, 2026 applies to Arbitrum Sepolia, not Arbitrum One. Arbitrum Nova and Orbit chains are not this schedule.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

@@ -26,32 +26,33 @@ def evaluate_network(
     *,
     execution: Client,
     execution_version: Version,
-    consensus: Client,
-    consensus_version: Version,
+    consensus: Client | None = None,
+    consensus_version: Version | None = None,
 ) -> NetworkCheckResult:
     execution_side = _side(execution, execution_version, schedule.required_execution)
-    consensus_side = _side(consensus, consensus_version, schedule.required_consensus)
+    consensus_side = None
+    if consensus is not None and consensus_version is not None:
+        consensus_side = _side(consensus, consensus_version, schedule.required_consensus)
     reasons = [schedule.summary]
     reasons.extend(_version_reasons(schedule.upgrade, execution_side, consensus_side))
     reasons.append(schedule.order_summary)
     warnings = [schedule.warning] if schedule.warning else []
-    prereleases = [
-        side
-        for side in (execution_side, consensus_side)
-        if side.installed.pre is not None
-    ]
+    sides = [execution_side] if consensus_side is None else [execution_side, consensus_side]
+    prereleases = [side for side in sides if side.installed.pre is not None]
     if prereleases:
         verdict = PRERELEASE
         reasons[0:0] = [
             f"{side.client.name} {side.installed.text} is a prerelease. Don't run it on a mainnet node."
             for side in prereleases
         ]
-    elif execution_side.status == _BELOW or consensus_side.status == _BELOW:
+    elif execution_side.status == _BELOW or (
+        consensus_side is not None and consensus_side.status == _BELOW
+    ):
         verdict = UNSAFE
     elif (
         schedule.activation is not None
         and execution_side.status == _EXACT
-        and consensus_side.status == _EXACT
+        and (consensus_side is None or consensus_side.status == _EXACT)
     ):
         verdict = CURRENT
     else:
@@ -80,7 +81,17 @@ def _side(client: Client, installed: Version, required_versions: dict[str, Versi
     return NetworkSide(client=client, installed=installed, required=required, status=status)
 
 
-def _version_reasons(upgrade: str, execution: NetworkSide, consensus: NetworkSide) -> list[str]:
+def _version_reasons(
+    upgrade: str,
+    execution: NetworkSide,
+    consensus: NetworkSide | None,
+) -> list[str]:
+    if consensus is None:
+        if execution.status == _UNANNOUNCED:
+            return [
+                f"No required {execution.client.name} version has been announced for {upgrade}."
+            ]
+        return [_one_reason(upgrade, execution)]
     if execution.status == _UNANNOUNCED and consensus.status == _UNANNOUNCED:
         return [
             f"No required {execution.client.name} or {consensus.client.name} version has been announced for {upgrade}."
@@ -104,10 +115,11 @@ def _one_reason(upgrade: str, side: NetworkSide) -> str:
 def _steps(
     schedule: NetworkSchedule,
     execution: NetworkSide,
-    consensus: NetworkSide,
+    consensus: NetworkSide | None,
 ) -> list[str]:
+    sides = [execution] if consensus is None else [execution, consensus]
     steps = [f"Read {schedule.source}."]
-    for side in (execution, consensus):
+    for side in sides:
         if side.installed.pre is not None:
             steps.append(
                 f"Do not run {side.client.name} {side.installed.text} on mainnet. It is a prerelease."
@@ -118,13 +130,13 @@ def _steps(
         )
     else:
         steps.append(f"The announced mainnet activation is {format_time(schedule.activation)}.")
-    if schedule.order == "execution-first":
+    if schedule.order == "execution-first" and consensus is not None:
         steps.append(f"Upgrade {execution.client.name} before {consensus.client.name}.")
-    elif schedule.order == "consensus-first":
+    elif schedule.order == "consensus-first" and consensus is not None:
         steps.append(f"Upgrade {consensus.client.name} before {execution.client.name}.")
     else:
         steps.append(schedule.order_summary)
-    for side in (execution, consensus):
+    for side in sides:
         if side.status == _BELOW and side.required is not None:
             steps.append(
                 f"Upgrade {side.client.name} to {side.required.text} before activation. "

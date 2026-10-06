@@ -128,7 +128,7 @@ class NetworkSide:
 class NetworkCheckResult:
     schedule: NetworkSchedule
     execution: NetworkSide
-    consensus: NetworkSide
+    consensus: NetworkSide | None
     verdict: str
     reasons: list[str]
     warnings: list[str]
