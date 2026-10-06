@@ -120,7 +120,7 @@ def test_mainnet_prerelease_is_refused(capsys):
 
 
 def test_unknown_network(capsys):
-    assert main(["check", "--network", "gnosis", "--execution", "geth", "--execution-version", "1.17.7", "--consensus", "lighthouse", "--consensus-version", "8.2.3"]) == 3
+    assert main(["check", "--network", "not-a-chain", "--execution", "geth", "--execution-version", "1.17.7", "--consensus", "lighthouse", "--consensus-version", "8.2.3"]) == 3
     assert "Unknown network" in capsys.readouterr().err
 
 
@@ -548,6 +548,116 @@ def test_arbitrum_one_refuses_a_prerelease(capsys):
                 "nitro",
                 "--execution-version",
                 "3.11.0-rc.3",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
+def test_gnosis_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "gnosis",
+                "--execution",
+                "nethermind",
+                "--execution-version",
+                "1.31.11",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Gnosis Chain\n")
+    assert "Next upgrade: Glamsterdam" in output
+    assert "Next upgrade: Fusaka" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://github.com/gnosischain/specs/blob/main/network-upgrades/glamsterdam.md" in output
+    assert "blog.ethereum.org" not in output
+    assert "nethermind 1.31.11  execution  requirement not announced" in output
+    assert "lighthouse 8.2.3  consensus  requirement not announced" in output
+    assert "No upgrade order between the execution client and the consensus client is stated for Gnosis." in output
+    assert "April 14, 2026" in output
+    assert "epoch 1714688" in output
+    assert "March 16, 2026" in output
+    assert "April 30, 2025" in output
+    assert "Gnosis-only flag change" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 1." not in output
+    assert "required 8." not in output
+    assert "2026-04-14" not in output
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "gnosis",
+                "--execution",
+                "erigon",
+                "--execution-version",
+                "3.0.2",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 1
+    )
+    erigon = capsys.readouterr().out
+    assert "erigon 3.0.2  execution  requirement not announced" in erigon
+    assert "Next upgrade: Glamsterdam" in erigon
+
+
+def test_gnosis_rejects_clients_it_does_not_document(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "gnosis",
+                "--execution",
+                "besu",
+                "--execution-version",
+                "26.9.0",
+                "--consensus",
+                "prysm",
+                "--consensus-version",
+                "7.2.0",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "Gnosis Chain does not include besu, prysm" in error
+    assert "Glamsterdam" not in error
+    assert "Fusaka" not in error
+
+
+def test_gnosis_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "gnosis",
+                "--execution",
+                "nethermind",
+                "--execution-version",
+                "1.31.11",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.3.0-rc.0",
             ]
         )
         == 2
