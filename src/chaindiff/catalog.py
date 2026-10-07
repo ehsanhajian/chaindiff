@@ -63,8 +63,11 @@ def load_clients() -> list[Client]:
             raise ValueError(f"{client_id} has an unknown role")
         if versioning not in ("semver", "calver"):
             raise ValueError(f"{client_id} has an unknown versioning scheme")
-        if tag_prefix and (any(char.isspace() for char in tag_prefix) or not tag_prefix.endswith("/")):
-            raise ValueError(f"{client_id} tag_prefix must end with /")
+        if tag_prefix and (
+            any(char.isspace() for char in tag_prefix)
+            or not (tag_prefix.endswith("/") or tag_prefix.endswith("-"))
+        ):
+            raise ValueError(f"{client_id} tag_prefix must end with / or -")
         if client_id in seen:
             raise ValueError(f"{client_id} is listed twice")
         if tag_prefix and tag_prefix in prefixes:

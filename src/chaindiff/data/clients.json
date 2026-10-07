@@ -88,6 +88,14 @@
       "tag_prefix": "releases/linea-besu-package/"
     },
     {
+      "id": "l2geth",
+      "name": "l2geth",
+      "role": "execution",
+      "github": "scroll-tech/go-ethereum",
+      "versioning": "semver",
+      "tag_prefix": "scroll-"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",

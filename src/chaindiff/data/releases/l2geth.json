@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "client": "l2geth",
+  "github": "scroll-tech/go-ethereum",
+  "fetched_at": "2026-10-07T06:42:21Z",
+  "ignored_tag_count": 0,
+  "releases": [
+    {
+      "tag": "scroll-v5.10.2",
+      "name": "scroll-v5.10.2",
+      "published_at": "2026-01-15T16:14:30Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.10.2"
+    },
+    {
+      "tag": "scroll-v5.10.0",
+      "name": "scroll-v5.10.0",
+      "published_at": "2025-12-09T09:36:17Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.10.0"
+    },
+    {
+      "tag": "scroll-v5.9.18",
+      "name": "scroll-v5.9.18",
+      "published_at": "2025-11-30T20:42:11Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.9.18"
+    },
+    {
+      "tag": "scroll-v5.9.14",
+      "name": "scroll-v5.9.14",
+      "published_at": "2025-11-20T08:57:39Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.9.14"
+    },
+    {
+      "tag": "scroll-v5.9.2",
+      "name": "scroll-v5.9.2",
+      "published_at": "2025-08-08T07:30:28Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.9.2"
+    },
+    {
+      "tag": "scroll-v5.8.74",
+      "name": "scroll-v5.8.74",
+      "published_at": "2025-07-24T13:29:20Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.74"
+    },
+    {
+      "tag": "scroll-v5.8.72",
+      "name": "scroll-v5.8.72",
+      "published_at": "2025-07-18T07:07:57Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.72"
+    },
+    {
+      "tag": "scroll-v5.8.52",
+      "name": "scroll-v5.8.52",
+      "published_at": "2025-06-05T11:21:52Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.52"
+    },
+    {
+      "tag": "scroll-v5.8.52-fix",
+      "name": "scroll-v5.8.52-fix",
+      "published_at": "2025-06-23T11:39:27Z",
+      "prerelease": true,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.52-fix"
+    },
+    {
+      "tag": "scroll-v5.8.38",
+      "name": "scroll-v5.8.38",
+      "published_at": "2025-04-15T09:05:17Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.38"
+    },
+    {
+      "tag": "scroll-v5.8.33",
+      "name": "scroll-v5.8.33",
+      "published_at": "2025-03-31T03:53:26Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.33"
+    },
+    {
+      "tag": "scroll-v5.8.25",
+      "name": "scroll-v5.8.25",
+      "published_at": "2025-03-13T15:20:56Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.25"
+    },
+    {
+      "tag": "scroll-v5.8.23",
+      "name": "scroll-v5.8.23",
+      "published_at": "2025-03-05T20:53:05Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.23"
+    },
+    {
+      "tag": "scroll-v5.8.0",
+      "name": "scroll-v5.8.0",
+      "published_at": "2024-12-20T12:19:24Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.8.0"
+    },
+    {
+      "tag": "scroll-v5.7.25",
+      "name": "scroll-v5.7.25",
+      "published_at": "2024-11-19T17:47:18Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.7.25"
+    },
+    {
+      "tag": "scroll-v5.7.0",
+      "name": "scroll-v5.7.0",
+      "published_at": "2024-08-27T06:08:54Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.7.0"
+    },
+    {
+      "tag": "scroll-v5.6.0",
+      "name": "scroll-v5.6.0",
+      "published_at": "2024-08-05T17:19:45Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.6.0"
+    },
+    {
+      "tag": "scroll-v5.5.0",
+      "name": "scroll-v5.5.0",
+      "published_at": "2024-06-24T14:28:20Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.5.0"
+    },
+    {
+      "tag": "scroll-v5.4.2",
+      "name": "scroll-v5.4.2",
+      "published_at": "2024-06-12T12:15:47Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.4.2"
+    },
+    {
+      "tag": "scroll-v5.3.0",
+      "name": "scroll-v5.3.0",
+      "published_at": "2024-04-22T07:53:56Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.3.0"
+    },
+    {
+      "tag": "scroll-v5.2.0",
+      "name": "scroll-v5.2.0",
+      "published_at": "2024-04-08T09:35:21Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.2.0"
+    },
+    {
+      "tag": "scroll-v5.1.10",
+      "name": "scroll-v5.1.10",
+      "published_at": "2024-01-04T15:57:59Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.1.10"
+    },
+    {
+      "tag": "scroll-v5.0.0",
+      "name": "scroll-v5.0.0",
+      "published_at": "2023-10-12T09:34:40Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.0.0"
+    },
+    {
+      "tag": "scroll-v4.3.51",
+      "name": "scroll-v4.3.51",
+      "published_at": "2023-08-24T17:31:54Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v4.3.51"
+    },
+    {
+      "tag": "scroll-v3.3.1",
+      "name": "Archimedes (scroll-v3.3.1)",
+      "published_at": "2023-05-26T11:05:00Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v3.3.1"
+    },
+    {
+      "tag": "scroll-v3.1.5",
+      "name": "scroll-v3.1.5",
+      "published_at": "2023-04-19T05:59:55Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v3.1.5"
+    },
+    {
+      "tag": "scroll-v3.1.2",
+      "name": "scroll-v3.1.2",
+      "published_at": "2023-03-30T20:18:28Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v3.1.2"
+    }
+  ]
+}

@@ -324,6 +324,44 @@ def test_linea_image_tag_is_read(capsys):
     assert "linea-besu 2.3.0" in capsys.readouterr().out
 
 
+def test_l2geth_version_drops_mainnet_metadata(monkeypatch, capsys):
+    def fake(path, argv, timeout=10):
+        assert argv == ("version",)
+        return (
+            "Geth\n"
+            "Version: 5.10.2-mainnet\n"
+            "Git Commit: abcdef1234567890\n"
+            "Architecture: amd64\n"
+            "Go Version: go1.23.4\n"
+            "Operating System: linux\n"
+        )
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fake)
+    assert version_argv("l2geth") == ("version",)
+    assert main(["detect", "--client", "l2geth", "--binary", "/usr/bin/geth"]) == 0
+    output = capsys.readouterr().out
+    assert "l2geth 5.10.2" in output
+    assert "5.10.2-mainnet" not in output
+    assert "1.23.4" not in output
+    assert version_from_output("l2geth", "Version: 5.10.2-unstable\n") is None
+
+
+def test_l2geth_image_tag_is_read(capsys):
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "l2geth",
+                "--image",
+                "scrolltech/l2geth:scroll-v5.10.2",
+            ]
+        )
+        == 0
+    )
+    assert "l2geth 5.10.2" in capsys.readouterr().out
+
+
 def test_detect_unknown_client(capsys):
     assert main(["detect", "--client", "lodestar", "--image", "lodestar:v1.2.3"]) == 3
     assert "Unknown client" in capsys.readouterr().err

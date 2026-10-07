@@ -1134,6 +1134,126 @@ def test_linea_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_scroll_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "scroll",
+                "--execution",
+                "l2geth",
+                "--execution-version",
+                "scroll-v5.10.2",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Scroll\n")
+    assert "Next upgrade: Unannounced" in output
+    assert "Next upgrade: OpenVM" not in output
+    assert "Next upgrade: Galileo" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://forum.scroll.io/t/announcement-openvm-v2-0-0-upgrade-on-scroll/1495" in output
+    assert "l2geth 5.10.2  execution  requirement not announced" in output
+    assert "l2geth is the node." in output
+    assert "September 22, 2026" in output
+    assert "02:00 UTC" in output
+    assert "December 16, 2025" in output
+    assert "December 18, 2025" in output
+    assert "scroll-v5.8.38 or higher" in output
+    assert "Early 2027 is not an activation time" in output
+    assert "Scroll Sepolia" in output
+    assert "Upstream Geth" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 5.8" not in output
+    assert "required 5.10" not in output
+    assert "2026-09-22" not in output
+    assert "2025-12-16" not in output
+    header, _, _ = output.partition("Verdict:")
+    assert "consensus" not in header
+
+
+def test_scroll_rejects_geth_and_a_consensus_flag(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "scroll",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+            ]
+        )
+        == 3
+    )
+    assert "Scroll does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "scroll",
+                "--execution",
+                "l2geth",
+                "--execution-version",
+                "5.10.2",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not use --consensus" in error
+    assert "OpenVM" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "l2geth",
+                "--execution-version",
+                "5.10.2",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include l2geth" in error
+    assert "--network scroll" in error
+    assert "Glamsterdam" not in error
+
+
+def test_scroll_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "scroll",
+                "--execution",
+                "l2geth",
+                "--execution-version",
+                "5.10.2-rc.1",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))
