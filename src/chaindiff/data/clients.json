@@ -96,6 +96,14 @@
       "tag_prefix": "scroll-"
     },
     {
+      "id": "external-node",
+      "name": "external node",
+      "role": "execution",
+      "github": "matter-labs/zksync-era",
+      "versioning": "semver",
+      "tag_prefix": "core-"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",

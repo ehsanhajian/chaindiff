@@ -36,6 +36,8 @@ _VERSION_ARGV = {
     "avalanchego": ("--version",),
     # l2geth scroll-v5.10.2 registers `version` and prints "Version: 5.10.2-mainnet".
     "l2geth": ("version",),
+    # external node core-v31.5.0 uses clap --version, which exits during parse.
+    "external-node": ("--version",),
 }
 
 # Tags that name a channel, not a release. Exact match only.
@@ -229,6 +231,15 @@ def _prysm(text: str) -> list[str]:
     )
 
 
+def _external_node(text: str) -> list[str]:
+    # core-v31.5.0 sets the crate version to 31.5.0-non-semver-compat.
+    # clap prints that suffix. It is not a prerelease.
+    return re.findall(
+        r"(?m)^zksync_external_node[ \t]+(\d+\.\d+\.\d+)(?:-non-semver-compat)?[ \t]*$",
+        text,
+    )
+
+
 def _l2geth(text: str) -> list[str]:
     # VersionMeta is "mainnet". It is not a prerelease, and the Go version is a later line.
     return re.findall(r"(?m)^Version:[ \t]*(\d+\.\d+\.\d+)(?:-mainnet)?[ \t]*$", text)
@@ -275,4 +286,5 @@ _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "bsc": _version_lines,
     "avalanchego": _avalanchego,
     "l2geth": _l2geth,
+    "external-node": _external_node,
 }

@@ -25,6 +25,7 @@ def test_registry_lists_the_supported_clients():
         "avalanchego",
         "linea-besu",
         "l2geth",
+        "external-node",
         "lighthouse",
         "prysm",
         "teku",
@@ -63,6 +64,9 @@ def test_registry_lists_the_supported_clients():
     assert by_id["l2geth"].github == "scroll-tech/go-ethereum"
     assert by_id["l2geth"].role == "execution"
     assert by_id["l2geth"].tag_prefix == "scroll-"
+    assert by_id["external-node"].github == "matter-labs/zksync-era"
+    assert by_id["external-node"].role == "execution"
+    assert by_id["external-node"].tag_prefix == "core-"
     assert by_id["bsc"].github == "bnb-chain/bsc"
     assert by_id["bsc"].role == "execution"
     assert by_id["bsc"].tag_prefix == ""
@@ -139,6 +143,14 @@ def test_shipped_catalog_drops_known_non_releases():
     assert latest_stable(l2geth).tag == "scroll-v5.10.2"
     assert all(item.tag.startswith("scroll-") for item in l2geth)
     assert all(not item.tag.startswith("v1.") for item in l2geth)
+    _, external_node = load_releases("external-node")
+    assert any(item.tag == "core-v31.5.0" and not item.prerelease for item in external_node)
+    assert any(item.tag == "core-v29.4.0" and not item.prerelease for item in external_node)
+    assert latest_stable(external_node).tag == "core-v31.5.0"
+    assert all(item.tag.startswith("core-") for item in external_node)
+    assert all(not item.tag.startswith("prover-") for item in external_node)
+    assert all(not item.tag.startswith("contract_verifier-") for item in external_node)
+    assert all(not item.tag.startswith("airbender_prover_server-") for item in external_node)
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

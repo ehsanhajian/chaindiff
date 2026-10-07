@@ -362,6 +362,36 @@ def test_l2geth_image_tag_is_read(capsys):
     assert "l2geth 5.10.2" in capsys.readouterr().out
 
 
+def test_external_node_version_drops_the_crate_suffix(monkeypatch, capsys):
+    def fake(path, argv, timeout=10):
+        assert argv == ("--version",)
+        return "zksync_external_node 31.5.0-non-semver-compat\n"
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fake)
+    assert version_argv("external-node") == ("--version",)
+    assert main(["detect", "--client", "external-node", "--binary", "/usr/bin/zksync_external_node"]) == 0
+    output = capsys.readouterr().out
+    assert "external-node 31.5.0" in output
+    assert "non-semver-compat" not in output
+    assert version_from_output("external-node", "zksync_external_node 31.5.0-rc.1\n") is None
+
+
+def test_external_node_image_tag_is_read(capsys):
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "external-node",
+                "--image",
+                "matterlabs/external-node:v29.4.0",
+            ]
+        )
+        == 0
+    )
+    assert "external-node 29.4.0" in capsys.readouterr().out
+
+
 def test_detect_unknown_client(capsys):
     assert main(["detect", "--client", "lodestar", "--image", "lodestar:v1.2.3"]) == 3
     assert "Unknown client" in capsys.readouterr().err
