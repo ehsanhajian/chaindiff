@@ -73,6 +73,13 @@
       "versioning": "semver"
     },
     {
+      "id": "avalanchego",
+      "name": "avalanchego",
+      "role": "execution",
+      "github": "ava-labs/avalanchego",
+      "versioning": "semver"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",

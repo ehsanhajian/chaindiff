@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "1.15.0",
+      "severity": "breaking",
+      "summary": "Schedules Helicon on Mainnet for September 22, 2026 at 15:00 UTC. The plugin version becomes 46. C-Chain state sync can stall across activation, and several C-Chain APIs and config options stop working after it.",
+      "action": "Upgrade before the Helicon time and update plugins to version 46. Do not state sync across activation. On Mainnet and Fuji, set commit-interval to 4096. Replace eth-apis with apis. A Firewood node must set state-sync-enabled to false.",
+      "source": "https://github.com/ava-labs/avalanchego/releases/tag/v1.15.0"
+    },
+    {
+      "version": "1.15.1",
+      "severity": "none",
+      "summary": "Backwards compatible with v1.15.0. Optional. The plugin version stays 46.",
+      "action": "",
+      "source": "https://github.com/ava-labs/avalanchego/releases/tag/v1.15.1"
+    }
+  ]
+}
