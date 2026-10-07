@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "2.3.0",
+      "severity": "none",
+      "summary": "The notes stop bespoke sequencer tracing at a configured timestamp, deduplicate forced transactions, and say the package upgrades Besu to 26.8.1. They do not state a hard fork.",
+      "action": "",
+      "source": "https://github.com/LFDT-Lineth/lineth-monorepo/releases/tag/releases/linea-besu-package/v2.3.0"
+    }
+  ]
+}

@@ -1001,6 +1001,139 @@ def test_polygon_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_linea_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "linea",
+                "--execution",
+                "linea-besu",
+                "--execution-version",
+                "releases/linea-besu-package/v2.3.0",
+                "--consensus",
+                "maru",
+                "--consensus-version",
+                "1.4.0",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Linea\n")
+    assert "Next upgrade: Beta v5.3" in output
+    assert "Next upgrade: Beta v5.2" not in output
+    assert "Next upgrade: Fusaka" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://docs.linea.build/changelog/release-notes" in output
+    assert "linea-besu 2.3.0  execution  requirement not announced" in output
+    assert "maru 1.4.0  consensus  requirement not announced" in output
+    assert "No required Linea Besu or Maru version has been announced for Beta v5.3." in output
+    assert "No upgrade order between Linea Besu and Maru is stated for Beta v5.3." in output
+    assert "Q4 2026" in output
+    assert "not activation times" in output
+    assert "April 1, 2026" in output
+    assert "December 3, 2025" in output
+    assert "docker-compose" in output
+    assert "Linea Sepolia" in output
+    assert "Upstream Besu, Geth, and Erigon" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "Amsterdam" not in output
+    assert "Glamsterdam" not in output
+    assert "required 2.3" not in output
+    assert "required 1.4" not in output
+    assert "2026-04-01" not in output
+    assert "2025-12-03" not in output
+
+
+def test_linea_rejects_upstream_clients(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "linea",
+                "--execution",
+                "besu",
+                "--execution-version",
+                "26.8.1",
+                "--consensus",
+                "teku",
+                "--consensus-version",
+                "26.8.0",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "Linea does not include besu, teku" in error
+    assert "Beta v5.3" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "linea",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+                "--consensus",
+                "maru",
+                "--consensus-version",
+                "1.4.0",
+            ]
+        )
+        == 3
+    )
+    assert "Linea does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "linea-besu",
+                "--execution-version",
+                "2.3.0",
+                "--consensus",
+                "maru",
+                "--consensus-version",
+                "1.4.0",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include linea-besu, maru" in error
+    assert "--network linea" in error
+    assert "Glamsterdam" not in error
+
+
+def test_linea_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "linea",
+                "--execution",
+                "linea-besu",
+                "--execution-version",
+                "2.3.0",
+                "--consensus",
+                "maru",
+                "--consensus-version",
+                "1.4.0-rc.1",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))

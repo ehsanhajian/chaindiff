@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "linea",
+  "name": "Linea",
+  "upgrade": {
+    "name": "Beta v5.3",
+    "activation": null,
+    "source": "https://docs.linea.build/changelog/release-notes",
+    "summary": "Linea Mainnet activation has not been scheduled. The changelog lists Beta v5.3 as the next release and says its timing is a target that can move. It does not name a Linea Besu or Maru release.",
+    "order": null,
+    "order_summary": "No upgrade order between Linea Besu and Maru is stated for Beta v5.3.",
+    "warning": "The changelog lists Linea Mainnet Q4 2026 for Beta v5.3 and Beta v5.4. Those quarters are targets, not activation times. Beta v5.2 activated on Linea Mainnet on April 1, 2026 and is not the next upgrade. Fusaka activated on December 3, 2025. That upgrade guide points at the current docker-compose files instead of a pinned next release. Linea Sepolia is not this schedule. Upstream Besu, Geth, and Erigon are not this check.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}
