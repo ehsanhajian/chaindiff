@@ -555,6 +555,119 @@ def test_arbitrum_one_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_avalanche_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "avalanche",
+                "--execution",
+                "avalanchego",
+                "--execution-version",
+                "1.15.1",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Avalanche\n")
+    assert "Next upgrade: Igloo" in output
+    assert "Next upgrade: Helicon" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://github.com/ava-labs/avalanchego/pull/6057" in output
+    assert "avalanchego 1.15.1  execution  requirement not announced" in output
+    assert "consensus" not in output.split("Verdict:")[0]
+    assert "avalanchego is the node." in output
+    assert "September 22, 2026 at 15:00 UTC" in output
+    assert "July 28, 2026 at 15:00 UTC" in output
+    assert "plugin version to 46" in output
+    assert "v1.15.1 is backwards compatible" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 1.15" not in output
+    assert "9999" not in output
+    assert "2026-09-22" not in output
+
+
+def test_avalanche_rejects_geth_and_a_consensus_flag(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "avalanche",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+            ]
+        )
+        == 3
+    )
+    assert "Avalanche does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "avalanche",
+                "--execution",
+                "avalanchego",
+                "--execution-version",
+                "1.15.1",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not use --consensus" in error
+    assert "Igloo" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "avalanchego",
+                "--execution-version",
+                "1.15.1",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include avalanchego" in error
+    assert "--network avalanche" in error
+    assert "Glamsterdam" not in error
+
+
+def test_avalanche_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "avalanche",
+                "--execution",
+                "avalanchego",
+                "--execution-version",
+                "1.15.0-fuji",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_bsc_requirement_is_not_announced(capsys):
     assert (
         main(

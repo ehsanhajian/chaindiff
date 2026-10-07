@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "avalanche",
+  "name": "Avalanche",
+  "upgrade": {
+    "name": "Igloo",
+    "activation": null,
+    "source": "https://github.com/ava-labs/avalanchego/pull/6057",
+    "summary": "Igloo is the next Avalanche upgrade and is unscheduled. No avalanchego release is named for it.",
+    "order": null,
+    "order_summary": "avalanchego is the node. No separate consensus client is part of this upgrade.",
+    "warning": "Helicon activated on Avalanche Mainnet on September 22, 2026 at 15:00 UTC. v1.15.0 told nodes to upgrade before that time and set the plugin version to 46. That is the live upgrade, not the next one. v1.15.1 is backwards compatible with v1.15.0 and is optional. Fuji Helicon activated on July 28, 2026 at 15:00 UTC and is not a mainnet deadline. Igloo names no avalanchego release.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

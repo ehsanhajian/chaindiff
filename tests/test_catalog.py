@@ -22,6 +22,7 @@ def test_registry_lists_the_supported_clients():
         "nitro",
         "bor",
         "bsc",
+        "avalanchego",
         "lighthouse",
         "prysm",
         "teku",
@@ -47,6 +48,9 @@ def test_registry_lists_the_supported_clients():
     assert by_id["bor"].github == "0xPolygon/bor"
     assert by_id["bor"].role == "execution"
     assert by_id["bor"].tag_prefix == ""
+    assert by_id["avalanchego"].github == "ava-labs/avalanchego"
+    assert by_id["avalanchego"].role == "execution"
+    assert by_id["avalanchego"].tag_prefix == ""
     assert by_id["bsc"].github == "bnb-chain/bsc"
     assert by_id["bsc"].role == "execution"
     assert by_id["bsc"].tag_prefix == ""
@@ -99,6 +103,10 @@ def test_shipped_catalog_drops_known_non_releases():
     assert any(item.tag == "v1.7.8" and not item.prerelease for item in bsc)
     assert any(item.tag == "v1.8.0-alpha" and item.prerelease for item in bsc)
     assert latest_stable(bsc).tag == "v1.7.8"
+    _, avalanchego = load_releases("avalanchego")
+    assert any(item.tag == "v1.15.1" and not item.prerelease for item in avalanchego)
+    assert any(item.tag == "v1.15.0-fuji" and item.prerelease for item in avalanchego)
+    assert latest_stable(avalanchego).tag == "v1.15.1"
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

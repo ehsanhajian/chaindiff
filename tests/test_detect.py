@@ -81,6 +81,11 @@ NIMBUS = "v26.9.1-abcdef-stateofus\n"
         ("bor", "Version: 2.10.2\nGitCommit: abcdef1234567890\n", "2.10.2"),
         ("heimdall", "0.12.1\n", "0.12.1"),
         ("bsc", "Geth\nVersion: 1.7.8\nGit Commit: abcdef\nGo Version: go1.24.1\n", "1.7.8"),
+        (
+            "avalanchego",
+            "avalanchego/1.15.1 [database=v1.4.5, rpcchainvm=46, commit=abc, go=1.26.8]\n",
+            "1.15.1",
+        ),
     ],
 )
 def test_binary_output_reads_one_release(client, text, version):

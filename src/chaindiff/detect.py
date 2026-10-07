@@ -32,6 +32,8 @@ _VERSION_ARGV = {
     "heimdall": ("version",),
     # BSC v1.7.8 registers `version` and prints "Version: <major.minor.patch>".
     "bsc": ("version",),
+    # avalanchego v1.15.1 --version prints and exits before the node starts.
+    "avalanchego": ("--version",),
 }
 
 # Tags that name a channel, not a release. Exact match only.
@@ -225,6 +227,14 @@ def _prysm(text: str) -> list[str]:
     )
 
 
+def _avalanchego(text: str) -> list[str]:
+    # The database version and the Go version are also in this line.
+    return re.findall(
+        r"(?m)^avalanchego/v?(\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?)",
+        text,
+    )
+
+
 def _plain_version(text: str) -> list[str]:
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     if len(lines) == 1:
@@ -256,4 +266,5 @@ _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "bor": _version_lines,
     "heimdall": _plain_version,
     "bsc": _version_lines,
+    "avalanchego": _avalanchego,
 }
