@@ -4,6 +4,8 @@ ChainDiff tells you whether a node-client upgrade is safe, and whether the relea
 
 It answers from a local catalog of releases, sourced reviews, and network announcements. It does not restart a node, edit a config, or apply an upgrade.
 
+The short page is [ehsanhajian.github.io/chaindiff](https://ehsanhajian.github.io/chaindiff/).
+
 ## Install
 
 ```bash

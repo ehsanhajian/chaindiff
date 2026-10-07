@@ -11,6 +11,7 @@ from collections.abc import Callable
 from datetime import datetime, timezone
 from typing import Any
 
+from chaindiff import __version__
 from chaindiff.catalog import load_clients, save_releases
 from chaindiff.models import Client, Release
 from chaindiff.versions import tag_is_prerelease, version_from_tag
@@ -27,7 +28,7 @@ class GitHubError(Exception):
 def _default_opener(url: str, token: str | None) -> tuple[Any, str | None]:
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "chaindiff/0.1",
+        "User-Agent": f"chaindiff/{__version__}",
         "X-GitHub-Api-Version": "2022-11-28",
     }
     if token:

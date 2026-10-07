@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can I safely upgrade my node?</title>
+  <meta name="description" content="ChainDiff tells you whether a node-client upgrade is safe, and whether the release you run meets the next upgrade on your chain.">
+  <meta property="og:title" content="Can I safely upgrade my node?">
+  <meta property="og:description" content="ChainDiff checks the release you run. It does not restart the node.">
+  <meta property="og:image" content="https://ehsanhajian.github.io/chaindiff/social-preview.png">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://ehsanhajian.github.io/chaindiff/">
+  <style>
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #0e141b; color: #f4f7f5; }
+    main { max-width: 40rem; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
+    h1 { font-size: 2rem; line-height: 1.2; font-weight: 700; }
+    p, li { color: #d5e2dc; line-height: 1.5; }
+    a { color: #3ddc97; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    pre { background: #161e27; padding: 1rem; overflow-x: auto; }
+    code { color: #f4f7f5; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Can I safely upgrade my node?</h1>
+    <p>ChainDiff tells you whether a node-client upgrade is safe, and whether the release you run meets the next upgrade on your chain.</p>
+    <p>It answers from a local catalog of releases, sourced reviews, and network announcements. It does not restart a node, edit a config, or apply an upgrade.</p>
+    <h2>Install</h2>
+    <pre><code>pip install chaindiff</code></pre>
+    <h2>Check</h2>
+    <pre><code>chaindiff check --client geth --from 1.17.6
+
+chaindiff check --network ethereum \
+  --execution geth --execution-version 1.17.7 \
+  --consensus lighthouse --consensus-version 8.2.3</code></pre>
+    <p>The full guide is the <a href="https://github.com/ehsanhajian/chaindiff#chaindiff">README</a>.</p>
+  </main>
+</body>
+</html>
