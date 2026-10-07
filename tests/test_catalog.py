@@ -24,6 +24,7 @@ def test_registry_lists_the_supported_clients():
         "bsc",
         "avalanchego",
         "linea-besu",
+        "l2geth",
         "lighthouse",
         "prysm",
         "teku",
@@ -59,6 +60,9 @@ def test_registry_lists_the_supported_clients():
     assert by_id["maru"].github == "LFDT-Lineth/lineth-monorepo"
     assert by_id["maru"].role == "consensus"
     assert by_id["maru"].tag_prefix == "releases/maru/"
+    assert by_id["l2geth"].github == "scroll-tech/go-ethereum"
+    assert by_id["l2geth"].role == "execution"
+    assert by_id["l2geth"].tag_prefix == "scroll-"
     assert by_id["bsc"].github == "bnb-chain/bsc"
     assert by_id["bsc"].role == "execution"
     assert by_id["bsc"].tag_prefix == ""
@@ -129,6 +133,12 @@ def test_shipped_catalog_drops_known_non_releases():
     assert all(item.tag.startswith("releases/maru/") for item in maru)
     assert all(not item.tag.startswith("releases/linea-besu-package/") for item in maru)
     assert all(not item.tag.startswith("releases/coordinator/") for item in maru)
+    _, l2geth = load_releases("l2geth")
+    assert any(item.tag == "scroll-v5.10.2" and not item.prerelease for item in l2geth)
+    assert any(item.tag == "scroll-v5.8.52-fix" and item.prerelease for item in l2geth)
+    assert latest_stable(l2geth).tag == "scroll-v5.10.2"
+    assert all(item.tag.startswith("scroll-") for item in l2geth)
+    assert all(not item.tag.startswith("v1.") for item in l2geth)
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

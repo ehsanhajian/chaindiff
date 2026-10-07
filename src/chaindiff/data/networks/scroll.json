@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "scroll",
+  "name": "Scroll",
+  "upgrade": {
+    "name": "Unannounced",
+    "activation": null,
+    "source": "https://forum.scroll.io/t/announcement-openvm-v2-0-0-upgrade-on-scroll/1495",
+    "summary": "No Scroll upgrade after OpenVM v2.0.0 is announced. That upgrade has already executed and names no l2geth release.",
+    "order": null,
+    "order_summary": "l2geth is the node. No separate consensus client is part of this upgrade.",
+    "warning": "OpenVM v2.0.0 executed on Scroll Mainnet on September 22, 2026 at 02:00 UTC. That announcement names no l2geth release and says users do not need to change anything. It is not the next upgrade. Galileo activated on December 16, 2025 and December 18, 2025 and is not the next upgrade. The current node guide names scroll-v5.8.38 or higher. That live minimum is not the next upgrade. A September 2026 forum post about a permissioned chain says its dates are not final and it is not a proposal. Early 2027 is not an activation time. Scroll Sepolia is not this schedule. Upstream Geth is not this check. The current node guide still pins l2geth.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

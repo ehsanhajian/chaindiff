@@ -34,6 +34,8 @@ _VERSION_ARGV = {
     "bsc": ("version",),
     # avalanchego v1.15.1 --version prints and exits before the node starts.
     "avalanchego": ("--version",),
+    # l2geth scroll-v5.10.2 registers `version` and prints "Version: 5.10.2-mainnet".
+    "l2geth": ("version",),
 }
 
 # Tags that name a channel, not a release. Exact match only.
@@ -227,6 +229,11 @@ def _prysm(text: str) -> list[str]:
     )
 
 
+def _l2geth(text: str) -> list[str]:
+    # VersionMeta is "mainnet". It is not a prerelease, and the Go version is a later line.
+    return re.findall(r"(?m)^Version:[ \t]*(\d+\.\d+\.\d+)(?:-mainnet)?[ \t]*$", text)
+
+
 def _avalanchego(text: str) -> list[str]:
     # The database version and the Go version are also in this line.
     return re.findall(
@@ -267,4 +274,5 @@ _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "heimdall": _plain_version,
     "bsc": _version_lines,
     "avalanchego": _avalanchego,
+    "l2geth": _l2geth,
 }

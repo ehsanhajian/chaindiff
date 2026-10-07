@@ -76,7 +76,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
         command.add_argument(
             "--network",
-            help="Network id, for example ethereum, gnosis, bsc, avalanche, linea, op-mainnet, base, arbitrum-one, or polygon",
+            help="Network id, for example ethereum, gnosis, bsc, avalanche, linea, scroll, op-mainnet, base, arbitrum-one, or polygon",
         )
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
@@ -331,6 +331,8 @@ def _outside_mainnet_pair(execution, consensus) -> str | None:
         hint = "Use --network avalanche for that chain's schedule."
     elif set(outside) <= _LINEA_CLIENTS:
         hint = "Use --network linea for that chain's schedule."
+    elif set(outside) <= {"l2geth"}:
+        hint = "Use --network scroll for that chain's schedule."
     else:
         hint = (
             "Use --client for one OP Stack client, or --network op-mainnet or --network base "
@@ -618,6 +620,40 @@ def _avalanche_check(args: argparse.Namespace, schedule, clients) -> int:
     return _EXIT[result.verdict]
 
 
+def _scroll_check(args: argparse.Namespace, schedule, clients) -> int:
+    if args.consensus or args.consensus_version:
+        print("Scroll is an l2geth node. This check does not use --consensus.", file=sys.stderr)
+        return 3
+    if not args.execution or not args.execution_version:
+        print(
+            "A Scroll check needs --execution l2geth and --execution-version.",
+            file=sys.stderr,
+        )
+        return 3
+    execution = client_by_id(clients, args.execution)
+    if execution is None:
+        known = ", ".join(item.id for item in clients)
+        print(f"Unknown client '{args.execution}'. Known clients: {known}", file=sys.stderr)
+        return 3
+    if execution.id != "l2geth":
+        print(f"Scroll does not include {execution.id}. This check uses l2geth.", file=sys.stderr)
+        return 3
+    execution_version = _parse_client_version(execution, args.execution_version)
+    if execution_version is None:
+        print(explain_unparsed(args.execution_version), file=sys.stderr)
+        return 3
+    result = evaluate_network(
+        schedule,
+        execution=execution,
+        execution_version=execution_version,
+    )
+    if args.json:
+        print(json.dumps(network_json(result), indent=2))
+    else:
+        print(format_network(result), end="")
+    return _EXIT[result.verdict]
+
+
 def _network_check(args: argparse.Namespace) -> int:
     if args.client or args.current:
         print("--network does not use --client or --from.", file=sys.stderr)
@@ -640,6 +676,8 @@ def _network_check(args: argparse.Namespace) -> int:
         return _bsc_check(args, schedule, clients)
     if schedule.id == "avalanche":
         return _avalanche_check(args, schedule, clients)
+    if schedule.id == "scroll":
+        return _scroll_check(args, schedule, clients)
     if not all((args.execution, args.execution_version, args.consensus, args.consensus_version)):
         print(
             "A network check needs --execution, --execution-version, --consensus, and --consensus-version.",

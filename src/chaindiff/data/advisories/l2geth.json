@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "5.10.2",
+      "severity": "note",
+      "summary": "Security fix recommended for Scroll mainnet and Scroll Sepolia nodes. It resolves vulnerabilities reported through the Ethereum Foundation bug bounty program. The notes do not state a hard fork.",
+      "action": "Upgrade. The notes recommend this release for every Scroll mainnet and Scroll Sepolia node.",
+      "source": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.10.2"
+    }
+  ]
+}
