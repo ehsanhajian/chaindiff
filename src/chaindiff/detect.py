@@ -38,6 +38,10 @@ _VERSION_ARGV = {
     "l2geth": ("version",),
     # external node core-v31.5.0 uses clap --version, which exits during parse.
     "external-node": ("--version",),
+    # Pathfinder v0.24.1 treats --version as its own command and clap exits during parse.
+    "pathfinder": ("--version",),
+    # Juno v0.16.8 sets cobra Version from git describe. --version exits before the node starts.
+    "juno": ("--version",),
 }
 
 # Tags that name a channel, not a release. Exact match only.
@@ -231,6 +235,22 @@ def _prysm(text: str) -> list[str]:
     )
 
 
+def _pathfinder(text: str) -> list[str]:
+    # clap prints the command name and VERGEN_GIT_DESCRIBE. A describe with extra commits is left unread.
+    return re.findall(
+        r"(?m)^Pathfinder[ \t]+v?(\d+\.\d+\.\d+(?:-(?:alpha|beta|rc)[0-9A-Za-z.]*)?)[ \t]*$",
+        text,
+    )
+
+
+def _juno(text: str) -> list[str]:
+    # cobra prints "juno version <git describe --tags>" and exits.
+    return re.findall(
+        r"(?m)^juno version v?(\d+\.\d+\.\d+(?:-(?:alpha|beta|rc)[0-9A-Za-z.]*)?)[ \t]*$",
+        text,
+    )
+
+
 def _external_node(text: str) -> list[str]:
     # core-v31.5.0 sets the crate version to 31.5.0-non-semver-compat.
     # clap prints that suffix. It is not a prerelease.
@@ -287,4 +307,6 @@ _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "avalanchego": _avalanchego,
     "l2geth": _l2geth,
     "external-node": _external_node,
+    "pathfinder": _pathfinder,
+    "juno": _juno,
 }

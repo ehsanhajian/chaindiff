@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "0.16.6",
+      "severity": "note",
+      "summary": "Adds Starknet 0.14.4 support. Startup runs a database migration.",
+      "action": "Plan for the startup migration. Full nodes take about 50 minutes. Pruned nodes take a few seconds.",
+      "source": "https://github.com/NethermindEth/juno/releases/tag/v0.16.6"
+    }
+  ]
+}

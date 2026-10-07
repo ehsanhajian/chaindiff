@@ -1377,6 +1377,175 @@ def test_zksync_era_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_starknet_names_pathfinder_and_juno(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "starknet",
+                "--execution",
+                "pathfinder",
+                "--execution-version",
+                "0.24.0",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("Starknet\n")
+    assert "Next upgrade: v0.14.4" in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://community.starknet.io/t/starknet-v0-14-4-prerelease-notes/116341" in output
+    assert "pathfinder 0.24.0  execution  required 0.24.0" in output
+    assert "Pathfinder 0.24.0 is the announced requirement." in output
+    assert "An operator runs Pathfinder or Juno." in output
+    assert "pending governance approval" in output
+    assert "October 5, 2026" in output
+    assert "not an activation time" in output
+    assert "September 15, 2026" in output
+    assert "not a mainnet deadline" in output
+    assert "SNIP-36" in output
+    assert "REVIEW REQUIRED" in output
+    assert "ALREADY CURRENT" not in output
+    assert "NOT SAFE" not in output
+    assert "2026-10-05" not in output
+    assert "2026-09-15" not in output
+    header, _, _ = output.partition("Verdict:")
+    assert "consensus" not in header
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "starknet",
+                "--execution",
+                "juno",
+                "--execution-version",
+                "0.16.5",
+            ]
+        )
+        == 2
+    )
+    older = capsys.readouterr().out
+    assert "juno 0.16.5  execution  required 0.16.6" in older
+    assert "NOT SAFE" in older
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "starknet",
+                "--execution",
+                "pathfinder",
+                "--execution-version",
+                "0.24.1",
+            ]
+        )
+        == 1
+    )
+    newer = capsys.readouterr().out
+    assert "announced 0.24.0, installed is newer" in newer
+    assert "ALREADY CURRENT" not in newer
+
+
+def test_starknet_rejects_geth_and_a_consensus_flag(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "starknet",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+            ]
+        )
+        == 3
+    )
+    assert "Starknet does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "starknet",
+                "--execution",
+                "pathfinder",
+                "--execution-version",
+                "0.24.0",
+                "--consensus",
+                "juno",
+                "--consensus-version",
+                "0.16.6",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not use --consensus" in error
+    assert "v0.14.4" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "pathfinder",
+                "--execution-version",
+                "0.24.0",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include pathfinder" in error
+    assert "--network starknet" in error
+    assert "Glamsterdam" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "juno",
+                "--execution-version",
+                "0.16.6",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include juno" in error
+    assert "--network starknet" in error
+    assert "Glamsterdam" not in error
+
+
+def test_starknet_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "starknet",
+                "--execution",
+                "juno",
+                "--execution-version",
+                "0.16.6-rc.4",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))

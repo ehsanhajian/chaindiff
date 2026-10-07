@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "starknet",
+  "name": "Starknet",
+  "upgrade": {
+    "name": "v0.14.4",
+    "activation": null,
+    "source": "https://community.starknet.io/t/starknet-v0-14-4-prerelease-notes/116341",
+    "summary": "v0.14.4 is the next Starknet upgrade. Mainnet activation is pending governance approval. A full node must be Pathfinder 0.24.0 or Juno 0.16.6. The announcement names those versions.",
+    "order": null,
+    "order_summary": "An operator runs Pathfinder or Juno. No separate consensus client is part of this upgrade.",
+    "warning": "Testnet is September 15, 2026. That date is not a mainnet deadline. Mainnet is listed as October 5, 2026, pending governance approval. That is not an activation time. A newer Pathfinder or Juno release is not the announced requirement. SNIP-36 prover operators are not this check.",
+    "required": {
+      "execution": {
+        "pathfinder": "0.24.0",
+        "juno": "0.16.6"
+      },
+      "consensus": {}
+    }
+  }
+}
