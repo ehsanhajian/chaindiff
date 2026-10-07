@@ -1,12 +1,29 @@
 [project]
 name = "chaindiff"
-version = "0.2.0"
-description = "Decide whether an Ethereum node client upgrade is safe."
+version = "0.3.0"
+description = "Decide whether a node client upgrade is safe."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 requires-python = ">=3.11"
-keywords = ["ethereum", "blockchain", "geth", "node", "upgrade", "cli"]
+keywords = [
+  "ethereum",
+  "gnosis",
+  "bnb",
+  "avalanche",
+  "optimism",
+  "base",
+  "arbitrum",
+  "polygon",
+  "linea",
+  "scroll",
+  "zksync",
+  "starknet",
+  "geth",
+  "node",
+  "upgrade",
+  "cli",
+]
 authors = [{ name = "ehsanhajian" }]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -23,7 +40,7 @@ dependencies = []
 dev = ["pytest>=8"]
 
 [project.urls]
-Homepage = "https://github.com/ehsanhajian/chaindiff"
+Homepage = "https://ehsanhajian.github.io/chaindiff/"
 Repository = "https://github.com/ehsanhajian/chaindiff"
 Issues = "https://github.com/ehsanhajian/chaindiff/issues"
 Changelog = "https://github.com/ehsanhajian/chaindiff/releases"
