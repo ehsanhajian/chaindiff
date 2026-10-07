@@ -1,61 +1,8 @@
 # ChainDiff
 
-Decide whether an Ethereum node client upgrade is safe.
+ChainDiff tells you whether a node-client upgrade is safe, and whether the release you run meets the next upgrade on your chain.
 
-ChainDiff compares the client you run with the release you want. It answers **safe** only when every release in between has a sourced review and none of those reviews is breaking. Otherwise the answer is **review required** or **not safe**.
-
-It does not restart a node, edit config, or apply an upgrade.
-
-## Scope
-
-Supported clients:
-
-| Client | Role | Release source |
-| --- | --- | --- |
-| Geth | execution | ethereum/go-ethereum |
-| Nethermind | execution | NethermindEth/nethermind |
-| Erigon | execution | erigontech/erigon |
-| Besu | execution | besu-eth/besu |
-| Reth | execution | paradigmxyz/reth |
-| op-geth | execution | ethereum-optimism/op-geth |
-| op-reth | execution | ethereum-optimism/optimism, tags `op-reth/` |
-| Nitro | execution | OffchainLabs/nitro |
-| Bor | execution | 0xPolygon/bor |
-| BSC | execution | bnb-chain/bsc |
-| avalanchego | execution | ava-labs/avalanchego |
-| Linea Besu | execution | LFDT-Lineth/lineth-monorepo, tags `releases/linea-besu-package/` |
-| l2geth | execution | scroll-tech/go-ethereum, tags `scroll-` |
-| external node | execution | matter-labs/zksync-era, tags `core-` |
-| Pathfinder | execution | software-mansion/pathfinder |
-| Juno | execution | NethermindEth/juno |
-| Lighthouse | consensus | sigp/lighthouse |
-| Prysm | consensus | OffchainLabs/prysm |
-| Teku | consensus | Consensys-Incorporated/teku |
-| Nimbus | consensus | status-im/nimbus-eth2 |
-| op-node | consensus | ethereum-optimism/optimism, tags `op-node/` |
-| Heimdall | consensus | 0xPolygon/heimdall-v2 |
-| Maru | consensus | LFDT-Lineth/lineth-monorepo, tags `releases/maru/` |
-
-Reth and Nimbus are in the catalog because operators run them. Besu and Teku are read from their current GitHub repositories. op-reth is the execution client Optimism documents for node operators, and op-node is the rollup node in the same repository. op-geth stays in the catalog because existing nodes may still be running it. op-batcher and op-proposer are not node clients.
-
-The shipping network schedules are Ethereum mainnet, Gnosis Chain, BNB Smart Chain, Avalanche, Linea, Scroll, zkSync Era, Starknet, OP Mainnet, Base, Arbitrum One, and Polygon PoS. op-geth, op-reth, and op-node are checked on their own with `--client`. `--network op-mainnet` and `--network base` each use that chain's next upgrade, so a release one chain requires is not assumed on the other. Arbitrum One is a Nitro node. Upstream Geth does not answer that check, and Arbitrum Nova and Orbit chains are not that schedule. Polygon PoS is bor with heimdall from the v2 repository. A bor release that does not name the matching heimdall is not a complete upgrade. Gnosis Chain reuses Nethermind, Erigon, Geth, or Reth with Lighthouse, Nimbus, or Teku. Lodestar stays out. BNB Smart Chain is the bnb-chain/bsc node. Upstream Geth does not answer that check, and opBNB is not that schedule. Avalanche is an avalanchego node. Linea is Linea Besu with Maru from LFDT-Lineth/lineth-monorepo. Upstream Besu, Geth, and Erigon do not answer that check, and Linea Sepolia is not that schedule. Scroll is an l2geth node from scroll-tech/go-ethereum. Upstream Geth does not answer that check, and Scroll Sepolia is not that schedule. zkSync Era is the external node from matter-labs/zksync-era. Other ZK Chains are not that schedule. Starknet is a Pathfinder or Juno full node. An operator runs one of them. SNIP-36 provers are not that check. The tool also covers these networks, one task each. A check has to use the clients that network actually runs, and that chain's upgrade, not only the latest tag of an upstream Ethereum client.
-
-- Ethereum mainnet
-- Gnosis
-- BNB Smart Chain
-- Avalanche
-- OP Mainnet
-- Base
-- Arbitrum One
-- Polygon PoS
-- Linea
-- Scroll
-- zkSync Era
-- Starknet
-
-Not in this cut: Lodestar, Grandine, op-batcher, op-proposer, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. `check` can take the execution client and the consensus client together and return one verdict and one plan. `check --network ethereum` compares that pair with the next Ethereum mainnet upgrade. `check --network op-mainnet` compares op-geth or op-reth and op-node with the next OP Mainnet upgrade. `check --network base` compares op-geth and op-node with the next Base upgrade. `check --network arbitrum-one` compares an installed Nitro release with the next Arbitrum One upgrade. `check --network polygon` compares installed bor and heimdall releases with the next Polygon PoS upgrade. `check --network gnosis` compares Nethermind or Erigon, or Geth or Reth, and Lighthouse, Nimbus, or Teku with the next Gnosis Chain upgrade. `check --network bsc` compares an installed BSC release with the next BNB Smart Chain upgrade. `check --network avalanche` compares an installed avalanchego release with the next Avalanche upgrade. `check --network linea` compares installed Linea Besu and Maru releases with the next Linea upgrade. `check --network scroll` compares an installed l2geth release with the next Scroll upgrade. `check --network zksync-era` compares an installed external node release with the next zkSync Era upgrade. `check --network starknet` compares an installed Pathfinder or Juno release with the next Starknet upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
-
-Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
+It answers from a local catalog of releases, sourced reviews, and network announcements. It does not restart a node, edit a config, or apply an upgrade.
 
 ## Install
 
@@ -63,101 +10,237 @@ Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the v
 pip install chaindiff
 ```
 
-That package is published from a GitHub release.
+The package is published from a GitHub release. Python 3.11 or newer.
 
-## Commands
+## Which command
+
+| Question | Command |
+| --- | --- |
+| What version is installed? | `detect` |
+| Is the move from this release to that release safe? | `check --client` |
+| Do these two Ethereum clients upgrade together? | `check --execution` and `--consensus` |
+| Does this install meet the next upgrade on this chain? | `check --network` |
+| What should I do before I upgrade? | `plan` |
+| Did a flag change between these releases? | `scan` |
+| What is the latest stable tag? | `versions` |
+
+`check`, `plan`, and `scan` compare versions you pass in. They do not read a binary. Run `detect` first when you need the installed version, then pass that version to `check`.
+
+`check --client` looks at the client, so the same command covers a mainnet node and a testnet node. A Sepolia Geth upgrade is the same check as a mainnet one. A release note that names a testnet deadline is included when that release is in the range.
+
+`check --network` looks only at the **next** upgrade on that chain. A live fork, a planning month, and a testnet date stay out of the requirement.
+
+## Examples
 
 ```bash
-chaindiff versions
 chaindiff detect --client geth --binary /usr/bin/geth
 chaindiff detect --client lighthouse --image sigp/lighthouse:v8.2.3
-chaindiff check --client geth --from <installed>
-chaindiff check --client lighthouse --from <installed> --to v8.2.3
-chaindiff check --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
-chaindiff plan --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
-chaindiff check --network ethereum --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
-chaindiff check --network polygon --execution bor --execution-version <installed> --consensus heimdall --consensus-version <installed>
-chaindiff check --network gnosis --execution nethermind --execution-version <installed> --consensus lighthouse --consensus-version <installed>
-chaindiff check --network bsc --execution bsc --execution-version <installed>
-chaindiff check --network avalanche --execution avalanchego --execution-version <installed>
-chaindiff check --network linea --execution linea-besu --execution-version <installed> --consensus maru --consensus-version <installed>
-chaindiff check --network scroll --execution l2geth --execution-version <installed>
-chaindiff check --network zksync-era --execution external-node --execution-version <installed>
-chaindiff check --network starknet --execution pathfinder --execution-version <installed>
-chaindiff check --network starknet --execution juno --execution-version <installed>
-chaindiff plan --client nethermind --from <installed>
-chaindiff scan --client geth --from <installed> --to <target> --config <file>
+
+chaindiff check --client geth --from 1.17.6
+chaindiff check --client lighthouse --from 8.2.2 --to v8.2.3
+
+chaindiff check --execution geth --execution-version 1.17.6 \
+  --consensus lighthouse --consensus-version 8.2.2
+chaindiff plan --execution geth --execution-version 1.17.6 \
+  --consensus lighthouse --consensus-version 8.2.2
+
+chaindiff check --network ethereum \
+  --execution geth --execution-version 1.17.7 \
+  --consensus lighthouse --consensus-version 8.2.3
+chaindiff check --network starknet \
+  --execution pathfinder --execution-version 0.24.0
+
+chaindiff scan --client geth --from 1.17.3 --config /etc/geth/flags
+chaindiff versions
 chaindiff refresh
 ```
 
-`check`, `plan`, `scan`, and `detect` read the client binary. Use them for a mainnet node or a testnet node. A Sepolia Geth upgrade is the same command as a mainnet one. A release note that names a testnet deadline is included when that release is in the range.
+`--to` defaults to the latest stable release. Every command accepts `--json`.
 
-`detect` reads the version from a client binary, or from a Docker image tag. It does not pull or start an image, and it does not run `check`. Geth, op-geth, bor, BSC, and l2geth are asked with `version` and read from a `Version:` line. l2geth prints `5.10.2-mainnet`; the `mainnet` suffix is metadata, not a prerelease, and the Go version on the next lines is ignored. The external node is asked with `--version`. core-v31.5.0 prints `zksync_external_node 31.5.0-non-semver-compat`; the suffix is the crate version, not a prerelease. Pathfinder and Juno are asked with `--version`. Pathfinder prints `Pathfinder v0.24.1`. Juno prints `juno version v0.16.8`. A git describe that is not one release is left unread. avalanchego is asked with `--version`. The version is the `avalanchego/` prefix, not the database version or the Go version in that line. `heimdalld version` prints the version alone. The other Ethereum clients are asked with `--version`. Prysm's binary is `beacon-chain` or `validator`. An op-node or op-reth version is read from the image tag. ChainDiff does not run those binaries, because their version output is not yet confirmed. Enter an OP Stack version as `1.19.8`. A full tag such as `op-node/v1.19.8` is also accepted. A Maru or Linea Besu version is read from the image tag. ChainDiff does not run those binaries. Maru's CLI annotation sets the version to `0.0.1`, which is not the release, and its documented run command uses `--network`. Enter a Linea version as `1.4.0` or `2.3.0`. A full tag such as `releases/maru/v1.4.0` is also accepted.
+## Verdicts
 
-When the output or the tag is one precise release, `detect` prints that version and the `check` command. A tag such as `1.17` is not treated as `1.17.0`. `latest`, `stable`, `nightly`, and the other channel names are not versions. If the binary fails, the tag is not a release, or more than one version appears, it prints:
+| Verdict | Exit | When |
+| --- | --- | --- |
+| ALREADY CURRENT | 0 | The installed release is the target. |
+| SAFE | 0 | Every release in the range has a sourced review, and none is breaking. |
+| REVIEW REQUIRED | 1 | A release has no review, a review is only a deprecation or a note, or the catalog is too old to trust `latest`. |
+| NOT SAFE | 2 | A reviewed change is breaking, or a semver client has an unreviewed major bump. |
+| PRERELEASE | 2 | The target is a prerelease. Leave it off a mainnet node. |
+| DOWNGRADE | 2 | The target is older than the installed release. |
 
-```bash
-chaindiff check --client geth --from <installed>
-```
+Exit 3 is a usage or catalog error.
+
+A catalog older than 5 days cannot return **safe** or **already current** for `latest`. A check between two explicit versions still runs, and the report says the catalog is old.
+
+Besu, Teku, and Nimbus use calendar versions. A new year is an ordinary release until a review says otherwise. Semver clients treat an unreviewed major bump as **not safe**.
+
+A network check uses the same exits:
+
+- **Already current** means every required client matches the announcement and the activation time is set.
+- **Review required** means a required version or the activation time is still open, or the installed release is newer than the named requirement.
+- **Not safe** means the installed release is older than an announced requirement.
+
+The checklist always includes the steps worth doing on any upgrade: read the notes, back up, keep the old binary, upgrade one client at a time, and roll back if the node fails. Client-specific steps appear only when an advisory names them.
+
+## Networks
+
+Use the clients that chain runs. A release required on one chain stays on that chain's schedule.
+
+| Chain | `--network` | Clients | Next upgrade | Named requirement |
+| --- | --- | --- | --- | --- |
+| Ethereum mainnet | `ethereum` | Geth, Nethermind, Erigon, Besu, or Reth, with Lighthouse, Prysm, Teku, or Nimbus | Glamsterdam | None yet |
+| Gnosis Chain | `gnosis` | Nethermind, Erigon, Geth, or Reth, with Lighthouse, Nimbus, or Teku | Glamsterdam | None yet |
+| BNB Smart Chain | `bsc` | BSC | Jenner | None yet |
+| Avalanche | `avalanche` | avalanchego | Igloo | None yet |
+| OP Mainnet | `op-mainnet` | op-geth or op-reth, with op-node | Lagoon | None yet |
+| Base | `base` | op-geth with op-node | Denim | None yet |
+| Arbitrum One | `arbitrum-one` | Nitro | Unannounced | None yet |
+| Polygon PoS | `polygon` | bor with heimdall | Unannounced | None yet |
+| Linea | `linea` | Linea Besu with Maru | Beta v5.3 | None yet |
+| Scroll | `scroll` | l2geth | Unannounced | None yet |
+| zkSync Era | `zksync-era` | external node | v31 | None yet |
+| Starknet | `starknet` | Pathfinder or Juno | v0.14.4 | Pathfinder 0.24.0 or Juno 0.16.6 |
+
+A chain with one client takes `--execution` and `--execution-version`. Leave `--consensus` off. For Starknet, pass either Pathfinder or Juno.
+
+Schedules live in `src/chaindiff/data/networks/`.
+
+### Ethereum mainnet
+
+Glamsterdam has no mainnet activation time and no required client release. Sepolia activates at 2026-10-06 13:53:36 UTC. That date is a testnet time. The announcement publishes no mainnet client releases. No upgrade order is stated.
+
+### Gnosis Chain
+
+Glamsterdam leaves the Chiado and mainnet timestamps blank and names no client release. Fusaka activated on Gnosis mainnet on April 14, 2026. Chiado is a separate schedule. Lodestar stays out. No Gnosis-only flag change is recorded for Glamsterdam.
+
+### BNB Smart Chain
+
+Jenner leaves the fork time and the hard-fork release unannounced. Late October 2026 and late November 2026 are planning windows. Pasteur activated on August 25, 2026 and used BSC v1.7.7. That live fork stays out of the next requirement. opBNB is a separate schedule. Pass `--execution bsc`.
+
+### Avalanche
+
+Igloo is unscheduled and names no avalanchego release. Helicon activated on Avalanche Mainnet on September 22, 2026 at 15:00 UTC. v1.15.0 is that live upgrade. v1.15.1 is a later optional release. Fuji is a separate schedule. Pass `--execution avalanchego`.
+
+### OP Mainnet
+
+Lagoon is in development, with no activation time and no required op-geth, op-reth, or op-node release. The OP Sepolia interop notice names neither those releases nor an OP Mainnet time. A late July 2026 line in that notice stays out of the schedule. A release named for Base stays on the Base schedule.
+
+### Base
+
+Denim is in planning. November 2026 is the mainnet planning target and October 2026 is the Sepolia planning target. Denim names no op-geth or op-node release. The operator image published from base/base is left out of the requirement. Pass `--execution op-geth` and `--consensus op-node`.
+
+### Arbitrum One
+
+No ArbOS upgrade after Elara is listed. ArbOS 61 Elara activated on August 20, 2026 and required Nitro v3.11.3 or higher. That live minimum stays out of the next requirement. Nitro v3.11.4 before October 6, 2026 is the Arbitrum Sepolia notice. Nova and Orbit are separate schedules. Pass `--execution nitro`.
+
+### Polygon PoS
+
+No upgrade after Lugano names both a bor release and a heimdall release. Lugano activated on October 1, 2026 and names Heimdall v0.12.1. Bor v2.10.2 says it has no hardfork and names no heimdall release. A bor release without the matching heimdall is an incomplete upgrade. Amoy is a separate schedule. Pass `--execution bor` and `--consensus heimdall`.
+
+### Linea
+
+Beta v5.3 has a mainnet timing the changelog describes as a target that can move. Q4 2026 is that target. The changelog names no Linea Besu or Maru release. Beta v5.2 activated on April 1, 2026. The Fusaka guide from December 3, 2025 points at the current docker-compose files. Linea Sepolia is a separate schedule. Pass `--execution linea-besu` and `--consensus maru`. Upstream Besu, Geth, and Erigon are outside this check.
+
+### Scroll
+
+No upgrade after OpenVM v2.0.0 is announced. OpenVM v2.0.0 executed on September 22, 2026 at 02:00 UTC and names no l2geth release. Galileo activated on December 16, 2025 and December 18, 2025. The current node guide names scroll-v5.8.38 or higher. That live minimum stays out of the next requirement. Early 2027 is a planning window. Scroll Sepolia is a separate schedule. Pass `--execution l2geth`. The current node guide still pins l2geth.
+
+### zkSync Era
+
+v31 is the next Era upgrade and is not scheduled. The announcement asks for a v31-compatible zksync-era release and does not name the tag. August 4, 2026 and August 24, 2026 were estimates. On August 24, 2026 Matter Labs said v31 is delayed and under review. Protocol version 30 was not deployed to Era mainnet. The current mainnet compose file pins `matterlabs/external-node:v29.4.0`. ZIP-17 increases the execution delay to 24 hours on October 7, 2026 at 13:00 UTC and names no node release. Other ZK Chains are separate schedules. Pass `--execution external-node`.
+
+### Starknet
+
+v0.14.4 names Pathfinder 0.24.0 and Juno 0.16.6. An operator runs one of them. Mainnet is listed as October 5, 2026, pending governance approval, so activation stays unset. An exact match is review required until an activation time is announced. September 15, 2026 is the testnet date. A newer Pathfinder or Juno tag stays review required. SNIP-36 prover operators are outside this check.
+
+## Clients
+
+| Client | id | Role | Release source |
+| --- | --- | --- | --- |
+| Geth | `geth` | execution | ethereum/go-ethereum |
+| Nethermind | `nethermind` | execution | NethermindEth/nethermind |
+| Erigon | `erigon` | execution | erigontech/erigon |
+| Besu | `besu` | execution | besu-eth/besu |
+| Reth | `reth` | execution | paradigmxyz/reth |
+| op-geth | `op-geth` | execution | ethereum-optimism/op-geth |
+| op-reth | `op-reth` | execution | ethereum-optimism/optimism, tags `op-reth/` |
+| Nitro | `nitro` | execution | OffchainLabs/nitro |
+| Bor | `bor` | execution | 0xPolygon/bor |
+| BSC | `bsc` | execution | bnb-chain/bsc |
+| avalanchego | `avalanchego` | execution | ava-labs/avalanchego |
+| Linea Besu | `linea-besu` | execution | LFDT-Lineth/lineth-monorepo, tags `releases/linea-besu-package/` |
+| l2geth | `l2geth` | execution | scroll-tech/go-ethereum, tags `scroll-` |
+| external node | `external-node` | execution | matter-labs/zksync-era, tags `core-` |
+| Pathfinder | `pathfinder` | execution | software-mansion/pathfinder |
+| Juno | `juno` | execution | NethermindEth/juno |
+| Lighthouse | `lighthouse` | consensus | sigp/lighthouse |
+| Prysm | `prysm` | consensus | OffchainLabs/prysm |
+| Teku | `teku` | consensus | Consensys-Incorporated/teku |
+| Nimbus | `nimbus` | consensus | status-im/nimbus-eth2 |
+| op-node | `op-node` | consensus | ethereum-optimism/optimism, tags `op-node/` |
+| Heimdall | `heimdall` | consensus | 0xPolygon/heimdall-v2 |
+| Maru | `maru` | consensus | LFDT-Lineth/lineth-monorepo, tags `releases/maru/` |
+
+Reth and Nimbus are included because operators run them. Besu and Teku are read from their current GitHub repositories. op-reth is the execution client Optimism documents for node operators. op-geth stays because existing nodes may still run it. op-batcher and op-proposer are left out.
+
+A pair check without `--network` accepts only the Ethereum mainnet clients: Geth, Nethermind, Erigon, Besu, or Reth, with Lighthouse, Prysm, Teku, or Nimbus. The pair is **safe** only when every release in both ranges has a sourced review and none is breaking. The plan states the upgrade order from the mainnet schedule. Any other client is rejected, with a hint toward that chain's `--network` command.
+
+Outside this catalog: Lodestar, Grandine, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks.
+
+## Reading a version
+
+`detect` reads a binary or a Docker image tag. It does not pull or start an image, and it does not run `check`. When the output or the tag is one precise release, it prints that version and the matching `check` command.
+
+| Clients | How the version is read |
+| --- | --- |
+| Geth, op-geth, bor, BSC, l2geth | `version`, from the `Version:` line |
+| Heimdall | `version`. The line is the version alone |
+| Nethermind, Erigon, Besu, Reth, Lighthouse, Prysm, Teku, Nimbus, avalanchego, external node, Pathfinder, Juno | `--version` |
+| op-node, op-reth, Linea Besu, Maru | Image tag only. The binary is left unrun |
+
+A wrong flag can start a node, so an unknown client is left unread. There is no fallback flag.
+
+Details that change the parsed version:
+
+- l2geth prints `5.10.2-mainnet`. The `mainnet` suffix is metadata, and the Go version on the following lines is ignored.
+- avalanchego's version is the `avalanchego/` prefix. The database version and the Go version on that line are ignored.
+- The external node prints `zksync_external_node 31.5.0-non-semver-compat`. That suffix is the crate version.
+- Pathfinder prints `Pathfinder v0.24.1`. Juno prints `juno version v0.16.8`. A git describe with extra commits is left unread.
+- Prysm's binary is `beacon-chain` or `validator`.
+- Enter an OP Stack version as `1.19.8`. A full tag such as `op-node/v1.19.8` is also accepted.
+- Enter a Linea version as `1.4.0` or `2.3.0`. A full tag such as `releases/maru/v1.4.0` is also accepted. Maru's CLI annotation is `0.0.1`, which is the annotation rather than the release, and its documented run command uses `--network`.
+
+A short tag such as `1.17` is left unread, as are channel names such as `latest`, `stable`, and `nightly`. If the binary fails, the tag is not a release, or more than one version appears, `detect` prints the `check` command with `<installed>` still in place.
 
 Exit 0 means a version was read. Exit 1 means it was not. Exit 3 means the client is unknown.
 
-A pair check takes an Ethereum mainnet execution client and consensus client and returns one verdict and one plan. The pair is **safe** only when every release in both ranges has a sourced review and none is breaking. Otherwise it stays **review required** or **not safe**. The plan states the upgrade order from the mainnet schedule. It does not invent a compatibility matrix between the two clients. op-geth, op-reth, op-node, bor, heimdall, bsc, avalanchego, linea-besu, maru, l2geth, external-node, pathfinder, and juno are not part of that pair.
+## Config scan
 
-`check --network ethereum` asks whether the execution client and the consensus client you run are the versions the next mainnet upgrade requires, and whether an upgrade order is stated. The schedule is `src/chaindiff/data/networks/ethereum.json`, taken from the network announcement. A Sepolia date in that announcement is not a mainnet deadline. No required mainnet version is invented from a testnet table. For this network check, **already current** means both clients are the announced requirement and the activation time is set. **Review required** means a required version or the activation time has not been announced, or the installed version is newer than the announcement. **Not safe** means an installed version is older than an announced requirement. A prerelease is still refused.
+`scan` reads a config you already have and compares it with sourced flag rules. It prints what to change. It does not edit the file.
 
-`check --network op-mainnet` asks the same question for op-geth or op-reth and op-node. The schedule is `src/chaindiff/data/networks/op-mainnet.json`. The next upgrade is Lagoon. OP Mainnet's activation time and client releases are not scheduled. The OP Sepolia interop notice does not name those releases, and a late July 2026 line in that notice is not an activation time. No required version is taken from that notice or from Base.
+The format follows the extension: `.toml`, `.json`, `.yaml`, or `.yml`. A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that.
 
-`check --network base` asks the same question for op-geth and op-node. The schedule is `src/chaindiff/data/networks/base.json`. The next upgrade is Denim. Base Mainnet's activation time is not scheduled. November 2026 is a planning target on the upgrades index, and October 2026 is the Sepolia planning target. Denim does not name an op-geth or op-node release. The operator node is published from base/base, and that image tag is not recorded here as the requirement.
+| Exit | Meaning |
+| --- | --- |
+| 0 | Every setting is covered, and no rule reports a change. |
+| 1 | A default changed, a setting is deprecated, or the catalog does not cover a setting. |
+| 2 | A setting was removed or renamed. |
 
-`check --network arbitrum-one` asks the same question for Nitro alone. The schedule is `src/chaindiff/data/networks/arbitrum-one.json`. No ArbOS upgrade after Elara is listed, so no Nitro release is recorded as the next requirement. ArbOS 61 Elara is already active and required Nitro v3.11.3 or higher; that live minimum is not stored as the next upgrade. Nitro v3.11.4 before October 6, 2026 is the Arbitrum Sepolia notice, not an Arbitrum One requirement. Pass `--execution nitro` and `--execution-version`. Do not pass `--consensus`.
-
-`check --network avalanche` asks the same question for avalanchego. The schedule is `src/chaindiff/data/networks/avalanche.json`. The next upgrade is Igloo. It is unscheduled and names no avalanchego release, so no required version is recorded. Helicon activated on Avalanche Mainnet on September 22, 2026 at 15:00 UTC. v1.15.0 is that live upgrade, and v1.15.1 is a later optional release. Fuji is not this schedule. Pass `--execution avalanchego` and `--execution-version`. Do not pass `--consensus`.
-
-`check --network bsc` asks the same question for the bnb-chain/bsc node. The schedule is `src/chaindiff/data/networks/bsc.json`. The next upgrade is Jenner. The announcement leaves the exact fork times and the hard fork release unannounced, so no BSC release is recorded as the requirement. Late October 2026 and late November 2026 are not activation times. Pasteur activated on August 25, 2026 and used BSC v1.7.7; that live fork is not the next upgrade. Pass `--execution bsc` and `--execution-version`. Do not pass `--consensus`. opBNB is not this schedule.
-
-`check --network gnosis` asks the same question for Nethermind, Erigon, Geth, or Reth, with Lighthouse, Nimbus, or Teku. The schedule is `src/chaindiff/data/networks/gnosis.json`. The next upgrade is Glamsterdam. Its spec leaves the Chiado and mainnet timestamps blank and names no client release, so no required version is recorded. Fusaka activated on Gnosis mainnet on April 14, 2026 and is not the next upgrade. No Gnosis-only flag change is stated for Glamsterdam. Chiado is not this schedule.
-
-`check --network linea` asks the same question for Linea Besu and Maru. The schedule is `src/chaindiff/data/networks/linea.json`. The next upgrade is Beta v5.3. The changelog says its Linea Mainnet timing is a target that can move, and it names no Linea Besu or Maru release, so no required version is recorded. Q4 2026 is not an activation time. Beta v5.2 activated on Linea Mainnet on April 1, 2026 and is not the next upgrade. Fusaka activated on December 3, 2025. That upgrade guide points at the current docker-compose files instead of a pinned next release. Pass `--execution linea-besu` and `--consensus maru`. Upstream Besu, Geth, and Erigon are not this check. Linea Sepolia is not this schedule.
-
-`check --network scroll` asks the same question for l2geth. The schedule is `src/chaindiff/data/networks/scroll.json`. No upgrade after OpenVM v2.0.0 is announced, so no l2geth release is recorded as the next requirement. OpenVM v2.0.0 executed on September 22, 2026 at 02:00 UTC and names no l2geth release. Galileo activated on December 16, 2025 and December 18, 2025. The current node guide names scroll-v5.8.38 or higher; that live minimum is not the next upgrade. Early 2027 is not an activation time. Pass `--execution l2geth` and `--execution-version`. Do not pass `--consensus`. Upstream Geth is not this check. Scroll Sepolia is not this schedule.
-
-`check --network zksync-era` asks the same question for the external node. The schedule is `src/chaindiff/data/networks/zksync-era.json`. The next upgrade is v31. It is not scheduled, and the announcement does not name a zksync-era release, so no required version is recorded. August 4, 2026 and August 24, 2026 were estimates. On August 24, 2026 Matter Labs said v31 is delayed and under review. Protocol version 30 was not deployed to Era mainnet. The current mainnet compose file pins matterlabs/external-node:v29.4.0, and that image is not the next upgrade. ZIP-17 increases the execution delay to 24 hours on October 7, 2026 at 13:00 UTC and does not name a node release. Pass `--execution external-node` and `--execution-version`. Do not pass `--consensus`. Other ZK Chains are not this schedule.
-
-`check --network starknet` asks the same question for Pathfinder or Juno. The schedule is `src/chaindiff/data/networks/starknet.json`. The next upgrade is v0.14.4. Mainnet activation is pending governance approval, so no activation time is recorded. The announcement names Pathfinder 0.24.0 and Juno 0.16.6. Pass one of those clients with `--execution` and `--execution-version`. Do not pass `--consensus`. October 5, 2026 is pending governance approval and is not an activation time. September 15, 2026 is the testnet date, not a mainnet deadline. A newer release is not the announced requirement. SNIP-36 prover operators are not this check.
-
-`check --network polygon` asks the same question for bor and heimdall. The schedule is `src/chaindiff/data/networks/polygon.json`. No upgrade after Lugano names both releases, so no required pair is recorded. Lugano activated on Polygon PoS mainnet on October 1, 2026 and the announcement names only Heimdall v0.12.1. Bor v2.10.2 says it has no hardfork and names no heimdall release. That live fork is not stored as the next upgrade. Pass `--execution bor` and `--consensus heimdall`. Amoy is not this schedule.
-
-`scan` accepts CLI flags, TOML, JSON, or YAML. The format follows the file extension (`.toml`, `.json`, `.yaml`, `.yml`). A file of command-line flags has no extension requirement. `--format cli|toml|json|yaml` overrides that. `--to` defaults to the latest stable release. The command prints what to change. It does not edit the file.
-
-Exit 2 means a setting in the file was removed or renamed. Exit 1 means a default changed, a setting is deprecated, or the catalog does not cover a setting. Exit 0 means every setting is covered and none of those changes apply. A stale catalog cannot return exit 0 for `latest`.
-
-`check` and `plan` use the local catalog. `refresh` is the only command that talks to GitHub. Set `GH_TOKEN` or `GITHUB_TOKEN` if you hit the unauthenticated rate limit.
-
-### Verdicts
-
-- **ALREADY CURRENT** (exit 0) — you are on the target release.
-- **SAFE** (exit 0) — every release in the range has a sourced review, and none is breaking.
-- **REVIEW REQUIRED** (exit 1) — ChainDiff will not call it safe. Releases are missing a review, something is deprecated, or the catalog is too old to trust "latest".
-- **NOT SAFE** (exit 2) — a reviewed breaking change, or an unreviewed semver major bump.
-- **PRERELEASE** (exit 2) — the target is a prerelease. Don't run it on a mainnet node.
-- **DOWNGRADE** (exit 2) — the target is older than what you run.
-
-A stale catalog (older than 5 days) cannot produce **safe** or **already current** for `latest`. Comparing two explicit versions still works; the report warns that the catalog is old.
-
-The checklist always includes the operator steps that are worth doing on any upgrade: read the notes, back up, keep the old binary, upgrade one client at a time, and roll back if the node fails. Client-specific steps appear only when an advisory says what to change.
+A stale catalog cannot return exit 0 for `latest`. A setting with no rule is reported as not covered. It is not called safe.
 
 ## Release catalog
 
-GitHub Actions refreshes the catalog twice a week, Monday and Thursday at 06:15 UTC, and commits it when the run succeeds. Run `chaindiff refresh` yourself any time.
+`check`, `plan`, and `scan` use the catalog shipped with the package. `refresh` is the only command that talks to GitHub. Set `GH_TOKEN` or `GITHUB_TOKEN` if you hit the unauthenticated rate limit.
 
-Erigon tags from the old date scheme, such as `v2022.10.01`, are left out. They are not comparable with the 2.x and 3.x line, and treating them as newer versions would hide the current release.
+GitHub Actions refreshes the catalog twice a week, Monday and Thursday at 06:15 UTC, and merges the update when the release lists change. Run `chaindiff refresh` any time. `chaindiff refresh --client geth` limits the fetch to one client.
 
-The stored catalog is tags, dates, titles, and URLs. It does not copy release-note bodies. A release title that mentions a security fix is reported as a warning. That warning does not by itself make the upgrade safe or unsafe.
+The stored catalog is tags, dates, titles, and URLs. Release-note bodies stay on GitHub. A release title that mentions a security fix is reported as a warning. That warning does not by itself make the upgrade safe or unsafe.
 
-## Advisories
+Erigon tags from the old date scheme, such as `v2022.10.01`, are left out. They are not comparable with the 2.x and 3.x line.
 
-Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advisories/<client>.json`:
+## Reviews
+
+Safe and not-safe both require a review. Reviews live in `src/chaindiff/data/advisories/<client>.json`:
 
 ```json
 {
@@ -174,7 +257,7 @@ Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advi
 }
 ```
 
-`severity` is `breaking`, `deprecated`, `note`, or `none`. `none` means the release was reviewed and there is nothing to do. `breaking` and `deprecated` need an `action`. Every advisory needs an `http` or `https` source. Do not mark a release reviewed without reading it.
+`severity` is `breaking`, `deprecated`, `note`, or `none`. `none` means the release was reviewed and there is nothing to do. `breaking` and `deprecated` need an `action`. Every advisory needs an `http` or `https` source. Leave a release unreviewed until the notes have been read.
 
 ## Flag rules
 
@@ -199,7 +282,7 @@ Safe and not-safe both require a review. Put reviews in `src/chaindiff/data/advi
 
 A rule applies when its version is after `--from` and at or before `--to`. Removed, renamed, and deprecated rules are reported when the file sets that key. A `default` rule is reported when the file does not set it. The same key outside that range is covered, and it is not listed as a change.
 
-## Networks
+## Network files
 
 `check --network` reads `src/chaindiff/data/networks/<network>.json`:
 
@@ -215,7 +298,7 @@ A rule applies when its version is after `--from` and at or before `--to`. Remov
     "summary": "What the announcement says about mainnet.",
     "order": null,
     "order_summary": "What the announcement says about upgrade order.",
-    "warning": "A date or table the operator must not treat as the mainnet requirement.",
+    "warning": "A date or table the operator must keep separate from the mainnet requirement.",
     "required": {
       "execution": {},
       "consensus": {}
@@ -224,7 +307,7 @@ A rule applies when its version is after `--from` and at or before `--to`. Remov
 }
 ```
 
-`activation` is an ISO time, or `null` when mainnet is not scheduled. `order` is `execution-first`, `consensus-first`, or `null`. `required` maps a client id to a `major.minor.patch` version from the announcement. An empty map means that role has no announced requirement. Do not fill it from a testnet table.
+`activation` is an ISO time, or `null` when mainnet is unscheduled. `order` is `execution-first`, `consensus-first`, or `null`. `required` maps a client id to a `major.minor.patch` version taken from the announcement. An empty map means that role has no announced requirement. A testnet table stays out of `required`.
 
 ## Development
 
