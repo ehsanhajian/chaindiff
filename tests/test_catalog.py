@@ -21,6 +21,7 @@ def test_registry_lists_the_supported_clients():
         "op-reth",
         "nitro",
         "bor",
+        "bsc",
         "lighthouse",
         "prysm",
         "teku",
@@ -46,6 +47,9 @@ def test_registry_lists_the_supported_clients():
     assert by_id["bor"].github == "0xPolygon/bor"
     assert by_id["bor"].role == "execution"
     assert by_id["bor"].tag_prefix == ""
+    assert by_id["bsc"].github == "bnb-chain/bsc"
+    assert by_id["bsc"].role == "execution"
+    assert by_id["bsc"].tag_prefix == ""
     assert by_id["heimdall"].github == "0xPolygon/heimdall-v2"
     assert by_id["heimdall"].role == "consensus"
     assert by_id["heimdall"].tag_prefix == ""
@@ -91,6 +95,10 @@ def test_shipped_catalog_drops_known_non_releases():
     assert any(item.tag == "v2.10.2" for item in bor)
     _, heimdall = load_releases("heimdall")
     assert any(item.tag == "v0.12.1" for item in heimdall)
+    _, bsc = load_releases("bsc")
+    assert any(item.tag == "v1.7.8" and not item.prerelease for item in bsc)
+    assert any(item.tag == "v1.8.0-alpha" and item.prerelease for item in bsc)
+    assert latest_stable(bsc).tag == "v1.7.8"
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

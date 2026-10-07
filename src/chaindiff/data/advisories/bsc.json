@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "1.7.8",
+      "severity": "none",
+      "summary": "Maintenance release. No hard fork and no scheduled upgrade.",
+      "action": "",
+      "source": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.8"
+    },
+    {
+      "version": "1.8.0-alpha",
+      "severity": "breaking",
+      "summary": "Preview release, not for production. debug_trace structLog fields change, and the tracing config no longer accepts reexec.",
+      "action": "Do not run this preview on BSC mainnet. Expect 0x-prefixed trace memory and storage, and drop reexec from the tracing config.",
+      "source": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.0-alpha"
+    }
+  ]
+}

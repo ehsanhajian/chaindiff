@@ -1,0 +1,912 @@
+{
+  "schema_version": 1,
+  "client": "bsc",
+  "github": "bnb-chain/bsc",
+  "fetched_at": "2026-10-07T05:56:42Z",
+  "ignored_tag_count": 2,
+  "releases": [
+    {
+      "tag": "v1.8.0-alpha",
+      "name": "v1.8.0-alpha",
+      "published_at": "2026-08-13T02:21:26Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.0-alpha"
+    },
+    {
+      "tag": "v1.7.8",
+      "name": "v1.7.8",
+      "published_at": "2026-08-11T02:38:35Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.8"
+    },
+    {
+      "tag": "v1.7.7",
+      "name": "v1.7.7",
+      "published_at": "2026-07-22T06:10:16Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.7"
+    },
+    {
+      "tag": "v1.7.6",
+      "name": "v1.7.6",
+      "published_at": "2026-07-09T03:07:50Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.6"
+    },
+    {
+      "tag": "v1.7.5",
+      "name": "v1.7.5",
+      "published_at": "2026-07-07T08:59:40Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.5"
+    },
+    {
+      "tag": "v1.7.4",
+      "name": "v1.7.4",
+      "published_at": "2026-07-06T12:21:31Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.4"
+    },
+    {
+      "tag": "v1.7.3",
+      "name": "v1.7.3",
+      "published_at": "2026-04-23T07:25:27Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.3"
+    },
+    {
+      "tag": "v1.7.2",
+      "name": "v1.7.2",
+      "published_at": "2026-03-25T09:38:10Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.2"
+    },
+    {
+      "tag": "v1.7.1",
+      "name": "v1.7.1",
+      "published_at": "2026-03-13T08:13:20Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.1"
+    },
+    {
+      "tag": "v1.7.0-alpha",
+      "name": "v1.7.0-alpha",
+      "published_at": "2026-01-26T08:09:43Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.7.0-alpha"
+    },
+    {
+      "tag": "v1.6.7",
+      "name": "v1.6.7",
+      "published_at": "2026-02-18T01:29:09Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.7"
+    },
+    {
+      "tag": "v1.6.6",
+      "name": "v1.6.6",
+      "published_at": "2026-01-14T07:56:44Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.6"
+    },
+    {
+      "tag": "v1.6.5",
+      "name": "v1.6.5",
+      "published_at": "2025-12-19T02:45:38Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.5"
+    },
+    {
+      "tag": "v1.6.4",
+      "name": "v1.6.4",
+      "published_at": "2025-12-05T01:52:38Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.4"
+    },
+    {
+      "tag": "v1.6.4-feature-BAL7928",
+      "name": "v1.6.4-feature-BAL7928",
+      "published_at": "2025-12-18T02:46:11Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.4-feature-BAL7928"
+    },
+    {
+      "tag": "v1.6.3",
+      "name": "v1.6.3",
+      "published_at": "2025-11-06T09:30:33Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.3"
+    },
+    {
+      "tag": "v1.6.2",
+      "name": "v1.6.2",
+      "published_at": "2025-10-31T06:31:09Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.2"
+    },
+    {
+      "tag": "v1.6.1-beta-feature-ScalableDB",
+      "name": "v1.6.1-beta-feature-ScalableDB",
+      "published_at": "2025-09-30T11:44:56Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.1-beta-feature-ScalableDB"
+    },
+    {
+      "tag": "v1.6.1-beta-feature-BAL",
+      "name": "v1.6.1-beta-feature-BAL",
+      "published_at": "2025-09-25T05:31:46Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.1-beta-feature-BAL"
+    },
+    {
+      "tag": "v1.6.1-beta",
+      "name": "v1.6.1-beta",
+      "published_at": "2025-09-23T07:50:13Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.1-beta"
+    },
+    {
+      "tag": "v1.6.0-alpha-feature-incr-snapshot",
+      "name": "v1.6.0-alpha-feature-incr-snapshot",
+      "published_at": "2025-09-01T03:21:43Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.0-alpha-feature-incr-snapshot"
+    },
+    {
+      "tag": "v1.6.0-alpha",
+      "name": "v1.6.0-alpha",
+      "published_at": "2025-08-29T01:02:49Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.6.0-alpha"
+    },
+    {
+      "tag": "v1.5.19",
+      "name": "v1.5.19",
+      "published_at": "2025-07-30T03:08:16Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.19"
+    },
+    {
+      "tag": "v1.5.19-feature-SI",
+      "name": "v1.5.19-feature-SI",
+      "published_at": "2025-08-26T07:25:42Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.19-feature-SI"
+    },
+    {
+      "tag": "v1.5.18",
+      "name": "v1.5.18(Deprecated)",
+      "published_at": "2025-07-23T06:56:45Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.18"
+    },
+    {
+      "tag": "v1.5.17",
+      "name": "v1.5.17",
+      "published_at": "2025-06-24T09:12:13Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.17"
+    },
+    {
+      "tag": "v1.5.16",
+      "name": "v1.5.16",
+      "published_at": "2025-06-05T02:56:10Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.16"
+    },
+    {
+      "tag": "v1.5.13",
+      "name": "v1.5.13",
+      "published_at": "2025-05-21T06:24:12Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.13"
+    },
+    {
+      "tag": "v1.5.12",
+      "name": "v1.5.12",
+      "published_at": "2025-04-25T12:45:37Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.12"
+    },
+    {
+      "tag": "v1.5.11",
+      "name": "v1.5.11",
+      "published_at": "2025-04-18T02:35:38Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.11"
+    },
+    {
+      "tag": "v1.5.10",
+      "name": "v1.5.10",
+      "published_at": "2025-04-10T03:09:35Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.10"
+    },
+    {
+      "tag": "v1.5.9",
+      "name": "v1.5.9",
+      "published_at": "2025-04-02T04:48:10Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.9"
+    },
+    {
+      "tag": "v1.5.8",
+      "name": "v1.5.8",
+      "published_at": "2025-03-23T10:04:06Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.8"
+    },
+    {
+      "tag": "v1.5.7",
+      "name": "v1.5.7",
+      "published_at": "2025-03-03T10:05:38Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.7"
+    },
+    {
+      "tag": "v1.5.6",
+      "name": "v1.5.6",
+      "published_at": "2025-02-15T12:38:28Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.6"
+    },
+    {
+      "tag": "v1.5.5",
+      "name": "v1.5.5",
+      "published_at": "2025-02-07T13:23:44Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.5"
+    },
+    {
+      "tag": "v1.5.4-beta",
+      "name": "v1.5.4-beta",
+      "published_at": "2025-01-30T14:39:09Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.4-beta"
+    },
+    {
+      "tag": "v1.5.3-beta",
+      "name": "v1.5.3-beta",
+      "published_at": "2025-01-07T13:47:02Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.3-beta"
+    },
+    {
+      "tag": "v1.5.2-alpha",
+      "name": "v1.5.2-alpha",
+      "published_at": "2024-12-25T06:31:42Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.2-alpha"
+    },
+    {
+      "tag": "v1.5.1-alpha",
+      "name": "v1.5.1-alpha",
+      "published_at": "2024-12-09T13:32:54Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.1-alpha"
+    },
+    {
+      "tag": "v1.5.0-alpha",
+      "name": "v1.5.0-alpha",
+      "published_at": "2024-12-09T07:45:32Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.5.0-alpha"
+    },
+    {
+      "tag": "v1.4.18",
+      "name": "v1.4.18",
+      "published_at": "2025-02-15T13:19:23Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.18"
+    },
+    {
+      "tag": "v1.4.17",
+      "name": "v1.4.17",
+      "published_at": "2025-01-30T13:33:39Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.17"
+    },
+    {
+      "tag": "v1.4.16",
+      "name": "v1.4.16",
+      "published_at": "2024-11-26T09:42:13Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.16"
+    },
+    {
+      "tag": "v1.4.15",
+      "name": "v1.4.15",
+      "published_at": "2024-09-19T07:07:54Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.15"
+    },
+    {
+      "tag": "v1.4.14",
+      "name": "v1.4.14",
+      "published_at": "2024-08-27T07:10:32Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.14"
+    },
+    {
+      "tag": "v1.4.13",
+      "name": "v1.4.13",
+      "published_at": "2024-08-09T02:21:59Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.13"
+    },
+    {
+      "tag": "v1.4.12",
+      "name": "v1.4.12",
+      "published_at": "2024-07-24T04:18:53Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.12"
+    },
+    {
+      "tag": "v1.4.11",
+      "name": "v1.4.11",
+      "published_at": "2024-06-28T01:17:07Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.11"
+    },
+    {
+      "tag": "v1.4.10",
+      "name": "v1.4.10",
+      "published_at": "2024-06-21T08:25:27Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.10"
+    },
+    {
+      "tag": "v1.4.9",
+      "name": "v1.4.9",
+      "published_at": "2024-06-11T06:25:40Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.9"
+    },
+    {
+      "tag": "v1.4.8",
+      "name": "v1.4.8",
+      "published_at": "2024-05-21T10:44:38Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.8"
+    },
+    {
+      "tag": "v1.4.7",
+      "name": "v1.4.7",
+      "published_at": "2024-05-17T08:35:04Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.7"
+    },
+    {
+      "tag": "v1.4.6",
+      "name": "v1.4.6",
+      "published_at": "2024-04-29T06:18:14Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.6"
+    },
+    {
+      "tag": "v1.4.5",
+      "name": "v1.4.5",
+      "published_at": "2024-04-10T13:46:43Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.5"
+    },
+    {
+      "tag": "v1.4.4-beta",
+      "name": "v1.4.4-beta",
+      "published_at": "2024-04-03T01:55:00Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.4-beta"
+    },
+    {
+      "tag": "v1.4.3-alpha",
+      "name": "v1.4.3-alpha",
+      "published_at": "2024-03-21T14:33:05Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.3-alpha"
+    },
+    {
+      "tag": "v1.4.2-alpha",
+      "name": "v1.4.2-alpha",
+      "published_at": "2024-03-12T07:34:39Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.2-alpha"
+    },
+    {
+      "tag": "v1.4.1-alpha",
+      "name": "v1.4.1-alpha",
+      "published_at": "2024-03-11T08:14:42Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.1-alpha"
+    },
+    {
+      "tag": "v1.4.0-alpha",
+      "name": "v1.4.0-alpha",
+      "published_at": "2024-03-08T07:53:45Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.4.0-alpha"
+    },
+    {
+      "tag": "v1.3.13",
+      "name": "v1.3.13",
+      "published_at": "2024-04-01T05:55:22Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.13"
+    },
+    {
+      "tag": "v1.3.12",
+      "name": "v1.3.12",
+      "published_at": "2024-03-19T06:25:25Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.12"
+    },
+    {
+      "tag": "v1.3.11",
+      "name": "v1.3.11",
+      "published_at": "2024-03-18T03:35:28Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.11"
+    },
+    {
+      "tag": "v1.3.10",
+      "name": "v1.3.10",
+      "published_at": "2024-03-04T06:43:59Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.10"
+    },
+    {
+      "tag": "v1.3.9",
+      "name": "v1.3.9",
+      "published_at": "2024-02-20T11:26:34Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.9"
+    },
+    {
+      "tag": "v1.3.8",
+      "name": "v1.3.8",
+      "published_at": "2024-01-29T06:45:45Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.8"
+    },
+    {
+      "tag": "v1.3.7",
+      "name": "v1.3.7",
+      "published_at": "2023-12-19T07:12:39Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.7"
+    },
+    {
+      "tag": "v1.3.6",
+      "name": "v1.3.6",
+      "published_at": "2023-12-14T06:36:24Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.6"
+    },
+    {
+      "tag": "v1.3.5",
+      "name": "v1.3.5",
+      "published_at": "2023-12-08T07:29:06Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.5"
+    },
+    {
+      "tag": "v1.3.4",
+      "name": "v1.3.4",
+      "published_at": "2023-12-04T11:17:59Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.4"
+    },
+    {
+      "tag": "v1.3.3",
+      "name": "v1.3.3(Deprecated)",
+      "published_at": "2023-11-30T02:17:46Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.3"
+    },
+    {
+      "tag": "v1.3.2",
+      "name": "v1.3.2(Deprecated)",
+      "published_at": "2023-11-29T07:52:54Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.2"
+    },
+    {
+      "tag": "v1.3.1-beta",
+      "name": "v1.3.1-beta",
+      "published_at": "2023-11-10T11:48:49Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.1-beta"
+    },
+    {
+      "tag": "v1.3.0",
+      "name": "v1.3.0",
+      "published_at": "2023-10-12T03:06:59Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.3.0"
+    },
+    {
+      "tag": "v1.2.15",
+      "name": "v1.2.15",
+      "published_at": "2023-12-04T11:14:06Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.15"
+    },
+    {
+      "tag": "v1.2.14",
+      "name": "v1.2.14(Deprecated)",
+      "published_at": "2023-11-29T07:06:35Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.14"
+    },
+    {
+      "tag": "v1.2.13",
+      "name": "v1.2.13",
+      "published_at": "2023-11-03T02:49:33Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.13"
+    },
+    {
+      "tag": "v1.2.12",
+      "name": "v1.2.12",
+      "published_at": "2023-09-11T09:57:49Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.12"
+    },
+    {
+      "tag": "v1.2.11",
+      "name": "v1.2.11",
+      "published_at": "2023-08-23T03:42:58Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.11"
+    },
+    {
+      "tag": "v1.2.10",
+      "name": "v1.2.10",
+      "published_at": "2023-08-03T04:11:33Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.10"
+    },
+    {
+      "tag": "v1.2.9",
+      "name": "v1.2.9",
+      "published_at": "2023-07-21T09:51:10Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.9"
+    },
+    {
+      "tag": "v1.2.8",
+      "name": "v1.2.8",
+      "published_at": "2023-06-27T07:02:24Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.8"
+    },
+    {
+      "tag": "v1.2.7",
+      "name": "v1.2.7",
+      "published_at": "2023-06-20T12:17:30Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.7"
+    },
+    {
+      "tag": "v1.2.6",
+      "name": "v1.2.6",
+      "published_at": "2023-06-20T06:17:16Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.6"
+    },
+    {
+      "tag": "v1.2.5",
+      "name": "v1.2.5",
+      "published_at": "2023-06-08T09:40:24Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.5"
+    },
+    {
+      "tag": "v1.2.4",
+      "name": "v1.2.4",
+      "published_at": "2023-05-23T02:34:41Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.4"
+    },
+    {
+      "tag": "v1.2.3",
+      "name": "v1.2.3",
+      "published_at": "2023-05-12T07:44:15Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.3"
+    },
+    {
+      "tag": "v1.2.1",
+      "name": "v1.2.1",
+      "published_at": "2023-04-25T15:30:33Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.1"
+    },
+    {
+      "tag": "v1.2.0",
+      "name": "v1.2.0",
+      "published_at": "2023-04-25T08:54:57Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.2.0"
+    },
+    {
+      "tag": "v1.1.23",
+      "name": "v1.1.23",
+      "published_at": "2023-04-17T11:29:20Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.23"
+    },
+    {
+      "tag": "v1.1.22",
+      "name": "v1.1.22",
+      "published_at": "2023-04-12T07:31:46Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.22"
+    },
+    {
+      "tag": "v1.1.21",
+      "name": "v1.1.21",
+      "published_at": "2023-03-27T09:07:09Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.21"
+    },
+    {
+      "tag": "v1.1.20",
+      "name": "v1.1.20",
+      "published_at": "2023-03-15T11:59:39Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.20"
+    },
+    {
+      "tag": "v1.1.19",
+      "name": "v1.1.19",
+      "published_at": "2023-02-13T06:21:03Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.19"
+    },
+    {
+      "tag": "v1.1.18",
+      "name": "v1.1.18",
+      "published_at": "2022-11-29T07:53:26Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.18"
+    },
+    {
+      "tag": "v1.1.17",
+      "name": "v1.1.17",
+      "published_at": "2022-11-02T12:19:10Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.17"
+    },
+    {
+      "tag": "v1.1.16",
+      "name": "v1.1.16",
+      "published_at": "2022-10-11T03:23:29Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.16"
+    },
+    {
+      "tag": "v1.1.15",
+      "name": "v1.1.15",
+      "published_at": "2022-10-07T04:00:57Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.15"
+    },
+    {
+      "tag": "v1.1.14",
+      "name": "v1.1.14",
+      "published_at": "2022-09-30T00:52:18Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.14"
+    },
+    {
+      "tag": "v1.1.13",
+      "name": "v1.1.13",
+      "published_at": "2022-09-02T04:03:27Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.13"
+    },
+    {
+      "tag": "v1.1.12",
+      "name": "v1.1.12",
+      "published_at": "2022-07-28T11:11:59Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.12"
+    },
+    {
+      "tag": "v1.1.11",
+      "name": "v1.1.11",
+      "published_at": "2022-06-08T14:07:00Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.11"
+    },
+    {
+      "tag": "v1.1.10",
+      "name": "v1.1.10",
+      "published_at": "2022-05-05T09:34:42Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.10"
+    },
+    {
+      "tag": "v1.1.9",
+      "name": "v1.1.9",
+      "published_at": "2022-04-12T02:40:18Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.9"
+    },
+    {
+      "tag": "v1.1.8",
+      "name": "v1.1.8",
+      "published_at": "2022-01-28T03:54:47Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.8"
+    },
+    {
+      "tag": "v1.1.7",
+      "name": "v1.1.7",
+      "published_at": "2021-12-05T04:30:56Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.7"
+    },
+    {
+      "tag": "v1.1.6",
+      "name": "v1.1.6",
+      "published_at": "2021-11-29T06:14:20Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.6"
+    },
+    {
+      "tag": "v1.1.5",
+      "name": "v1.1.5",
+      "published_at": "2021-11-16T07:03:45Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.5"
+    },
+    {
+      "tag": "v1.1.4",
+      "name": "v1.1.4",
+      "published_at": "2021-11-02T06:18:47Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.4"
+    },
+    {
+      "tag": "v1.1.3",
+      "name": "v1.1.3",
+      "published_at": "2021-10-20T04:15:13Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.3"
+    },
+    {
+      "tag": "v1.1.2",
+      "name": "v1.1.2",
+      "published_at": "2021-08-31T02:50:15Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.2"
+    },
+    {
+      "tag": "v1.1.1",
+      "name": "v1.1.1",
+      "published_at": "2021-08-13T02:48:57Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.1"
+    },
+    {
+      "tag": "v1.1.1-beta",
+      "name": "v1.1.1-beta",
+      "published_at": "2021-07-29T11:03:55Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.1-beta"
+    },
+    {
+      "tag": "v1.1.0",
+      "name": "v1.1.0",
+      "published_at": "2021-07-26T06:33:11Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.0"
+    },
+    {
+      "tag": "v1.1.0-beta",
+      "name": "v1.1.0-beta",
+      "published_at": "2021-05-10T09:27:08Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.1.0-beta"
+    },
+    {
+      "tag": "v1.0.7",
+      "name": "v1.0.7",
+      "published_at": "2021-03-25T06:31:47Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.7"
+    },
+    {
+      "tag": "v1.0.7-ht.3",
+      "name": "v1.0.7-ht.3",
+      "published_at": "2021-05-10T16:47:42Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.7-ht.3"
+    },
+    {
+      "tag": "v1.0.7-hf.2",
+      "name": "v1.0.7-hf.2",
+      "published_at": "2021-05-08T02:33:39Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.7-hf.2"
+    },
+    {
+      "tag": "v1.0.7-hf.1",
+      "name": "v1.0.7-hf.1",
+      "published_at": "2021-05-07T10:51:11Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.7-hf.1"
+    },
+    {
+      "tag": "v1.0.6",
+      "name": "v1.0.6",
+      "published_at": "2021-02-05T03:06:37Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.6"
+    },
+    {
+      "tag": "v1.0.5",
+      "name": "v1.0.5",
+      "published_at": "2021-01-19T03:47:31Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.5"
+    },
+    {
+      "tag": "v1.0.4",
+      "name": "v1.0.4",
+      "published_at": "2020-11-23T10:02:46Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.4"
+    },
+    {
+      "tag": "v1.0.3",
+      "name": "v1.0.3",
+      "published_at": "2020-09-24T06:25:09Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.3"
+    },
+    {
+      "tag": "v1.0.2",
+      "name": "v1.0.2",
+      "published_at": "2020-08-28T02:36:44Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.2"
+    },
+    {
+      "tag": "v1.0.1-beta.2",
+      "name": "v1.0.1-beta.2",
+      "published_at": "2020-08-13T13:04:34Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.1-beta.2"
+    },
+    {
+      "tag": "v1.0.1-beta",
+      "name": "v1.0.1-beta",
+      "published_at": "2020-08-11T10:04:53Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.1-beta"
+    },
+    {
+      "tag": "v1.0.0-beta.1",
+      "name": "v1.0.0-beta.1",
+      "published_at": "2020-07-28T10:13:55Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.0-beta.1"
+    },
+    {
+      "tag": "v1.0.0-beta.0",
+      "name": "v1.0.0-beta.0",
+      "published_at": "2020-07-09T08:16:40Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.0-beta.0"
+    },
+    {
+      "tag": "v1.0.0-alpha.0",
+      "name": "v1.0.0-alpha.0",
+      "published_at": "2020-05-21T10:37:04Z",
+      "prerelease": true,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.0.0-alpha.0"
+    }
+  ]
+}

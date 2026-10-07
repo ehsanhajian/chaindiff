@@ -21,6 +21,7 @@ Supported clients:
 | op-reth | execution | ethereum-optimism/optimism, tags `op-reth/` |
 | Nitro | execution | OffchainLabs/nitro |
 | Bor | execution | 0xPolygon/bor |
+| BSC | execution | bnb-chain/bsc |
 | Lighthouse | consensus | sigp/lighthouse |
 | Prysm | consensus | OffchainLabs/prysm |
 | Teku | consensus | Consensys-Incorporated/teku |
@@ -30,7 +31,7 @@ Supported clients:
 
 Reth and Nimbus are in the catalog because operators run them. Besu and Teku are read from their current GitHub repositories. op-reth is the execution client Optimism documents for node operators, and op-node is the rollup node in the same repository. op-geth stays in the catalog because existing nodes may still be running it. op-batcher and op-proposer are not node clients.
 
-The shipping network schedules are Ethereum mainnet, Gnosis Chain, OP Mainnet, Base, Arbitrum One, and Polygon PoS. op-geth, op-reth, and op-node are checked on their own with `--client`. `--network op-mainnet` and `--network base` each use that chain's next upgrade, so a release one chain requires is not assumed on the other. Arbitrum One is a Nitro node. Upstream Geth does not answer that check, and Arbitrum Nova and Orbit chains are not that schedule. Polygon PoS is bor with heimdall from the v2 repository. A bor release that does not name the matching heimdall is not a complete upgrade. Gnosis Chain reuses Nethermind, Erigon, Geth, or Reth with Lighthouse, Nimbus, or Teku. Lodestar stays out. The tool also covers these networks, one task each. A check has to use the clients that network actually runs, and that chain's upgrade, not only the latest tag of an upstream Ethereum client.
+The shipping network schedules are Ethereum mainnet, Gnosis Chain, BNB Smart Chain, OP Mainnet, Base, Arbitrum One, and Polygon PoS. op-geth, op-reth, and op-node are checked on their own with `--client`. `--network op-mainnet` and `--network base` each use that chain's next upgrade, so a release one chain requires is not assumed on the other. Arbitrum One is a Nitro node. Upstream Geth does not answer that check, and Arbitrum Nova and Orbit chains are not that schedule. Polygon PoS is bor with heimdall from the v2 repository. A bor release that does not name the matching heimdall is not a complete upgrade. Gnosis Chain reuses Nethermind, Erigon, Geth, or Reth with Lighthouse, Nimbus, or Teku. Lodestar stays out. BNB Smart Chain is the bnb-chain/bsc node. Upstream Geth does not answer that check, and opBNB is not that schedule. The tool also covers these networks, one task each. A check has to use the clients that network actually runs, and that chain's upgrade, not only the latest tag of an upstream Ethereum client.
 
 - Ethereum mainnet
 - Gnosis
@@ -45,7 +46,7 @@ The shipping network schedules are Ethereum mainnet, Gnosis Chain, OP Mainnet, B
 - zkSync Era
 - Starknet
 
-Not in this cut: Lodestar, Grandine, op-batcher, op-proposer, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. `check` can take the execution client and the consensus client together and return one verdict and one plan. `check --network ethereum` compares that pair with the next Ethereum mainnet upgrade. `check --network op-mainnet` compares op-geth or op-reth and op-node with the next OP Mainnet upgrade. `check --network base` compares op-geth and op-node with the next Base upgrade. `check --network arbitrum-one` compares an installed Nitro release with the next Arbitrum One upgrade. `check --network polygon` compares installed bor and heimdall releases with the next Polygon PoS upgrade. `check --network gnosis` compares Nethermind or Erigon, or Geth or Reth, and Lighthouse, Nimbus, or Teku with the next Gnosis Chain upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
+Not in this cut: Lodestar, Grandine, op-batcher, op-proposer, applying the upgrade, node metrics, peer or disk checks, and RPC benchmarks. `check` can take the execution client and the consensus client together and return one verdict and one plan. `check --network ethereum` compares that pair with the next Ethereum mainnet upgrade. `check --network op-mainnet` compares op-geth or op-reth and op-node with the next OP Mainnet upgrade. `check --network base` compares op-geth and op-node with the next Base upgrade. `check --network arbitrum-one` compares an installed Nitro release with the next Arbitrum One upgrade. `check --network polygon` compares installed bor and heimdall releases with the next Polygon PoS upgrade. `check --network gnosis` compares Nethermind or Erigon, or Geth or Reth, and Lighthouse, Nimbus, or Teku with the next Gnosis Chain upgrade. `check --network bsc` compares an installed BSC release with the next BNB Smart Chain upgrade. `scan` reads a config file you already have and compares it with sourced flag rules. A setting with no rule is reported as not covered. It is not called safe.
 
 Calendar-versioned clients (Besu, Teku, Nimbus) do not treat a new year in the version as a breaking change by itself. Semver clients do: an unreviewed major bump is **not safe**.
 
@@ -70,6 +71,7 @@ chaindiff plan --execution geth --execution-version <installed> --consensus ligh
 chaindiff check --network ethereum --execution geth --execution-version <installed> --consensus lighthouse --consensus-version <installed>
 chaindiff check --network polygon --execution bor --execution-version <installed> --consensus heimdall --consensus-version <installed>
 chaindiff check --network gnosis --execution nethermind --execution-version <installed> --consensus lighthouse --consensus-version <installed>
+chaindiff check --network bsc --execution bsc --execution-version <installed>
 chaindiff plan --client nethermind --from <installed>
 chaindiff scan --client geth --from <installed> --to <target> --config <file>
 chaindiff refresh
@@ -77,7 +79,7 @@ chaindiff refresh
 
 `check`, `plan`, `scan`, and `detect` read the client binary. Use them for a mainnet node or a testnet node. A Sepolia Geth upgrade is the same command as a mainnet one. A release note that names a testnet deadline is included when that release is in the range.
 
-`detect` reads the version from a client binary, or from a Docker image tag. It does not pull or start an image, and it does not run `check`. Geth, op-geth, and bor are asked with `version` and read from a `Version:` line. `heimdalld version` prints the version alone. The other Ethereum clients are asked with `--version`. Prysm's binary is `beacon-chain` or `validator`. An op-node or op-reth version is read from the image tag. ChainDiff does not run those binaries, because their version output is not yet confirmed. Enter an OP Stack version as `1.19.8`. A full tag such as `op-node/v1.19.8` is also accepted.
+`detect` reads the version from a client binary, or from a Docker image tag. It does not pull or start an image, and it does not run `check`. Geth, op-geth, bor, and BSC are asked with `version` and read from a `Version:` line. `heimdalld version` prints the version alone. The other Ethereum clients are asked with `--version`. Prysm's binary is `beacon-chain` or `validator`. An op-node or op-reth version is read from the image tag. ChainDiff does not run those binaries, because their version output is not yet confirmed. Enter an OP Stack version as `1.19.8`. A full tag such as `op-node/v1.19.8` is also accepted.
 
 When the output or the tag is one precise release, `detect` prints that version and the `check` command. A tag such as `1.17` is not treated as `1.17.0`. `latest`, `stable`, `nightly`, and the other channel names are not versions. If the binary fails, the tag is not a release, or more than one version appears, it prints:
 
@@ -87,7 +89,7 @@ chaindiff check --client geth --from <installed>
 
 Exit 0 means a version was read. Exit 1 means it was not. Exit 3 means the client is unknown.
 
-A pair check takes an Ethereum mainnet execution client and consensus client and returns one verdict and one plan. The pair is **safe** only when every release in both ranges has a sourced review and none is breaking. Otherwise it stays **review required** or **not safe**. The plan states the upgrade order from the mainnet schedule. It does not invent a compatibility matrix between the two clients. op-geth, op-reth, op-node, bor, and heimdall are not part of that pair.
+A pair check takes an Ethereum mainnet execution client and consensus client and returns one verdict and one plan. The pair is **safe** only when every release in both ranges has a sourced review and none is breaking. Otherwise it stays **review required** or **not safe**. The plan states the upgrade order from the mainnet schedule. It does not invent a compatibility matrix between the two clients. op-geth, op-reth, op-node, bor, heimdall, and bsc are not part of that pair.
 
 `check --network ethereum` asks whether the execution client and the consensus client you run are the versions the next mainnet upgrade requires, and whether an upgrade order is stated. The schedule is `src/chaindiff/data/networks/ethereum.json`, taken from the network announcement. A Sepolia date in that announcement is not a mainnet deadline. No required mainnet version is invented from a testnet table. For this network check, **already current** means both clients are the announced requirement and the activation time is set. **Review required** means a required version or the activation time has not been announced, or the installed version is newer than the announcement. **Not safe** means an installed version is older than an announced requirement. A prerelease is still refused.
 
@@ -96,6 +98,8 @@ A pair check takes an Ethereum mainnet execution client and consensus client and
 `check --network base` asks the same question for op-geth and op-node. The schedule is `src/chaindiff/data/networks/base.json`. The next upgrade is Denim. Base Mainnet's activation time is not scheduled. November 2026 is a planning target on the upgrades index, and October 2026 is the Sepolia planning target. Denim does not name an op-geth or op-node release. The operator node is published from base/base, and that image tag is not recorded here as the requirement.
 
 `check --network arbitrum-one` asks the same question for Nitro alone. The schedule is `src/chaindiff/data/networks/arbitrum-one.json`. No ArbOS upgrade after Elara is listed, so no Nitro release is recorded as the next requirement. ArbOS 61 Elara is already active and required Nitro v3.11.3 or higher; that live minimum is not stored as the next upgrade. Nitro v3.11.4 before October 6, 2026 is the Arbitrum Sepolia notice, not an Arbitrum One requirement. Pass `--execution nitro` and `--execution-version`. Do not pass `--consensus`.
+
+`check --network bsc` asks the same question for the bnb-chain/bsc node. The schedule is `src/chaindiff/data/networks/bsc.json`. The next upgrade is Jenner. The announcement leaves the exact fork times and the hard fork release unannounced, so no BSC release is recorded as the requirement. Late October 2026 and late November 2026 are not activation times. Pasteur activated on August 25, 2026 and used BSC v1.7.7; that live fork is not the next upgrade. Pass `--execution bsc` and `--execution-version`. Do not pass `--consensus`. opBNB is not this schedule.
 
 `check --network gnosis` asks the same question for Nethermind, Erigon, Geth, or Reth, with Lighthouse, Nimbus, or Teku. The schedule is `src/chaindiff/data/networks/gnosis.json`. The next upgrade is Glamsterdam. Its spec leaves the Chiado and mainnet timestamps blank and names no client release, so no required version is recorded. Fusaka activated on Gnosis mainnet on April 14, 2026 and is not the next upgrade. No Gnosis-only flag change is stated for Glamsterdam. Chiado is not this schedule.
 

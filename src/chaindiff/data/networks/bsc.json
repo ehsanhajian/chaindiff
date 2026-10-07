@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "bsc",
+  "name": "BNB Smart Chain",
+  "upgrade": {
+    "name": "Jenner",
+    "activation": null,
+    "source": "https://docs.bnbchain.org/announce/jenner-bsc/",
+    "summary": "BNB Smart Chain activation has not been scheduled. The Jenner announcement says the exact fork times and the hard fork release are still to be announced.",
+    "order": null,
+    "order_summary": "BSC is the node. No separate consensus client is part of this upgrade.",
+    "warning": "Jenner lists testnet as late October 2026 and mainnet as late November 2026. Those are not activation times, and the announcement names no BSC release. Pasteur activated on BSC mainnet on August 25, 2026. That live fork used BSC v1.7.7, and it is not the next upgrade. The announcement describes --mev.grpc.disable for the unpublished Jenner release, so that flag is not recorded here. opBNB is not this schedule.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}
