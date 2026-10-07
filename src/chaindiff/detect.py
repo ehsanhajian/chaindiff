@@ -12,7 +12,7 @@ from collections.abc import Callable
 
 from chaindiff.versions import Version, parse_version
 
-# Geth, op-geth, bor, and heimdall use a version subcommand. The other
+# Geth, op-geth, bor, heimdall, and BSC use a version subcommand. The other
 # confirmed clients print and exit on --version. A wrong flag can start the
 # node, so there is no fallback.
 _VERSION_ARGV = {
@@ -30,6 +30,8 @@ _VERSION_ARGV = {
     # heimdalld v0.12.1 `version` prints that build version alone.
     "bor": ("version",),
     "heimdall": ("version",),
+    # BSC v1.7.8 registers `version` and prints "Version: <major.minor.patch>".
+    "bsc": ("version",),
 }
 
 # Tags that name a channel, not a release. Exact match only.
@@ -253,4 +255,5 @@ _EXTRACTORS: dict[str, Callable[[str], list[str]]] = {
     "nimbus": _nimbus,
     "bor": _version_lines,
     "heimdall": _plain_version,
+    "bsc": _version_lines,
 }

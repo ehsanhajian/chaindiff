@@ -66,6 +66,13 @@
       "versioning": "semver"
     },
     {
+      "id": "bsc",
+      "name": "BSC",
+      "role": "execution",
+      "github": "bnb-chain/bsc",
+      "versioning": "semver"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",

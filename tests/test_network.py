@@ -555,6 +555,121 @@ def test_arbitrum_one_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_bsc_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "bsc",
+                "--execution",
+                "bsc",
+                "--execution-version",
+                "1.7.8",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("BNB Smart Chain\n")
+    assert "Next upgrade: Jenner" in output
+    assert "Next upgrade: Pasteur" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://docs.bnbchain.org/announce/jenner-bsc/" in output
+    assert "bsc 1.7.8  execution  requirement not announced" in output
+    assert "consensus" not in output.split("Verdict:")[0]
+    assert "BSC is the node." in output
+    assert "late October 2026" in output
+    assert "late November 2026" in output
+    assert "August 25, 2026" in output
+    assert "v1.7.7" in output
+    assert "--mev.grpc.disable" in output
+    assert "opBNB is not this schedule." in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 1.7" not in output
+    assert "2026-10" not in output
+    assert "2026-11" not in output
+
+
+def test_bsc_rejects_geth_and_a_consensus_flag(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "bsc",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+            ]
+        )
+        == 3
+    )
+    assert "BNB Smart Chain does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "bsc",
+                "--execution",
+                "bsc",
+                "--execution-version",
+                "1.7.8",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not use --consensus" in error
+    assert "Jenner" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "bsc",
+                "--execution-version",
+                "1.7.8",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include bsc" in error
+    assert "--network bsc" in error
+    assert "Glamsterdam" not in error
+
+
+def test_bsc_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "bsc",
+                "--execution",
+                "bsc",
+                "--execution-version",
+                "1.8.0-alpha",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_gnosis_requirement_is_not_announced(capsys):
     assert (
         main(
