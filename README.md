@@ -23,8 +23,11 @@ The package is published from a GitHub release. Python 3.11 or newer.
 | What should I do before I upgrade? | `plan` |
 | Did a flag change between these releases? | `scan` |
 | What is the latest stable tag? | `versions` |
+| Is the local release catalog current? | `refresh` |
 
 `check`, `plan`, and `scan` compare versions you pass in. They do not read a binary. Run `detect` first when you need the installed version, then pass that version to `check`.
+
+`refresh` downloads release tags from GitHub into the local catalog. The other commands read that catalog and do not talk to GitHub. A catalog older than 5 days cannot call `latest` safe, so run `refresh` before you trust that answer. `refresh --client geth` updates one client.
 
 `check --client` looks at the client, so the same command covers a mainnet node and a testnet node. A Sepolia Geth upgrade is the same check as a mainnet one. A release note that names a testnet deadline is included when that release is in the range.
 
@@ -55,7 +58,7 @@ chaindiff versions
 chaindiff refresh
 ```
 
-`--to` defaults to the latest stable release. Every command accepts `--json`.
+`--to` defaults to the latest stable release. `detect`, `versions`, `check`, `plan`, and `scan` accept `--json`.
 
 ## Verdicts
 
