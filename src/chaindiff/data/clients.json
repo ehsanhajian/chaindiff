@@ -104,6 +104,20 @@
       "tag_prefix": "core-"
     },
     {
+      "id": "pathfinder",
+      "name": "Pathfinder",
+      "role": "execution",
+      "github": "software-mansion/pathfinder",
+      "versioning": "semver"
+    },
+    {
+      "id": "juno",
+      "name": "Juno",
+      "role": "execution",
+      "github": "NethermindEth/juno",
+      "versioning": "semver"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",

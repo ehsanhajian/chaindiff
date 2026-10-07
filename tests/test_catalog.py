@@ -26,6 +26,8 @@ def test_registry_lists_the_supported_clients():
         "linea-besu",
         "l2geth",
         "external-node",
+        "pathfinder",
+        "juno",
         "lighthouse",
         "prysm",
         "teku",
@@ -67,6 +69,12 @@ def test_registry_lists_the_supported_clients():
     assert by_id["external-node"].github == "matter-labs/zksync-era"
     assert by_id["external-node"].role == "execution"
     assert by_id["external-node"].tag_prefix == "core-"
+    assert by_id["pathfinder"].github == "software-mansion/pathfinder"
+    assert by_id["pathfinder"].role == "execution"
+    assert by_id["pathfinder"].tag_prefix == ""
+    assert by_id["juno"].github == "NethermindEth/juno"
+    assert by_id["juno"].role == "execution"
+    assert by_id["juno"].tag_prefix == ""
     assert by_id["bsc"].github == "bnb-chain/bsc"
     assert by_id["bsc"].role == "execution"
     assert by_id["bsc"].tag_prefix == ""
@@ -151,6 +159,14 @@ def test_shipped_catalog_drops_known_non_releases():
     assert all(not item.tag.startswith("prover-") for item in external_node)
     assert all(not item.tag.startswith("contract_verifier-") for item in external_node)
     assert all(not item.tag.startswith("airbender_prover_server-") for item in external_node)
+    _, pathfinder = load_releases("pathfinder")
+    assert any(item.tag == "v0.24.0" and not item.prerelease for item in pathfinder)
+    assert any(item.tag == "v0.22.8-beta.1" and item.prerelease for item in pathfinder)
+    assert latest_stable(pathfinder).tag == "v0.24.1"
+    _, juno = load_releases("juno")
+    assert any(item.tag == "v0.16.6" and not item.prerelease for item in juno)
+    assert any(item.tag == "v0.16.6-rc.4" and item.prerelease for item in juno)
+    assert latest_stable(juno).tag == "v0.16.8"
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

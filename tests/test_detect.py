@@ -392,6 +392,53 @@ def test_external_node_image_tag_is_read(capsys):
     assert "external-node 29.4.0" in capsys.readouterr().out
 
 
+def test_pathfinder_and_juno_version_lines(monkeypatch, capsys):
+    def fake(path, argv, timeout=10):
+        assert argv == ("--version",)
+        if path.endswith("pathfinder"):
+            return "Pathfinder v0.24.1\n"
+        return "juno version v0.16.8\n"
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fake)
+    assert version_argv("pathfinder") == ("--version",)
+    assert version_argv("juno") == ("--version",)
+    assert main(["detect", "--client", "pathfinder", "--binary", "/usr/bin/pathfinder"]) == 0
+    assert "pathfinder 0.24.1" in capsys.readouterr().out
+    assert main(["detect", "--client", "juno", "--binary", "/usr/bin/juno"]) == 0
+    assert "juno 0.16.8" in capsys.readouterr().out
+    assert version_from_output("pathfinder", "Pathfinder v0.24.1-3-gabcdef\n") is None
+    assert version_from_output("juno", "juno version v0.16.6-rc.4\n") is not None
+
+
+def test_starknet_image_tags_are_read(capsys):
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "pathfinder",
+                "--image",
+                "swmansion/pathfinder:v0.24.0",
+            ]
+        )
+        == 0
+    )
+    assert "pathfinder 0.24.0" in capsys.readouterr().out
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "juno",
+                "--image",
+                "nethermind/juno:v0.16.6",
+            ]
+        )
+        == 0
+    )
+    assert "juno 0.16.6" in capsys.readouterr().out
+
+
 def test_detect_unknown_client(capsys):
     assert main(["detect", "--client", "lodestar", "--image", "lodestar:v1.2.3"]) == 3
     assert "Unknown client" in capsys.readouterr().err

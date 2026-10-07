@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "0.24.0",
+      "severity": "breaking",
+      "summary": "Enables Starknet 0.14.4. RPC websocket clients must answer server pings. The keepalive cannot be turned off.",
+      "action": "Make websocket clients answer pings. Do not set --rpc.websocket.ping-interval, --rpc.websocket.initial-frame-timeout, or --rpc.websocket.max-missed-pings to 0. Raise the ping interval instead.",
+      "source": "https://github.com/software-mansion/pathfinder/releases/tag/v0.24.0"
+    }
+  ]
+}
