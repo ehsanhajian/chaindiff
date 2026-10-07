@@ -23,12 +23,14 @@ def test_registry_lists_the_supported_clients():
         "bor",
         "bsc",
         "avalanchego",
+        "linea-besu",
         "lighthouse",
         "prysm",
         "teku",
         "nimbus",
         "op-node",
         "heimdall",
+        "maru",
     ]
     by_id = {client.id: client for client in load_clients()}
     assert by_id["besu"].github == "besu-eth/besu"
@@ -51,6 +53,12 @@ def test_registry_lists_the_supported_clients():
     assert by_id["avalanchego"].github == "ava-labs/avalanchego"
     assert by_id["avalanchego"].role == "execution"
     assert by_id["avalanchego"].tag_prefix == ""
+    assert by_id["linea-besu"].github == "LFDT-Lineth/lineth-monorepo"
+    assert by_id["linea-besu"].role == "execution"
+    assert by_id["linea-besu"].tag_prefix == "releases/linea-besu-package/"
+    assert by_id["maru"].github == "LFDT-Lineth/lineth-monorepo"
+    assert by_id["maru"].role == "consensus"
+    assert by_id["maru"].tag_prefix == "releases/maru/"
     assert by_id["bsc"].github == "bnb-chain/bsc"
     assert by_id["bsc"].role == "execution"
     assert by_id["bsc"].tag_prefix == ""
@@ -107,6 +115,20 @@ def test_shipped_catalog_drops_known_non_releases():
     assert any(item.tag == "v1.15.1" and not item.prerelease for item in avalanchego)
     assert any(item.tag == "v1.15.0-fuji" and item.prerelease for item in avalanchego)
     assert latest_stable(avalanchego).tag == "v1.15.1"
+    _, linea_besu = load_releases("linea-besu")
+    assert any(item.tag == "releases/linea-besu-package/v2.3.0" and not item.prerelease for item in linea_besu)
+    assert any(item.tag == "releases/linea-besu-package/v2.1.1" and item.prerelease for item in linea_besu)
+    assert latest_stable(linea_besu).tag == "releases/linea-besu-package/v2.3.0"
+    assert all(item.tag.startswith("releases/linea-besu-package/") for item in linea_besu)
+    assert all(not item.tag.startswith("releases/maru/") for item in linea_besu)
+    assert all(not item.tag.startswith("releases/coordinator/") for item in linea_besu)
+    _, maru = load_releases("maru")
+    assert any(item.tag == "releases/maru/v1.4.0" and not item.prerelease for item in maru)
+    assert any(item.tag == "releases/maru/v1.3.0" and not item.prerelease for item in maru)
+    assert latest_stable(maru).tag == "releases/maru/v1.4.0"
+    assert all(item.tag.startswith("releases/maru/") for item in maru)
+    assert all(not item.tag.startswith("releases/linea-besu-package/") for item in maru)
+    assert all(not item.tag.startswith("releases/coordinator/") for item in maru)
 
 
 def test_release_roundtrip(tmp_path, monkeypatch):

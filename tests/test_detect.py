@@ -282,6 +282,48 @@ def test_op_node_image_tag_is_read(capsys):
     assert "op-node 1.19.8" in capsys.readouterr().out
 
 
+def test_linea_binary_is_not_run(monkeypatch, capsys):
+    def fail(path, argv, timeout=10):
+        raise AssertionError("Linea version output is not the package release")
+
+    monkeypatch.setattr("chaindiff.cli.read_binary_output", fail)
+    assert version_argv("maru") is None
+    assert version_argv("linea-besu") is None
+    assert main(["detect", "--client", "maru", "--binary", "/usr/bin/app"]) == 1
+    output = capsys.readouterr().out
+    assert "Could not read a Maru version from that binary." in output
+    assert "chaindiff check --client maru --from <installed>" in output
+
+
+def test_linea_image_tag_is_read(capsys):
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "maru",
+                "--image",
+                "consensys/maru:1.4.0-20260923-0284c54",
+            ]
+        )
+        == 0
+    )
+    assert "maru 1.4.0" in capsys.readouterr().out
+    assert (
+        main(
+            [
+                "detect",
+                "--client",
+                "linea-besu",
+                "--image",
+                "consensys/linea-besu-package:2.3.0-20260923-8d01643",
+            ]
+        )
+        == 0
+    )
+    assert "linea-besu 2.3.0" in capsys.readouterr().out
+
+
 def test_detect_unknown_client(capsys):
     assert main(["detect", "--client", "lodestar", "--image", "lodestar:v1.2.3"]) == 3
     assert "Unknown client" in capsys.readouterr().err

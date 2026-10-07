@@ -76,7 +76,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--to", dest="target", default="latest", help="Target version, or latest")
         command.add_argument(
             "--network",
-            help="Network id, for example ethereum, gnosis, bsc, avalanche, op-mainnet, base, arbitrum-one, or polygon",
+            help="Network id, for example ethereum, gnosis, bsc, avalanche, linea, op-mainnet, base, arbitrum-one, or polygon",
         )
         command.add_argument("--execution", help="Execution client id")
         command.add_argument("--execution-version", help="Installed execution client version")
@@ -299,6 +299,9 @@ _BASE_EXECUTION = frozenset({"op-geth"})
 _BASE_CONSENSUS = frozenset({"op-node"})
 _GNOSIS_EXECUTION = frozenset({"nethermind", "erigon", "geth", "reth"})
 _GNOSIS_CONSENSUS = frozenset({"lighthouse", "nimbus", "teku"})
+_LINEA_CLIENTS = frozenset({"linea-besu", "maru"})
+_LINEA_EXECUTION = frozenset({"linea-besu"})
+_LINEA_CONSENSUS = frozenset({"maru"})
 
 
 def _parse_client_version(client, text: str) -> Version | None:
@@ -326,6 +329,8 @@ def _outside_mainnet_pair(execution, consensus) -> str | None:
         hint = "Use --network bsc for that chain's schedule."
     elif set(outside) <= {"avalanchego"}:
         hint = "Use --network avalanche for that chain's schedule."
+    elif set(outside) <= _LINEA_CLIENTS:
+        hint = "Use --network linea for that chain's schedule."
     else:
         hint = (
             "Use --client for one OP Stack client, or --network op-mainnet or --network base "
@@ -398,6 +403,21 @@ def _outside_gnosis(execution, consensus) -> str | None:
         f"Gnosis Chain does not include {listed}. "
         "This check uses nethermind, erigon, geth, or reth with lighthouse, nimbus, or teku."
     )
+
+
+def _outside_linea(execution, consensus) -> str | None:
+    outside = [
+        client.id
+        for client, allowed in (
+            (execution, _LINEA_EXECUTION),
+            (consensus, _LINEA_CONSENSUS),
+        )
+        if client.id not in allowed
+    ]
+    if not outside:
+        return None
+    listed = ", ".join(outside)
+    return f"Linea does not include {listed}. This check uses linea-besu with maru."
 
 
 def _client_result(client, current_text: str, target_text: str):
@@ -649,6 +669,8 @@ def _network_check(args: argparse.Namespace) -> int:
         outside = _outside_polygon(execution, consensus)
     elif schedule.id == "gnosis":
         outside = _outside_gnosis(execution, consensus)
+    elif schedule.id == "linea":
+        outside = _outside_linea(execution, consensus)
     else:
         outside = None
     if outside is not None:

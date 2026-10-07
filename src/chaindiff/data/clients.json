@@ -80,6 +80,14 @@
       "versioning": "semver"
     },
     {
+      "id": "linea-besu",
+      "name": "Linea Besu",
+      "role": "execution",
+      "github": "LFDT-Lineth/lineth-monorepo",
+      "versioning": "semver",
+      "tag_prefix": "releases/linea-besu-package/"
+    },
+    {
       "id": "lighthouse",
       "name": "Lighthouse",
       "role": "consensus",
@@ -121,6 +129,14 @@
       "role": "consensus",
       "github": "0xPolygon/heimdall-v2",
       "versioning": "semver"
+    },
+    {
+      "id": "maru",
+      "name": "Maru",
+      "role": "consensus",
+      "github": "LFDT-Lineth/lineth-monorepo",
+      "versioning": "semver",
+      "tag_prefix": "releases/maru/"
     }
   ]
 }

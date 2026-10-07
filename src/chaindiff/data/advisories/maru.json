@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "1.4.0",
+      "severity": "none",
+      "summary": "Adds Noise and Yamux, custom validator signers, and Amsterdam support. The notes do not state a hard fork or an operator change.",
+      "action": "",
+      "source": "https://github.com/LFDT-Lineth/lineth-monorepo/releases/tag/releases/maru/v1.4.0"
+    }
+  ]
+}
