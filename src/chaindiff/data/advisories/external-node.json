@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "advisories": [
+    {
+      "version": "31.5.0",
+      "severity": "none",
+      "summary": "The notes list one change, labeled v32, that updates vm2. They do not state a hard fork or an operator change.",
+      "action": "",
+      "source": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.5.0"
+    }
+  ]
+}

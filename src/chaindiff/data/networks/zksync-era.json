@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "id": "zksync-era",
+  "name": "zkSync Era",
+  "upgrade": {
+    "name": "v31",
+    "activation": null,
+    "source": "https://forum.zknation.io/t/zip-16-zksync-v31-upgrade/1033",
+    "summary": "v31 is the next ZKsync Era upgrade and is not scheduled. The announcement says external nodes must run a v31-compatible zksync-era release and does not name that release.",
+    "order": null,
+    "order_summary": "The external node is the Era node. No separate consensus client is part of this upgrade.",
+    "warning": "August 4, 2026 and August 24, 2026 were estimates. On August 24, 2026 Matter Labs said v31 is delayed and under review. Those dates are not activation times. Protocol version 30 was not deployed to Era mainnet. The current mainnet compose file pins matterlabs/external-node:v29.4.0. That image is not the next upgrade. ZIP-17 increases the Era execution delay to 24 hours on October 7, 2026 at 13:00 UTC and does not name a node release. Other ZK Chains are not this schedule.",
+    "required": {
+      "execution": {},
+      "consensus": {}
+    }
+  }
+}

@@ -1,0 +1,1087 @@
+{
+  "schema_version": 1,
+  "client": "external-node",
+  "github": "matter-labs/zksync-era",
+  "fetched_at": "2026-10-07T12:25:55Z",
+  "ignored_tag_count": 83,
+  "releases": [
+    {
+      "tag": "core-v31.5.0",
+      "name": "core: v31.5.0",
+      "published_at": "2026-08-08T09:01:36Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.5.0"
+    },
+    {
+      "tag": "core-v31.4.0",
+      "name": "core: v31.4.0",
+      "published_at": "2026-08-06T09:57:19Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.4.0"
+    },
+    {
+      "tag": "core-v31.3.0",
+      "name": "core: v31.3.0",
+      "published_at": "2026-07-20T13:19:04Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.3.0"
+    },
+    {
+      "tag": "core-v31.2.0",
+      "name": "core: v31.2.0",
+      "published_at": "2026-07-14T12:38:27Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.2.0"
+    },
+    {
+      "tag": "core-v31.1.0",
+      "name": "core: v31.1.0",
+      "published_at": "2026-07-03T11:17:41Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.1.0"
+    },
+    {
+      "tag": "core-v31.0.0",
+      "name": "core: v31.0.0",
+      "published_at": "2026-06-18T10:01:26Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v31.0.0"
+    },
+    {
+      "tag": "core-v29.20.0",
+      "name": "core: v29.20.0",
+      "published_at": "2026-06-04T14:58:54Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.20.0"
+    },
+    {
+      "tag": "core-v29.19.2",
+      "name": "core: v29.19.2",
+      "published_at": "2026-06-03T16:16:50Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.19.2"
+    },
+    {
+      "tag": "core-v29.19.1",
+      "name": "core: v29.19.1",
+      "published_at": "2026-06-01T10:56:54Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.19.1"
+    },
+    {
+      "tag": "core-v29.19.0",
+      "name": "core: v29.19.0",
+      "published_at": "2026-05-26T16:49:44Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.19.0"
+    },
+    {
+      "tag": "core-v29.18.0",
+      "name": "core: v29.18.0",
+      "published_at": "2026-05-26T09:36:44Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.18.0"
+    },
+    {
+      "tag": "core-v29.17.0",
+      "name": "core: v29.17.0",
+      "published_at": "2026-05-20T13:50:42Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.17.0"
+    },
+    {
+      "tag": "core-v29.16.0",
+      "name": "core: v29.16.0",
+      "published_at": "2026-04-23T15:03:29Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.16.0"
+    },
+    {
+      "tag": "core-v29.15.2",
+      "name": "core: v29.15.2",
+      "published_at": "2026-04-14T07:23:28Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.15.2"
+    },
+    {
+      "tag": "core-v29.15.1",
+      "name": "core: v29.15.1",
+      "published_at": "2026-04-10T12:35:34Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.15.1"
+    },
+    {
+      "tag": "core-v29.15.0",
+      "name": "core: v29.15.0",
+      "published_at": "2026-03-25T16:48:40Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.15.0"
+    },
+    {
+      "tag": "core-v29.14.0",
+      "name": "core: v29.14.0",
+      "published_at": "2026-03-20T11:05:41Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.14.0"
+    },
+    {
+      "tag": "core-v29.13.1",
+      "name": "core: v29.13.1",
+      "published_at": "2026-03-16T10:53:46Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.13.1"
+    },
+    {
+      "tag": "core-v29.13.0",
+      "name": "core: v29.13.0",
+      "published_at": "2026-03-12T13:40:37Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.13.0"
+    },
+    {
+      "tag": "core-v29.12.0",
+      "name": "core: v29.12.0",
+      "published_at": "2026-03-04T20:44:25Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.12.0"
+    },
+    {
+      "tag": "core-v29.11.1",
+      "name": "core: v29.11.1",
+      "published_at": "2026-02-25T15:46:07Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.11.1"
+    },
+    {
+      "tag": "core-v29.11.0",
+      "name": "core: v29.11.0",
+      "published_at": "2026-02-23T18:52:54Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.11.0"
+    },
+    {
+      "tag": "core-v29.10.0",
+      "name": "core: v29.10.0",
+      "published_at": "2026-02-09T08:37:15Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.10.0"
+    },
+    {
+      "tag": "core-v29.9.0",
+      "name": "core: v29.9.0",
+      "published_at": "2026-02-03T11:37:00Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.9.0"
+    },
+    {
+      "tag": "core-v29.8.0",
+      "name": "core: v29.8.0",
+      "published_at": "2026-01-27T09:30:24Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.8.0"
+    },
+    {
+      "tag": "core-v29.7.1",
+      "name": "core: v29.7.1",
+      "published_at": "2026-01-10T22:12:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.7.1"
+    },
+    {
+      "tag": "core-v29.7.0",
+      "name": "core: v29.7.0",
+      "published_at": "2025-12-17T01:10:38Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.7.0"
+    },
+    {
+      "tag": "core-v29.6.0",
+      "name": "core: v29.6.0",
+      "published_at": "2025-11-17T14:58:48Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.6.0"
+    },
+    {
+      "tag": "core-v29.5.0",
+      "name": "core: v29.5.0",
+      "published_at": "2025-10-16T12:05:52Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.5.0"
+    },
+    {
+      "tag": "core-v29.4.1",
+      "name": "core: v29.4.1",
+      "published_at": "2025-09-29T18:04:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.4.1"
+    },
+    {
+      "tag": "core-v29.4.0",
+      "name": "core: v29.4.0",
+      "published_at": "2025-09-24T17:38:45Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.4.0"
+    },
+    {
+      "tag": "core-v29.3.0",
+      "name": "core: v29.3.0",
+      "published_at": "2025-09-18T20:41:08Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.3.0"
+    },
+    {
+      "tag": "core-v29.2.0",
+      "name": "core: v29.2.0",
+      "published_at": "2025-09-01T13:34:12Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.2.0"
+    },
+    {
+      "tag": "core-v29.1.2",
+      "name": "core: v29.1.2",
+      "published_at": "2025-08-26T16:40:06Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.1.2"
+    },
+    {
+      "tag": "core-v29.1.1",
+      "name": "core: v29.1.1",
+      "published_at": "2025-08-22T19:50:54Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.1.1"
+    },
+    {
+      "tag": "core-v29.1.0",
+      "name": "core: v29.1.0",
+      "published_at": "2025-08-15T17:28:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.1.0"
+    },
+    {
+      "tag": "core-v29.0.0",
+      "name": "core: v29.0.0",
+      "published_at": "2025-07-29T15:23:58Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v29.0.0"
+    },
+    {
+      "tag": "core-v28.10.0",
+      "name": "core: v28.10.0",
+      "published_at": "2025-07-25T10:05:43Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.10.0"
+    },
+    {
+      "tag": "core-v28.9.0",
+      "name": "core: v28.9.0",
+      "published_at": "2025-07-09T16:01:23Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.9.0"
+    },
+    {
+      "tag": "core-v28.8.0",
+      "name": "core: v28.8.0",
+      "published_at": "2025-07-08T14:49:29Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.8.0"
+    },
+    {
+      "tag": "core-v28.7.0",
+      "name": "core: v28.7.0",
+      "published_at": "2025-06-30T21:17:38Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.7.0"
+    },
+    {
+      "tag": "core-v28.6.0",
+      "name": "core: v28.6.0",
+      "published_at": "2025-06-12T08:44:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.6.0"
+    },
+    {
+      "tag": "core-v28.5.0",
+      "name": "core: v28.5.0",
+      "published_at": "2025-06-06T14:26:34Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.5.0"
+    },
+    {
+      "tag": "core-v28.4.0",
+      "name": "core: v28.4.0",
+      "published_at": "2025-06-02T15:11:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.4.0"
+    },
+    {
+      "tag": "core-v28.3.0",
+      "name": "core: v28.3.0",
+      "published_at": "2025-05-30T07:51:42Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.3.0"
+    },
+    {
+      "tag": "core-v28.2.1",
+      "name": "core: v28.2.1",
+      "published_at": "2025-05-15T12:00:15Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.2.1"
+    },
+    {
+      "tag": "core-v28.2.0",
+      "name": "core: v28.2.0",
+      "published_at": "2025-05-12T14:29:33Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.2.0"
+    },
+    {
+      "tag": "core-v28.1.0",
+      "name": "core: v28.1.0",
+      "published_at": "2025-05-08T10:41:32Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.1.0"
+    },
+    {
+      "tag": "core-v28.0.0",
+      "name": "core: v28.0.0",
+      "published_at": "2025-05-05T10:23:32Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v28.0.0"
+    },
+    {
+      "tag": "core-v27.5.3",
+      "name": "core-v27.5.3",
+      "published_at": "2025-05-08T18:06:08Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.5.3"
+    },
+    {
+      "tag": "core-v27.5.2",
+      "name": "core: v27.5.2",
+      "published_at": "2025-05-02T09:39:16Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.5.2"
+    },
+    {
+      "tag": "core-v27.5.1",
+      "name": "core: v27.5.1",
+      "published_at": "2025-05-01T20:41:01Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.5.1"
+    },
+    {
+      "tag": "core-v27.5.0",
+      "name": "core: v27.5.0",
+      "published_at": "2025-04-30T16:18:52Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.5.0"
+    },
+    {
+      "tag": "core-v27.4.0",
+      "name": "core: v27.4.0",
+      "published_at": "2025-04-16T08:02:49Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.4.0"
+    },
+    {
+      "tag": "core-v27.3.0",
+      "name": "core: v27.3.0",
+      "published_at": "2025-04-10T16:22:17Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.3.0"
+    },
+    {
+      "tag": "core-v27.2.0",
+      "name": "core: v27.2.0",
+      "published_at": "2025-04-03T15:49:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.2.0"
+    },
+    {
+      "tag": "core-v27.1.0",
+      "name": "core: v27.1.0",
+      "published_at": "2025-03-27T14:04:43Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.1.0"
+    },
+    {
+      "tag": "core-v27.0.0",
+      "name": "core: v27.0.0",
+      "published_at": "2025-03-21T16:07:44Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v27.0.0"
+    },
+    {
+      "tag": "core-v26.7.0",
+      "name": "core: v26.7.0",
+      "published_at": "2025-03-07T10:02:49Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.7.0"
+    },
+    {
+      "tag": "core-v26.6.0",
+      "name": "core: v26.6.0",
+      "published_at": "2025-03-05T17:10:47Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.6.0"
+    },
+    {
+      "tag": "core-v26.5.0",
+      "name": "core: v26.5.0",
+      "published_at": "2025-03-04T10:03:11Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.5.0"
+    },
+    {
+      "tag": "core-v26.4.0",
+      "name": "core: v26.4.0",
+      "published_at": "2025-02-13T12:30:38Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.4.0"
+    },
+    {
+      "tag": "core-v26.3.0",
+      "name": "core: v26.3.0",
+      "published_at": "2025-02-12T12:11:32Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.3.0"
+    },
+    {
+      "tag": "core-v26.2.1",
+      "name": "core: v26.2.1",
+      "published_at": "2025-01-28T14:01:38Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.2.1"
+    },
+    {
+      "tag": "core-v26.2.0",
+      "name": "core: v26.2.0",
+      "published_at": "2025-01-24T14:48:24Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.2.0"
+    },
+    {
+      "tag": "core-v26.1.0",
+      "name": "core: v26.1.0",
+      "published_at": "2025-01-21T14:24:25Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.1.0"
+    },
+    {
+      "tag": "core-v26.0.0",
+      "name": "core: v26.0.0",
+      "published_at": "2025-01-17T14:19:59Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v26.0.0"
+    },
+    {
+      "tag": "core-v25.4.0",
+      "name": "core: v25.4.0",
+      "published_at": "2024-12-19T14:47:22Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v25.4.0"
+    },
+    {
+      "tag": "core-v25.3.0",
+      "name": "core: v25.3.0",
+      "published_at": "2024-12-11T18:21:12Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v25.3.0"
+    },
+    {
+      "tag": "core-v25.2.0",
+      "name": "core: v25.2.0",
+      "published_at": "2024-11-19T16:21:37Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v25.2.0"
+    },
+    {
+      "tag": "core-v25.1.0",
+      "name": "core: v25.1.0",
+      "published_at": "2024-11-05T09:00:59Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v25.1.0"
+    },
+    {
+      "tag": "core-v25.0.0",
+      "name": "core: v25.0.0",
+      "published_at": "2024-10-23T12:52:33Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v25.0.0"
+    },
+    {
+      "tag": "core-v24.29.1",
+      "name": "core: v24.29.1",
+      "published_at": "2024-10-20T23:55:01Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.29.1"
+    },
+    {
+      "tag": "core-v24.29.0",
+      "name": "core: v24.29.0",
+      "published_at": "2024-10-15T08:04:47Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.29.0"
+    },
+    {
+      "tag": "core-v24.28.0",
+      "name": "core: v24.28.0",
+      "published_at": "2024-10-02T17:34:05Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.28.0"
+    },
+    {
+      "tag": "core-v24.27.0",
+      "name": "core: v24.27.0",
+      "published_at": "2024-09-25T14:23:01Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.27.0"
+    },
+    {
+      "tag": "core-v24.26.0",
+      "name": "core: v24.26.0",
+      "published_at": "2024-09-23T13:03:53Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.26.0"
+    },
+    {
+      "tag": "core-v24.25.0",
+      "name": "core: v24.25.0",
+      "published_at": "2024-09-19T11:42:46Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.25.0"
+    },
+    {
+      "tag": "core-v24.24.0",
+      "name": "core: v24.24.0",
+      "published_at": "2024-09-05T20:14:48Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.24.0"
+    },
+    {
+      "tag": "core-v24.23.0",
+      "name": "core: v24.23.0",
+      "published_at": "2024-08-28T18:04:38Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.23.0"
+    },
+    {
+      "tag": "core-v24.22.0",
+      "name": "core: v24.22.0",
+      "published_at": "2024-08-27T15:02:35Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.22.0"
+    },
+    {
+      "tag": "core-v24.21.0",
+      "name": "core: v24.21.0",
+      "published_at": "2024-08-23T07:30:50Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.21.0"
+    },
+    {
+      "tag": "core-v24.20.0",
+      "name": "core: v24.20.0",
+      "published_at": "2024-08-21T14:45:25Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.20.0"
+    },
+    {
+      "tag": "core-v24.19.0",
+      "name": "core: v24.19.0",
+      "published_at": "2024-08-21T09:18:16Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.19.0"
+    },
+    {
+      "tag": "core-v24.18.0",
+      "name": "core: v24.18.0",
+      "published_at": "2024-08-14T17:20:17Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.18.0"
+    },
+    {
+      "tag": "core-v24.17.0",
+      "name": "core: v24.17.0",
+      "published_at": "2024-08-13T12:05:02Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.17.0"
+    },
+    {
+      "tag": "core-v24.16.0",
+      "name": "core: v24.16.0",
+      "published_at": "2024-08-08T14:36:08Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.16.0"
+    },
+    {
+      "tag": "core-v24.15.0",
+      "name": "core: v24.15.0",
+      "published_at": "2024-08-07T10:15:58Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.15.0"
+    },
+    {
+      "tag": "core-v24.14.0",
+      "name": "core: v24.14.0",
+      "published_at": "2024-08-02T07:47:44Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.14.0"
+    },
+    {
+      "tag": "core-v24.13.0",
+      "name": "core: v24.13.0",
+      "published_at": "2024-08-01T07:40:05Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.13.0"
+    },
+    {
+      "tag": "core-v24.12.0",
+      "name": "core: v24.12.0",
+      "published_at": "2024-07-25T20:53:31Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.12.0"
+    },
+    {
+      "tag": "core-v24.11.0",
+      "name": "core: v24.11.0",
+      "published_at": "2024-07-24T07:23:19Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.11.0"
+    },
+    {
+      "tag": "core-v24.10.0",
+      "name": "core: v24.10.0",
+      "published_at": "2024-07-22T10:19:31Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.10.0"
+    },
+    {
+      "tag": "core-v24.9.0",
+      "name": "core: v24.9.0",
+      "published_at": "2024-07-10T14:46:22Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.9.0"
+    },
+    {
+      "tag": "core-v24.8.0",
+      "name": "core: v24.8.0",
+      "published_at": "2024-06-24T10:22:37Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.8.0"
+    },
+    {
+      "tag": "core-v24.7.0",
+      "name": "core: v24.7.0",
+      "published_at": "2024-06-03T14:28:17Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.7.0"
+    },
+    {
+      "tag": "core-v24.6.0",
+      "name": "core: v24.6.0",
+      "published_at": "2024-06-03T09:53:18Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.6.0"
+    },
+    {
+      "tag": "core-v24.5.1",
+      "name": "core: v24.5.1",
+      "published_at": "2024-05-31T07:46:59Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.5.1"
+    },
+    {
+      "tag": "core-v24.5.0",
+      "name": "core: v24.5.0",
+      "published_at": "2024-05-30T18:43:54Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.5.0"
+    },
+    {
+      "tag": "core-v24.4.0",
+      "name": "core: v24.4.0",
+      "published_at": "2024-05-21T16:26:17Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.4.0"
+    },
+    {
+      "tag": "core-v24.3.0",
+      "name": "core: v24.3.0",
+      "published_at": "2024-05-17T06:35:02Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.3.0"
+    },
+    {
+      "tag": "core-v24.2.0",
+      "name": "core: v24.2.0",
+      "published_at": "2024-05-14T09:21:47Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.2.0"
+    },
+    {
+      "tag": "core-v24.1.0",
+      "name": "core: v24.1.0",
+      "published_at": "2024-05-08T08:28:50Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.1.0"
+    },
+    {
+      "tag": "core-v24.0.0",
+      "name": "core: v24.0.0",
+      "published_at": "2024-04-30T09:47:02Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v24.0.0"
+    },
+    {
+      "tag": "core-v23.1.0",
+      "name": "core: v23.1.0",
+      "published_at": "2024-04-22T14:26:31Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v23.1.0"
+    },
+    {
+      "tag": "core-v23.0.0",
+      "name": "core: v23.0.0",
+      "published_at": "2024-04-16T15:27:10Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v23.0.0"
+    },
+    {
+      "tag": "core-v22.1.0",
+      "name": "core: v22.1.0",
+      "published_at": "2024-03-28T13:58:50Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v22.1.0"
+    },
+    {
+      "tag": "core-v22.0.0",
+      "name": "core: v22.0.0",
+      "published_at": "2024-03-22T07:17:30Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v22.0.0"
+    },
+    {
+      "tag": "core-v21.1.0",
+      "name": "core: v21.1.0",
+      "published_at": "2024-03-13T12:49:34Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v21.1.0"
+    },
+    {
+      "tag": "core-v21.0.0",
+      "name": "core: v21.0.0",
+      "published_at": "2024-03-01T20:36:35Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v21.0.0"
+    },
+    {
+      "tag": "core-v20.8.0",
+      "name": "core: v20.8.0",
+      "published_at": "2024-02-26T08:56:25Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.8.0"
+    },
+    {
+      "tag": "core-v20.7.0",
+      "name": "core: v20.7.0",
+      "published_at": "2024-02-16T10:01:08Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.7.0"
+    },
+    {
+      "tag": "core-v20.6.0",
+      "name": "core: v20.6.0",
+      "published_at": "2024-02-08T14:57:57Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.6.0"
+    },
+    {
+      "tag": "core-v20.5.2",
+      "name": "core: v20.5.2",
+      "published_at": "2024-02-04T16:40:27Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.5.2"
+    },
+    {
+      "tag": "core-v20.5.1",
+      "name": "core: v20.5.1",
+      "published_at": "2024-02-02T15:15:22Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.5.1"
+    },
+    {
+      "tag": "core-v20.5.0",
+      "name": "core: v20.5.0",
+      "published_at": "2024-02-02T12:06:32Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.5.0"
+    },
+    {
+      "tag": "core-v20.4.0",
+      "name": "core: v20.4.0",
+      "published_at": "2024-01-31T15:36:20Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.4.0"
+    },
+    {
+      "tag": "core-v20.3.0",
+      "name": "core: v20.3.0",
+      "published_at": "2024-01-31T12:01:01Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.3.0"
+    },
+    {
+      "tag": "core-v20.2.0",
+      "name": "core: v20.2.0",
+      "published_at": "2024-01-30T12:48:46Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.2.0"
+    },
+    {
+      "tag": "core-v20.1.0",
+      "name": "core: v20.1.0",
+      "published_at": "2024-01-23T16:21:48Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.1.0"
+    },
+    {
+      "tag": "core-v20.0.0",
+      "name": "core: v20.0.0",
+      "published_at": "2024-01-19T14:53:03Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v20.0.0"
+    },
+    {
+      "tag": "core-v19.2.0",
+      "name": "core: v19.2.0",
+      "published_at": "2024-01-17T13:31:57Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v19.2.0"
+    },
+    {
+      "tag": "core-v19.1.1",
+      "name": "core: v19.1.1",
+      "published_at": "2024-01-12T10:41:11Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v19.1.1"
+    },
+    {
+      "tag": "core-v19.1.0",
+      "name": "core: v19.1.0",
+      "published_at": "2024-01-11T09:56:00Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v19.1.0"
+    },
+    {
+      "tag": "core-v19.0.0",
+      "name": "core: v19.0.0",
+      "published_at": "2024-01-05T12:39:38Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v19.0.0"
+    },
+    {
+      "tag": "core-v18.13.0",
+      "name": "core: v18.13.0",
+      "published_at": "2024-01-02T14:20:08Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.13.0"
+    },
+    {
+      "tag": "core-v18.12.0",
+      "name": "core: v18.12.0",
+      "published_at": "2023-12-25T23:56:33Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.12.0"
+    },
+    {
+      "tag": "core-v18.11.0",
+      "name": "core: v18.11.0",
+      "published_at": "2023-12-25T21:03:33Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.11.0"
+    },
+    {
+      "tag": "core-v18.10.3",
+      "name": "core: v18.10.3",
+      "published_at": "2023-12-25T17:27:00Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.10.3"
+    },
+    {
+      "tag": "core-v18.10.2",
+      "name": "core: v18.10.2",
+      "published_at": "2023-12-25T14:20:23Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.10.2"
+    },
+    {
+      "tag": "core-v18.10.1",
+      "name": "core: v18.10.1",
+      "published_at": "2023-12-25T11:30:29Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.10.1"
+    },
+    {
+      "tag": "core-v18.10.0",
+      "name": "core: v18.10.0",
+      "published_at": "2023-12-25T10:30:54Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.10.0"
+    },
+    {
+      "tag": "core-v18.9.0",
+      "name": "core: v18.9.0",
+      "published_at": "2023-12-19T17:42:14Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.9.0"
+    },
+    {
+      "tag": "core-v18.8.0",
+      "name": "core: v18.8.0",
+      "published_at": "2023-12-13T13:58:18Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.8.0"
+    },
+    {
+      "tag": "core-v18.7.0",
+      "name": "core: v18.7.0",
+      "published_at": "2023-12-12T08:20:23Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.7.0"
+    },
+    {
+      "tag": "core-v18.6.1",
+      "name": "core: v18.6.1",
+      "published_at": "2023-12-06T12:39:23Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.6.1"
+    },
+    {
+      "tag": "core-v18.6.0",
+      "name": "core: v18.6.0",
+      "published_at": "2023-12-05T17:50:58Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.6.0"
+    },
+    {
+      "tag": "core-v18.5.0",
+      "name": "core: v18.5.0",
+      "published_at": "2023-12-05T12:06:07Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.5.0"
+    },
+    {
+      "tag": "core-v18.4.0",
+      "name": "core: v18.4.0",
+      "published_at": "2023-12-01T11:32:32Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.4.0"
+    },
+    {
+      "tag": "core-v18.3.1",
+      "name": "core: v18.3.1",
+      "published_at": "2023-11-28T19:43:19Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.3.1"
+    },
+    {
+      "tag": "core-v18.3.0",
+      "name": "core: v18.3.0",
+      "published_at": "2023-11-28T12:10:18Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.3.0"
+    },
+    {
+      "tag": "core-v18.2.0",
+      "name": "core: v18.2.0",
+      "published_at": "2023-11-27T12:51:33Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.2.0"
+    },
+    {
+      "tag": "core-v18.1.0",
+      "name": "core: v18.1.0",
+      "published_at": "2023-11-21T06:59:20Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.1.0"
+    },
+    {
+      "tag": "core-v18.0.3",
+      "name": "core: v18.0.3",
+      "published_at": "2023-11-16T12:59:56Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.0.3"
+    },
+    {
+      "tag": "core-v18.0.2",
+      "name": "core: v18.0.2",
+      "published_at": "2023-11-16T11:43:23Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.0.2"
+    },
+    {
+      "tag": "core-v18.0.1",
+      "name": "core: v18.0.1",
+      "published_at": "2023-11-15T12:53:31Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.0.1"
+    },
+    {
+      "tag": "core-v18.0.0",
+      "name": "core: v18.0.0",
+      "published_at": "2023-11-15T09:06:19Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v18.0.0"
+    },
+    {
+      "tag": "core-v17.1.0",
+      "name": "core: v17.1.0",
+      "published_at": "2023-11-03T13:12:49Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v17.1.0"
+    },
+    {
+      "tag": "core-v16.2.0",
+      "name": "core: v16.2.0",
+      "published_at": "2023-10-26T13:28:19Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v16.2.0"
+    },
+    {
+      "tag": "core-v16.1.0",
+      "name": "core: v16.1.0",
+      "published_at": "2023-10-24T16:03:11Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v16.1.0"
+    },
+    {
+      "tag": "core-v16.0.2",
+      "name": "core: v16.0.2",
+      "published_at": "2023-10-12T18:32:15Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v16.0.2"
+    },
+    {
+      "tag": "core-v16.0.0",
+      "name": "core: v16.0.0",
+      "published_at": "2023-10-11T10:11:53Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v16.0.0"
+    },
+    {
+      "tag": "core-v15.1.1",
+      "name": "core: v15.1.1",
+      "published_at": "2023-10-06T09:30:33Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v15.1.1"
+    },
+    {
+      "tag": "core-v15.1.0",
+      "name": "core: v15.1.0",
+      "published_at": "2023-10-03T19:59:47Z",
+      "prerelease": false,
+      "url": "https://github.com/matter-labs/zksync-era/releases/tag/core-v15.1.0"
+    }
+  ]
+}

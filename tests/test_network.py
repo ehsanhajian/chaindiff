@@ -1254,6 +1254,129 @@ def test_scroll_refuses_a_prerelease(capsys):
     assert "PRERELEASE" in capsys.readouterr().out
 
 
+def test_zksync_era_requirement_is_not_announced(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "zksync-era",
+                "--execution",
+                "external-node",
+                "--execution-version",
+                "core-v31.5.0",
+            ]
+        )
+        == 1
+    )
+    output = capsys.readouterr().out
+    assert output.startswith("zkSync Era\n")
+    assert "Next upgrade: v31" in output
+    assert "Next upgrade: v32" not in output
+    assert "Next upgrade: v29" not in output
+    assert "Mainnet activation: not scheduled" in output
+    assert "https://forum.zknation.io/t/zip-16-zksync-v31-upgrade/1033" in output
+    assert "external-node 31.5.0  execution  requirement not announced" in output
+    assert "The external node is the Era node." in output
+    assert "No required external node version has been announced for v31." in output
+    assert "August 4, 2026" in output
+    assert "August 24, 2026" in output
+    assert "not activation times" in output
+    assert "under review" in output
+    assert "matterlabs/external-node:v29.4.0" in output
+    assert "October 7, 2026" in output
+    assert "13:00 UTC" in output
+    assert "Protocol version 30" in output
+    assert "Other ZK Chains" in output
+    assert "REVIEW REQUIRED" in output
+    assert "Verdict: SAFE" not in output
+    assert "NOT SAFE" not in output
+    assert "required 31" not in output
+    assert "required 29" not in output
+    assert "2026-08-04" not in output
+    assert "2026-08-24" not in output
+    assert "2026-10-07" not in output
+    header, _, _ = output.partition("Verdict:")
+    assert "consensus" not in header
+
+
+def test_zksync_era_rejects_geth_and_a_consensus_flag(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "zksync-era",
+                "--execution",
+                "geth",
+                "--execution-version",
+                "1.17.7",
+            ]
+        )
+        == 3
+    )
+    assert "zkSync Era does not include geth" in capsys.readouterr().err
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "zksync-era",
+                "--execution",
+                "external-node",
+                "--execution-version",
+                "31.5.0",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not use --consensus" in error
+    assert "v31" not in error
+    assert (
+        main(
+            [
+                "check",
+                "--execution",
+                "external-node",
+                "--execution-version",
+                "31.5.0",
+                "--consensus",
+                "lighthouse",
+                "--consensus-version",
+                "8.2.3",
+            ]
+        )
+        == 3
+    )
+    error = capsys.readouterr().err
+    assert "does not include external-node" in error
+    assert "--network zksync-era" in error
+    assert "Glamsterdam" not in error
+
+
+def test_zksync_era_refuses_a_prerelease(capsys):
+    assert (
+        main(
+            [
+                "check",
+                "--network",
+                "zksync-era",
+                "--execution",
+                "external-node",
+                "--execution-version",
+                "31.5.0-rc.1",
+            ]
+        )
+        == 2
+    )
+    assert "PRERELEASE" in capsys.readouterr().out
+
+
 def test_schedule_rejects_a_testnet_client_in_the_wrong_role(tmp_path, monkeypatch):
     monkeypatch.setenv("CHAINDIFF_DATA", str(tmp_path))
     _write(tmp_path, _schedule(required_execution={"lighthouse": "8.3.0"}))
