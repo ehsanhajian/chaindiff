@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "nimbus",
   "github": "status-im/nimbus-eth2",
-  "fetched_at": "2026-10-02T12:57:35Z",
+  "fetched_at": "2026-10-08T13:22:44Z",
   "ignored_tag_count": 2,
   "releases": [
+    {
+      "tag": "v26.10.0",
+      "name": "v26.10.0",
+      "published_at": "2026-10-04T11:28:04Z",
+      "prerelease": false,
+      "url": "https://github.com/status-im/nimbus-eth2/releases/tag/v26.10.0"
+    },
     {
       "tag": "v26.9.1",
       "name": "v26.9.1",

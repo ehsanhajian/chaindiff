@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "op-node",
   "github": "ethereum-optimism/optimism",
-  "fetched_at": "2026-10-05T08:13:19Z",
-  "ignored_tag_count": 2311,
+  "fetched_at": "2026-10-08T13:22:44Z",
+  "ignored_tag_count": 2317,
   "releases": [
+    {
+      "tag": "op-node/v1.19.9",
+      "name": "op-node v1.19.9",
+      "published_at": "2026-10-07T08:42:44Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-node/v1.19.9"
+    },
     {
       "tag": "op-node/v1.19.8",
       "name": "op-node v1.19.8",

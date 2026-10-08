@@ -2,7 +2,7 @@
   "schema_version": 1,
   "client": "op-geth",
   "github": "ethereum-optimism/op-geth",
-  "fetched_at": "2026-10-05T08:11:05Z",
+  "fetched_at": "2026-10-08T13:22:44Z",
   "ignored_tag_count": 0,
   "releases": [
     {

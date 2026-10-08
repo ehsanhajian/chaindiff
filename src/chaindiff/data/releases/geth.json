@@ -2,7 +2,7 @@
   "schema_version": 1,
   "client": "geth",
   "github": "ethereum/go-ethereum",
-  "fetched_at": "2026-10-02T12:57:35Z",
+  "fetched_at": "2026-10-08T13:22:44Z",
   "ignored_tag_count": 0,
   "releases": [
     {

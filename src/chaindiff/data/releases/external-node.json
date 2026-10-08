@@ -2,7 +2,7 @@
   "schema_version": 1,
   "client": "external-node",
   "github": "matter-labs/zksync-era",
-  "fetched_at": "2026-10-07T12:25:55Z",
+  "fetched_at": "2026-10-08T13:22:44Z",
   "ignored_tag_count": 83,
   "releases": [
     {
