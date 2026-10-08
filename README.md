@@ -237,7 +237,7 @@ A stale catalog cannot return exit 0 for `latest`. A setting with no rule is rep
 
 `check`, `plan`, and `scan` use the catalog shipped with the package. `refresh` is the only command that talks to GitHub. Set `GH_TOKEN` or `GITHUB_TOKEN` if you hit the unauthenticated rate limit.
 
-GitHub Actions refreshes the catalog twice a week, Monday and Thursday at 06:15 UTC, and merges the update when the release lists change. Run `chaindiff refresh` any time. `chaindiff refresh --client geth` limits the fetch to one client.
+GitHub Actions refreshes the catalog twice a week, Monday and Thursday at 06:15 UTC, and merges the update when the release lists change. When a new stable tag appears, that run publishes the next patch release, such as 0.3.1, so a fresh `pip install` includes the tag. A prerelease does not publish a ChainDiff release. The new tag is not reviewed. Run `chaindiff refresh` any time. `chaindiff refresh --client geth` limits the fetch to one client.
 
 The stored catalog is tags, dates, titles, and URLs. Release-note bodies stay on GitHub. A release title that mentions a security fix is reported as a warning. That warning does not by itself make the upgrade safe or unsafe.
 

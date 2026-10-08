@@ -23,25 +23,49 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install ChainDiff
-        run: pip install -e .
+        run: pip install -e ".[dev]"
+      - name: Remember stable tags
+        run: python -m chaindiff.versionbump snapshot . new-stable-before.json
       - name: Refresh release catalog
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: chaindiff refresh
+      - name: Bump the patch version for a new stable tag
+        run: python -m chaindiff.versionbump bump-if-new . new-stable-before.json new-stable.txt
+      - name: Test
+        run: pytest
       - name: Open a catalog pull request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git add src/chaindiff/data/releases
+          git add src/chaindiff/data/releases pyproject.toml src/chaindiff/__init__.py
           if git diff --cached --quiet; then
             echo "No catalog changes"
             exit 0
           fi
-          branch="catalog/refresh-${GITHUB_RUN_ID}"
+          branch="catalog/refresh-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           git checkout -b "$branch"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh client release catalog"
+          if [ -s new-stable.txt ]; then
+            git commit -F new-stable-commit.txt
+            title="ChainDiff $(cat new-version.txt)"
+            body="new-stable.txt"
+          else
+            git commit -m "Refresh client release catalog"
+            title="Refresh client release catalog"
+            body=""
+          fi
           git push -u origin "$branch"
-          gh pr create --base main --head "$branch" --title "Refresh client release catalog" --body "Scheduled update of the client release catalog."
+          if [ -n "$body" ]; then
+            gh pr create --base main --head "$branch" --title "$title" --body-file "$body"
+          else
+            gh pr create --base main --head "$branch" --title "$title" --body "Scheduled update of the client release catalog."
+          fi
           gh pr merge --squash --delete-branch
+          if [ -s new-stable.txt ]; then
+            git fetch origin main
+            sha=$(git rev-parse origin/main)
+            version=$(cat new-version.txt)
+            gh release view "v${version}" >/dev/null 2>&1 || gh release create "v${version}" --target "$sha" --title "ChainDiff ${version}" --notes-file new-stable.txt
+          fi
