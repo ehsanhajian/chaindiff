@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "geth",
   "github": "ethereum/go-ethereum",
-  "fetched_at": "2026-10-08T14:16:30Z",
+  "fetched_at": "2026-10-12T15:15:39Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v1.17.8",
+      "name": "Protein Sludge Pack (v1.17.8)",
+      "published_at": "2026-10-08T16:35:36Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.8"
+    },
     {
       "tag": "v1.17.7",
       "name": "Intact Neuro-Coil (v1.17.7)",
