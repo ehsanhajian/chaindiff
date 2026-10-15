@@ -2,9 +2,23 @@
   "schema_version": 1,
   "client": "heimdall",
   "github": "0xPolygon/heimdall-v2",
-  "fetched_at": "2026-10-12T15:15:39Z",
+  "fetched_at": "2026-10-15T11:22:34Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v0.12.2",
+      "name": "v0.12.2",
+      "published_at": "2026-10-14T09:30:56Z",
+      "prerelease": false,
+      "url": "https://github.com/0xPolygon/heimdall-v2/releases/tag/v0.12.2"
+    },
+    {
+      "tag": "v0.12.2-beta-2",
+      "name": "v0.12.2-beta-2",
+      "published_at": "2026-10-12T15:17:32Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/heimdall-v2/releases/tag/v0.12.2-beta-2"
+    },
     {
       "tag": "v0.12.2-beta",
       "name": "v0.12.2-beta",
