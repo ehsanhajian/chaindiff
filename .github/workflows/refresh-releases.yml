@@ -43,20 +43,45 @@ jobs:
             echo "No catalog changes"
             exit 0
           fi
+          # main requires a signed commit. A local git commit from Actions is unsigned,
+          # and GitHub rejects the squash while that commit is on the pull request.
+          # The Commits API signs this commit as github-actions[bot] when the request
+          # sets no author and no committer.
+          set -o pipefail
           branch="catalog/refresh-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
-          git checkout -b "$branch"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if [ -s new-stable.txt ]; then
-            git commit -F new-stable-commit.txt
+            message=$(cat new-stable-commit.txt)
             title="ChainDiff $(cat new-version.txt)"
             body="new-stable.txt"
           else
-            git commit -m "Refresh client release catalog"
+            message="Refresh client release catalog"
             title="Refresh client release catalog"
             body=""
           fi
-          git push -u origin "$branch"
+          parent=$(git rev-parse HEAD)
+          base_tree=$(git rev-parse "HEAD^{tree}")
+          entries='[]'
+          while IFS= read -r -d '' path; do
+            blob=$(jq -n --rawfile content "$path" '{content:$content,encoding:"utf-8"}' \
+              | gh api --method POST "repos/${GITHUB_REPOSITORY}/git/blobs" --input - --jq .sha)
+            entries=$(jq -n --arg path "$path" --arg sha "$blob" --argjson entries "$entries" \
+              '$entries + [{path:$path,mode:"100644",type:"blob",sha:$sha}]')
+          done < <(git diff --cached --name-only -z --diff-filter=ACMR)
+          tree=$(jq -n --arg base "$base_tree" --argjson tree "$entries" '{base_tree:$base,tree:$tree}' \
+            | gh api --method POST "repos/${GITHUB_REPOSITORY}/git/trees" --input - --jq .sha)
+          jq -n --arg message "$message" --arg tree "$tree" --arg parent "$parent" \
+            '{message:$message,tree:$tree,parents:[$parent]}' \
+            | gh api --method POST "repos/${GITHUB_REPOSITORY}/git/commits" --input - > commit.json
+          commit_sha=$(jq -r .sha commit.json)
+          verified=$(jq -r '.verification.verified' commit.json)
+          reason=$(jq -r '.verification.reason' commit.json)
+          if [ "$verified" != "true" ]; then
+            echo "Catalog commit ${commit_sha} is not verified (${reason})."
+            exit 1
+          fi
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/git/refs" \
+            -f ref="refs/heads/${branch}" \
+            -f sha="$commit_sha"
           if [ -n "$body" ]; then
             gh pr create --base main --head "$branch" --title "$title" --body-file "$body"
           else
