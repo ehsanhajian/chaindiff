@@ -87,7 +87,7 @@ jobs:
           else
             gh pr create --base main --head "$branch" --title "$title" --body "Scheduled update of the client release catalog."
           fi
-          gh pr merge --squash --delete-branch
+          gh pr merge "$branch" --squash --delete-branch
           if [ -s new-stable.txt ]; then
             git fetch origin main
             sha=$(git rev-parse origin/main)
