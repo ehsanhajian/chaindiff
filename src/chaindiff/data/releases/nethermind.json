@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "nethermind",
   "github": "NethermindEth/nethermind",
-  "fetched_at": "2026-10-15T11:22:34Z",
+  "fetched_at": "2026-10-19T16:44:32Z",
   "ignored_tag_count": 39,
   "releases": [
+    {
+      "tag": "2.2.0",
+      "name": "v2.2.0",
+      "published_at": "2026-10-16T16:26:20Z",
+      "prerelease": false,
+      "url": "https://github.com/NethermindEth/nethermind/releases/tag/2.2.0"
+    },
     {
       "tag": "2.1.0",
       "name": "v2.1.0",
@@ -18,13 +25,6 @@
       "published_at": "2026-09-22T14:58:58Z",
       "prerelease": false,
       "url": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0"
-    },
-    {
-      "tag": "2.0.0-rc2",
-      "name": "v2.0.0-rc2",
-      "published_at": "2026-09-14T16:02:58Z",
-      "prerelease": true,
-      "url": "https://github.com/NethermindEth/nethermind/releases/tag/2.0.0-rc2"
     },
     {
       "tag": "1.39.3",
