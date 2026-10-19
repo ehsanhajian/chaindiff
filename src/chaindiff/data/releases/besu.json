@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "besu",
   "github": "besu-eth/besu",
-  "fetched_at": "2026-10-15T11:22:34Z",
+  "fetched_at": "2026-10-19T13:04:42Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "26.10.0",
+      "name": "26.10.0",
+      "published_at": "2026-10-16T10:53:52Z",
+      "prerelease": false,
+      "url": "https://github.com/besu-eth/besu/releases/tag/26.10.0"
+    },
     {
       "tag": "26.9.0",
       "name": "26.9.0",

@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "lighthouse",
   "github": "sigp/lighthouse",
-  "fetched_at": "2026-10-15T11:22:34Z",
+  "fetched_at": "2026-10-19T13:04:42Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v8.3.0",
+      "name": "Simple Rick",
+      "published_at": "2026-10-19T10:12:23Z",
+      "prerelease": false,
+      "url": "https://github.com/sigp/lighthouse/releases/tag/v8.3.0"
+    },
     {
       "tag": "v8.3.0-rc.0",
       "name": "Warp Rick",

@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "teku",
   "github": "Consensys-Incorporated/teku",
-  "fetched_at": "2026-10-15T11:22:34Z",
+  "fetched_at": "2026-10-19T13:04:42Z",
   "ignored_tag_count": 2,
   "releases": [
+    {
+      "tag": "26.10.1",
+      "name": "26.10.1",
+      "published_at": "2026-10-15T22:13:46Z",
+      "prerelease": false,
+      "url": "https://github.com/Consensys-Incorporated/teku/releases/tag/26.10.1"
+    },
     {
       "tag": "26.10.0",
       "name": "26.10.0",
