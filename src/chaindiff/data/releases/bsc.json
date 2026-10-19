@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "bsc",
   "github": "bnb-chain/bsc",
-  "fetched_at": "2026-10-15T11:22:34Z",
+  "fetched_at": "2026-10-19T16:44:32Z",
   "ignored_tag_count": 2,
   "releases": [
+    {
+      "tag": "v1.8.1",
+      "name": "v1.8.1",
+      "published_at": "2026-10-16T10:51:12Z",
+      "prerelease": false,
+      "url": "https://github.com/bnb-chain/bsc/releases/tag/v1.8.1"
+    },
     {
       "tag": "v1.8.0-alpha",
       "name": "v1.8.0-alpha",
