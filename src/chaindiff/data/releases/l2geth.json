@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "l2geth",
   "github": "scroll-tech/go-ethereum",
-  "fetched_at": "2026-10-19T16:44:32Z",
+  "fetched_at": "2026-10-22T11:45:39Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "scroll-v5.10.11",
+      "name": "scroll-v5.10.11",
+      "published_at": "2026-10-22T08:21:05Z",
+      "prerelease": false,
+      "url": "https://github.com/scroll-tech/go-ethereum/releases/tag/scroll-v5.10.11"
+    },
     {
       "tag": "scroll-v5.10.2",
       "name": "scroll-v5.10.2",

@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "geth",
   "github": "ethereum/go-ethereum",
-  "fetched_at": "2026-10-19T16:44:32Z",
+  "fetched_at": "2026-10-22T11:45:39Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v1.17.9",
+      "name": "Universal Semiconductor (v1.17.9)",
+      "published_at": "2026-10-21T15:08:46Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.9"
+    },
     {
       "tag": "v1.17.8",
       "name": "Protein Sludge Pack (v1.17.8)",
