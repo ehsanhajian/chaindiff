@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "reth",
   "github": "paradigmxyz/reth",
-  "fetched_at": "2026-10-19T16:44:32Z",
+  "fetched_at": "2026-10-22T11:45:39Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v2.8.0",
+      "name": "Reth v2.8.0",
+      "published_at": "2026-10-20T19:34:03Z",
+      "prerelease": false,
+      "url": "https://github.com/paradigmxyz/reth/releases/tag/v2.8.0"
+    },
     {
       "tag": "v2.7.0",
       "name": "Reth v2.7.0",
