@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "avalanchego",
   "github": "ava-labs/avalanchego",
-  "fetched_at": "2026-10-22T11:45:39Z",
+  "fetched_at": "2026-10-26T12:53:42Z",
   "ignored_tag_count": 1,
   "releases": [
+    {
+      "tag": "v1.15.2",
+      "name": "Helicon.2 - Removed Coreth",
+      "published_at": "2026-10-22T21:49:24Z",
+      "prerelease": false,
+      "url": "https://github.com/ava-labs/avalanchego/releases/tag/v1.15.2"
+    },
     {
       "tag": "v1.15.1",
       "name": "Helicon.1 - Improved Snapshot Performance",

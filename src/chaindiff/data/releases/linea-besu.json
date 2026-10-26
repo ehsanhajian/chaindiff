@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "linea-besu",
   "github": "LFDT-Lineth/lineth-monorepo",
-  "fetched_at": "2026-10-22T11:45:39Z",
+  "fetched_at": "2026-10-26T12:53:42Z",
   "ignored_tag_count": 324,
   "releases": [
+    {
+      "tag": "releases/linea-besu-package/v2.3.2",
+      "name": "Linea Besu v2.3.2",
+      "published_at": "2026-10-26T08:58:05Z",
+      "prerelease": true,
+      "url": "https://github.com/LFDT-Lineth/lineth-monorepo/releases/tag/releases/linea-besu-package/v2.3.2"
+    },
     {
       "tag": "releases/linea-besu-package/v2.3.2-rc1",
       "name": "Linea Besu v2.3.2-rc1",
