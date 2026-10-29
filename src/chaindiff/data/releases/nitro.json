@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "nitro",
   "github": "OffchainLabs/nitro",
-  "fetched_at": "2026-10-26T12:53:42Z",
+  "fetched_at": "2026-10-29T12:54:37Z",
   "ignored_tag_count": 53,
   "releases": [
+    {
+      "tag": "v3.12.2",
+      "name": "Arbitrum Nitro v3.12.2",
+      "published_at": "2026-10-27T13:27:32Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/nitro/releases/tag/v3.12.2"
+    },
     {
       "tag": "v3.12.1",
       "name": "Arbitrum Nitro v3.12.1",
