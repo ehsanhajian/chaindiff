@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "nethermind",
   "github": "NethermindEth/nethermind",
-  "fetched_at": "2026-10-26T12:53:42Z",
-  "ignored_tag_count": 40,
+  "fetched_at": "2026-10-29T12:54:37Z",
+  "ignored_tag_count": 41,
   "releases": [
+    {
+      "tag": "2.2.2",
+      "name": "v2.2.2",
+      "published_at": "2026-10-26T16:59:58Z",
+      "prerelease": false,
+      "url": "https://github.com/NethermindEth/nethermind/releases/tag/2.2.2"
+    },
     {
       "tag": "2.2.1",
       "name": "v2.2.1",
