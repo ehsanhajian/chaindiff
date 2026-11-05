@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "juno",
   "github": "NethermindEth/juno",
-  "fetched_at": "2026-11-02T15:41:39Z",
+  "fetched_at": "2026-11-05T14:33:59Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v0.17.0",
+      "name": "v0.17.0",
+      "published_at": "2026-11-03T17:30:23Z",
+      "prerelease": false,
+      "url": "https://github.com/NethermindEth/juno/releases/tag/v0.17.0"
+    },
     {
       "tag": "v0.16.8",
       "name": "v0.16.8",
