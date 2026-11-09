@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "avalanchego",
   "github": "ava-labs/avalanchego",
-  "fetched_at": "2026-11-05T14:33:59Z",
+  "fetched_at": "2026-11-09T16:08:36Z",
   "ignored_tag_count": 1,
   "releases": [
+    {
+      "tag": "v1.15.3",
+      "name": "v1.15.3 - API Cleanup",
+      "published_at": "2026-11-05T22:47:12Z",
+      "prerelease": false,
+      "url": "https://github.com/ava-labs/avalanchego/releases/tag/v1.15.3"
+    },
     {
       "tag": "v1.15.2",
       "name": "Helicon.2 - Removed Coreth",
