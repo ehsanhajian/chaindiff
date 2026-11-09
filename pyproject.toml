@@ -1,6 +1,6 @@
 [project]
 name = "chaindiff"
-version = "0.3.8"
+version = "0.3.9"
 description = "Decide whether a node client upgrade is safe."
 readme = "README.md"
 license = "MIT"
