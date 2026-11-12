@@ -2,8 +2,8 @@
   "schema_version": 1,
   "client": "op-node",
   "github": "ethereum-optimism/optimism",
-  "fetched_at": "2026-11-09T16:08:36Z",
-  "ignored_tag_count": 2350,
+  "fetched_at": "2026-11-12T15:05:48Z",
+  "ignored_tag_count": 2352,
   "releases": [
     {
       "tag": "op-node/v1.20.1",
