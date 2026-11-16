@@ -2,8 +2,8 @@
   "schema_version": 1,
   "client": "op-reth",
   "github": "ethereum-optimism/optimism",
-  "fetched_at": "2026-11-12T15:05:48Z",
-  "ignored_tag_count": 2395,
+  "fetched_at": "2026-11-16T15:36:44Z",
+  "ignored_tag_count": 2398,
   "releases": [
     {
       "tag": "op-reth/v2.8.2",
