@@ -2,8 +2,8 @@
   "schema_version": 1,
   "client": "nethermind",
   "github": "NethermindEth/nethermind",
-  "fetched_at": "2026-11-16T15:36:44Z",
-  "ignored_tag_count": 42,
+  "fetched_at": "2026-11-19T15:40:09Z",
+  "ignored_tag_count": 44,
   "releases": [
     {
       "tag": "2.2.2",

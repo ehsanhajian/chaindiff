@@ -2,9 +2,30 @@
   "schema_version": 1,
   "client": "bor",
   "github": "0xPolygon/bor",
-  "fetched_at": "2026-11-16T15:36:44Z",
+  "fetched_at": "2026-11-19T15:40:09Z",
   "ignored_tag_count": 4,
   "releases": [
+    {
+      "tag": "v2.11.2-beta3",
+      "name": "v2.11.2-beta3",
+      "published_at": "2026-11-18T17:35:55Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.11.2-beta3"
+    },
+    {
+      "tag": "v2.11.2-beta2",
+      "name": "v2.11.2-beta2",
+      "published_at": "2026-11-18T11:08:05Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.11.2-beta2"
+    },
+    {
+      "tag": "v2.11.2-beta",
+      "name": "v2.11.2-beta",
+      "published_at": "2026-11-17T09:50:07Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.11.2-beta"
+    },
     {
       "tag": "v2.11.1",
       "name": "v2.11.1",

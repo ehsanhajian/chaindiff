@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "erigon",
   "github": "erigontech/erigon",
-  "fetched_at": "2026-11-16T15:36:44Z",
+  "fetched_at": "2026-11-19T15:40:09Z",
   "ignored_tag_count": 107,
   "releases": [
+    {
+      "tag": "v3.8.2",
+      "name": "v3.8.2",
+      "published_at": "2026-11-19T13:33:00Z",
+      "prerelease": false,
+      "url": "https://github.com/erigontech/erigon/releases/tag/v3.8.2"
+    },
     {
       "tag": "v3.8.1",
       "name": "v3.8.1",
