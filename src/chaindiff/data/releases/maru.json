@@ -2,8 +2,8 @@
   "schema_version": 1,
   "client": "maru",
   "github": "LFDT-Lineth/lineth-monorepo",
-  "fetched_at": "2026-11-16T15:36:44Z",
-  "ignored_tag_count": 334,
+  "fetched_at": "2026-11-19T15:40:09Z",
+  "ignored_tag_count": 335,
   "releases": [
     {
       "tag": "releases/maru/v1.4.0",

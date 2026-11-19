@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "prysm",
   "github": "OffchainLabs/prysm",
-  "fetched_at": "2026-11-16T15:36:44Z",
+  "fetched_at": "2026-11-19T15:40:09Z",
   "ignored_tag_count": 1,
   "releases": [
+    {
+      "tag": "v7.3.2",
+      "name": "v7.3.2",
+      "published_at": "2026-11-18T16:56:16Z",
+      "prerelease": false,
+      "url": "https://github.com/OffchainLabs/prysm/releases/tag/v7.3.2"
+    },
     {
       "tag": "v7.3.1",
       "name": "v7.3.1",
