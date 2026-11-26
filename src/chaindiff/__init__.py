@@ -1,3 +1,3 @@
 """Decide whether a node client upgrade is safe."""
 
-__version__ = "0.3.13"
+__version__ = "0.3.14"

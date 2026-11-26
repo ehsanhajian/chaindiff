@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "op-reth",
   "github": "ethereum-optimism/optimism",
-  "fetched_at": "2026-11-23T17:58:16Z",
-  "ignored_tag_count": 2401,
+  "fetched_at": "2026-11-26T16:48:31Z",
+  "ignored_tag_count": 2407,
   "releases": [
+    {
+      "tag": "op-reth/v2.10.0",
+      "name": "op-reth v2.10.0",
+      "published_at": "2026-11-25T13:20:22Z",
+      "prerelease": false,
+      "url": "https://github.com/ethereum-optimism/optimism/releases/tag/op-reth/v2.10.0"
+    },
     {
       "tag": "op-reth/v2.9.0",
       "name": "op-reth v2.9.0",

@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "bor",
   "github": "0xPolygon/bor",
-  "fetched_at": "2026-11-23T17:58:16Z",
+  "fetched_at": "2026-11-26T16:48:31Z",
   "ignored_tag_count": 4,
   "releases": [
+    {
+      "tag": "v2.12.0-beta",
+      "name": "v2.12.0-beta",
+      "published_at": "2026-11-23T18:34:37Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/bor/releases/tag/v2.12.0-beta"
+    },
     {
       "tag": "v2.11.2",
       "name": "v2.11.2",
