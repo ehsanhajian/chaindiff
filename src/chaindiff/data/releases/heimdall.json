@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "heimdall",
   "github": "0xPolygon/heimdall-v2",
-  "fetched_at": "2026-11-23T17:58:16Z",
+  "fetched_at": "2026-11-26T16:48:31Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v0.14.2-beta",
+      "name": "v0.14.2-beta",
+      "published_at": "2026-11-26T14:51:41Z",
+      "prerelease": true,
+      "url": "https://github.com/0xPolygon/heimdall-v2/releases/tag/v0.14.2-beta"
+    },
     {
       "tag": "v0.14.0",
       "name": "v0.14.0",

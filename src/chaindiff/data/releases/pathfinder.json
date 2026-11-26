@@ -2,9 +2,16 @@
   "schema_version": 1,
   "client": "pathfinder",
   "github": "software-mansion/pathfinder",
-  "fetched_at": "2026-11-23T17:58:16Z",
+  "fetched_at": "2026-11-26T16:48:31Z",
   "ignored_tag_count": 0,
   "releases": [
+    {
+      "tag": "v0.24.3",
+      "name": "v0.24.3",
+      "published_at": "2026-11-25T08:43:26Z",
+      "prerelease": false,
+      "url": "https://github.com/software-mansion/pathfinder/releases/tag/v0.24.3"
+    },
     {
       "tag": "v0.24.2",
       "name": "v0.24.2",
